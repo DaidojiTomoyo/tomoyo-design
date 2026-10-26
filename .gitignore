@@ -1,0 +1,21 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+*.log
+.env*
+!.env.example
+.pnpm-store/
+
+# Impeccable is installed separately in each development environment.
+/.agents/skills/impeccable/
+/.claude/skills/impeccable/
+/.claude/agents/impeccable-*.md
+/.claude/settings.local.json
+/.codex/hooks.json
+/.impeccable/config.local.json

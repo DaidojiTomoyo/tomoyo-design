@@ -1,0 +1,21 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+pnpm-lock.yaml
+next-env.d.ts
+*.tsbuildinfo
+
+# Installed agent tooling maintains its own formatting.
+.agent/
+.agents/
+.codex/
+.claude/
+.impeccable/
+
+# Preserve the existing source documents and research captures.
+docs/ui-style-motion-glossary.md
+docs/architecture.md
+docs/experience-design.md
+docs/research/
