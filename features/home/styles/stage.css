@@ -1,0 +1,118 @@
+.preview-stage {
+  position: relative;
+  isolation: isolate;
+  height: calc(487 * var(--unit));
+  margin-inline: calc(6 * var(--unit));
+  background: var(--blue);
+}
+
+.preview-stage::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--blue-texture) repeat;
+  background-size: 630px;
+  opacity: 0.48;
+  content: '';
+}
+
+.preview-stage::after {
+  position: absolute;
+  top: calc(-33 * var(--unit));
+  right: calc(24.5 * var(--unit));
+  bottom: calc(-41 * var(--unit));
+  left: calc(22.5 * var(--unit));
+  border-inline: 1px solid #aec8ea;
+  pointer-events: none;
+  content: '';
+}
+
+.stage-caption,
+.stage-footer {
+  position: absolute;
+  right: calc(29 * var(--unit));
+  width: max(140px, calc(140 * var(--unit)));
+  color: var(--paper);
+  font-size: calc(12 * var(--unit));
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.stage-caption {
+  top: calc(25 * var(--unit));
+}
+.stage-footer {
+  bottom: calc(34 * var(--unit));
+}
+
+.stage-caption::after,
+.stage-footer::before {
+  display: block;
+  width: calc(32 * var(--unit));
+  height: 1px;
+  margin-block: calc(16 * var(--unit));
+  background: #a8c3e0;
+  content: '';
+}
+
+.rest-outline {
+  position: absolute;
+  top: calc(165 * var(--unit));
+  left: 24.15%;
+  width: 51.95%;
+  height: calc(277 * var(--unit));
+  border: 1.5px dashed #aec8ea;
+  border-radius: 8px;
+}
+
+.preview-stage :focus-visible {
+  outline-color: var(--paper);
+}
+
+@media (max-width: 1100px) {
+  .preview-stage::after {
+    display: none;
+  }
+  .stage-caption {
+    display: none;
+  }
+  .preview-stage {
+    height: 430px;
+  }
+  .rest-outline {
+    top: 115px;
+    left: 21%;
+    width: 74%;
+    height: 270px;
+  }
+  .stage-footer {
+    right: 26px;
+    bottom: 12px;
+    width: auto;
+    font-size: 10px;
+  }
+  .stage-footer::before {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .preview-stage {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    margin-inline: 4px;
+    padding: 16px 16px 20px;
+  }
+  .stage-footer,
+  .rest-outline {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .preview-stage {
+    padding-inline: 12px;
+  }
+}
