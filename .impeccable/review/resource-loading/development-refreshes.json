@@ -1,0 +1,50 @@
+[
+  {
+    "content": "visible",
+    "cover": "hidden",
+    "entry": "resources",
+    "fonts": "loaded",
+    "images": [
+      {
+        "complete": true,
+        "width": 268
+      }
+    ],
+    "loadingUi": "bypassed",
+    "opacity": "0",
+    "phase": "complete",
+    "resources": "ready"
+  },
+  {
+    "content": "visible",
+    "cover": "hidden",
+    "entry": "resources",
+    "fonts": "loaded",
+    "images": [
+      {
+        "complete": true,
+        "width": 268
+      }
+    ],
+    "loadingUi": "bypassed",
+    "opacity": "0",
+    "phase": "complete",
+    "resources": "ready"
+  },
+  {
+    "content": "visible",
+    "cover": "hidden",
+    "entry": "resources",
+    "fonts": "loaded",
+    "images": [
+      {
+        "complete": true,
+        "width": 268
+      }
+    ],
+    "loadingUi": "bypassed",
+    "opacity": "0",
+    "phase": "complete",
+    "resources": "ready"
+  }
+]

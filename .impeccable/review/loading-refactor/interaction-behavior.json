@@ -1,0 +1,16 @@
+{
+  "copy": {
+    "glass": true,
+    "length": 578
+  },
+  "promptLanguage": "en",
+  "replayStart": {
+    "entry": "replay",
+    "phase": "opening"
+  },
+  "afterInput": {
+    "cover": "visible",
+    "entry": "replay",
+    "phase": "opening"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "page": {
+    "content": "visible",
+    "cover": "hidden",
+    "entry": "resources",
+    "fonts": "loaded",
+    "images": [
+      {
+        "complete": true,
+        "width": 195
+      }
+    ],
+    "loadingUi": "bypassed",
+    "opacity": "0",
+    "phase": "complete",
+    "resources": "ready"
+  },
+  "clipboard": "沿用我项目现有的技术栈，实现「磨砂玻璃」效果。\n\n保留我的内容、字体、颜色与布局。把效果应用于现有卡片，不复刻 Tomoyo 的示例插画，也不引入组件库。\n\n为卡片添加磨砂玻璃材质：背景 rgba(247, 232, 216, 0.86)，backdrop-filter: blur(18px) saturate(1.15)，1px rgba(255, 249, 239, 0.7) 描边，阴影 0 20px 32px rgba(4, 25, 72, 0.32)。在卡片后放置有对比度的图片或纹理，使模糊可见；文字和前景图片保持清晰，不对内容使用 filter: blur。描边使用不占布局空间的伪元素，切换材质时保持内容尺寸不变。不支持 backdrop-filter 时回退到不透明 #f7e8d8。重播先用 160ms 平滑回到纸面，再用 320ms 和 cubic-bezier(0.16, 1, 0.3, 1) 过渡到玻璃。\n\n从当前画面平滑接续动画，快速切换时取消旧动画并保留当前视觉状态。动画播放中重复点击重播不应让画面跳回起点。\n\n尊重 prefers-reduced-motion：跳过位移和渐变，立即显示内容，保留清晰的焦点标记。玻璃可保留静态材质。支持键盘和触屏，动画仅影响当前组件。\n\n实现后说明哪些参数可以调整，以及如何验证行为。",
+  "button": "已复制"
+}

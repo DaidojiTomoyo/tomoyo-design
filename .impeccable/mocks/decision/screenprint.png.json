@@ -1,0 +1,12 @@
+{
+  "prompt": "Edit this Tomoyo Design homepage comp, preserving its composition, material, palette, all functional controls and every preview region. Correct factual copy only. In the small lower-right annotation inside the blue stage, remove 'EST. 2024' and 'TOKYO, JP'; replace that annotation with 'PREVIEW / HOVER LIFT'. Remove all small numeric counts next to category effect names at the bottom: there are no published collection totals. Keep the 01, 02, 03 preset indices because the page genuinely has three visible presets. Replace the small upper-right stage claim 'BETTER RESULTS' with 'COPY THE PROMPT'. Preserve all other content, rendering and proportions. Do not introduce any new claims, locations, dates, numbers, prices or testimonials. This is an image correction of the existing website mockup.",
+  "approved": true,
+  "approval": "User selected screenprint using Build this on 2026-10-26 and explicitly resumed implementation on 2026-10-27. This selected comp is the implementation reference.",
+  "source": "image_gen",
+  "generatedImage": "/Users/peipei/.codex/generated_images/01a176eb-29fd-7c82-8450-4d7fa60fb445/exec-4b371f9d-7160-491b-9f3c-fbb370ce8e20.png",
+  "mode": "persuade",
+  "purpose": "homepage-direction-proposal",
+  "frame": "1440x900",
+  "createdAt": "2026-10-26T09:03:49.814Z",
+  "referenceImage": "/Users/peipei/.codex/generated_images/01a176eb-29fd-7c82-8450-4d7fa60fb445/exec-a3f75952-433a-481a-9d11-144f23693ee6.png"
+}

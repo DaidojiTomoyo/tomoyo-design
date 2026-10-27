@@ -1,0 +1,24 @@
+{
+  "preview": {
+    "entry": "first",
+    "phase": "complete",
+    "surface": "preview"
+  },
+  "homeAfterPreview": {
+    "bar": false,
+    "entry": "first",
+    "opacity": "1",
+    "phase": "opening",
+    "settled": true,
+    "surface": "home",
+    "width": 1280
+  },
+  "heldMobile": {
+    "entry": "first",
+    "intro": "1",
+    "lettersSettled": true,
+    "phase": "opening",
+    "skip": "visible",
+    "width": 390
+  }
+}

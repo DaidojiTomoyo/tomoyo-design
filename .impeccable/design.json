@@ -1,0 +1,700 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T07:45:17Z",
+  "title": "Design System: Tomoyo Design",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "奶油纸",
+        "tonalRamp": [
+          "oklch(15% 0.02687 69.29)",
+          "oklch(26.43% 0.02687 69.29)",
+          "oklch(37.86% 0.02687 69.29)",
+          "oklch(49.29% 0.02687 69.29)",
+          "oklch(60.71% 0.02687 69.29)",
+          "oklch(72.14% 0.02687 69.29)",
+          "oklch(83.57% 0.02687 69.29)",
+          "oklch(95% 0.02687 69.29)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "深蓝油墨",
+        "tonalRamp": [
+          "oklch(15% 0.14805 263.71)",
+          "oklch(26.43% 0.14805 263.71)",
+          "oklch(37.86% 0.14805 263.71)",
+          "oklch(49.29% 0.14805 263.71)",
+          "oklch(60.71% 0.14805 263.71)",
+          "oklch(72.14% 0.14805 263.71)",
+          "oklch(83.57% 0.14805 263.71)",
+          "oklch(95% 0.14805 263.71)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "群青舞台",
+        "tonalRamp": [
+          "oklch(15% 0.18738 262.36)",
+          "oklch(26.43% 0.18738 262.36)",
+          "oklch(37.86% 0.18738 262.36)",
+          "oklch(49.29% 0.18738 262.36)",
+          "oklch(60.71% 0.18738 262.36)",
+          "oklch(72.14% 0.18738 262.36)",
+          "oklch(83.57% 0.18738 262.36)",
+          "oklch(95% 0.18738 262.36)"
+        ]
+      },
+      "vermilion": {
+        "role": "secondary",
+        "displayName": "朱红印记",
+        "tonalRamp": [
+          "oklch(15% 0.21702 33.50)",
+          "oklch(26.43% 0.21702 33.50)",
+          "oklch(37.86% 0.21702 33.50)",
+          "oklch(49.29% 0.21702 33.50)",
+          "oklch(60.71% 0.21702 33.50)",
+          "oklch(72.14% 0.21702 33.50)",
+          "oklch(83.57% 0.21702 33.50)",
+          "oklch(95% 0.21702 33.50)"
+        ]
+      },
+      "copy-vermilion-p3": {
+        "role": "secondary",
+        "displayName": "广色域朱红",
+        "tonalRamp": [
+          "oklch(15% 0.25545 32.70)",
+          "oklch(26.43% 0.25545 32.70)",
+          "oklch(37.86% 0.25545 32.70)",
+          "oklch(49.29% 0.25545 32.70)",
+          "oklch(60.71% 0.25545 32.70)",
+          "oklch(72.14% 0.25545 32.70)",
+          "oklch(83.57% 0.25545 32.70)",
+          "oklch(95% 0.25545 32.70)"
+        ]
+      },
+      "action-paper": {
+        "role": "neutral",
+        "displayName": "浅纸白",
+        "tonalRamp": [
+          "oklch(15% 0.01467 80.71)",
+          "oklch(26.43% 0.01467 80.71)",
+          "oklch(37.86% 0.01467 80.71)",
+          "oklch(49.29% 0.01467 80.71)",
+          "oklch(60.71% 0.01467 80.71)",
+          "oklch(72.14% 0.01467 80.71)",
+          "oklch(83.57% 0.01467 80.71)",
+          "oklch(95% 0.01467 80.71)"
+        ]
+      },
+      "active-peach": {
+        "role": "secondary",
+        "displayName": "浅暖选中编号",
+        "tonalRamp": [
+          "oklch(15% 0.13625 42.63)",
+          "oklch(26.43% 0.13625 42.63)",
+          "oklch(37.86% 0.13625 42.63)",
+          "oklch(49.29% 0.13625 42.63)",
+          "oklch(60.71% 0.13625 42.63)",
+          "oklch(72.14% 0.13625 42.63)",
+          "oklch(83.57% 0.13625 42.63)",
+          "oklch(95% 0.13625 42.63)"
+        ]
+      },
+      "quiet-blue": {
+        "role": "neutral",
+        "displayName": "退后蓝",
+        "tonalRamp": [
+          "oklch(15% 0.05057 250.32)",
+          "oklch(26.43% 0.05057 250.32)",
+          "oklch(37.86% 0.05057 250.32)",
+          "oklch(49.29% 0.05057 250.32)",
+          "oklch(60.71% 0.05057 250.32)",
+          "oklch(72.14% 0.05057 250.32)",
+          "oklch(83.57% 0.05057 250.32)",
+          "oklch(95% 0.05057 250.32)"
+        ]
+      },
+      "registration-blue": {
+        "role": "neutral",
+        "displayName": "套准浅蓝",
+        "tonalRamp": [
+          "oklch(15% 0.05571 255.22)",
+          "oklch(26.43% 0.05571 255.22)",
+          "oklch(37.86% 0.05571 255.22)",
+          "oklch(49.29% 0.05571 255.22)",
+          "oklch(60.71% 0.05571 255.22)",
+          "oklch(72.14% 0.05571 255.22)",
+          "oklch(83.57% 0.05571 255.22)",
+          "oklch(95% 0.05571 255.22)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "控件蓝边",
+        "tonalRamp": [
+          "oklch(15% 0.10695 258.58)",
+          "oklch(26.43% 0.10695 258.58)",
+          "oklch(37.86% 0.10695 258.58)",
+          "oklch(49.29% 0.10695 258.58)",
+          "oklch(60.71% 0.10695 258.58)",
+          "oklch(72.14% 0.10695 258.58)",
+          "oklch(83.57% 0.10695 258.58)",
+          "oklch(95% 0.10695 258.58)"
+        ]
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "蓝灰分隔",
+        "tonalRamp": [
+          "oklch(15% 0.05706 269.21)",
+          "oklch(26.43% 0.05706 269.21)",
+          "oklch(37.86% 0.05706 269.21)",
+          "oklch(49.29% 0.05706 269.21)",
+          "oklch(60.71% 0.05706 269.21)",
+          "oklch(72.14% 0.05706 269.21)",
+          "oklch(83.57% 0.05706 269.21)",
+          "oklch(95% 0.05706 269.21)"
+        ]
+      },
+      "step-vermilion": {
+        "role": "secondary",
+        "displayName": "深朱红步骤号",
+        "tonalRamp": [
+          "oklch(15% 0.16338 32.97)",
+          "oklch(26.43% 0.16338 32.97)",
+          "oklch(37.86% 0.16338 32.97)",
+          "oklch(49.29% 0.16338 32.97)",
+          "oklch(60.71% 0.16338 32.97)",
+          "oklch(72.14% 0.16338 32.97)",
+          "oklch(83.57% 0.16338 32.97)",
+          "oklch(95% 0.16338 32.97)"
+        ]
+      },
+      "error": {
+        "role": "secondary",
+        "displayName": "错误砖红",
+        "tonalRamp": [
+          "oklch(15% 0.13990 31.97)",
+          "oklch(26.43% 0.13990 31.97)",
+          "oklch(37.86% 0.13990 31.97)",
+          "oklch(49.29% 0.13990 31.97)",
+          "oklch(60.71% 0.13990 31.97)",
+          "oklch(72.14% 0.13990 31.97)",
+          "oklch(83.57% 0.13990 31.97)",
+          "oklch(95% 0.13990 31.97)"
+        ]
+      },
+      "field-surface": {
+        "role": "neutral",
+        "displayName": "半透明字段纸",
+        "tonalRamp": [
+          "oklch(15% 0.01467 80.71 / 0.45)",
+          "oklch(26.43% 0.01467 80.71 / 0.45)",
+          "oklch(37.86% 0.01467 80.71 / 0.45)",
+          "oklch(49.29% 0.01467 80.71 / 0.45)",
+          "oklch(60.71% 0.01467 80.71 / 0.45)",
+          "oklch(72.14% 0.01467 80.71 / 0.45)",
+          "oklch(83.57% 0.01467 80.71 / 0.45)",
+          "oklch(95% 0.01467 80.71 / 0.45)"
+        ]
+      },
+      "glass-surface": {
+        "role": "neutral",
+        "displayName": "玻璃纸",
+        "tonalRamp": [
+          "oklch(15% 0.02687 69.29 / 0.86)",
+          "oklch(26.43% 0.02687 69.29 / 0.86)",
+          "oklch(37.86% 0.02687 69.29 / 0.86)",
+          "oklch(49.29% 0.02687 69.29 / 0.86)",
+          "oklch(60.71% 0.02687 69.29 / 0.86)",
+          "oklch(72.14% 0.02687 69.29 / 0.86)",
+          "oklch(83.57% 0.02687 69.29 / 0.86)",
+          "oklch(95% 0.02687 69.29 / 0.86)"
+        ]
+      },
+      "glass-border": {
+        "role": "neutral",
+        "displayName": "玻璃亮边",
+        "tonalRamp": [
+          "oklch(15% 0.01467 80.71 / 0.7)",
+          "oklch(26.43% 0.01467 80.71 / 0.7)",
+          "oklch(37.86% 0.01467 80.71 / 0.7)",
+          "oklch(49.29% 0.01467 80.71 / 0.7)",
+          "oklch(60.71% 0.01467 80.71 / 0.7)",
+          "oklch(72.14% 0.01467 80.71 / 0.7)",
+          "oklch(83.57% 0.01467 80.71 / 0.7)",
+          "oklch(95% 0.01467 80.71 / 0.7)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "展示标题",
+        "purpose": "宽屏分类标题；紧凑布局另有流体字号。"
+      },
+      "headline": {
+        "displayName": "示例标题",
+        "purpose": "Oswald 粗体，示例内容在效果切换时保持稳定。"
+      },
+      "title": {
+        "displayName": "样张标题",
+        "purpose": "当前首页样张的一级标题。"
+      },
+      "step-title": {
+        "displayName": "步骤标题",
+        "purpose": "使用说明中的步骤名称。"
+      },
+      "body": {
+        "displayName": "说明正文",
+        "purpose": "使用说明正文，最大行长在布局中控制。"
+      },
+      "sample-body": {
+        "displayName": "示例正文",
+        "purpose": "示例卡片宽屏正文；紧凑模式采用更舒展的行高。"
+      },
+      "label": {
+        "displayName": "标签与导航",
+        "purpose": "等宽的短标签、导航文字。"
+      },
+      "annotation": {
+        "displayName": "印刷注释",
+        "purpose": "短小的周边说明；不是大标题前的装饰 eyebrow。"
+      },
+      "preset-name": {
+        "displayName": "预设名称",
+        "purpose": "蓝底预设按钮名称。"
+      },
+      "prompt-summary": {
+        "displayName": "摘要文字",
+        "purpose": "打开完整提示词的按钮内容。"
+      },
+      "prompt-text": {
+        "displayName": "完整提示词",
+        "purpose": "可选择的只读文本域。"
+      },
+      "copy-action": {
+        "displayName": "主动作文字",
+        "purpose": "19px 下限与 700 字重保障主行动的辨识度。"
+      },
+      "secondary-action": {
+        "displayName": "次动作文字",
+        "purpose": "Replay 的常规字重。"
+      },
+      "display-zh": {
+        "displayName": "中文展示标题",
+        "purpose": "中文分类标题的宽屏字阶，使用 Noto Sans SC 900。"
+      },
+      "headline-zh": {
+        "displayName": "中文示例标题",
+        "purpose": "中文示例标题，紧凑布局使用独立的流体字阶。"
+      },
+      "title-zh": {
+        "displayName": "中文样张标题",
+        "purpose": "中文一级标题保留清楚的粗体与行高。"
+      },
+      "guide-display-zh": {
+        "displayName": "中文说明大标题",
+        "purpose": "使用说明的中文流体标题。"
+      },
+      "body-zh": {
+        "displayName": "中文说明正文",
+        "purpose": "中文页面的本地黑体正文。"
+      },
+      "sample-body-zh": {
+        "displayName": "中文示例正文",
+        "purpose": "中文预览正文行高为 1.7，紧凑字号为 15px。"
+      },
+      "prompt-text-zh": {
+        "displayName": "中文提示词",
+        "purpose": "根据文本域自身 lang 使用中文字体，与界面语言独立。"
+      },
+      "copy-action-zh": {
+        "displayName": "中文主动作",
+        "purpose": "中文复制操作保留 19px 字号下限和 700 字重。"
+      },
+      "language-label": {
+        "displayName": "界面语言链接",
+        "purpose": "英文 EN 标签用等宽字，中文链接有独立的 Noto Sans SC 字体。"
+      },
+      "prompt-language-label": {
+        "displayName": "提示词语言标签",
+        "purpose": "英文界面的原生语言选择；中文界面继承 Noto Sans SC。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "specimen-resting",
+        "value": "0 20px 32px rgba(4, 25, 72, 0.32)",
+        "purpose": "当前示例卡片的静置深度。"
+      },
+      {
+        "name": "specimen-lifted",
+        "value": "0 28px 44px rgba(4, 25, 72, 0.38)",
+        "purpose": "Hover lift 抬升时的柔和阴影。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "effect-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "示例进入、归稳与正式首页活字编排共用的指数缓出。"
+      },
+      {
+        "name": "lift-distance",
+        "value": "6px",
+        "purpose": "内部表面的向上位移，外层命中区域保持不动。"
+      },
+      {
+        "name": "lift-duration",
+        "value": "240ms",
+        "purpose": "hover / focus 的归稳过渡。"
+      },
+      {
+        "name": "lift-replay-duration",
+        "value": "960ms",
+        "purpose": "一次抬升演示段，结束时依据当前输入状态归稳。"
+      },
+      {
+        "name": "reveal-reset-duration",
+        "value": "120ms",
+        "purpose": "从当前帧平滑淡出后再入场。"
+      },
+      {
+        "name": "reveal-reset-ease",
+        "value": "ease-in",
+        "purpose": "柔和入场的预备淡出曲线。"
+      },
+      {
+        "name": "reveal-distance",
+        "value": "12px",
+        "purpose": "柔和入场的起始向下偏移。"
+      },
+      {
+        "name": "reveal-duration",
+        "value": "480ms",
+        "purpose": "柔和入场的 opacity 与位置过渡。"
+      },
+      {
+        "name": "reveal-demonstration-duration",
+        "value": "600ms",
+        "purpose": "预备淡出与入场合计的演示段。"
+      },
+      {
+        "name": "glass-reset-duration",
+        "value": "160ms",
+        "purpose": "玻璃重播先从当前材质回到纸面。"
+      },
+      {
+        "name": "glass-reset-ease",
+        "value": "ease-in-out",
+        "purpose": "玻璃重播预备段的曲线。"
+      },
+      {
+        "name": "glass-duration",
+        "value": "320ms",
+        "purpose": "从纸面或当前材质过渡到玻璃。"
+      },
+      {
+        "name": "glass-replay-duration",
+        "value": "480ms",
+        "purpose": "玻璃复位与转化合计的演示段。"
+      },
+      {
+        "name": "glass-backdrop-duration",
+        "value": "200ms",
+        "purpose": "常驻后方图像的透明度过渡；减少动态效果时关闭。"
+      },
+      {
+        "name": "glass-backdrop-ease",
+        "value": "ease-out",
+        "purpose": "仅用于后方图像显隐。"
+      },
+      {
+        "name": "preset-rule-duration",
+        "value": "180ms",
+        "purpose": "选中短线的宽度和背景色过渡。"
+      },
+      {
+        "name": "preset-rule-ease",
+        "value": "ease-out",
+        "purpose": "仅用于选中短线。"
+      },
+      {
+        "name": "copy-feedback-duration",
+        "value": "2400ms",
+        "purpose": "复制成功文字与勾选图标的保留时间。"
+      },
+      {
+        "name": "home-loading-reveal-delay",
+        "value": "250ms",
+        "purpose": "首页检查阶段先隐藏正文和加载层；到延迟末仍在等待才显示活字加载。资源更早结算时直接显示内容，预览与显式重播使用 0ms。"
+      },
+      {
+        "name": "home-type-letter-duration",
+        "value": "640ms",
+        "purpose": "加载层显示时，CSS 使六字从交替的 translateY ±110% 排到原位，控制器接续已运行的形成动画；快速就绪路径不播放。"
+      },
+      {
+        "name": "home-type-letter-stagger",
+        "value": "45ms",
+        "purpose": "相邻字母延迟；六个字母完整形成需要 640 + 5 × 45 = 865ms。"
+      },
+      {
+        "name": "home-opening-rule-duration",
+        "value": "720ms",
+        "purpose": "随已显示的加载层，横线由 scaleX(0) 展开到 1；活字方向不显示套准圆标。"
+      },
+      {
+        "name": "preview-opening-hold-duration",
+        "value": "650ms",
+        "purpose": "仅预览路由与显式重播，在资源结算和字标形成后保留完整画面；正式首页真实加载不加此固定停留。"
+      },
+      {
+        "name": "home-resource-timeout",
+        "value": "10000ms",
+        "purpose": "实际字体、海岸图片和纸纹、蓝纹解码的故障等待上限；到期仍有任务时返回 timeout，不宣称资源全部成功。"
+      },
+      {
+        "name": "home-loading-recovery-delay",
+        "value": "6s",
+        "purpose": "仅未接管的 checking 状态在约 6 秒后由 CSS 恢复正文和滚动并隐藏加载层；迟到接管不重新覆盖，已接管 loading 使用独立资源故障上限。"
+      },
+      {
+        "name": "home-type-exit-duration",
+        "value": "640ms",
+        "purpose": "实际出现的活字加载层上移 24% 并淡出；进入退场时释放正文与滚动。快速就绪直接 complete，不执行此退场。"
+      },
+      {
+        "name": "home-content-arrival-delay",
+        "value": "200ms",
+        "purpose": "已经显示的加载层或完整演示开始退场 200ms 后，示例和页面标题进入；快速就绪直接显示内容，不执行该入场。"
+      },
+      {
+        "name": "home-sample-arrival-duration",
+        "value": "640ms",
+        "purpose": "sample-arrival 由 translateX(24px) 与底部遮片进入，sample-surface 独立承担示例演示。"
+      },
+      {
+        "name": "home-heading-arrival-duration",
+        "value": "520ms",
+        "purpose": "首页标题与预设编号从下方 24px 配合遮片归位。"
+      },
+      {
+        "name": "home-heading-arrival-stagger",
+        "value": "45ms",
+        "purpose": "已显示加载层后的首页标题与三个预设编号依次延迟；这段内容入场在退场开始后 855ms 完成。"
+      },
+      {
+        "name": "home-category-arrival-duration",
+        "value": "620ms",
+        "purpose": "分类标题首次可见时从 translateY(85%)、rotate(3deg) 归位。"
+      },
+      {
+        "name": "home-category-index-duration",
+        "value": "400ms",
+        "purpose": "分类编号延迟 100ms 后从上方 12px 进入。"
+      },
+      {
+        "name": "home-guide-title-duration",
+        "value": "680ms",
+        "purpose": "使用说明标题按行从左侧 16px 配合遮片进入。"
+      },
+      {
+        "name": "home-guide-title-stagger",
+        "value": "85ms",
+        "purpose": "使用说明标题各行的入场间隔。"
+      },
+      {
+        "name": "home-step-index-duration",
+        "value": "460ms",
+        "purpose": "各步骤首次可见时，编号从上方 18px 与透明度 0.2 进入；替代旧横向编号提示。"
+      },
+      {
+        "name": "home-locale-exit-duration",
+        "value": "160ms",
+        "purpose": "旧语言文字向上 18px 并淡出，使用 ease-in。"
+      },
+      {
+        "name": "home-locale-enter-duration",
+        "value": "380ms",
+        "purpose": "新语言文字向原位进入，使用 effect-ease；原生文字过渡组采用同一时长。"
+      },
+      {
+        "name": "home-locale-enter-delay",
+        "value": "60ms",
+        "purpose": "活字方向的新语言文字开始进入前的延迟。"
+      },
+      {
+        "name": "home-locale-offset",
+        "value": "18px",
+        "purpose": "原生语言交换的纵向距离：旧文向上，新文从下方进入。"
+      },
+      {
+        "name": "home-locale-fallback-duration",
+        "value": "300ms",
+        "purpose": "缺少原生过渡 API 时，新文字从下方 10px、透明度 0.4 进入；不重播开场。"
+      },
+      {
+        "name": "copy-success-mark-duration",
+        "value": "320ms",
+        "purpose": "复制成功勾选由 scale(1.35)、rotate(-12deg) 归位；减少动态效果时省略。"
+      },
+      {
+        "name": "copy-success-label-duration",
+        "value": "260ms",
+        "purpose": "活字首页的成功标签从下方 8px 进入；2400ms 状态保留时间不变。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "copy-label",
+        "value": "1400px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "compact",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      },
+      {
+        "name": "narrow",
+        "value": "360px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Copy 主动作",
+      "kind": "button",
+      "refersTo": "button-copy",
+      "description": "复制时以 aria-busy / aria-disabled 与 ref 互斥保护请求，保留 pointer 和焦点；busy 透明度为 0.85。成功反馈保留 2400ms，失败打开并选中当前语言的完整提示词。 正式首页采用活字反馈：成功勾选归位 320ms，标签从下方 8px 进入 260ms；减少动态效果时省略。",
+      "html": "<button class=\"ds-copy\" type=\"button\" data-copy-state=\"idle\" aria-busy=\"false\" aria-disabled=\"false\" aria-label=\"Copy prompt\"><span class=\"ds-copy-label-long\" aria-hidden=\"true\">Copy prompt</span><span class=\"ds-copy-label-short\" aria-hidden=\"true\">Copy</span><svg class=\"ds-copy-icon\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8 7h12v14H8zM16 7V3H4v14h4\"/></svg></button>",
+      "css": ".ds-copy{font-family:var(--font-mono, \"Roboto Mono\"), monospace;box-sizing:border-box}.ds-copy-icon{width: 1.25em;height: 1.25em;flex: none}.ds-copy:hover{filter: brightness(0.94)}.ds-copy[aria-busy='true']{opacity: 0.85}.ds-copy{display: inline-flex;height: calc(52 * var(--unit, 1px));flex: none;align-items: center;justify-content: center;gap: calc(12 * var(--unit, 1px));padding-inline: calc(18 * var(--unit, 1px));border: 1px solid #426aa7;border-radius: 5px;font-size: calc(16 * var(--unit, 1px));font-weight: 400;white-space: nowrap}.ds-copy{width: calc(174 * var(--unit, 1px));margin-left: calc(24 * var(--unit, 1px));gap: calc(6 * var(--unit, 1px));padding-inline: calc(7 * var(--unit, 1px));transform: translateY(calc(-1.5 * var(--unit, 1px)));border-color: var(--vermilion, #f74822);background: var(--vermilion, #f74822);background: color(display-p3 0.97 0.283 0.135);color: #fff9ef;font-size: max(19px, calc(19 * var(--unit, 1px)));font-weight: 700;letter-spacing: -0.04em}.ds-copy-label-short{display: none}.ds-copy .ds-copy-icon{width: calc(20 * var(--unit, 1px));height: calc(20 * var(--unit, 1px))}@media (max-width: 1400px){.ds-copy-label-long{display: none}.ds-copy-label-short{display: inline}}@media (max-width: 1100px){.ds-copy{width: 108px;margin-left: 0;height: 46px}.ds-copy .ds-copy-icon{width: 20px;height: 20px}}@media (max-width: 900px){.ds-copy{order: 0;width: 100%;height: 48px;margin: 0;transform: none;font-size: 19px}}.ds-copy{cursor:pointer;touch-action:manipulation}.ds-copy *{cursor:inherit}.ds-copy:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-copy:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}@keyframes ds-copy-stamp{from{transform:scale(1.35) rotate(-12deg);opacity:0.3}to{transform:scale(1) rotate(0);opacity:1}}@keyframes ds-copy-label-arrive{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}@media(prefers-reduced-motion:no-preference){.ds-copy[data-copy-state='copied'] .ds-copy-icon{animation:ds-copy-stamp 320ms cubic-bezier(0.16, 1, 0.3, 1)}.ds-copy[data-copy-state='copied']>span{animation:ds-copy-label-arrive 260ms cubic-bezier(0.16, 1, 0.3, 1)}}"
+    },
+    {
+      "name": "Replay 次动作",
+      "kind": "button",
+      "refersTo": "button-replay",
+      "description": "细蓝边、透明底；hover 反转为油墨底。同一效果演示中的重复 Replay 被控制器忽略；不同效果从当前帧接续。减少动态效果时保留可用的静态预览。",
+      "html": "<button class=\"ds-replay\" type=\"button\"><svg class=\"ds-replay-icon\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 10a8 8 0 1 1 1 8M4 4v6h6\"/></svg> Replay</button>",
+      "css": ".ds-replay{font-family:var(--font-mono, \"Roboto Mono\"), monospace;box-sizing:border-box}.ds-replay-icon{width: 1.25em;height: 1.25em;flex: none}.ds-replay:hover{background: var(--ink, #08297e);color: var(--paper, #f7e8d8)}.ds-replay{display: inline-flex;height: calc(52 * var(--unit, 1px));flex: none;align-items: center;justify-content: center;gap: calc(12 * var(--unit, 1px));padding-inline: calc(18 * var(--unit, 1px));border: 1px solid #426aa7;border-radius: 5px;font-size: calc(16 * var(--unit, 1px));font-weight: 400;white-space: nowrap}.ds-replay{width: calc(150 * var(--unit, 1px));background: transparent;color: var(--ink, #08297e)}@media (max-width: 1100px){.ds-replay{width: 110px;height: 46px;font-size: 14px}}@media (max-width: 900px){.ds-replay{order: 0;width: 100%;height: 48px;margin: 0;transform: none;font-size: 19px}.ds-replay{font-size: 15px}}.ds-replay{cursor:pointer;touch-action:manipulation}.ds-replay *{cursor:inherit}.ds-replay:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-replay:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+    },
+    {
+      "name": "手动选文动作",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "完整提示词下方的 Select all text，保留下划线与 44px 最小高度。选择全文由应用执行，片段保留原有视觉与焦点。",
+      "html": "<button class=\"ds-text-button\" type=\"button\">Select all text <svg class=\"ds-text-icon\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M8 7h12v14H8zM16 7V3H4v14h4\"/></svg></button>",
+      "css": ".ds-text-button{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-text-icon{width: 1.25em;height: 1.25em;flex: none}.ds-text-button{display: inline-flex;align-items: center;gap: 10px;min-height: 44px;padding: 0;margin-top: 12px;border: 0;background: transparent;font-size: 13px;text-decoration: underline;text-underline-offset: 4px}.ds-text-button{cursor:pointer;touch-action:manipulation}.ds-text-button *{cursor:inherit}.ds-text-button:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-text-button:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+    },
+    {
+      "name": "提示词摘要入口",
+      "kind": "button",
+      "refersTo": "prompt-summary",
+      "description": "打开完整提示词的真实按钮，摘要语言跟随界面。宽屏单行省略，紧凑布局换行；实际应用打开 disclosure 并聚焦只读文本域。",
+      "html": "<button class=\"ds-summary\" type=\"button\" aria-label=\"Read the full Hover lift prompt\">Using your existing stack, lift the card 6px on hover and return smoothly.</button>",
+      "css": ".ds-summary{font-family:var(--font-mono, \"Roboto Mono\"), monospace;max-width:100%;box-sizing:border-box}.ds-summary{background: transparent;color: var(--ink, #08297e);text-align: left}.ds-summary:hover{border-color: var(--ink, #08297e)}.ds-summary{min-width: 0;height: calc(51 * var(--unit, 1px));flex: 1;overflow: hidden;padding: calc(11 * var(--unit, 1px)) calc(17 * var(--unit, 1px));border: 1px solid #426aa7;border-radius: 5px;font-size: calc(17 * var(--unit, 1px));line-height: 1.4;text-overflow: ellipsis;white-space: nowrap}@media (max-width: 1100px){.ds-summary{height: 46px;padding: 10px 12px;font-size: 14px}}@media (max-width: 900px){.ds-summary{order: 2;grid-column: 1 / -1;width: 100%;height: auto;padding: 12px;font-size: 13px;line-height: 1.6;white-space: normal}}.ds-summary{cursor:pointer;touch-action:manipulation}.ds-summary *{cursor:inherit}.ds-summary:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-summary:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+    },
+    {
+      "name": "完整提示词文本域",
+      "kind": "input",
+      "refersTo": "prompt-textarea",
+      "description": "只读提示词按自身 lang 使用 Roboto Mono 或 Noto Sans SC，与界面语言独立。片段使用当前 buildEffectPrompt 的完整英文输出；实际应用在复制失败时选中全文。语言 select 单独展示。",
+      "html": "<div class=\"ds-prompt-field\"><label for=\"ds-prompt-text\">Hover lift · ready for your AI</label><p>Copy this description into your AI tool alongside the component you want to change.</p><textarea id=\"ds-prompt-text\" lang=\"en\" readonly spellcheck=\"false\">Create a Hover lift effect using my project's existing stack.\n\nKeep my content, typography, colors, and layout. Apply the effect to my existing card; do not recreate the Tomoyo demo artwork or add a component library.\n\nAdd a subtle hover lift to the card. On pointer hover and visible keyboard focus, translate it upward by 6px without changing the layout. Transition transform and box-shadow over 240ms using cubic-bezier(0.16, 1, 0.3, 1). The resting shadow is 0 20px 32px rgba(4, 25, 72, 0.32); the lifted shadow is 0 28px 44px rgba(4, 25, 72, 0.38). Return smoothly to the resting state on pointer leave or blur. Provide a tap or Replay control that demonstrates rest, lift, hold, and return once in 960ms.\n\nKeep the pointer hit area stationary and animate its inner visual surface. Continue from the current visual frame when switching effects; cancel superseded animations. Repeated Replay clicks during playback must not restart the animation or make it flash.\n\nRespect prefers-reduced-motion: skip movement and fades, show all content immediately, and retain a clear focus indicator. A glass surface may remain static. Support keyboard and touch input. Keep the animation local to this component.\n\nImplement the change, then tell me which parameters to adjust and how you verified the behavior.</textarea></div>",
+      "css": ".ds-prompt-field{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-prompt-field textarea{font-family:var(--font-mono, \"Roboto Mono\"), monospace;box-sizing:border-box}.ds-prompt-field{padding: 8px 0 24px}.ds-prompt-field label{display: block;font-size: 22px;font-family: var(--font-heading, \"Oswald\"), sans-serif;font-weight: 600}.ds-prompt-field p{margin-block: 12px 20px;font-size: 13px;line-height: 1.7}.ds-prompt-field textarea{display: block;width: 100%;min-height: 310px;padding: 20px;resize: vertical;border: 1px solid #7481a5;border-radius: 5px;background: rgb(255 249 239 / 45%);color: var(--ink, #08297e);caret-color: var(--vermilion, #f74822);font-size: 14px;line-height: 1.7}.ds-copy-error{color: #96301f}@media (max-width: 900px){.ds-prompt-field textarea{min-height: 420px;padding: 14px;font-size: 16px}}:lang(zh-Hans) .ds-prompt-field label{font-family: var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-field textarea:lang(en){font-family:var(--font-mono, \"Roboto Mono\"), monospace}.ds-prompt-field textarea:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-field:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-field textarea:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+    },
+    {
+      "name": "页内导航",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "当前两个真实页内入口。英文为等宽字、中文为 Noto Sans SC，窄屏导航换行；界面语言链接作为独立组件展示。",
+      "html": "<header class=\"ds-header\"><nav aria-label=\"Main navigation\"><a href=\"#effects\">Effects</a><a href=\"#how-it-works\">How it works</a></nav></header>",
+      "css": ".ds-header{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-header a{color:inherit;text-underline-offset:5px;touch-action:manipulation}.ds-header{display: flex;height: calc(58 * var(--unit, 1px));align-items: center;gap: calc(32 * var(--unit, 1px));padding-inline: calc(40 * var(--unit, 1px))}.ds-header nav{display: flex;gap: calc(32 * var(--unit, 1px));font-size: calc(14 * var(--unit, 1px));font-weight: 600}.ds-header nav a{padding-block: 12px;text-decoration: none}.ds-header nav a:hover{text-decoration: underline}@media (max-width: 1100px){.ds-header{height: 70px;padding-inline: 28px;gap: 24px}.ds-header nav{gap: 24px;font-size: 13px}}@media (max-width: 900px){.ds-header{min-height: 76px;height: auto;padding: 18px 20px;gap: 18px;flex-wrap: wrap}}@media (max-width: 600px){.ds-header{row-gap: 8px}.ds-header nav{order: 3;width: 100%;gap: 24px;font-size: 12px}.ds-header nav a{padding-block: 8px}}@media (max-width: 1100px){.ds-header{gap: 20px}}@media (max-width: 600px){.ds-header{gap: 12px}}.ds-header:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-header a:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+    },
+    {
+      "name": "效果预设选择",
+      "kind": "custom",
+      "refersTo": "effect-preset",
+      "description": "紧凑模式的三个真实预设，aria-pressed、暖色编号和厚短线共同表达选择。应用控制器从当前帧切换，保持外层点击区域不动；片段展示默认选择。",
+      "html": "<div class=\"ds-preset-stage\"><div class=\"ds-presets\" role=\"group\" aria-label=\"Choose an effect\"><button class=\"ds-preset\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-preset-number\">01</span><span class=\"ds-preset-name\">Hover lift</span><span class=\"ds-preset-rule\" aria-hidden=\"true\"></span></button><button class=\"ds-preset\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-preset-number\">02</span><span class=\"ds-preset-name\">Soft reveal</span><span class=\"ds-preset-rule\" aria-hidden=\"true\"></span></button><button class=\"ds-preset\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-preset-number\">03</span><span class=\"ds-preset-name\">Frosted glass</span><span class=\"ds-preset-rule\" aria-hidden=\"true\"></span></button></div></div>",
+      "css": ".ds-preset-stage{padding:16px;background:var(--blue, #0840b1)}.ds-presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.ds-preset{display:flex;min-height:88px;flex-direction:column;align-items:flex-start;padding:0 0 4px;border:0;background:transparent;color:var(--paper, #f7e8d8);font-family:var(--font-mono, \"Roboto Mono\"), monospace;text-align:left;cursor:pointer}.ds-preset-number{color:#a8c3e0;font-family:var(--font-heading, \"Oswald\"), sans-serif;font-size:30px;font-weight:600;line-height:1}.ds-preset-name{margin-top:7px;font-size:14px;line-height:1.3}.ds-preset-rule{width:24px;height:1px;margin-top:auto;background:#a8c3e0;transition:width 180ms ease-out,background-color 180ms ease-out}.ds-preset[aria-pressed='true'] .ds-preset-number{color:#ff986e}.ds-preset[aria-pressed='true'] .ds-preset-rule{width:40px;height:4px;border-radius:4px;background:var(--vermilion, #f74822)}.ds-preset:hover .ds-preset-name{text-decoration:underline;text-underline-offset:6px}.ds-preset:focus-visible{outline:3px solid var(--paper, #f7e8d8);outline-offset:5px}@media(max-width:600px){.ds-presets{gap:8px}.ds-preset-name{font-size:13px}}@media(max-width:360px){.ds-preset-name{font-size:12px}}@media(prefers-reduced-motion:reduce){.ds-preset-rule{transition:none}}.ds-preset{cursor:pointer;touch-action:manipulation}.ds-preset *{cursor:inherit}.ds-preset:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}"
+    },
+    {
+      "name": "固定点击区域与示例表面",
+      "kind": "card",
+      "refersTo": "sample-card-compact",
+      "description": "当前紧凑示例的三层结构：外层 button 固定命中与焦点，sample-arrival 承担首页入场，sample-surface 持有内容、材质、阴影及示例演示；后两层均 pointer-events:none。片段省略海岸图，保留现有中英文字阶及 data-effect 玻璃状态。页面入场由 features/home/motion/page-entry.ts 控制，示例接续由 features/home/effects/use-preview-motion.ts 控制，两个控制器不向同一元素写入变换。",
+      "html": "<div class=\"ds-card-stage\"><button class=\"ds-card\" type=\"button\" data-effect=\"hover-lift\" aria-label=\"Play Hover lift preview\"><span class=\"ds-card-arrival\"><span class=\"ds-card-surface\"><span class=\"ds-card-copy\"><span class=\"ds-card-heading\">A small<br>moment of calm.</span><span class=\"ds-card-body\">The sea keeps its own time, reminding us that progress can be quiet, and that stillness is a kind of momentum.</span><span class=\"ds-card-mark\" aria-hidden=\"true\"></span><span class=\"ds-card-index\">01 / 03</span></span></span></span></button></div>",
+      "css": ".ds-card-stage{padding:16px 16px 20px;background:var(--blue, #0840b1)}.ds-card{position:relative;display:block;width:100%;height:auto;padding:0;border:0;border-radius:12px;background:transparent;color:var(--ink, #08297e);font-family:var(--font-mono, \"Roboto Mono\"), monospace;text-align:left;box-sizing:border-box}.ds-card-surface{position:relative;display:grid;width:100%;height:auto;grid-template-columns:1fr;grid-template-rows:auto;gap:16px;padding:18px;border-radius:inherit;background:var(--paper, #f7e8d8) var(--paper-texture, none) repeat;background-size:630px;box-shadow:var(--resting-shadow, 0 20px 32px rgba(4, 25, 72, 0.32));pointer-events:none;box-sizing:border-box}.ds-card-copy{position:relative;display:flex;min-width:0;flex-direction:column}.ds-card-heading{display:block;font-family:var(--font-heading, \"Oswald\"), sans-serif;font-size:clamp(36px, 8.4vw, 52px);font-weight:700;line-height:0.98;letter-spacing:-0.035em}.ds-card-body{display:block;margin-top:16px;font-size:14px;line-height:1.6}.ds-card-mark{width:40px;height:5px;flex-shrink:0;margin-top:22px;border-radius:4px;background:var(--vermilion, #f74822)}.ds-card-index{position:absolute;right:0;bottom:0;font-size:11px;font-weight:600}.ds-card[data-effect='frosted-glass'] .ds-card-surface{background:var(--paper, #f7e8d8)}.ds-card[data-effect='frosted-glass'] .ds-card-surface::before{position:absolute;inset:0;border:1px solid rgb(255 249 239 / 70%);border-radius:inherit;pointer-events:none;content:''}@supports(backdrop-filter:blur(1px)){.ds-card[data-effect='frosted-glass'] .ds-card-surface{background:var(--glass-surface, rgba(247, 232, 216, 0.86));backdrop-filter:blur(var(--glass-blur, 18px)) saturate(var(--glass-saturation, 1.15))}}.ds-card{cursor:pointer;touch-action:manipulation}.ds-card *{cursor:inherit}.ds-card:focus-visible{outline:3px solid var(--paper, #f7e8d8);outline-offset:5px}@media(max-width:600px){.ds-card-surface{padding:16px}.ds-card-body{font-size:13px;line-height:1.55}}@media(max-width:360px){.ds-card-heading{font-size:32px}}.ds-card:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-card-heading:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif;font-size:clamp(26px, 6vw, 36px);line-height:1.3;font-weight:900;letter-spacing:-0.02em}.ds-card-body:lang(zh-Hans){font-size:15px;line-height:1.7}.ds-card-index:lang(zh-Hans){font-family:var(--font-heading, \"Oswald\"), sans-serif}.ds-card-arrival{display:block;width:100%;height:auto;border-radius:inherit;pointer-events:none}"
+    },
+    {
+      "name": "界面语言链接",
+      "kind": "nav",
+      "refersTo": "language-switch",
+      "description": "EN / 中文为真实语言链接；aria-current 与 2px 下划线标记当前界面。目标 URL 保留效果、hash 和有效提示词语言，包括尚未手动修改的默认值。 正式首页为文字应用活字纵向 ViewTransition：旧文 160ms 上移淡出，新文延迟 60ms 后以 380ms 从下方进入；不重播开场，图像和控件保持实时。片段只展示语言链接，路由与文字快照由应用负责。 语言链接位于 components/navigation/，文字过渡位于 components/motion/，URL 状态与当前页面内存的语言切换意图共用 lib/navigation/；刷新不会继承这项意图。",
+      "html": "<div class=\"ds-language-switch\" role=\"group\" aria-label=\"Interface language\"><a href=\"/en?prompt=en\" hreflang=\"en\" lang=\"en\" aria-current=\"page\">EN</a><span aria-hidden=\"true\">/</span><a href=\"/zh?prompt=en\" hreflang=\"zh-Hans\" lang=\"zh-Hans\">中文</a></div>",
+      "css": ".ds-language-switch{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-language-switch a{color:inherit;text-underline-offset:5px;touch-action:manipulation}.ds-language-switch{display: inline-flex;margin-inline-start: auto;align-items: center;gap: 8px;flex: none;font-size: 12px;font-weight: 600}.ds-language-switch a{display: inline-flex;align-items: center;min-height: 44px;padding-inline: 4px;text-decoration: none}.ds-language-switch a[aria-current='page']{text-decoration: underline;text-decoration-thickness: 2px}.ds-language-switch a:hover{text-decoration: underline}@media (max-width: 1100px){.ds-language-switch{margin-inline-start: auto}}@media (max-width: 600px){.ds-language-switch{font-size: 12px;gap: 4px}}.ds-language-switch a:lang(zh-Hans){font-family: var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-language-switch a:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}.ds-language-switch{margin-inline-start:auto}"
+    },
+    {
+      "name": "独立提示词语言选择",
+      "kind": "input",
+      "refersTo": "prompt-language-select",
+      "description": "原生 select 独立选择 English / 简体中文。其 label 跟随界面，提示词正文与 textarea lang 跟随所选语言；不改变界面语言或当前效果。",
+      "html": "<div class=\"ds-language-field\"><label class=\"ds-prompt-language\">Prompt language<select aria-label=\"Prompt language\"><option value=\"en\" lang=\"en\" selected>English</option><option value=\"zh\" lang=\"zh-Hans\">简体中文</option></select></label></div>",
+      "css": ".ds-language-field{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-language-field label{font-family:var(--font-heading, \"Oswald\"), sans-serif;font-size:22px;font-weight:600}.ds-language-field{padding: 8px 0 24px}.ds-language-field label{display: block;font-size: 22px;font-family: var(--font-heading, \"Oswald\"), sans-serif;font-weight: 600}.ds-language-field p{margin-block: 12px 20px;font-size: 13px;line-height: 1.7}.ds-language-field textarea{display: block;width: 100%;min-height: 310px;padding: 20px;resize: vertical;border: 1px solid #7481a5;border-radius: 5px;background: rgb(255 249 239 / 45%);color: var(--ink, #08297e);caret-color: var(--vermilion, #f74822);font-size: 14px;line-height: 1.7}@media (max-width: 900px){.ds-language-field textarea{min-height: 420px;padding: 14px;font-size: 16px}}.ds-language-field .ds-prompt-language{display: flex;align-items: center;gap: 12px;font: inherit;font-size: 13px}.ds-prompt-language select{min-height: 44px;padding: 8px 12px;border: 1px solid var(--ink, #08297e);border-radius: 5px;background: var(--paper, #f7e8d8);color: var(--ink, #08297e);font: inherit;cursor: pointer}:lang(zh-Hans) .ds-language-field label{font-family: var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-language select{touch-action:manipulation}.ds-language-field:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-language select:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "丝网套色 / Screenprint Overprint",
+    "overview": "暖奶油纸面承接群青油墨，朱红标记让操作和当前状态清楚可见。英文以压缩粗体建立远近层次，等宽文字像印刷样本旁的准确注释；中文以本地黑体的重量和独立字阶延续同一层次。材质来自经批准的纸纹、蓝色油墨与海岸图像；文字和控件保持真实、可选择、可操作。\n\n这套语言服务于「看见效果、找到描述、用于自己的项目」：效果可以有触感和运动，说明与操作则保持稳定。它以第一版首页为实证，后续页面继承颜色、字体关系、材料和状态规则；首页的画布位置、三栏分类与首屏顺序仍属于[首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)，不构成所有页面的固定模板。",
+    "keyCharacteristics": [
+      "奶油纸与深蓝油墨形成稳定的阅读底色。",
+      "朱红动作、浅暖色选中编号与细蓝线共同表达状态。",
+      "英文的 Anton、Oswald、Roboto Mono 与中文的 Noto Sans SC 各有明确职责。",
+      "真实栅格纹理带来印刷触感，语义文字和几何图标保持清晰。",
+      "演示动效局限于当前示例；首页只有资源仍需等待才显示活字加载，快速就绪直接显示内容，滚动与语言过渡延续同一节奏。"
+    ],
+    "rules": [
+      {
+        "name": "The Two Inks Rule",
+        "body": "群青承担主体与预览，朱红承担动作、索引和有意义的标记；蓝底选中编号使用更亮的暖色，不能直接以装饰色替代可读的状态文字。",
+        "section": "colors"
+      },
+      {
+        "name": "The Type Roles Rule",
+        "body": "英文以 Anton 建立展示体量、Oswald 承担标题和编号、Roboto Mono 承担正文与注释；中文由 Noto Sans SC 接续标题、正文与控件，数字和拉丁字标仍用 Oswald。字体分工比单页的字号位置更值得继承。",
+        "section": "typography"
+      },
+      {
+        "name": "The Steady Content Rule",
+        "body": "切换效果保留同一内容盒、字体和内间距；点击区域固定，内部视觉表面从当前帧接续运动。玻璃亮边通过绝对定位伪元素叠加，不能让描边挤窄内容、改变换行或吞掉标记。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 保持纸、群青、朱红的角色及中英文字体分工，先用已有 token 解决新界面的层次。",
+      "**Do** 让预览参数与复制文本共用同一份配置，状态改变时保持示例内容与布局稳定。",
+      "**Do** 使用批准的栅格材料并保留来源信息；文字和操作仍由真实 HTML 与 SVG 承担。",
+      "**Do** 提供 hover、可见键盘焦点、触屏与复制失败的手动路径，并在减少动态效果时保持内容可用。",
+      "**Do** 根据内容重排紧凑页面，保留主操作和正文的可读空间。",
+      "**Do** 固定预览的点击区域，让内部表面从当前帧接续运动；重复重播不得把进行中的同一演示重置到第一帧。",
+      "**Do** 将界面语言与提示词语言分开选择，切换界面时保留当前效果与实际提示词语言。",
+      "**Do** 根据真实首屏资源决定是否显示首页加载层；快速就绪直接显示内容，已出现的字标接续后退场；将页面入场与示例演示分层，语言切换只过渡文本。"
+    ],
+    "donts": [
+      "**Don't** 将首页的绝对定位、三栏分类或海岸图案升级为所有未来页面的必选布局。",
+      "**Don't** 用随机噪声替代已批准的纸纹，或让静态材质削弱文字与焦点指示。",
+      "**Don't** 用改变内容盒尺寸的边框实现材质切换，或设置自动循环；加载开屏不得在脚本失效后持续遮挡正文。",
+      "**Don't** 缩小 Copy 的已确定字重与字号下限，或只靠颜色表达选中、成功和失败。",
+      "**Don't** 把已经移除的类别 eyebrow 与装饰短线重新引入系统，或把静态词汇伪装成可点击入口。"
+    ]
+  }
+}

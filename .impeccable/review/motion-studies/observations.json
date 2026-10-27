@@ -1,0 +1,227 @@
+{
+  "pressFrames": [
+    {
+      "card": "matrix(0.979664, -0.0256534, 0.0256534, 0.979664, 0, 26)",
+      "clip": "inset(0px 0px 0px 2.06799%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.979664, -0.0256534, 0.0256534, 0.979664, 0, 26)",
+      "clip": "inset(0px 0px 0px 39.277%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.986687, -0.0170065, 0.0170065, 0.986687, 0, 17.1158)",
+      "clip": "inset(0px 0px 0px 68.6433%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.996507, -0.00454276, 0.00454276, 0.996507, 0, 4.52732)",
+      "clip": "inset(0px 0px 0px 90.2995%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.998758, -0.00162193, 0.00162193, 0.998758, 0, 1.61279)",
+      "clip": "inset(0px 0px 0px 96.2366%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.99966, -0.000444698, 0.000444698, 0.99966, 0, 0.441792)",
+      "clip": "inset(0px 0px 0px 98.9038%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.99981, -0.000248002, 0.000248002, 0.99981, 0, 0.246344)",
+      "clip": "inset(0px 0px 0px 99.3779%)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "card": "matrix(0.999922, -0.000102674, 0.000102674, 0.999922, 0, 0.101976)",
+      "clip": "inset(0px 0px 0px 99.7374%)",
+      "overlay": "1",
+      "phase": "entering"
+    }
+  ],
+  "typeFrames": [
+    {
+      "overlay": "1",
+      "phase": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)"
+    },
+    {
+      "overlay": "0.466683",
+      "phase": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, -115.197)"
+    },
+    {
+      "overlay": "0.275171",
+      "phase": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, -156.563)"
+    },
+    {
+      "overlay": "0.125891",
+      "phase": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, -188.807)"
+    },
+    {
+      "overlay": "0.000609063",
+      "phase": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, -215.868)"
+    },
+    {
+      "overlay": "0.000173424",
+      "phase": "entering",
+      "transform": "matrix(1, 0, 0, 1, 0, -215.963)"
+    }
+  ],
+  "coastFrames": [
+    {
+      "cardFilter": "blur(5px)",
+      "clip": "inset(0% 0px)",
+      "overlay": "1",
+      "phase": "entering"
+    },
+    {
+      "cardFilter": "blur(5px)",
+      "clip": "inset(11.9796% 0px)",
+      "overlay": "0.714771",
+      "phase": "entering"
+    },
+    {
+      "cardFilter": "blur(1.56787px)",
+      "clip": "inset(35.4916% 0px)",
+      "overlay": "0.154962",
+      "phase": "entering"
+    },
+    {
+      "cardFilter": "blur(0.770076px)",
+      "clip": "inset(38.8056% 0px)",
+      "overlay": "0.0760577",
+      "phase": "entering"
+    },
+    {
+      "cardFilter": "blur(0.383364px)",
+      "clip": "inset(40.4612% 0px)",
+      "overlay": "0.0366384",
+      "phase": "entering"
+    },
+    {
+      "cardFilter": "blur(0.140578px)",
+      "clip": "inset(41.4967% 0px)",
+      "overlay": "0.0119831",
+      "phase": "entering"
+    },
+    {
+      "cardFilter": "blur(0.0601921px)",
+      "clip": "inset(41.8184% 0px)",
+      "overlay": "0.00432348",
+      "phase": "entering"
+    }
+  ],
+  "pressLanguage": [
+    {
+      "effect": "frosted-glass",
+      "kind": "language",
+      "phase": "complete",
+      "textMotion": "copy-plate-in",
+      "title": "Try an effect. Get the prompt."
+    },
+    {
+      "effect": "frosted-glass",
+      "kind": "language",
+      "phase": "complete",
+      "textMotion": "none",
+      "title": "Try an effect. Get the prompt."
+    },
+    {
+      "effect": "frosted-glass",
+      "kind": "language",
+      "phase": "complete",
+      "textMotion": "none",
+      "title": "Try an effect. Get the prompt."
+    },
+    {
+      "effect": "frosted-glass",
+      "kind": "language",
+      "phase": "complete",
+      "textMotion": "none",
+      "title": "Try an effect. Get the prompt."
+    },
+    {
+      "effect": "frosted-glass",
+      "kind": "language",
+      "phase": "complete",
+      "textMotion": "none",
+      "title": "Try an effect. Get the prompt."
+    }
+  ],
+  "layoutChecks": [
+    {
+      "height": 900,
+      "overflow": 0,
+      "phase": "complete",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/zh/motion-preview/press#top",
+      "width": 1280
+    },
+    {
+      "height": 844,
+      "overflow": 0,
+      "phase": "complete",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/zh/motion-preview/press#top",
+      "width": 390
+    },
+    {
+      "height": 900,
+      "overflow": 0,
+      "phase": "complete",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/zh/motion-preview/type#top",
+      "width": 1280
+    },
+    {
+      "height": 844,
+      "overflow": 0,
+      "phase": "complete",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/zh/motion-preview/type#top",
+      "width": 390
+    },
+    {
+      "height": 900,
+      "overflow": 0,
+      "phase": "complete",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/zh/motion-preview/coast#top",
+      "width": 1280
+    },
+    {
+      "height": 844,
+      "overflow": 0,
+      "phase": "complete",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/zh/motion-preview/coast#top",
+      "width": 390
+    },
+    {
+      "overflow": 0,
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/en/motion-preview/coast?prompt=zh#top",
+      "width": 320
+    },
+    {
+      "overflow": 0,
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3001/en/motion-preview/coast?prompt=zh#top",
+      "width": 768
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 # Project conventions
 
 - Keep `app/`, `components/`, and future business directories at the project root. Do not create a `src/` directory. The `@/*` import alias resolves from the root.
+- Keep route files in `app/` focused on metadata, route parameters, and composition. Put page-specific components, hooks, motion controllers, and styles in `features/<feature>/`; reserve `components/` for shared UI and `lib/` for shared non-UI helpers. Keep global tokens and resets in `styles/`, and colocate feature styles with their owner. Split by responsibility when a file mixes concerns; do not grow a single page, controller, or global stylesheet to hold new features.
 - Use pnpm and the committed lockfile. Match the Node.js and pnpm versions documented in `README.md` and `package.json`.
 - Use ESLint for code checks and Prettier for formatting. Run `pnpm check` and `pnpm build` when validating application changes.
 - Read `PRODUCT.md` for confirmed product context. Use `docs/README.md` as the documentation index, `docs/architecture.md` for the technical plan, and `docs/experience-design.md` for page and interaction proposals.

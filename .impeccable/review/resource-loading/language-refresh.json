@@ -1,0 +1,32 @@
+{
+  "language": {
+    "content": "visible",
+    "cover": "hidden",
+    "entry": "language",
+    "fonts": "loaded",
+    "images": [
+      {
+        "complete": true,
+        "width": 268
+      }
+    ],
+    "opacity": "0",
+    "phase": "complete"
+  },
+  "refresh": {
+    "content": "visible",
+    "cover": "hidden",
+    "entry": "resources",
+    "fonts": "loaded",
+    "images": [
+      {
+        "complete": true,
+        "width": 268
+      }
+    ],
+    "loadingUi": "bypassed",
+    "opacity": "0",
+    "phase": "complete",
+    "resources": "ready"
+  }
+}

@@ -1,0 +1,726 @@
+{
+  "image": [
+    {
+      "observedMs": 10,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": false,
+          "width": 0
+        }
+      ],
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "pending"
+    },
+    {
+      "observedMs": 3499,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 3579,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.460532",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 4373,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "font": [
+    {
+      "observedMs": 12,
+      "content": "hidden",
+      "cover": "visible",
+      "fonts": "loading",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "checking"
+    },
+    {
+      "observedMs": 3237,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "pending"
+    },
+    {
+      "observedMs": 3257,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 3332,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.487806",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 4136,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "texture": [
+    {
+      "observedMs": 12,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "pending"
+    },
+    {
+      "observedMs": 3500,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 3590,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.49444",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 4393,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "failed-image": [
+    {
+      "observedMs": 10,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 0
+        }
+      ],
+      "loadingUi": "bypassed",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "degraded"
+    }
+  ],
+  "timeout": [
+    {
+      "observedMs": 12,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": false,
+          "width": 0
+        }
+      ],
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "pending"
+    },
+    {
+      "observedMs": 9576,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": false,
+          "width": 0
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "timeout"
+    },
+    {
+      "observedMs": 9649,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": false,
+          "width": 0
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.493117",
+      "phase": "entering",
+      "resources": "timeout"
+    },
+    {
+      "observedMs": 10467,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": false,
+          "width": 0
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "timeout"
+    }
+  ],
+  "preview-type": [
+    {
+      "observedMs": 12,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1184,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1245,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.495838",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 2051,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "preview-type-replay": [
+    {
+      "observedMs": 8,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "replay",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1215,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "replay",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1278,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "replay",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.491019",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 2082,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "replay",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "preview-press": [
+    {
+      "observedMs": 10,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1060,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1775,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1974,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "preview-coast": [
+    {
+      "observedMs": 6,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 928
+        },
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "pending"
+    },
+    {
+      "observedMs": 12,
+      "content": "hidden",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 928
+        },
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "loading",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1315,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 928
+        },
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "1",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 1392,
+      "content": "visible",
+      "cover": "visible",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 928
+        },
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0.492222",
+      "phase": "entering",
+      "resources": "ready"
+    },
+    {
+      "observedMs": 2315,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "preview",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 928
+        },
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "shown",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "late-script": [
+    {
+      "observedMs": 17,
+      "content": "hidden",
+      "cover": "visible",
+      "fonts": "loading",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "checking"
+    },
+    {
+      "observedMs": 5212,
+      "content": "visible",
+      "cover": "hidden",
+      "fonts": "loading",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "checking"
+    },
+    {
+      "observedMs": 8223,
+      "content": "visible",
+      "cover": "hidden",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "1",
+      "phase": "checking"
+    }
+  ],
+  "late-script-hydrated": [
+    {
+      "observedMs": 28,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "recovery",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "opacity": "0",
+      "phase": "complete"
+    }
+  ],
+  "final-cache": [
+    {
+      "observedMs": 8,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "bypassed",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ],
+  "final-cache-zh": [
+    {
+      "observedMs": 9,
+      "content": "visible",
+      "cover": "hidden",
+      "entry": "resources",
+      "fonts": "loaded",
+      "images": [
+        {
+          "complete": true,
+          "width": 268
+        }
+      ],
+      "loadingUi": "bypassed",
+      "opacity": "0",
+      "phase": "complete",
+      "resources": "ready"
+    }
+  ]
+}

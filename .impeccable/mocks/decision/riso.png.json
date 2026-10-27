@@ -1,0 +1,9 @@
+{
+  "prompt": "Render the first viewport and the start of the next section of a finished desktop homepage for Tomoyo Design, in a landscape 1440 by 900 proportion, edge to edge with crisp readable UI text and no browser, device or physical book around it. The visitor chooses an interface effect, watches it and copies natural-language instructions for their own AI.\n\nThe whole opening is one continuous interactive specimen sheet. It leads with the working preview rather than introductory headline space. A reading card titled 'A little more depth' is the unmistakable main artifact, in a generous demonstration field with a visible pointer and subtle lifted shadow. Its controls and language occupy the same sheet, like the title and marginal annotations of a print. The slim title line reads 'See the effect. Find the words.' Integrated preset names are 'Hover lift', 'Soft reveal', 'Frosted glass'; Hover lift is selected. The close caption reads 'Lift the card 6px on hover. Return smoothly when the pointer leaves. Keep the existing content and layout.' A clear 'Copy prompt' action outranks the smaller 'Replay' control. The example is a reading card, not a product for sale.\n\nThe frame includes the Tomoyo Design mark, 'Effects', 'How it works', and the start of a distinct following section 'Browse by feeling' with Motion, Style and Material. The supplied references inform print material and typography only, not their layouts or content. One working specimen dominates; keep explanatory type compact and calm. No oversized headline beside a separate preview, no marketing two-column hero, no decorative shapes competing with the actual UI demonstration, no pricing or fabricated claims.",
+  "approved": false,
+  "source": "image_gen",
+  "reference_images": [
+    ".impeccable/mocks/worlds/risograph-web-system-board.webp",
+    ".impeccable/mocks/worlds/risograph-web-system-hero.webp"
+  ]
+}

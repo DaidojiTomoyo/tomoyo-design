@@ -1,0 +1,35 @@
+{
+  "beforeHydration": {
+    "content": "hidden",
+    "cover": "visible",
+    "entry": null,
+    "opacity": "1",
+    "overflow": "hidden",
+    "phase": "loading"
+  },
+  "recovery": [
+    {
+      "content": "hidden",
+      "cover": "visible",
+      "entry": null,
+      "overflow": "hidden",
+      "phase": "loading"
+    },
+    {
+      "content": "visible",
+      "cover": "hidden",
+      "entry": null,
+      "overflow": "auto",
+      "phase": "loading"
+    }
+  ],
+  "lateHydration": {
+    "content": "visible",
+    "cover": "hidden",
+    "phase": "complete"
+  },
+  "returnVisit": {
+    "entry": "return",
+    "phase": "entering"
+  }
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "direction": "press",
+    "skip": {
+      "opacity": "0",
+      "overflow": 0,
+      "phase": "complete"
+    }
+  },
+  {
+    "direction": "type",
+    "skip": {
+      "opacity": "0",
+      "overflow": 0,
+      "phase": "complete"
+    }
+  },
+  {
+    "direction": "coast",
+    "skip": {
+      "opacity": "0",
+      "overflow": 0,
+      "phase": "complete"
+    }
+  },
+  {
+    "keyboard": {
+      "active": "preset-frosted-glass",
+      "effect": "frosted-glass",
+      "opacity": "0",
+      "phase": "complete"
+    }
+  },
+  {
+    "language": {
+      "effect": "frosted-glass",
+      "entry": "language",
+      "phase": "complete"
+    }
+  }
+]

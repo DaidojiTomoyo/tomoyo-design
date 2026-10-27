@@ -1,0 +1,10 @@
+{
+  "prompt": "Create a polished desktop homepage mockup for Tomoyo Design, edge to edge at landscape 1440x900 proportions, crisp readable UI text, no browser or device frame. This is the deliberately conventional product-homepage alternative: an excellent familiar component-library landing page. People come here to see UI effects and copy accurate natural-language prompts to recreate them with their own AI. Show Tomoyo Design with navigation Effects and How it works. The headline is 'See the effect. Find the words.' A concise subtitle explains 'Explore interface effects. Copy a prompt. Make it yours.' Follow with a large working preview area containing one clean reading card titled 'A small moment of calm'. Present the three preset choices Hover lift, Soft reveal, Frosted glass with Hover lift active, a Replay control, and a visible Copy prompt button next to the actual description 'Using your existing stack, lift the card 6px on hover and return smoothly.' The controls are real interface affordances, not decorative text. Use a light cool neutral ground, clean white panels, deep ink typography and restrained indigo primary actions. The type is a clear modern sans serif; layouts are familiar, spacious and carefully aligned. At the lower edge show the beginning of the category section with Motion, Style, Material and useful short descriptions. No testimonials, collection counts, invented dates, locations, pricing or promises of guaranteed AI results. This is a complete working homepage concept whose main proof is the interactive preview.",
+  "approved": false,
+  "source": "image_gen",
+  "generatedImage": "/Users/peipei/.codex/generated_images/01a176eb-29fd-7c82-8450-4d7fa60fb445/exec-c1523e80-3c95-4cb3-b0d2-371e7637680a.png",
+  "mode": "persuade",
+  "purpose": "homepage-direction-proposal",
+  "frame": "1440x900",
+  "createdAt": "2026-10-26T09:03:50.088Z"
+}

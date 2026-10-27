@@ -1,0 +1,17 @@
+{
+  "prompt": "Design a high-fidelity desktop homepage for Tomoyo Design, edge-to-edge at approximately 1440 × 900 landscape. Crisp readable text, no browser chrome, device, desk, or literal book. This product lets visitors experience interface styles and motion, then copy the exact description to their AI.\n\nThe homepage IS an open specimen sheet. One broad annotated demonstration occupies the central page, with a single beautiful example interface card suspended in its open field. The page has no separate marketing hero or left-copy/right-picture split. “See the effect. Find the words.” runs as the specimen heading across the page above the demonstration, with the specimen index and selected effect woven into this heading. Small margin notes identify the hover distance and return behavior. Below the demonstration, one continuous annotation strip holds the selected effect’s description and the primary action, “Copy prompt”.\n\nUse a continuous warm ivory reading ground, deep green-black ink, and restrained vermilion for selection and actions. Editorial serif display lettering contrasts with exceptionally clear sans-serif annotations. Precise rules and generous open space organize a typographic specimen publication, expressed as a real interactive webpage.\n\nInclude readable preset controls “Hover lift”, “Soft reveal”, “Frosted glass”, and “Replay”. The prompt says: “Alongside your existing stack, lift the card 6px on hover and return smoothly.” Navigation reads “Tomoyo Design”, “Effects”, “How it works”. The lower edge reveals “Browse by feeling” and a calm index of “Motion”, “Style”, “Material”. Only the specimen leads visually. No invented statistics, social proof, or commercial claims.",
+  "approved": false,
+  "source": "image_gen",
+  "artifact": "homepage-direction-comp",
+  "direction": "specimen",
+  "reviewNote": "Both counters now accurately show 01 / 03; other composition and content are preserved.",
+  "revisions": [
+    {
+      "prompt": "Edit this exact homepage image in only two places. Replace both visible red specimen counters reading “01 / 12” with “01 / 03”: the small counter before the Hover lift preset near the top, and the larger counter under EFFECT in the lower annotation strip. Keep their original typeface, size, weight, red color, spacing, baseline, and position. Preserve every other pixel as closely as possible: the page layout, all other text, navigation, photograph, card, controls, rules, colors, and composition must stay unchanged. The actual homepage demonstration contains exactly three presets, so both counters must read “01 / 03”. Return the full edited image at the same aspect ratio and dimensions.",
+      "source": "image_gen",
+      "reference": ".impeccable/mocks/decision/specimen.png",
+      "change": "Correct both specimen counters to 01 / 03."
+    }
+  ],
+  "finalPrompt": "Edit this exact homepage image in only two places. Replace both visible red specimen counters reading “01 / 12” with “01 / 03”: the small counter before the Hover lift preset near the top, and the larger counter under EFFECT in the lower annotation strip. Keep their original typeface, size, weight, red color, spacing, baseline, and position. Preserve every other pixel as closely as possible: the page layout, all other text, navigation, photograph, card, controls, rules, colors, and composition must stay unchanged. The actual homepage demonstration contains exactly three presets, so both counters must read “01 / 03”. Return the full edited image at the same aspect ratio and dimensions."
+}

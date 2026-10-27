@@ -1,0 +1,10 @@
+{
+  "prompt": "Create a finished desktop website screen for Tomoyo Design, landscape approximately 1440 by 900, edge-to-edge readable UI with no browser or device. This product lets visitors try a real interface effect and take its precise description to their AI. The page must be unmistakably usable: effect selectors, a real content-card demo, Replay and Copy prompt all visible.\n\nThe first attached design-system board supplies visual language only. Recompose the homepage around a specimen-led modular grid. Reading sequence: a compact Tomoyo Design masthead with Effects and How it works; an editorial title rail saying “See the effect. Find the words.”; an expansive live specimen that is the focal body of the page; its connected settings and prompt strip; then the beginning of Motion, Style and Material browsing. The title is a rail, never a giant promotional block beside a preview. The artifact itself dominates the screen: a generous demonstration field holds a lifted card called “Weekend notes”, with a short paragraph and Open notes action. Across the specimen’s own edge, label the variants Hover lift, Soft reveal, Frosted glass and visibly select Hover lift. The same specimen grid carries 6px lift, 180ms, Replay, and the exact prompt “Using my existing stack, lift the card 6px on hover and return smoothly in 180ms.” Place Copy prompt as the clear final action in this reading sequence.\n\nAdapt the attached Swiss-system references into a working product, without copying their concert content or page composition. Let one coherent grid and its dynamic geometric specimen carry the identity; surrounding content remains quiet and precise. No left-copy/right-preview hero, equal-card marketing row, invented customers or commercial claims.",
+  "approved": false,
+  "source": "image_gen",
+  "references": [
+    ".impeccable/mocks/worlds/design-canon-swiss-grid-poster-wall-board.webp",
+    ".impeccable/mocks/worlds/design-canon-swiss-grid-poster-wall-hero.webp"
+  ],
+  "notes": "Direction proposal only. Layout uses a narrow editorial index beside a dominant specimen. Extra generated Library/About navigation is not approved product scope."
+}

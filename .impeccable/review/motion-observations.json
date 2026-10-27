@@ -1,0 +1,598 @@
+{
+  "source": "IAB read-only computed-style samples after real button clicks",
+  "softReveal": [
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.924122,
+      "transform": "matrix(1, 0, 0, 1, 0, 0.910537)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.843561,
+      "transform": "matrix(1, 0, 0, 1, 0, 1.87727)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.742165,
+      "transform": "matrix(1, 0, 0, 1, 0, 3.09402)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.742165,
+      "transform": "matrix(1, 0, 0, 1, 0, 3.09402)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.622281,
+      "transform": "matrix(1, 0, 0, 1, 0, 4.53262)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.622281,
+      "transform": "matrix(1, 0, 0, 1, 0, 4.53262)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.479388,
+      "transform": "matrix(1, 0, 0, 1, 0, 6.24734)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.479388,
+      "transform": "matrix(1, 0, 0, 1, 0, 6.24734)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.479388,
+      "transform": "matrix(1, 0, 0, 1, 0, 6.24734)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.333797,
+      "transform": "matrix(1, 0, 0, 1, 0, 7.99444)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.333797,
+      "transform": "matrix(1, 0, 0, 1, 0, 7.99444)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.17027,
+      "transform": "matrix(1, 0, 0, 1, 0, 9.95676)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.17027,
+      "transform": "matrix(1, 0, 0, 1, 0, 9.95676)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.17027,
+      "transform": "matrix(1, 0, 0, 1, 0, 9.95676)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.0121957,
+      "transform": "matrix(1, 0, 0, 1, 0, 11.8537)"
+    },
+    {
+      "cursor": "pointer",
+      "hitY": 149.671875,
+      "opacity": 0.0121957,
+      "transform": "matrix(1, 0, 0, 1, 0, 11.8537)"
+    }
+  ],
+  "interruption": {
+    "before": {
+      "opacity": "0.825367",
+      "transform": "matrix(1, 0, 0, 1, 0, 2.09559)"
+    },
+    "after": {
+      "opacity": "0.919267",
+      "transform": "matrix(1, 0, 0, 1, 0, 0.968791)"
+    }
+  },
+  "responsive": [
+    {
+      "file": "zh-desktop.png",
+      "docWidth": 1280,
+      "inkPass": "0",
+      "lang": "zh-Hans",
+      "scrollY": 0,
+      "width": 1280
+    },
+    {
+      "file": "mobile.png",
+      "docWidth": 390,
+      "inkPass": "0",
+      "lang": "en",
+      "scrollY": 0,
+      "width": 390
+    },
+    {
+      "file": "zh-mobile.png",
+      "docWidth": 390,
+      "inkPass": "0",
+      "lang": "zh-Hans",
+      "scrollY": 0,
+      "width": 390
+    },
+    {
+      "file": "en-320.png",
+      "docWidth": 320,
+      "inkPass": "0",
+      "lang": "en",
+      "scrollY": 0,
+      "width": 320
+    },
+    {
+      "file": "zh-320.png",
+      "docWidth": 320,
+      "inkPass": "0",
+      "lang": "zh-Hans",
+      "scrollY": 0,
+      "width": 320
+    }
+  ],
+  "limitations": [
+    "Not a performance trace or 60fps assertion",
+    "Reduced-motion and clipboard-denied paths not forced in this browser"
+  ],
+  "stress": [
+    {
+      "expected": "soft-reveal",
+      "actual": "soft-reveal",
+      "hitY": 149.671875,
+      "opacity": "0.843981"
+    },
+    {
+      "expected": "frosted-glass",
+      "actual": "frosted-glass",
+      "hitY": 149.671875,
+      "opacity": "0.342672"
+    },
+    {
+      "expected": "hover-lift",
+      "actual": "hover-lift",
+      "hitY": 149.671875,
+      "opacity": "0.779364"
+    },
+    {
+      "expected": "soft-reveal",
+      "actual": "soft-reveal",
+      "hitY": 149.671875,
+      "opacity": "0.990291"
+    },
+    {
+      "expected": "frosted-glass",
+      "actual": "frosted-glass",
+      "hitY": 149.671875,
+      "opacity": "0.915446"
+    },
+    {
+      "expected": "hover-lift",
+      "actual": "hover-lift",
+      "hitY": 149.671875,
+      "opacity": "0.964329"
+    },
+    {
+      "expected": "soft-reveal",
+      "actual": "soft-reveal",
+      "hitY": 149.671875,
+      "opacity": "0.987756"
+    },
+    {
+      "expected": "frosted-glass",
+      "actual": "frosted-glass",
+      "hitY": 149.671875,
+      "opacity": "0.913575"
+    },
+    {
+      "expected": "hover-lift",
+      "actual": "hover-lift",
+      "hitY": 149.671875,
+      "opacity": "0.963498"
+    }
+  ],
+  "keyboard": {
+    "focus": "effect-preview",
+    "outline": "solid"
+  },
+  "consoleErrors": [],
+  "registration": {
+    "samples": [
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.06858, -0.147813, 0.147813, 1.06858, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.06139, -0.128777, 0.128777, 1.06139, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0502, -0.101261, 0.101261, 1.0502, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.04404, -0.0870424, 0.0870424, 1.04404, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.04404, -0.0870424, 0.0870424, 1.04404, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0373, -0.0721793, 0.0721793, 1.0373, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0373, -0.0721793, 0.0721793, 1.0373, 0, -8.5)"
+      },
+      {
+        "center": 92.50000381469728,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.03169, -0.0602932, 0.0602932, 1.03169, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.02684, -0.0503509, 0.0503509, 1.02684, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.02684, -0.0503509, 0.0503509, 1.02684, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.02263, -0.0419547, 0.0419547, 1.02263, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.02263, -0.0419547, 0.0419547, 1.02263, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01905, -0.0349558, 0.0349558, 1.01905, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01905, -0.0349558, 0.0349558, 1.01905, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01595, -0.0290222, 0.0290222, 1.01595, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01595, -0.0290222, 0.0290222, 1.01595, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01317, -0.0237916, 0.0237916, 1.01317, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01317, -0.0237916, 0.0237916, 1.01317, 0, -8.5)"
+      },
+      {
+        "center": 92.50000381469728,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01094, -0.019651, 0.019651, 1.01094, 0, -8.5)"
+      },
+      {
+        "center": 92.50000381469728,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.01094, -0.019651, 0.019651, 1.01094, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00751, -0.0133549, 0.0133549, 1.00751, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00616, -0.0109238, 0.0109238, 1.00616, 0, -8.5)"
+      },
+      {
+        "center": 92.49999618530272,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00511, -0.00904077, 0.00904077, 1.00511, 0, -8.5)"
+      },
+      {
+        "center": 92.49999618530272,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00511, -0.00904077, 0.00904077, 1.00511, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00409, -0.00720659, 0.00720659, 1.00409, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00409, -0.00720659, 0.00720659, 1.00409, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00334, -0.00587953, 0.00587953, 1.00334, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00262, -0.00460634, 0.00460634, 1.00262, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00262, -0.00460634, 0.00460634, 1.00262, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0021, -0.00369282, 0.00369282, 1.0021, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0021, -0.00369282, 0.00369282, 1.0021, 0, -8.5)"
+      },
+      {
+        "center": 92.50000381469728,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00162, -0.00283645, 0.00283645, 1.00162, 0, -8.5)"
+      },
+      {
+        "center": 92.50000381469728,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00162, -0.00283645, 0.00283645, 1.00162, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00124, -0.00216684, 0.00216684, 1.00124, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00124, -0.00216684, 0.00216684, 1.00124, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00094, -0.00163762, 0.00163762, 1.00094, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00094, -0.00163762, 0.00163762, 1.00094, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00071, -0.00123349, 0.00123349, 1.00071, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00071, -0.00123349, 0.00123349, 1.00071, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0005, -0.000878133, 0.000878133, 1.0005, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0005, -0.000878133, 0.000878133, 1.0005, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0005, -0.000878133, 0.000878133, 1.0005, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00036, -0.000629322, 0.000629322, 1.00036, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00036, -0.000629322, 0.000629322, 1.00036, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00024, -0.000417134, 0.000417134, 1.00024, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00024, -0.000417134, 0.000417134, 1.00024, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00024, -0.000417134, 0.000417134, 1.00024, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00015, -0.000268952, 0.000268952, 1.00015, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00015, -0.000268952, 0.000268952, 1.00015, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0001, -0.000169622, 0.000169622, 1.0001, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0001, -0.000169622, 0.000169622, 1.0001, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.0001, -0.000169622, 0.000169622, 1.0001, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00005, -9.11063e-05, 9.11063e-05, 1.00005, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00005, -9.11063e-05, 9.11063e-05, 1.00005, 0, -8.5)"
+      },
+      {
+        "center": 92.5,
+        "expected": 92.5,
+        "inkOpacity": "1",
+        "transform": "matrix(1.00003, -4.50603e-05, 4.50603e-05, 1.00003, 0, -8.5)"
+      }
+    ],
+    "rest": {
+      "center": 92.5,
+      "inkOpacity": "0",
+      "transform": "matrix(1, 0, 0, 1, 0, -8.5)"
+    }
+  },
+  "languageFix": [
+    {
+      "from": "/en",
+      "to": "中文",
+      "expected": "en",
+      "documentLang": "zh-Hans",
+      "hrefs": [
+        "/en?prompt=en",
+        "/zh?prompt=en"
+      ],
+      "promptLang": "en",
+      "selected": "hover-lift",
+      "startsWith": "Create a Hover lift effect using my project's existing stack.\n\nKeep my content, "
+    },
+    {
+      "from": "/zh",
+      "to": "EN",
+      "expected": "zh",
+      "documentLang": "en",
+      "hrefs": [
+        "/en?prompt=zh",
+        "/zh?prompt=zh"
+      ],
+      "promptLang": "zh-Hans",
+      "selected": "hover-lift",
+      "startsWith": "沿用我项目现有的技术栈，实现「悬浮抬升」效果。\n\n保留我的内容、字体、颜色与布局。把效果应用于现有卡片，不复刻 Tomoyo 的示例插画，也不引入组件库。\n\n为"
+    },
+    {
+      "from": "/en?effect=soft-reveal&prompt=zh#effects",
+      "to": "中文",
+      "expected": "zh",
+      "documentLang": "zh-Hans",
+      "hrefs": [
+        "/en?effect=soft-reveal&prompt=zh#effects",
+        "/zh?effect=soft-reveal&prompt=zh#effects"
+      ],
+      "promptLang": "zh-Hans",
+      "selected": "soft-reveal",
+      "startsWith": "沿用我项目现有的技术栈，实现「柔和渐显」效果。\n\n保留我的内容、字体、颜色与布局。把效果应用于现有卡片，不复刻 Tomoyo 的示例插画，也不引入组件库。\n\n为"
+    }
+  ]
+}

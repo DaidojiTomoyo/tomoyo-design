@@ -1,0 +1,440 @@
+{
+  "regions": [
+    {
+      "id": "page-ground",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 0,
+        "y": 0,
+        "w": 1586,
+        "h": 992
+      },
+      "container": true,
+      "note": "Warm cream page background beneath the independent elements."
+    },
+    {
+      "id": "paper-grain",
+      "kind": "texture",
+      "pixelBox": {
+        "x": 790,
+        "y": 8,
+        "w": 250,
+        "h": 42
+      },
+      "note": "Clean warm cream paper grain, to tile softly across the page and sample card."
+    },
+    {
+      "id": "brand",
+      "kind": "text",
+      "pixelBox": {
+        "x": 40,
+        "y": 15,
+        "w": 217,
+        "h": 30
+      },
+      "note": "TOMOYO DESIGN in condensed bold navy uppercase."
+    },
+    {
+      "id": "navigation",
+      "kind": "control",
+      "pixelBox": {
+        "x": 286,
+        "y": 15,
+        "w": 181,
+        "h": 31
+      },
+      "note": "Effects and How it works navigation links."
+    },
+    {
+      "id": "nav-note",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1367,
+        "y": 14,
+        "w": 153,
+        "h": 31
+      },
+      "note": "Small uppercase two-line product annotation."
+    },
+    {
+      "id": "nav-dot",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 1533,
+        "y": 20,
+        "w": 18,
+        "h": 19
+      },
+      "note": "Vermilion circular registration mark."
+    },
+    {
+      "id": "sheet-frame",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 16,
+        "y": 58,
+        "w": 1555,
+        "h": 635
+      },
+      "container": true,
+      "note": "Thin vermilion rectangular proof-sheet frame."
+    },
+    {
+      "id": "sheet-index",
+      "kind": "text",
+      "pixelBox": {
+        "x": 84,
+        "y": 79,
+        "w": 96,
+        "h": 32
+      },
+      "note": "01 / 03 preset index in vermilion condensed type."
+    },
+    {
+      "id": "page-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 247,
+        "y": 78,
+        "w": 478,
+        "h": 36
+      },
+      "note": "See the effect. Find the words. navy headline in one line."
+    },
+    {
+      "id": "sheet-note",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1186,
+        "y": 87,
+        "w": 288,
+        "h": 17
+      },
+      "note": "Interactive effects for modern interfaces small uppercase caption."
+    },
+    {
+      "id": "stage",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 24,
+        "y": 125,
+        "w": 1538,
+        "h": 487
+      },
+      "container": true,
+      "note": "Large ultramarine demonstration stage containing the preset rail, card, and annotations."
+    },
+    {
+      "id": "blue-grain",
+      "kind": "texture",
+      "pixelBox": {
+        "x": 1211,
+        "y": 260,
+        "w": 133,
+        "h": 206
+      },
+      "note": "Ultramarine screenprinted ink grain, clean sample with no text or controls."
+    },
+    {
+      "id": "preset-lift",
+      "kind": "control",
+      "pixelBox": {
+        "x": 70,
+        "y": 195,
+        "w": 208,
+        "h": 91
+      },
+      "note": "01 Hover lift selected control with a vermilion active bar."
+    },
+    {
+      "id": "preset-reveal",
+      "kind": "control",
+      "pixelBox": {
+        "x": 70,
+        "y": 323,
+        "w": 208,
+        "h": 116
+      },
+      "note": "02 Soft reveal preset control with its preceding short rule."
+    },
+    {
+      "id": "preset-glass",
+      "kind": "control",
+      "pixelBox": {
+        "x": 70,
+        "y": 455,
+        "w": 208,
+        "h": 91
+      },
+      "note": "03 Frosted glass preset control with its preceding short rule."
+    },
+    {
+      "id": "stage-caption",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1392,
+        "y": 151,
+        "w": 141,
+        "h": 44
+      },
+      "note": "Simple UI effects. Exact words. Copy the prompt. three-line light caption."
+    },
+    {
+      "id": "rest-outline",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 396,
+        "y": 290,
+        "w": 799,
+        "h": 277
+      },
+      "container": true,
+      "note": "Dotted rounded rectangular outline showing the sample card's resting position."
+    },
+    {
+      "id": "sample-card",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 415,
+        "y": 185,
+        "w": 757,
+        "h": 335
+      },
+      "container": true,
+      "note": "Warm cream rounded content card with soft downward shadow."
+    },
+    {
+      "id": "coast-print",
+      "kind": "image",
+      "pixelBox": {
+        "x": 449,
+        "y": 219,
+        "w": 331,
+        "h": 268
+      },
+      "bleed": true,
+      "note": "Duotone blue and warm paper coastal landscape, leafy branch at upper left, rocky foreground and calm sea with a distant headland. No lettering."
+    },
+    {
+      "id": "card-heading",
+      "kind": "text",
+      "pixelBox": {
+        "x": 811,
+        "y": 222,
+        "w": 333,
+        "h": 101
+      },
+      "note": "A small moment of calm. in two compact lines of heavy condensed navy type."
+    },
+    {
+      "id": "card-body",
+      "kind": "text",
+      "pixelBox": {
+        "x": 812,
+        "y": 348,
+        "w": 325,
+        "h": 88
+      },
+      "note": "Monospaced navy paragraph about the sea keeping its own time, in four lines."
+    },
+    {
+      "id": "card-mark",
+      "kind": "chrome",
+      "pixelBox": {
+        "x": 812,
+        "y": 470,
+        "w": 48,
+        "h": 9
+      },
+      "note": "Short vermilion rounded horizontal accent."
+    },
+    {
+      "id": "card-index",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1082,
+        "y": 479,
+        "w": 58,
+        "h": 14
+      },
+      "note": "Small navy 01 / 03 index."
+    },
+    {
+      "id": "stage-footer",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1392,
+        "y": 529,
+        "w": 126,
+        "h": 49
+      },
+      "note": "Short light rule and Preview / Hover lift annotation."
+    },
+    {
+      "id": "prompt-label",
+      "kind": "text",
+      "pixelBox": {
+        "x": 84,
+        "y": 640,
+        "w": 169,
+        "h": 19
+      },
+      "note": "Copy this prompt uppercase navy label with right arrow."
+    },
+    {
+      "id": "prompt-field",
+      "kind": "control",
+      "pixelBox": {
+        "x": 294,
+        "y": 624,
+        "w": 841,
+        "h": 51
+      },
+      "note": "Thin navy outlined prompt text field containing the current natural-language effect summary."
+    },
+    {
+      "id": "copy-button",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1171,
+        "y": 624,
+        "w": 174,
+        "h": 52
+      },
+      "note": "Vermilion Copy prompt button with a light duplicate-paper icon."
+    },
+    {
+      "id": "replay-button",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1357,
+        "y": 624,
+        "w": 150,
+        "h": 52
+      },
+      "note": "Cream outlined Replay button with a navy circular-arrow icon."
+    },
+    {
+      "id": "category-overline",
+      "kind": "text",
+      "pixelBox": {
+        "x": 41,
+        "y": 723,
+        "w": 190,
+        "h": 20
+      },
+      "note": "Explore effects small navy caption and short rule."
+    },
+    {
+      "id": "category-note",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1194,
+        "y": 722,
+        "w": 340,
+        "h": 20
+      },
+      "note": "Pick an effect. Copy the words. Make it yours. small uppercase line."
+    },
+    {
+      "id": "motion-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 40,
+        "y": 757,
+        "w": 277,
+        "h": 93
+      },
+      "note": "Motion large condensed navy category title with smaller vermilion 01."
+    },
+    {
+      "id": "style-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 581,
+        "y": 757,
+        "w": 238,
+        "h": 94
+      },
+      "note": "Style large condensed navy category title with smaller vermilion 02."
+    },
+    {
+      "id": "material-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1112,
+        "y": 757,
+        "w": 322,
+        "h": 94
+      },
+      "note": "Material large condensed navy category title with smaller vermilion 03."
+    },
+    {
+      "id": "motion-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 40,
+        "y": 868,
+        "w": 253,
+        "h": 36
+      },
+      "note": "Short uppercase description about purposeful movement."
+    },
+    {
+      "id": "style-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 581,
+        "y": 868,
+        "w": 228,
+        "h": 36
+      },
+      "note": "Short uppercase description of distinctive visual treatments."
+    },
+    {
+      "id": "material-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1111,
+        "y": 868,
+        "w": 221,
+        "h": 36
+      },
+      "note": "Short uppercase category description in navy monospaced letters.",
+      "codeDrawn": true
+    },
+    {
+      "id": "motion-list",
+      "kind": "control",
+      "pixelBox": {
+        "x": 307,
+        "y": 848,
+        "w": 151,
+        "h": 103
+      },
+      "note": "Compact category sample list with navy text and small arrows."
+    },
+    {
+      "id": "style-list",
+      "kind": "control",
+      "pixelBox": {
+        "x": 822,
+        "y": 848,
+        "w": 180,
+        "h": 103
+      },
+      "note": "Compact category style list with navy text and small arrows."
+    },
+    {
+      "id": "material-list",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1335,
+        "y": 848,
+        "w": 192,
+        "h": 103
+      },
+      "note": "Compact material sample list with navy text and small arrows."
+    }
+  ]
+}
