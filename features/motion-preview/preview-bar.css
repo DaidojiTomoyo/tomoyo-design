@@ -1,0 +1,76 @@
+.motion-preview-bar {
+  position: relative;
+  z-index: 30;
+  max-width: 1800px;
+  margin-inline: auto;
+  padding: 12px 40px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+}
+.motion-preview-controls,
+.motion-preview-bar nav,
+.motion-preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.motion-preview-controls {
+  justify-content: space-between;
+}
+.motion-preview-bar a,
+.motion-preview-bar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border: 0;
+  padding: 4px 0;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+}
+.motion-preview-bar nav a {
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+}
+.motion-preview-bar nav a[aria-current='page'] {
+  border-color: var(--vermilion);
+}
+.motion-preview-bar a:hover,
+.motion-preview-bar button:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.motion-preview-bar > p {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.motion-preview-quiet {
+  display: none;
+}
+@media (max-width: 900px) {
+  .motion-preview-bar {
+    padding: 10px 20px;
+  }
+  .motion-preview-controls {
+    gap: 4px;
+  }
+  .motion-preview-bar nav {
+    gap: 18px;
+  }
+  .motion-preview-actions {
+    gap: 16px;
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-preview-quiet {
+    display: block;
+  }
+}
