@@ -1,0 +1,86 @@
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+::view-transition-group(.locale-press),
+::view-transition-group(.locale-type),
+::view-transition-group(.locale-coast) {
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+::view-transition-old(.locale-press) {
+  animation: copy-plate-out 160ms ease-in both;
+}
+::view-transition-new(.locale-press) {
+  animation: copy-plate-in 380ms cubic-bezier(0.16, 1, 0.3, 1) 70ms both;
+}
+::view-transition-old(.locale-type) {
+  animation: copy-type-out 160ms ease-in both;
+}
+::view-transition-new(.locale-type) {
+  animation: copy-type-in 380ms cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+}
+::view-transition-old(.locale-coast) {
+  animation: copy-exposure-out 160ms ease-in both;
+}
+::view-transition-new(.locale-coast) {
+  animation: copy-exposure-in 380ms ease-out 40ms both;
+}
+@keyframes copy-plate-out {
+  to {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+}
+@keyframes copy-plate-in {
+  from {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0.2;
+  }
+  to {
+    clip-path: inset(0);
+    opacity: 1;
+  }
+}
+@keyframes copy-type-out {
+  to {
+    transform: translateY(-18px);
+    opacity: 0;
+  }
+}
+@keyframes copy-type-in {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes copy-exposure-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes copy-exposure-in {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
