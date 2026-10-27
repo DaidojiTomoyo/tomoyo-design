@@ -60,6 +60,9 @@ export async function generateMetadata({
   const { meta } = getMessages(locale);
   return {
     ...meta,
+    verification: {
+      google: 'bGGIfT4GfBSWoTXDSvAa9cX73Cpkd5TjCKRMoB9uHNE',
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: { en: '/en', 'zh-Hans': '/zh', 'x-default': '/en' },
