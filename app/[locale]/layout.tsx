@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { getImageProps } from 'next/image';
@@ -126,6 +127,7 @@ export default async function RootLayout({
           </defs>
         </svg>
         {children}
+        <Analytics />
       </body>
     </html>
   );
