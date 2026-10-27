@@ -12,10 +12,24 @@ next-env.d.ts
 !.env.example
 .pnpm-store/
 
-# Impeccable is installed separately in each development environment.
+# Agent skills are installed separately in each development environment.
 /.agents/skills/impeccable/
+/.agents/skills/humanizer/
 /.claude/skills/impeccable/
+/.claude/skills/humanizer
 /.claude/agents/impeccable-*.md
 /.claude/settings.local.json
 /.codex/hooks.json
 /.impeccable/config.local.json
+
+# Keep design sources, reports and current evidence; generated comparisons stay local.
+/.impeccable/build/
+/.impeccable/questions/
+/.impeccable/hook.cache.json
+/.impeccable/review/diff/
+/.impeccable/review/**/*.png
+!/.impeccable/review/desktop.png
+!/.impeccable/review/mobile.png
+!/.impeccable/review/user-1280.png
+!/.impeccable/review/hero-repro.png
+!/.impeccable/review/resource-loading/*.png
