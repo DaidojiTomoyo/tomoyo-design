@@ -7,6 +7,7 @@ import { getCategory, type EffectEntry } from '@/content/effects/registry';
 import { resolveEffect } from '@/content/effects/schema';
 import type { Locale } from '@/i18n/config';
 import { rememberCatalogPosition } from './scroll-position';
+import { useTranslations } from 'next-intl';
 
 export function EffectCard({
   effect,
@@ -20,6 +21,15 @@ export function EffectCard({
   eager: boolean;
 }) {
   const { spec } = resolveEffect(effect.id);
+  const t = useTranslations('Common.Preview');
+  const metric =
+    spec.id === 'editorial'
+      ? t('editorialMetric', { size: spec.titleSize })
+      : spec.id === 'bento-grid'
+        ? t('bentoMetric', { columns: spec.columns === 'three-columns' ? 3 : 4, gap: spec.gap })
+        : spec.id === 'frosted-glass'
+          ? `blur ${spec.blur}px`
+          : `${spec.distance}px · ${spec.duration}ms`;
   return (
     <article className="catalog-effect-card" data-effect={effect.id}>
       <EffectPreview spec={spec} locale={locale} compact eager={eager} />
@@ -45,11 +55,7 @@ export function EffectCard({
       </Link>
       <div className="catalog-card-footer">
         <span>{getCategory(effect.category)!.name[locale]}</span>
-        <span>
-          {spec.id === 'frosted-glass'
-            ? `blur ${spec.blur}px`
-            : `${spec.distance}px · ${spec.duration}ms`}
-        </span>
+        <span>{metric}</span>
       </div>
     </article>
   );

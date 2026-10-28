@@ -92,7 +92,7 @@ export function CatalogPage({
           className="catalog-effect-grid"
           data-route-enter
           data-curated={
-            !query && sort === 'recommended' && !category && results.length === 3
+            !query && sort === 'recommended' && !category && results.length >= 3
               ? 'true'
               : undefined
           }

@@ -20,7 +20,7 @@ export function catalogReturnPath(from: string | null, locale: UiLocale) {
   if (
     !from ||
     !isLocale(from.split('/')[1]) ||
-    !/^\/explore(?:\/(motion|material))?(?:\?[^#]*)?$/.test(route)
+    !/^\/explore(?:\/(motion|material|style|layout))?(?:\?[^#]*)?$/.test(route)
   )
     return `/${locale}/explore`;
   return localizedPath(locale, route);

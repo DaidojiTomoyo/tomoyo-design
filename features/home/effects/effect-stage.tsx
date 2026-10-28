@@ -6,7 +6,7 @@ import { RangeField } from '@/components/ui/range-field';
 import {
   parameters,
   parameterValue,
-  type EffectSpec,
+  type CardEffectSpec as EffectSpec,
   type ParameterKey,
 } from '@/content/effects/schema';
 import type { RefObject } from 'react';

@@ -1,6 +1,6 @@
 'use client';
 import { useLayoutEffect, useRef, type RefObject } from 'react';
-import type { EffectSpec } from '@/content/effects/schema';
+import type { CardEffectSpec as EffectSpec } from '@/content/effects/schema';
 import { createPreviewController } from '@/components/effects/preview-controller';
 
 export function usePreviewMotion(

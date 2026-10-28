@@ -1,137 +1,36 @@
-export const effectIds = ['hover-lift', 'soft-reveal', 'frosted-glass'] as const;
-export type EffectId = (typeof effectIds)[number];
-type Ease = 'out' | 'in-out' | 'linear';
-type Direction = 'up' | 'down' | 'left' | 'right';
-type Tint = 'paper' | 'cool' | 'rose';
-type LiftValues = {
-  distance: number;
-  duration: number;
-  scale: number;
-  rotation: number;
-  shadow: number;
-  ease: Ease;
-};
-type RevealValues = {
-  distance: number;
-  duration: number;
-  delay: number;
-  blur: number;
-  startScale: number;
-  direction: Direction;
-  ease: Ease;
-};
-type GlassValues = {
-  blur: number;
-  saturation: number;
-  opacity: number;
-  borderOpacity: number;
-  radius: number;
-  shadow: number;
-  tint: Tint;
-};
-type ValuesById = {
-  'hover-lift': LiftValues;
-  'soft-reveal': RevealValues;
-  'frosted-glass': GlassValues;
-};
-export type ParameterKey = { [Id in EffectId]: keyof ValuesById[Id] }[EffectId];
-export type ParameterValue = number | string;
-type ParameterBase = { key: ParameterKey; group: 'movement' | 'timing' | 'surface' };
-export type RangeParameter = ParameterBase & {
-  type: 'range';
-  min: number;
-  max: number;
-  step: number;
-  unit: string;
-};
-export type ChoiceParameter = ParameterBase & { type: 'choice'; options: readonly string[] };
-export type Parameter = RangeParameter | ChoiceParameter;
+import type { PromptLocale } from '@/i18n/config';
+import { cardParameters, cardDefaults } from './definitions/cards';
+import { compositionParameters, compositionDefaults } from './definitions/composition';
+import { motionTokens, easingValues, tintValues } from './motion-tokens';
+import {
+  effectIds,
+  type EffectId,
+  type EffectSpec,
+  type Parameter,
+  type ParameterKey,
+  type ParameterValue,
+  type SpecsById,
+  type ValuesById,
+} from './types';
 
-export const motionTokens = {
-  easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-  liftDistance: 6,
-  liftDuration: 240,
-  revealDistance: 12,
-  revealDuration: 480,
-  revealResetDuration: 120,
-  glassDuration: 320,
-  glassResetDuration: 160,
-  glassBlur: 18,
-  glassSaturation: 1.15,
-  glassSurface: 'rgba(247, 232, 216, 0.86)',
-  restingShadow: '0 20px 32px rgba(4, 25, 72, 0.32)',
-  liftedShadow: '0 28px 44px rgba(4, 25, 72, 0.38)',
-} as const;
+export { effectIds } from './types';
+export type {
+  EffectId,
+  EffectSpec,
+  CardEffectId,
+  CardEffectSpec,
+  CompositionSpec,
+  Parameter,
+  ParameterKey,
+  ParameterValue,
+} from './types';
+export { motionTokens, easingValues, tintValues } from './motion-tokens';
 
 export const parameters: Record<EffectId, readonly Parameter[]> = {
-  'hover-lift': [
-    { key: 'distance', type: 'range', group: 'movement', min: 0, max: 24, step: 1, unit: 'px' },
-    { key: 'scale', type: 'range', group: 'movement', min: 1, max: 1.12, step: 0.01, unit: '×' },
-    { key: 'rotation', type: 'range', group: 'movement', min: -6, max: 6, step: 0.5, unit: '°' },
-    { key: 'shadow', type: 'range', group: 'movement', min: 0, max: 0.6, step: 0.01, unit: '' },
-    { key: 'duration', type: 'range', group: 'timing', min: 100, max: 800, step: 10, unit: 'ms' },
-    { key: 'ease', type: 'choice', group: 'timing', options: ['out', 'in-out', 'linear'] },
-  ],
-  'soft-reveal': [
-    {
-      key: 'direction',
-      type: 'choice',
-      group: 'movement',
-      options: ['up', 'down', 'left', 'right'],
-    },
-    { key: 'distance', type: 'range', group: 'movement', min: 0, max: 64, step: 1, unit: 'px' },
-    { key: 'blur', type: 'range', group: 'movement', min: 0, max: 16, step: 1, unit: 'px' },
-    {
-      key: 'startScale',
-      type: 'range',
-      group: 'movement',
-      min: 0.8,
-      max: 1,
-      step: 0.01,
-      unit: '×',
-    },
-    { key: 'duration', type: 'range', group: 'timing', min: 100, max: 1500, step: 10, unit: 'ms' },
-    { key: 'delay', type: 'range', group: 'timing', min: 0, max: 800, step: 20, unit: 'ms' },
-    { key: 'ease', type: 'choice', group: 'timing', options: ['out', 'in-out', 'linear'] },
-  ],
-  'frosted-glass': [
-    { key: 'tint', type: 'choice', group: 'surface', options: ['paper', 'cool', 'rose'] },
-    { key: 'blur', type: 'range', group: 'surface', min: 0, max: 40, step: 1, unit: 'px' },
-    { key: 'opacity', type: 'range', group: 'surface', min: 0.2, max: 1, step: 0.01, unit: '' },
-    { key: 'saturation', type: 'range', group: 'surface', min: 0, max: 2, step: 0.05, unit: '' },
-    { key: 'borderOpacity', type: 'range', group: 'surface', min: 0, max: 1, step: 0.05, unit: '' },
-    { key: 'radius', type: 'range', group: 'surface', min: 0, max: 32, step: 1, unit: 'px' },
-    { key: 'shadow', type: 'range', group: 'surface', min: 0, max: 0.6, step: 0.01, unit: '' },
-  ],
+  ...cardParameters,
+  ...compositionParameters,
 };
-
-const defaults: ValuesById = {
-  'hover-lift': { distance: 6, duration: 240, scale: 1, rotation: 0, shadow: 0.38, ease: 'out' },
-  'soft-reveal': {
-    distance: 12,
-    duration: 480,
-    delay: 0,
-    blur: 0,
-    startScale: 1,
-    direction: 'up',
-    ease: 'out',
-  },
-  'frosted-glass': {
-    blur: 18,
-    saturation: 1.15,
-    opacity: 0.86,
-    borderOpacity: 0.7,
-    radius: 8,
-    shadow: 0.32,
-    tint: 'paper',
-  },
-};
-export const easingValues = {
-  out: motionTokens.easing,
-  'in-out': 'cubic-bezier(0.65, 0, 0.35, 1)',
-  linear: 'linear',
-};
-export const tintValues = { paper: '247, 232, 216', cool: '223, 237, 248', rose: '250, 224, 217' };
+const defaults: ValuesById = { ...cardDefaults, ...compositionDefaults };
 
 export function isEffectId(value: string): value is EffectId {
   return effectIds.some((id) => id === value);
@@ -141,17 +40,6 @@ export function defaultValues<Id extends EffectId>(id: Id): ValuesById[Id] {
   return { ...defaults[id] };
 }
 
-type ResolvedTokens = Omit<
-  typeof motionTokens,
-  'easing' | 'restingShadow' | 'liftedShadow' | 'glassSurface'
-> & {
-  easing: string;
-  restingShadow: string;
-  liftedShadow: string;
-  glassSurface: string;
-};
-type SpecsById = { [Id in EffectId]: ValuesById[Id] & ResolvedTokens & { id: Id } };
-export type EffectSpec = SpecsById[EffectId];
 export function parameterValue(spec: EffectSpec, key: ParameterKey): ParameterValue {
   return (spec as unknown as Record<string, ParameterValue>)[key];
 }
@@ -181,7 +69,7 @@ export function resolveEffect<Id extends EffectId>(id: Id, input: Record<string,
   if (spec.id === 'frosted-glass') {
     spec.glassSurface = `rgba(${tintValues[spec.tint]}, ${spec.opacity})`;
     spec.restingShadow = `0 20px 32px rgba(4, 25, 72, ${spec.shadow})`;
-  } else {
+  } else if (spec.id === 'hover-lift' || spec.id === 'soft-reveal') {
     spec.easing = easingValues[spec.ease];
     if (spec.id === 'hover-lift') spec.liftedShadow = `0 28px 44px rgba(4, 25, 72, ${spec.shadow})`;
   }
@@ -193,4 +81,3 @@ export function effectQuery(spec: EffectSpec, prompt: PromptLocale) {
   for (const p of parameters[spec.id]) query.set(p.key, String(parameterValue(spec, p.key)));
   return query;
 }
-import type { PromptLocale } from '@/i18n/config';

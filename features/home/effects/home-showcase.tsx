@@ -1,9 +1,9 @@
 'use client';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { EffectPreview } from '@/components/effects/effect-preview';
+import { CardEffectPreview } from '@/components/effects/card-effect-preview';
 import { Icon } from '@/components/ui/icon';
-import { effects, categories } from '@/content/effects/registry';
+import { homeEffects, homeCategories } from '@/content/home-effects';
 import { resolveEffect } from '@/content/effects/schema';
 import type { UiLocale } from '@/i18n/config';
 import '../styles/showcase.css';
@@ -17,9 +17,9 @@ export function HomeShowcase({ locale }: { locale: UiLocale }) {
         <p>{t('showcase.intro')}</p>
       </div>
       <div className="home-showcase-grid">
-        {effects.map((effect) => (
+        {homeEffects.map((effect) => (
           <article key={effect.id}>
-            <EffectPreview locale={locale} spec={resolveEffect(effect.id).spec} compact />
+            <CardEffectPreview locale={locale} spec={resolveEffect(effect.id).spec} compact />
             <Link href={`/effects/${effect.id}`} locale={locale}>
               <h3>{effect.name[locale]}</h3>
               <Icon name="arrow" />
@@ -29,7 +29,7 @@ export function HomeShowcase({ locale }: { locale: UiLocale }) {
         ))}
       </div>
       <nav className="home-category-links" aria-label={t('showcase.categories')}>
-        {categories.map((category) => (
+        {homeCategories.map((category) => (
           <Link href={`/explore/${category.id}`} locale={locale} key={category.id}>
             {category.name[locale]}
             <Icon name="arrow" />

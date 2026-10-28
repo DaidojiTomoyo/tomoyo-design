@@ -5,6 +5,51 @@ type Preset = {
   values: Record<string, number | string>;
 };
 export const effectPresets = {
+  editorial: [
+    { id: 'journal', values: {} },
+    {
+      id: 'coverStory',
+      values: { composition: 'cover', titleSize: 64, imageShare: 65, columnGap: 32, ruleWeight: 2 },
+    },
+    {
+      id: 'reading',
+      values: {
+        composition: 'image-right',
+        titleFace: 'sans',
+        titleSize: 38,
+        bodySize: 16,
+        lineHeight: 1.8,
+        imageShare: 40,
+        columnGap: 18,
+        ruleWeight: 0,
+      },
+    },
+  ],
+  'bento-grid': [
+    { id: 'featureGrid', values: {} },
+    {
+      id: 'balancedGrid',
+      values: {
+        columns: 'four-columns',
+        arrangement: 'balanced',
+        gap: 16,
+        radius: 8,
+        padding: 16,
+        rowHeight: 128,
+      },
+    },
+    {
+      id: 'panoramaGrid',
+      values: {
+        arrangement: 'panorama',
+        gap: 20,
+        radius: 24,
+        padding: 24,
+        rowHeight: 100,
+        alignment: 'align-center',
+      },
+    },
+  ],
   'hover-lift': [
     {
       id: 'quiet',

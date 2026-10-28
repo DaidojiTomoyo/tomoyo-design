@@ -1,0 +1,113 @@
+.composition-demo {
+  min-width: 0;
+}
+.composition-toolbar,
+.composition-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--catalog-muted);
+}
+.composition-toolbar {
+  margin-bottom: 10px;
+}
+.composition-footer {
+  margin-top: 10px;
+}
+.composition-demo .composition-width,
+.composition-demo .composition-compare {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  min-height: 44px;
+  border: 1px solid var(--catalog-line);
+  border-radius: var(--radius-control, 5px);
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+}
+.composition-width .icon,
+.composition-compare .icon {
+  width: 16px;
+  height: 16px;
+}
+.composition-width:hover,
+.composition-compare:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.composition-width[aria-pressed='true'],
+.composition-compare[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.composition-stage {
+  padding: 16px;
+  background: #d6dde5;
+  border-radius: 9px;
+  min-width: 0;
+}
+.composition-viewport {
+  container-type: inline-size;
+  width: 100%;
+  margin-inline: auto;
+  min-width: 0;
+}
+.composition-stage[data-narrow='true'] .composition-viewport {
+  max-width: 320px;
+}
+.composition-image {
+  position: relative;
+  min-width: 0;
+}
+.composition-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1.5;
+}
+.composition-image-error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  padding: 12px;
+  text-align: center;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 12px;
+}
+.composition-image-error button {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  min-height: 44px;
+}
+.composition-demo[data-compact] .composition-stage {
+  padding: 12px;
+}
+.composition-demo[data-compact] .composition-footer {
+  font-size: 10px;
+}
+.composition-demo[data-compact] .composition-compare {
+  font-size: 11px;
+}
+.detail-workspace > section:first-child:has(.composition-demo) {
+  position: static;
+}
+@media (max-width: 760px) {
+  .composition-stage {
+    padding: 10px;
+  }
+  .composition-toolbar,
+  .composition-footer {
+    gap: 8px;
+  }
+}

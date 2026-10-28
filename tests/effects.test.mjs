@@ -1,29 +1,10 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { posix } from 'node:path';
 import test from 'node:test';
-import { runInNewContext } from 'node:vm';
-import ts from 'typescript';
-import { defaultValues, effectQuery, resolveEffect } from '../content/effects/schema.ts';
-import { createEffectPrompt } from '../content/effects/prompts.ts';
 import { matchesEffect } from '../lib/effects/search.ts';
 
-function load(path) {
-  const source = readFileSync(new URL(`../${path}.ts`, import.meta.url), 'utf8');
-  const { outputText } = ts.transpileModule(source, {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
-  });
-  const exports = {};
-  runInNewContext(outputText, {
-    exports,
-    URLSearchParams,
-    require: (specifier) => {
-      assert.ok(specifier.startsWith('.'), `Unexpected dependency: ${specifier}`);
-      return load(posix.join(posix.dirname(path), specifier));
-    },
-  });
-  return exports;
-}
+import { loadTypeScript as load } from './helpers/load-ts.mjs';
+const { defaultValues, effectQuery, resolveEffect } = load('content/effects/schema');
+const { createEffectPrompt } = load('content/effects/prompts');
 
 const { catalogReturnPath, queryInput, serializeQuery } = load('lib/navigation/query');
 

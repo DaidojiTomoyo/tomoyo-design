@@ -3,7 +3,8 @@ import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { runInNewContext } from 'node:vm';
 import ts from 'typescript';
-import { resolveEffect } from '../content/effects/schema.ts';
+import { loadTypeScript } from './helpers/load-ts.mjs';
+const { resolveEffect } = loadTypeScript('content/effects/schema');
 
 function load(name, globals) {
   const source = readFileSync(new URL(`../components/effects/${name}.ts`, import.meta.url), 'utf8');

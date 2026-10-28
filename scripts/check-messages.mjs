@@ -2,7 +2,15 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { locales } from '../i18n/config.ts';
 import { validateMessageCatalogs } from './lib/message-validation.mjs';
 
-const namespaces = ['common', 'home', 'catalog', 'effect-detail', 'controls', 'motion-preview'];
+const namespaces = [
+  'common',
+  'home',
+  'catalog',
+  'effect-detail',
+  'controls',
+  'motion-preview',
+  'composition',
+];
 const catalogs = {};
 const errors = [];
 

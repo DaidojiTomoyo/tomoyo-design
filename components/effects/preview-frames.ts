@@ -1,4 +1,4 @@
-import type { EffectSpec } from '@/content/effects/schema';
+import type { CardEffectSpec as EffectSpec } from '@/content/effects/schema';
 export type PreviewFrame = {
   opacity: string;
   transform: string;

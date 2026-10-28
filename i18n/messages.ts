@@ -5,7 +5,10 @@ import type detail from '@/messages/en/effect-detail.json';
 import type controls from '@/messages/en/controls.json';
 import type motion from '@/messages/en/motion-preview.json';
 
+import type composition from '@/messages/en/composition.json';
+
 export type Messages = {
+  Composition: typeof composition;
   Common: typeof common;
   Home: typeof home;
   Catalog: typeof catalog;

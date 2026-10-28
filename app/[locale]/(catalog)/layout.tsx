@@ -14,7 +14,7 @@ export default async function CatalogLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   return (
-    <IntlScope namespaces={['Catalog', 'EffectDetail', 'Controls']}>
+    <IntlScope namespaces={['Catalog', 'EffectDetail', 'Controls', 'Composition']}>
       <CatalogShell locale={locale}>{children}</CatalogShell>
     </IntlScope>
   );

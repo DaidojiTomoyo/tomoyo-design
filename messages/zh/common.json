@@ -9,7 +9,9 @@
     "paused": "已按设备设置减少动态效果",
     "imageError": "预览图片未能加载。",
     "retry": "重新加载图片",
-    "imageAlt": "蓝色丝网套色海岸插画"
+    "imageAlt": "蓝色丝网套色海岸插画",
+    "editorialMetric": "字号 {size}px",
+    "bentoMetric": "{columns} 列 · {gap}px"
   },
   "States": {
     "notFound": "效果库里还没有这个效果。",

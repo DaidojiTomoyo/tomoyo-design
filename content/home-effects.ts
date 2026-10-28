@@ -1,9 +1,14 @@
 import type { PromptLocale } from '@/i18n/config';
-import { effectIds, motionTokens, resolveEffect } from '@/content/effects/schema';
+import { motionTokens, resolveEffect } from '@/content/effects/schema';
 import { createEffectPrompt } from '@/content/effects/prompts';
+import { getEffect, categories } from '@/content/effects/registry';
 export { motionTokens } from '@/content/effects/schema';
 
-export const homeEffects = effectIds.map((id) => ({ id }));
+const homeEffectIds = ['hover-lift', 'soft-reveal', 'frosted-glass'] as const;
+export const homeEffects = homeEffectIds.map((id) => ({ ...getEffect(id), id }));
+export const homeCategories = categories.filter((category) =>
+  homeEffects.some((effect) => effect.category === category.id),
+);
 
 export type EffectId = (typeof homeEffects)[number]['id'];
 

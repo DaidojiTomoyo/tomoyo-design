@@ -7,6 +7,8 @@ type IconName =
   | 'grid'
   | 'motion'
   | 'material'
+  | 'type'
+  | 'layout'
   | 'menu'
   | 'down'
   | 'chevron'
@@ -25,6 +27,8 @@ const paths: Record<IconName, string> = {
   grid: 'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z',
   motion: 'm3 13 5-8 6 14 7-9M3 19h4M18 5h3',
   material: 'M4 7h13v13H4zM8 3h13v13',
+  type: 'M4 5V3h16v2M12 3v18M8 21h8',
+  layout: 'M3 3h11v10H3zM18 3h3v10h-3zM3 17h6v4H3zM13 17h8v4h-8z',
   menu: 'M4 6h16M4 12h16M4 18h16',
   down: 'm5 9 7 7 7-7',
   chevron: 'm9 5 7 7-7 7',

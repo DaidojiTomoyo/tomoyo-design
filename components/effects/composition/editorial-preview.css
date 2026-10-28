@@ -1,0 +1,148 @@
+.editorial-sample {
+  padding: clamp(16px, 4cqw, 28px);
+  color: var(--ink);
+  background: var(--action-paper, #fff9ef);
+  font-size: var(--editorial-body-size);
+  line-height: var(--editorial-line-height);
+  overflow-wrap: anywhere;
+}
+.editorial-heading {
+  border-top: var(--editorial-rule) solid currentColor;
+  padding-top: 18px;
+  margin-bottom: var(--editorial-gap);
+}
+.editorial-heading h2 {
+  font:
+    600 clamp(28px, 12cqw, var(--editorial-title-size))/1.05 var(--font-heading),
+    sans-serif;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  margin: 0 0 16px;
+}
+.editorial-sample[data-face='sans'] .editorial-heading h2 {
+  font-family: var(--font-cjk), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.editorial-sample:lang(zh) .editorial-heading h2 {
+  font-family: var(--font-cjk), sans-serif;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.editorial-sample:lang(zh)[data-face='condensed'] .editorial-heading h2 {
+  letter-spacing: -0.04em;
+}
+.editorial-sample:lang(zh)[data-face='sans'] .editorial-heading h2 {
+  font-weight: 600;
+}
+.editorial-heading p,
+.editorial-copy p {
+  margin: 0;
+  max-width: 65ch;
+}
+.editorial-heading p {
+  max-width: 48ch;
+}
+.editorial-spread {
+  display: grid;
+  grid-template-columns: minmax(0, var(--editorial-image)) minmax(0, var(--editorial-copy));
+  grid-template-areas: 'image copy';
+  gap: var(--editorial-gap);
+  align-items: start;
+}
+.editorial-spread figure {
+  grid-area: image;
+  min-width: 0;
+  margin: 0;
+}
+.editorial-copy {
+  grid-area: copy;
+  min-width: 0;
+}
+.editorial-copy p + p {
+  margin-top: 1em;
+}
+.editorial-spread figcaption {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.editorial-sample[data-composition='image-right'] .editorial-spread {
+  grid-template-columns: minmax(0, var(--editorial-copy)) minmax(0, var(--editorial-image));
+  grid-template-areas: 'copy image';
+}
+.editorial-sample[data-composition='cover'] .editorial-spread {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'image' 'copy';
+}
+.editorial-sample[data-composition='cover'] .composition-image img {
+  aspect-ratio: var(--editorial-image-ratio);
+}
+.editorial-sample > footer {
+  border-top: var(--editorial-rule) solid currentColor;
+  margin-top: var(--editorial-gap);
+  padding-top: 12px;
+  font-size: 10px;
+}
+.composition-demo[data-compact] .editorial-sample {
+  padding: 16px;
+  font-size: 11px;
+}
+.composition-demo[data-compact] .editorial-heading {
+  padding-top: 12px;
+  margin-bottom: 14px;
+}
+.composition-demo[data-compact] .editorial-heading h2 {
+  font-size: clamp(25px, 9cqw, 40px);
+  margin-bottom: 10px;
+}
+.composition-demo[data-compact] .editorial-spread {
+  gap: 14px;
+}
+.composition-demo[data-compact] .editorial-sample > footer {
+  margin-top: 14px;
+  padding-top: 10px;
+}
+.composition-demo[data-compact] .editorial-spread figcaption {
+  font-size: 10px;
+}
+.composition-stage[data-plain='true'] .editorial-sample {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.composition-stage[data-plain='true'] .editorial-heading {
+  border: 0;
+  padding: 0;
+  margin-bottom: 16px;
+}
+.composition-stage[data-plain='true'] .editorial-heading h2 {
+  font:
+    700 22px/1.3 var(--font-cjk),
+    sans-serif;
+  letter-spacing: 0;
+}
+.composition-stage[data-plain='true'] .editorial-spread {
+  display: block;
+}
+.composition-stage[data-plain='true'] .editorial-copy {
+  margin-top: 16px;
+}
+.composition-stage[data-plain='true'] .editorial-sample > footer {
+  border: 0;
+}
+.composition-stage[data-plain='true'] .composition-image img {
+  aspect-ratio: 1.5;
+}
+@container (max-width: 480px) {
+  .editorial-sample .editorial-spread,
+  .editorial-sample[data-composition='image-right'] .editorial-spread {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'image' 'copy';
+  }
+}
+
+.composition-demo[data-compact] .editorial-sample .editorial-spread {
+  grid-template-columns: minmax(0, var(--editorial-image)) minmax(0, var(--editorial-copy));
+  grid-template-areas: 'image copy';
+}

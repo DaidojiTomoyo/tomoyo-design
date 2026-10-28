@@ -22,5 +22,7 @@
   "invalid": "Some settings in this link were invalid. Those values have been reset to their defaults.",
   "summaryLift": "Lift by {distance}px over {duration}ms, then return smoothly.",
   "summaryReveal": "Fade in across {distance}px in your chosen direction over {duration}ms.",
-  "summaryGlass": "Blur the backdrop by {blur}px with saturation at {saturation}. Keep the content sharp."
+  "summaryGlass": "Blur the backdrop by {blur}px with saturation at {saturation}. Keep the content sharp.",
+  "summaryEditorial": "Heading up to {titleSize}px, body {bodySize}px, with a {columnGap}px gap.",
+  "summaryBento": "A {gap}px grid gap, {radius}px corners and {padding}px inside each block."
 }

@@ -48,10 +48,7 @@ export function EffectDetailPage({
     }
   }
   const clipboard = useClipboard(prompt, () => openPrompt(true));
-  const summary = t(
-    id === 'hover-lift' ? 'summaryLift' : id === 'soft-reveal' ? 'summaryReveal' : 'summaryGlass',
-    config.spec,
-  );
+  const summary = t(effect.summaryKey, config.spec);
   return (
     <div className="effect-detail" data-catalog-page={pathname}>
       <nav className="detail-crumb" aria-label={t('navigation')}>
