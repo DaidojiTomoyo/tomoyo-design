@@ -1,12 +1,12 @@
 import {
-  parameters,
+  activeParameters,
   parameterValue,
   type EffectSpec,
   type ParameterKey,
   type ParameterValue,
 } from '@/content/effects/schema';
 import { useTranslations } from 'next-intl';
-import { effectPresets, selectedPreset } from '@/content/effects/presets';
+import { effectPresets, presetValues, selectedPreset } from '@/content/effects/presets';
 import { RangeField } from '@/components/ui/range-field';
 import { ChoiceField } from '@/components/ui/choice-field';
 
@@ -23,7 +23,8 @@ export function ParameterControls({
 }) {
   const t = useTranslations('Controls');
   const preset = selectedPreset(spec);
-  const groups = [...new Set(parameters[spec.id].map((parameter) => parameter.group))];
+  const visible = activeParameters(spec);
+  const groups = [...new Set(visible.map((parameter) => parameter.group))];
   return (
     <div className="detail-parameters">
       <div className="detail-panel-heading">
@@ -42,16 +43,16 @@ export function ParameterControls({
         }))}
         onChange={(value) => {
           const next = effectPresets[spec.id].find((item) => item.id === value);
-          if (next) onPreset(next.values);
+          if (next) onPreset(presetValues(spec, next.values));
         }}
       />
       <p className="detail-config-note" aria-live="polite">
         {preset ? t('changes') : t('custom')}
       </p>
       {groups.map((group) => (
-        <fieldset className="detail-parameter-group" key={group}>
+        <fieldset className="detail-parameter-group" data-group={group} key={group}>
           <legend>{t(group)}</legend>
-          {parameters[spec.id]
+          {visible
             .filter((parameter) => parameter.group === group)
             .map((parameter) =>
               parameter.type === 'range' ? (

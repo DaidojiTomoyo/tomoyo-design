@@ -1,0 +1,25 @@
+{
+  "sample": "示例内容",
+  "scrollRegion": "可滚动的效果预览",
+  "scrollReset": "回到顶部",
+  "swap": "切换示例语言",
+  "replay": "播放演示",
+  "pause": "暂停",
+  "resume": "继续",
+  "ready": "点击播放演示",
+  "preparing": "正在准备预览…",
+  "playing": "正在播放",
+  "paused": "已暂停",
+  "reduced": "已按设备设置减少动态效果",
+  "fallback": "预览资源未加载完成，恢复连接后可重试。",
+  "scrollHint": "在预览内向下滚动",
+  "textHint": "只切换示例中的语言",
+  "alternateTitle": "An afternoon by the sea",
+  "alternateBody": "I sat on a rock and tipped the sand out of my shoes.",
+  "hints": {
+    "opening": "点击后在预览内播放开场。成形和停留时间用于演示；实际加载页应根据资源加载情况结束。",
+    "entrance": "点击播放，查看图片、标题和正文如何入场。调节时长和错开时间，可以比较不同的节奏。",
+    "scroll": "在预览内滚动，也可以聚焦后用方向键。每段内容进入时播放一次，回到顶部可以重新体验。",
+    "text-swap": "用中英文示例查看换字过程。网站界面和提示词仍使用你各自选择的语言。"
+  }
+}

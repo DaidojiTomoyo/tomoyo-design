@@ -6,9 +6,21 @@ export const effectIds = [
   'frosted-glass',
   'editorial',
   'bento-grid',
+  'overprint',
+  'coastal-reveal',
 ] as const;
 export type EffectId = (typeof effectIds)[number];
 export type CardEffectId = 'hover-lift' | 'soft-reveal' | 'frosted-glass';
+export type SequenceEffectId = 'overprint' | 'coastal-reveal';
+export type SequenceScene = 'opening' | 'entrance' | 'scroll' | 'text-swap';
+type SequenceValues = {
+  scene: SequenceScene;
+  duration: number;
+  formation: number;
+  hold: number;
+  distance: number;
+  stagger: number;
+};
 type Ease = 'out' | 'in-out' | 'linear';
 export type ValuesById = {
   'hover-lift': {
@@ -56,12 +68,16 @@ export type ValuesById = {
     rowHeight: number;
     alignment: 'align-start' | 'align-center' | 'align-end';
   };
+  overprint: SequenceValues & { offset: number; rotation: number };
+  'coastal-reveal': SequenceValues & { blur: number; startScale: number };
 };
 export type ParameterKey = { [Id in EffectId]: keyof ValuesById[Id] }[EffectId];
 export type ParameterValue = number | string;
 type ParameterBase = {
   key: ParameterKey;
+  scenes?: readonly SequenceScene[];
   group:
+    | 'sceneGroup'
     | 'movement'
     | 'timing'
     | 'surface'
@@ -92,3 +108,4 @@ export type SpecsById = { [Id in EffectId]: ValuesById[Id] & ResolvedTokens & { 
 export type EffectSpec = SpecsById[EffectId];
 export type CardEffectSpec = SpecsById[CardEffectId];
 export type CompositionSpec = SpecsById['editorial' | 'bento-grid'];
+export type SequenceSpec = SpecsById[SequenceEffectId];

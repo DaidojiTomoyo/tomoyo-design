@@ -3,6 +3,7 @@ import type { EffectSpec } from '@/content/effects/schema';
 import type { Locale } from '@/i18n/config';
 import { CardEffectPreview } from './card-effect-preview';
 import { CompositionPreview } from './composition/composition-preview';
+import { SequencePreview } from './sequences/sequence-preview';
 
 export function EffectPreview(props: {
   spec: EffectSpec;
@@ -11,6 +12,8 @@ export function EffectPreview(props: {
   eager?: boolean;
 }) {
   const { spec, ...rest } = props;
+  if (spec.id === 'overprint' || spec.id === 'coastal-reveal')
+    return <SequencePreview {...rest} spec={spec} key={`${spec.id}-${props.locale}`} />;
   return spec.id === 'editorial' || spec.id === 'bento-grid' ? (
     <CompositionPreview {...rest} spec={spec} key={spec.id} />
   ) : (

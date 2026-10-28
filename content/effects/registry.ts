@@ -49,9 +49,58 @@ export type EffectEntry = {
   trigger: Text;
   aliases: string[];
   summaryKey:
-    'summaryLift' | 'summaryReveal' | 'summaryGlass' | 'summaryEditorial' | 'summaryBento';
+    | 'summaryLift'
+    | 'summaryReveal'
+    | 'summaryGlass'
+    | 'summaryEditorial'
+    | 'summaryBento'
+    | 'summaryOverprint'
+    | 'summaryCoast';
 };
 const entries: Record<EffectId, Omit<EffectEntry, 'id'>> = {
+  overprint: {
+    summaryKey: 'summaryOverprint',
+    category: 'motion',
+    name: { en: 'Overprint', zh: '套色印刷' },
+    description: {
+      en: 'Bring the ink layers into register, then wipe the paper away.',
+      zh: '两层字样错位套准，再揭开纸面，露出内容。',
+    },
+    trigger: { en: 'Play / scroll / swap text', zh: '播放 / 滚动 / 换字' },
+    aliases: [
+      '套色',
+      '套准',
+      '印刷',
+      '揭幕',
+      '开场',
+      'screenprint',
+      'registration',
+      'press',
+      'opening',
+      'text transition',
+    ],
+  },
+  'coastal-reveal': {
+    summaryKey: 'summaryCoast',
+    category: 'motion',
+    name: { en: 'Coastal reveal', zh: '海岸显影' },
+    description: {
+      en: 'Let the image come into focus, then close the mask to reveal the page.',
+      zh: '图像逐渐清晰，遮片向中间收拢，露出后面的页面。',
+    },
+    trigger: { en: 'Play / scroll / swap text', zh: '播放 / 滚动 / 换字' },
+    aliases: [
+      '海岸',
+      '显影',
+      '视差',
+      '开场',
+      'exposure',
+      'coast',
+      'parallax',
+      'image reveal',
+      'opening',
+    ],
+  },
   'hover-lift': {
     summaryKey: 'summaryLift',
     category: 'motion',

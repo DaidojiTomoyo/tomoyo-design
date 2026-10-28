@@ -11,7 +11,8 @@
     "retry": "重新加载图片",
     "imageAlt": "蓝色丝网套色海岸插画",
     "editorialMetric": "字号 {size}px",
-    "bentoMetric": "{columns} 列 · {gap}px"
+    "bentoMetric": "{columns} 列 · {gap}px",
+    "sequenceMetric": "开场 {duration}s"
   },
   "States": {
     "notFound": "效果库里还没有这个效果。",

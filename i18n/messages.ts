@@ -6,8 +6,10 @@ import type controls from '@/messages/en/controls.json';
 import type motion from '@/messages/en/motion-preview.json';
 
 import type composition from '@/messages/en/composition.json';
+import type sequence from '@/messages/en/sequence.json';
 
 export type Messages = {
+  Sequence: typeof sequence;
   Composition: typeof composition;
   Common: typeof common;
   Home: typeof home;

@@ -14,11 +14,13 @@ type IconName =
   | 'chevron'
   | 'pointer'
   | 'play'
+  | 'pause'
   | 'eye'
   | 'link'
   | 'close';
 
 const paths: Record<IconName, string> = {
+  pause: 'M8 5v14M16 5v14',
   arrow: 'M4 12h16m-6-6 6 6-6 6',
   copy: 'M8 7h12v14H8zM16 7V3H4v14h4',
   replay: 'M4 10a8 8 0 1 1 1 8M4 4v6h6',

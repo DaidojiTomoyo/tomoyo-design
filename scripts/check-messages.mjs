@@ -10,6 +10,7 @@ const namespaces = [
   'controls',
   'motion-preview',
   'composition',
+  'sequence',
 ];
 const catalogs = {};
 const errors = [];

@@ -7,7 +7,7 @@ import type { Messages } from './messages';
 export default getRequestConfig(async ({ locale: override }) => {
   const locale = override ?? (await rootLocale());
   if (!isLocale(locale)) notFound();
-  const [Common, Home, Catalog, EffectDetail, Controls, MotionPreview, Composition] =
+  const [Common, Home, Catalog, EffectDetail, Controls, MotionPreview, Composition, Sequence] =
     await Promise.all([
       import(`../messages/${locale}/common.json`).then((module) => module.default),
       import(`../messages/${locale}/home.json`).then((module) => module.default),
@@ -16,6 +16,7 @@ export default getRequestConfig(async ({ locale: override }) => {
       import(`../messages/${locale}/controls.json`).then((module) => module.default),
       import(`../messages/${locale}/motion-preview.json`).then((module) => module.default),
       import(`../messages/${locale}/composition.json`).then((module) => module.default),
+      import(`../messages/${locale}/sequence.json`).then((module) => module.default),
     ]);
   return {
     locale,
@@ -27,6 +28,7 @@ export default getRequestConfig(async ({ locale: override }) => {
       Controls,
       MotionPreview,
       Composition,
+      Sequence,
     } satisfies Messages,
   };
 });

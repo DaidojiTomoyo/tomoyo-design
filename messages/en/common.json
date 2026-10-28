@@ -11,7 +11,8 @@
     "retry": "Retry image",
     "imageAlt": "Blue screenprint of a coastline",
     "editorialMetric": "Type {size}px",
-    "bentoMetric": "{columns} cols · {gap}px"
+    "bentoMetric": "{columns} cols · {gap}px",
+    "sequenceMetric": "Opening {duration}s"
   },
   "States": {
     "notFound": "This effect is not in the library.",

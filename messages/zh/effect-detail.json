@@ -24,5 +24,7 @@
   "summaryReveal": "沿所选方向移动 {distance}px 并淡入，用 {duration}ms 完成。",
   "summaryGlass": "背景模糊 {blur}px、饱和度 {saturation}；前景内容保持清晰。",
   "summaryEditorial": "标题最大 {titleSize}px，正文 {bodySize}px，栏间距 {columnGap}px。",
-  "summaryBento": "网格间距 {gap}px，圆角 {radius}px，每块留白 {padding}px。"
+  "summaryBento": "网格间距 {gap}px，圆角 {radius}px，每块留白 {padding}px。",
+  "summaryOverprint": "过渡时长 {duration}ms，切换场景可调整对应参数。",
+  "summaryCoast": "过渡时长 {duration}ms，切换场景可调整对应参数。"
 }

@@ -24,5 +24,7 @@
   "summaryReveal": "Fade in across {distance}px in your chosen direction over {duration}ms.",
   "summaryGlass": "Blur the backdrop by {blur}px with saturation at {saturation}. Keep the content sharp.",
   "summaryEditorial": "Heading up to {titleSize}px, body {bodySize}px, with a {columnGap}px gap.",
-  "summaryBento": "A {gap}px grid gap, {radius}px corners and {padding}px inside each block."
+  "summaryBento": "A {gap}px grid gap, {radius}px corners and {padding}px inside each block.",
+  "summaryOverprint": "Transition: {duration}ms. Each scene has its own controls.",
+  "summaryCoast": "Transition: {duration}ms. Each scene has its own controls."
 }

@@ -1,6 +1,7 @@
 import type { PromptLocale } from '@/i18n/config';
 import { cardParameters, cardDefaults } from './definitions/cards';
 import { compositionParameters, compositionDefaults } from './definitions/composition';
+import { sequenceParameters, sequenceDefaults } from './definitions/sequences';
 import { motionTokens, easingValues, tintValues } from './motion-tokens';
 import {
   effectIds,
@@ -20,6 +21,7 @@ export type {
   CardEffectId,
   CardEffectSpec,
   CompositionSpec,
+  SequenceSpec,
   Parameter,
   ParameterKey,
   ParameterValue,
@@ -29,8 +31,15 @@ export { motionTokens, easingValues, tintValues } from './motion-tokens';
 export const parameters: Record<EffectId, readonly Parameter[]> = {
   ...cardParameters,
   ...compositionParameters,
+  ...sequenceParameters,
 };
-const defaults: ValuesById = { ...cardDefaults, ...compositionDefaults };
+const defaults: ValuesById = { ...cardDefaults, ...compositionDefaults, ...sequenceDefaults };
+
+export function activeParameters(spec: EffectSpec) {
+  return parameters[spec.id].filter(
+    (parameter) => !parameter.scenes || ('scene' in spec && parameter.scenes.includes(spec.scene)),
+  );
+}
 
 export function isEffectId(value: string): value is EffectId {
   return effectIds.some((id) => id === value);

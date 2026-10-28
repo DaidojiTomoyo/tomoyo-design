@@ -1,0 +1,25 @@
+{
+  "sample": "Sample content",
+  "scrollRegion": "Scrollable preview",
+  "scrollReset": "Back to the top",
+  "swap": "Switch sample language",
+  "replay": "Play demo",
+  "pause": "Pause",
+  "resume": "Resume",
+  "ready": "Ready to play",
+  "preparing": "Preparing the preview…",
+  "playing": "Playing",
+  "paused": "Paused",
+  "reduced": "Motion reduced by your device settings",
+  "fallback": "The preview could not load. Retry when your connection is ready.",
+  "scrollHint": "Scroll inside the preview",
+  "textHint": "Only the sample language changes",
+  "alternateTitle": "海边的一下午",
+  "alternateBody": "我在礁石边坐下，倒了倒鞋里的沙。",
+  "hints": {
+    "opening": "Play the opening inside this preview. Formation and hold time control the demo; a real loading screen should follow resource readiness.",
+    "entrance": "Play to see the image, heading and caption arrive. Adjust the timing to compare the rhythm.",
+    "scroll": "Scroll inside the preview, or focus it and use the arrow keys. Each section animates once; go back to the top to try again.",
+    "text-swap": "Switch between the Chinese and English sample text. Your interface and prompt language stay as selected."
+  }
+}

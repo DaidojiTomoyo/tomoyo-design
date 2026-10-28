@@ -48,7 +48,13 @@
     "reading": "紧凑阅读",
     "featureGrid": "主次分明",
     "balancedGrid": "均匀排列",
-    "panoramaGrid": "横幅开篇"
+    "panoramaGrid": "横幅开篇",
+    "pressOriginal": "原版套色",
+    "pressQuick": "快速套准",
+    "pressBold": "大幅错位",
+    "coastOriginal": "原版显影",
+    "coastClear": "快速显影",
+    "coastDeep": "缓慢显影"
   },
   "typography": "文字层级",
   "compositionGroup": "图文编排",
@@ -80,5 +86,15 @@
   "align-end": "靠下",
   "rowHeight": "行高下限",
   "gap": "网格间距",
-  "padding": "块内留白"
+  "padding": "块内留白",
+  "sceneGroup": "演示场景",
+  "scene": "选择场景",
+  "opening": "开场",
+  "entrance": "内容入场",
+  "scroll": "滚动",
+  "text-swap": "文字切换",
+  "formation": "成形时间",
+  "hold": "停留时间",
+  "stagger": "错开时间",
+  "offset": "套色偏移"
 }

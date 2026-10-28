@@ -48,7 +48,13 @@
     "reading": "Reading",
     "featureGrid": "Feature",
     "balancedGrid": "Even",
-    "panoramaGrid": "Panorama"
+    "panoramaGrid": "Panorama",
+    "pressOriginal": "Original print",
+    "pressQuick": "Quick print",
+    "pressBold": "Wide register",
+    "coastOriginal": "Original exposure",
+    "coastClear": "Quick exposure",
+    "coastDeep": "Slow exposure"
   },
   "typography": "Typography",
   "compositionGroup": "Image & text",
@@ -80,5 +86,15 @@
   "align-end": "Bottom",
   "rowHeight": "Minimum row height",
   "gap": "Grid gap",
-  "padding": "Inner padding"
+  "padding": "Inner padding",
+  "sceneGroup": "Demo",
+  "scene": "Scene",
+  "opening": "Opening",
+  "entrance": "Content entrance",
+  "scroll": "On scroll",
+  "text-swap": "Text change",
+  "formation": "Formation time",
+  "hold": "Hold time",
+  "stagger": "Text stagger",
+  "offset": "Ink offset"
 }

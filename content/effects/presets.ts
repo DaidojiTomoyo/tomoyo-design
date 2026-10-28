@@ -1,10 +1,64 @@
-import { resolveEffect, type EffectId, type EffectSpec } from './schema';
+import { resolveEffect, type EffectId, type EffectSpec, type ParameterValue } from './schema';
 
 type Preset = {
   id: string;
   values: Record<string, number | string>;
 };
 export const effectPresets = {
+  overprint: [
+    { id: 'pressOriginal', values: {} },
+    {
+      id: 'pressQuick',
+      values: {
+        formation: 400,
+        hold: 200,
+        duration: 400,
+        distance: 12,
+        stagger: 25,
+        offset: 4,
+        rotation: -0.5,
+      },
+    },
+    {
+      id: 'pressBold',
+      values: {
+        formation: 1000,
+        hold: 800,
+        duration: 1000,
+        distance: 38,
+        stagger: 70,
+        offset: 18,
+        rotation: -3,
+      },
+    },
+  ],
+  'coastal-reveal': [
+    { id: 'coastOriginal', values: {} },
+    {
+      id: 'coastClear',
+      values: {
+        formation: 500,
+        hold: 200,
+        duration: 500,
+        distance: 8,
+        stagger: 25,
+        blur: 2,
+        startScale: 1.02,
+      },
+    },
+    {
+      id: 'coastDeep',
+      values: {
+        formation: 1300,
+        hold: 900,
+        duration: 1100,
+        distance: 32,
+        stagger: 70,
+        blur: 10,
+        startScale: 1.12,
+      },
+    },
+  ],
   editorial: [
     { id: 'journal', values: {} },
     {
@@ -100,8 +154,14 @@ export const effectPresets = {
   ],
 } as const satisfies Record<EffectId, readonly Preset[]>;
 
+export function presetValues(spec: EffectSpec, values: Record<string, ParameterValue>) {
+  return 'scene' in spec ? { ...values, scene: spec.scene } : values;
+}
+
 export function selectedPreset(spec: EffectSpec) {
   return effectPresets[spec.id].find(
-    (preset) => JSON.stringify(resolveEffect(spec.id, preset.values).spec) === JSON.stringify(spec),
+    (preset) =>
+      JSON.stringify(resolveEffect(spec.id, presetValues(spec, preset.values)).spec) ===
+      JSON.stringify(spec),
   )?.id;
 }
