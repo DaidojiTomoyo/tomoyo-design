@@ -1,0 +1,190 @@
+.ui-range-field,
+.ui-choice-field {
+  min-width: 0;
+}
+.ui-field-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.ui-number-field {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 9px;
+  border: 1px solid var(--control-border, #426aa7);
+  border-radius: 6px;
+  background: var(--action-paper, #fff9ef);
+  font:
+    12px var(--font-mono),
+    monospace;
+  font-variant-numeric: tabular-nums;
+}
+.ui-number-field input {
+  width: 49px;
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: right;
+  appearance: textfield;
+}
+.ui-number-field input::-webkit-inner-spin-button,
+.ui-number-field input::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.ui-number-field:focus-within,
+.ui-select:focus-within {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.ui-number-field input:focus-visible,
+.ui-select select:focus-visible {
+  outline: none;
+}
+.ui-range {
+  display: block;
+  width: 100%;
+  height: 32px;
+  margin: 4px 0 0;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+.ui-range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--ink) var(--range-fill), #c5bec0 var(--range-fill));
+}
+.ui-range::-moz-range-track {
+  height: 4px;
+  border-radius: 4px;
+  background: #c5bec0;
+}
+.ui-range::-moz-range-progress {
+  height: 4px;
+  background: var(--ink);
+}
+.ui-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: -7px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--action-paper, #fff9ef);
+  transition: background 120ms;
+}
+.ui-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--action-paper, #fff9ef);
+}
+.ui-range:hover::-webkit-slider-thumb,
+.ui-range:active::-webkit-slider-thumb {
+  background: var(--active-peach, #ff986e);
+}
+.ui-choice-field {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.ui-choice-field legend {
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.ui-segments {
+  display: flex;
+  padding: 3px;
+  gap: 3px;
+  background: #e8d9cc;
+  border-radius: 7px;
+}
+.ui-segments label {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+.ui-segments input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.ui-segments span {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  transition:
+    color 160ms,
+    background 160ms;
+}
+.ui-segments input:checked + span {
+  color: var(--action-paper, #fff9ef);
+  background: var(--ink);
+}
+.ui-segments input:focus-visible + span {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.ui-segments label:hover span {
+  background: rgb(8 41 126 / 8%);
+}
+.ui-segments label:hover input:checked + span {
+  background: var(--blue);
+}
+.ui-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--control-border, #426aa7);
+  border-radius: 6px;
+  color: var(--ink);
+  background: var(--action-paper, #fff9ef);
+}
+.ui-select select {
+  appearance: none;
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 34px 8px 12px;
+  border: 0 !important;
+  border-radius: inherit;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.ui-select > .icon {
+  position: absolute;
+  right: 10px;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  transform: rotate(90deg);
+}
+@media (max-width: 760px) {
+  .ui-number-field input {
+    font-size: 16px;
+    min-height: 40px;
+  }
+  .ui-segments span {
+    min-height: 44px;
+  }
+}

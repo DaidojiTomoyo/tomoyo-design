@@ -1,0 +1,304 @@
+.effect-canvas {
+  height: 416px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 9px;
+  background: var(--blue);
+}
+.effect-canvas::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--blue-texture) center / cover;
+  opacity: 0.34;
+  pointer-events: none;
+  z-index: -1;
+}
+.effect-target {
+  display: block;
+  width: 290px;
+  max-width: 66%;
+  padding: 14px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  border-radius: 6px;
+}
+.effect-target:focus-visible {
+  outline-color: var(--paper);
+  outline-offset: 4px;
+}
+.effect-sample {
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 14px 14px 19px;
+  border-radius: var(--effect-radius, 8px);
+  box-shadow: 0 20px 32px rgba(4, 25, 72, 0.32);
+  pointer-events: none;
+}
+.effect-print-copy,
+.effect-glass-copy {
+  display: block;
+}
+.effect-glass-copy {
+  padding: 12px;
+  background: rgb(247 232 216 / 94%);
+  border-radius: 4px;
+}
+.effect-demo[data-effect='soft-reveal'] .effect-canvas {
+  background: #c3d2de;
+}
+.effect-demo[data-effect='soft-reveal'] .effect-canvas::before {
+  opacity: 0.2;
+}
+.effect-demo[data-effect='soft-reveal'] .effect-sample {
+  padding: 32px 24px;
+}
+.effect-demo[data-effect='soft-reveal'] .effect-sample-title {
+  font-size: 64px;
+  line-height: 1;
+  margin-top: 0;
+}
+.effect-demo[data-effect='soft-reveal'] .effect-sample-note {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #7481a5;
+}
+.effect-artwork {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.85;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+.effect-sample-title {
+  display: block;
+  font:
+    400 35px/1.1 var(--font-display),
+    sans-serif;
+  letter-spacing: -0.02em;
+  margin-top: 15px;
+}
+.effect-sample-note {
+  display: block;
+  font:
+    400 10px/1.5 var(--font-mono),
+    monospace;
+  margin-top: 9px;
+}
+.effect-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.effect-demo[data-effect='frosted-glass'] .effect-canvas::before {
+  display: none;
+}
+.effect-demo[data-effect='frosted-glass'] .effect-sample {
+  position: relative;
+  background: rgba(247, 232, 216, 0.86);
+  backdrop-filter: blur(var(--effect-blur)) saturate(var(--effect-saturation));
+  padding: 30px 24px;
+}
+.effect-demo[data-effect='frosted-glass'] .effect-sample::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(255 249 239 / var(--effect-border, 0.7));
+  border-radius: inherit;
+  pointer-events: none;
+}
+.effect-demo[data-effect='frosted-glass'] .effect-sample-title {
+  margin-top: 0;
+}
+.effect-hint {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--paper);
+  background: rgb(8 41 126 / 88%);
+  padding: 3px 6px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+.effect-preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+.effect-preview-footer p {
+  font-size: 11px;
+  color: var(--catalog-muted);
+  margin: 0;
+  text-align: right;
+}
+.effect-preview-footer button {
+  min-width: 146px;
+}
+.effect-demo-compact .effect-canvas {
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 264px;
+  aspect-ratio: 1.28;
+  grid-template-rows: minmax(0, 1fr) 44px;
+}
+.effect-demo-compact .effect-target {
+  grid-row: 1;
+  width: 60%;
+  max-width: 280px;
+  padding: 8px;
+}
+.effect-demo-compact .effect-sample {
+  padding: 10px 10px 12px;
+}
+.effect-demo-compact .effect-sample-title {
+  font-size: 25px;
+  margin-top: 11px;
+}
+.effect-demo-compact .effect-sample-note {
+  font-size: 9px;
+  margin-top: 5px;
+}
+.effect-demo-compact[data-effect='soft-reveal'] .effect-artwork {
+  aspect-ratio: 2.8;
+}
+.effect-demo-compact[data-effect='soft-reveal'] .effect-sample {
+  padding: 24px;
+}
+.effect-demo-compact[data-effect='soft-reveal'] .effect-sample-title {
+  font-size: 48px;
+}
+.effect-demo-compact[data-effect='soft-reveal'] .effect-sample-note {
+  margin-top: 12px;
+  padding-top: 10px;
+}
+.effect-demo-compact[data-effect='frosted-glass'] .effect-target {
+  width: 78%;
+  max-width: 300px;
+}
+.effect-demo-compact[data-effect='frosted-glass'] .effect-sample {
+  padding: 27px 20px;
+}
+.effect-demo-compact[data-effect='frosted-glass'] .effect-sample-title {
+  font-size: 29px;
+  margin-top: 0;
+}
+.effect-demo-compact .effect-hint {
+  position: static;
+  font-size: 10px;
+}
+.effect-trigger {
+  grid-row: 2;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  margin-inline: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.effect-trigger:focus-visible {
+  outline-color: var(--paper);
+  outline-offset: 0;
+}
+.effect-image-error {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
+}
+.effect-image-error button {
+  padding: 10px 14px;
+  min-height: 44px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .effect-demo[data-effect='frosted-glass'] .effect-sample {
+    background: var(--paper);
+  }
+}
+@media (max-width: 1150px) {
+  .effect-canvas {
+    height: 380px;
+  }
+}
+@media (max-width: 760px) {
+  .effect-canvas {
+    height: 248px;
+  }
+  .effect-target {
+    width: 204px;
+    max-width: 65%;
+    padding: 12px;
+  }
+  .effect-sample {
+    padding: 9px 9px 12px;
+  }
+  .effect-sample-title {
+    font-size: 23px;
+    margin-top: 10px;
+  }
+  .effect-demo:not(.effect-demo-compact)[data-effect='soft-reveal'] .effect-sample-title {
+    font-size: 40px;
+  }
+  .effect-demo:not(.effect-demo-compact)[data-effect='soft-reveal'] .effect-sample {
+    padding: 20px 16px;
+  }
+  .effect-demo:not(.effect-demo-compact)[data-effect='frosted-glass'] .effect-sample {
+    padding: 20px 14px;
+  }
+  .effect-sample-note {
+    font-size: 8px;
+    margin-top: 5px;
+  }
+  .effect-hint {
+    font-size: 10px;
+    left: 12px;
+    bottom: 12px;
+  }
+  .effect-preview-footer p {
+    font-size: 10px;
+  }
+  .effect-demo-compact .effect-canvas {
+    aspect-ratio: 1.5;
+  }
+  .effect-demo-compact .effect-target {
+    width: 192px;
+    max-width: 65%;
+  }
+  .effect-demo-compact .effect-sample-title {
+    font-size: 23px;
+  }
+}
+@media (max-width: 360px) {
+  .effect-demo-compact .effect-canvas {
+    aspect-ratio: 1.3;
+  }
+}
