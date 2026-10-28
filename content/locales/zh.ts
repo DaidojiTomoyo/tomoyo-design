@@ -70,12 +70,12 @@ export const zh: HomeMessages = {
       {
         title: '动效',
         description: ['元素如何移动，', '如何回应你的操作。'],
-        examples: ['悬浮抬升', '滑入', '淡入', '视差'],
+        examples: ['悬浮抬升', '柔和渐显', '淡入', '视差'],
       },
       {
         title: '风格',
         description: ['文字和元素', '怎样改变外观。'],
-        examples: ['柔和渐显', '下划线延展', '由虚到实', '悬停缩放'],
+        examples: ['下划线延展', '由虚到实', '悬停缩放'],
       },
       {
         title: '材质',

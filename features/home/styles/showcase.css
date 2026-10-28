@@ -1,0 +1,218 @@
+.home-showcase {
+  margin: 72px 40px 52px;
+}
+.home-showcase-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+.home-showcase h2 {
+  font:
+    700 42px/1.2 var(--font-heading),
+    sans-serif;
+  max-width: 20ch;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-wrap: balance;
+}
+.home-showcase:lang(zh-Hans) h2 {
+  font:
+    900 34px/1.4 var(--font-cjk),
+    sans-serif;
+  max-width: 12em;
+}
+.home-showcase-heading p {
+  max-width: 32ch;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+.home-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+.home-showcase-grid article {
+  min-width: 0;
+}
+.home-showcase-grid article > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 54px;
+  text-decoration: none;
+}
+.home-showcase-grid a:hover h3 {
+  text-decoration: underline;
+}
+.home-showcase-grid h3 {
+  font-size: 17px;
+  margin: 0;
+}
+.home-showcase-grid article > p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+.home-category-links {
+  display: flex;
+  gap: 32px;
+  padding-top: 28px;
+  margin-top: 28px;
+  border-top: 1px solid var(--divider);
+}
+.home-category-links a {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  min-height: 44px;
+  font-size: 13px;
+}
+.home-library-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--paper);
+  background: var(--ink);
+  border-radius: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-library-link:hover {
+  background: var(--blue);
+}
+.home-quick-controls {
+  position: absolute;
+  right: 3.2%;
+  top: 22%;
+  width: 17%;
+  color: var(--paper);
+}
+.home-quick-controls > p {
+  font-size: 15px;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+.home-quick-controls .ui-range-field {
+  margin: 0 0 14px;
+}
+.home-quick-controls .ui-field-heading {
+  font-size: 11px;
+  gap: 4px;
+}
+.home-quick-controls .ui-number-field {
+  color: var(--ink);
+  padding: 0 5px;
+  border: 0;
+}
+.home-quick-controls .ui-number-field input {
+  width: 34px;
+  min-height: 32px;
+  font-size: 11px;
+}
+.home-quick-controls > span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+.home-quick-controls .ui-range::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    var(--active-peach, #ff986e) var(--range-fill),
+    #708ec4 var(--range-fill)
+  );
+}
+.home-quick-controls .ui-range::-moz-range-progress {
+  background: var(--active-peach, #ff986e);
+}
+@media (max-width: 1100px) {
+  .home-quick-controls {
+    position: relative;
+    inset: auto;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+    margin: 0 32px;
+    padding: 22px 0;
+  }
+  .home-quick-controls > p {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .home-quick-controls > span {
+    display: none;
+  }
+  .home-quick-controls .ui-range-field {
+    margin: 0;
+  }
+  .preview-stage {
+    height: 580px;
+  }
+  .home-quick-controls {
+    top: 390px;
+  }
+  .home-showcase {
+    margin-inline: 28px;
+  }
+  .home-showcase-heading {
+    display: block;
+  }
+  .home-showcase-heading p {
+    margin-top: 16px;
+    max-width: 52ch;
+  }
+}
+@media (max-width: 900px) {
+  .preview-stage {
+    height: auto;
+  }
+  .home-quick-controls {
+    top: auto;
+    margin: 0;
+    padding: 16px 0 0;
+    border-top: 1px solid #708ec4;
+  }
+  .home-quick-controls > p {
+    font-size: 14px;
+  }
+  .home-quick-controls .ui-field-heading {
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+  .home-quick-controls .ui-number-field input {
+    font-size: 16px;
+    min-height: 40px;
+    width: 46px;
+  }
+  .home-library-link {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    justify-self: start;
+  }
+  .home-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .home-showcase {
+    margin: 50px 20px 36px;
+  }
+  .home-showcase h2 {
+    font-size: 36px;
+  }
+  .home-showcase:lang(zh-Hans) h2 {
+    font-size: 28px;
+  }
+  .home-category-links {
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+}

@@ -181,6 +181,16 @@
   text-transform: uppercase;
 }
 
+.preview-guidance a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 32px;
+  margin-inline-start: 1em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 @media (max-width: 1400px) {
   .copy-label-long {
     display: none;

@@ -7,6 +7,7 @@ import paperGrain from '@/assets/plates/paper-grain.png';
 import blueGrain from '@/assets/plates/blue-grain.png';
 import { notFound } from 'next/navigation';
 import { getMessages, isLocale, locales } from '@/content/locales';
+import { PageTransition } from '@/components/motion/page-transition';
 import '../globals.css';
 
 const display = localFont({
@@ -129,7 +130,7 @@ export default async function RootLayout({
             </filter>
           </defs>
         </svg>
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Analytics />
       </body>
     </html>

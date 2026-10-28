@@ -22,7 +22,7 @@
   grid-template-rows: minmax(0, 1fr);
   gap: calc(33 * var(--unit));
   padding: calc(33 * var(--unit));
-  border-radius: inherit;
+  border-radius: var(--sample-radius, inherit);
   background: var(--paper) var(--paper-texture) repeat;
   background-size: 630px;
   box-shadow: var(--resting-shadow);
@@ -45,7 +45,7 @@
 .sample-card[data-effect='frosted-glass'] .sample-surface::before {
   position: absolute;
   inset: 0;
-  border: 1px solid rgb(255 249 239 / 70%);
+  border: 1px solid rgb(255 249 239 / var(--glass-border-opacity, 0.7));
   border-radius: inherit;
   pointer-events: none;
   content: '';
@@ -63,6 +63,11 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
+}
+.sample-card[data-effect='frosted-glass'] .sample-copy {
+  background: rgb(247 232 216 / 94%);
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .sample-heading {

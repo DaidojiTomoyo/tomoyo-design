@@ -1,4 +1,6 @@
 import './styles/index.css';
+import Link from 'next/link';
+import { getCatalogMessages } from '@/content/catalog';
 import { EffectExperience } from '@/features/home/effects/effect-experience';
 import { LanguageSwitch } from '@/components/navigation/language-switch';
 import { LocalizedText } from '@/components/motion/localized-text';
@@ -27,7 +29,7 @@ export function HomeContent({
           <span className="wordmark-type">TOMOYO DESIGN</span>
         </a>
         <nav aria-label={t.nav.label}>
-          <a href="#effects">{t.nav.effects}</a>
+          <Link href={`/${locale}/explore`}>{getCatalogMessages(locale).library}</Link>
           <a href="#how-it-works">{t.nav.how}</a>
         </nav>
         <LanguageSwitch locale={locale} />

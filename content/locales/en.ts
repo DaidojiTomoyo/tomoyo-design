@@ -71,12 +71,12 @@ export const en = {
       {
         title: 'Motion',
         description: ['How elements move', 'and respond to input.'],
-        examples: ['Hover lift', 'Slide in', 'Fade in', 'Parallax'],
+        examples: ['Hover lift', 'Soft reveal', 'Fade in', 'Parallax'],
       },
       {
         title: 'Style',
         description: ['How text and elements', 'change their appearance.'],
-        examples: ['Soft reveal', 'Underline grow', 'Blur to sharp', 'Scale on hover'],
+        examples: ['Underline grow', 'Blur to sharp', 'Scale on hover'],
       },
       {
         title: 'Material',

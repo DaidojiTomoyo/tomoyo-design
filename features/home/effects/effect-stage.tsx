@@ -1,4 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { Icon } from '@/components/ui/icon';
+import { RangeField } from '@/components/ui/range-field';
+import { controlCopy } from '@/content/effects/control-copy';
+import {
+  parameters,
+  parameterValue,
+  type EffectSpec,
+  type ParameterKey,
+} from '@/content/effects/schema';
 import type { RefObject } from 'react';
 import coastPrint from '@/assets/plates/coast-print.png';
 import { LocalizedText } from '@/components/motion/localized-text';
@@ -10,6 +20,8 @@ export function EffectStage({
   locale,
   direction,
   selectedId,
+  spec,
+  onParameterChange,
   onSelect,
   onReplay,
   sampleRef,
@@ -18,6 +30,8 @@ export function EffectStage({
   locale: Locale;
   direction: MotionDirection;
   selectedId: EffectId;
+  spec: EffectSpec;
+  onParameterChange: (key: ParameterKey, value: number) => void;
   onSelect: (id: EffectId) => void;
   onReplay: () => void;
   sampleRef: RefObject<HTMLButtonElement | null>;
@@ -27,6 +41,10 @@ export function EffectStage({
   const homeEffects = getHomeEffects(locale);
   const active = homeEffects.find((effect) => effect.id === selectedId)!;
   const index = homeEffects.indexOf(active) + 1;
+  const quickKeys = selectedId === 'frosted-glass' ? ['blur', 'opacity'] : ['distance', 'duration'];
+  const c = controlCopy[locale];
+  const headline =
+    locale === 'zh' ? ['试试效果，', '再复制提示词。'] : ['Try an effect.', 'Get the prompt.'];
   return (
     <>
       <div className="sheet-heading">
@@ -36,14 +54,17 @@ export function EffectStage({
         </span>
         <LocalizedText id="page-title" locale={locale} direction={direction}>
           <h1 id="page-title" data-locale-text>
-            {t.preview.title}
+            {headline.map((line) => (
+              <span className="sheet-headline-line" key={line}>
+                {line}
+              </span>
+            ))}
           </h1>
         </LocalizedText>
-        <LocalizedText id="sheet-note" locale={locale} direction={direction}>
-          <p className="sheet-note" data-locale-text>
-            {t.preview.note}
-          </p>
-        </LocalizedText>
+        <Link className="home-library-link" href={`/${locale}/explore`}>
+          {locale === 'zh' ? '浏览效果库' : 'Browse effects'}
+          <Icon name="arrow" />
+        </Link>
         <span className="registration-mark registration-end" aria-hidden="true" />
       </div>
       <div className="preview-stage" data-effect={selectedId}>
@@ -69,16 +90,6 @@ export function EffectStage({
             </button>
           ))}
         </div>
-        <LocalizedText id="stage-caption" locale={locale} direction={direction}>
-          <p className="stage-caption" data-locale-text>
-            {t.preview.caption.map((line) => (
-              <span key={line}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </p>
-        </LocalizedText>
         <div className="rest-outline" aria-hidden="true" />
 
         <Image
@@ -130,11 +141,28 @@ export function EffectStage({
             </span>
           </span>
         </button>
-        <p className="stage-footer">
-          {t.preview.label}
-          <br />
-          {active.name}
-        </p>
+        <div className="home-quick-controls">
+          <p>{locale === 'zh' ? '自己调一下' : 'Make it yours'}</p>
+          {parameters[selectedId]
+            .filter((parameter) => quickKeys.includes(parameter.key))
+            .map(
+              (parameter) =>
+                parameter.type === 'range' && (
+                  <RangeField
+                    key={parameter.key}
+                    id={`home-${parameter.key}`}
+                    label={c[parameter.key]}
+                    min={parameter.min}
+                    max={parameter.max}
+                    step={parameter.step}
+                    unit={parameter.unit}
+                    value={Number(parameterValue(spec, parameter.key))}
+                    onChange={(value) => onParameterChange(parameter.key, value)}
+                  />
+                ),
+            )}
+          <span>{locale === 'zh' ? '提示词也会跟着变。' : 'The prompt changes with you.'}</span>
+        </div>
         <p id="preview-instructions" className="sr-only">
           {active.hint}
         </p>

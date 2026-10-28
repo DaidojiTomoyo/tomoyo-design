@@ -18,7 +18,8 @@
 .sheet-heading {
   position: relative;
   display: flex;
-  height: calc(65 * var(--unit));
+  min-height: 136px;
+  gap: 24px;
   align-items: center;
   padding: 0 calc(66 * var(--unit));
 }
@@ -35,12 +36,16 @@
 }
 
 .sheet-heading h1 {
-  margin: 0 0 0 calc(32 * var(--unit));
+  margin: 0;
+  max-width: 18ch;
   font-family: var(--font-heading), sans-serif;
-  font-size: calc(34 * var(--unit));
+  font-size: clamp(36px, 3.4vw, 54px);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.005em;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+.sheet-headline-line {
+  display: block;
 }
 
 .sheet-note {
@@ -85,7 +90,7 @@
 
 @media (max-width: 1100px) {
   .sheet-heading {
-    height: 76px;
+    min-height: 120px;
     padding-inline: 40px;
   }
   .sheet-index {
@@ -93,7 +98,7 @@
     padding-right: 20px;
   }
   .sheet-heading h1 {
-    margin-left: 20px;
+    margin-left: 0;
     font-size: 30px;
   }
   .sheet-note {
@@ -165,6 +170,8 @@
   font-family: var(--font-cjk), sans-serif;
   font-weight: 900;
   letter-spacing: -0.02em;
+  max-width: 10em;
+  line-height: 1.35;
 }
 @media (max-width: 900px) {
   :lang(zh-Hans) .sheet-heading h1 {

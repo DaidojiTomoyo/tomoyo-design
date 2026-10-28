@@ -1,4 +1,5 @@
 import { Icon } from '@/components/ui/icon';
+import { SelectField } from '@/components/ui/select-field';
 import { formatMessage as f, getMessages, type Locale } from '@/content/locales';
 import type { getHomeEffects } from '@/content/home-effects';
 import type { PromptCopy } from './use-prompt-copy';
@@ -22,7 +23,6 @@ export function PromptDetails({
   const { copyState, detailsRef, promptRef } = copy;
   return (
     <div className="prompt-workspace">
-      <p className="index-note">{t.categories.note}</p>
       <p className="motion-quiet-note">{t.prompt.reduced}</p>
       <details className="full-prompt" id="full-prompt" ref={detailsRef}>
         <summary>
@@ -33,7 +33,7 @@ export function PromptDetails({
             <label htmlFor="prompt-text">{f(t.prompt.ready, { name: active.name })}</label>
             <label className="prompt-language">
               {t.prompt.language}
-              <select
+              <SelectField
                 aria-label={t.prompt.language}
                 value={promptLocale}
                 onChange={(event) => {
@@ -47,7 +47,7 @@ export function PromptDetails({
                 <option value="zh" lang="zh-Hans">
                   简体中文
                 </option>
-              </select>
+              </SelectField>
             </label>
           </div>
           {copyState === 'error' ? (

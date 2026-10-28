@@ -1,4 +1,4 @@
-import { studyMotion as t, type MotionDirection } from '@/content/motion-studies';
+import type { MotionDirection } from '@/content/motion-studies';
 import type { MotionRuntime } from './animation-runtime';
 
 export function observeScrollMotion(
@@ -18,34 +18,7 @@ export function observeScrollMotion(
         observer.unobserve(entry.target);
         if (reduced.matches) continue;
         const element = entry.target;
-        if (element.matches('.category')) {
-          const heading = element.querySelector('.category-title');
-          const frames =
-            direction === 'press'
-              ? [
-                  { clipPath: 'inset(0 100% 0 0)', transform: 'translateX(-12px)' },
-                  { clipPath: 'inset(0)', transform: 'translateX(0)' },
-                ]
-              : direction === 'type'
-                ? [
-                    { transform: 'translateY(85%) rotate(3deg)', opacity: 0 },
-                    { transform: 'translateY(0) rotate(0)', opacity: 1 },
-                  ]
-                : [
-                    { filter: 'blur(4px)', opacity: 0.3 },
-                    { filter: 'blur(0)', opacity: 1 },
-                  ];
-          animate(heading, frames, t.scroll);
-          animate(
-            element.querySelector('h2 > span:last-child'),
-            [
-              { opacity: 0.3, transform: 'translateY(-12px)' },
-              { opacity: 1, transform: 'translateY(0)' },
-            ],
-            400,
-            100,
-          );
-        } else if (element.matches('.guide-intro')) {
+        if (element.matches('.guide-intro')) {
           element.querySelectorAll('.guide-title-line').forEach((line, index) =>
             animate(
               line,
@@ -80,7 +53,7 @@ export function observeScrollMotion(
     { threshold: 0.2 },
   );
   root
-    .querySelectorAll('.category, .guide-intro, .guide-steps li')
+    .querySelectorAll('.guide-intro, .guide-steps li')
     .forEach((element) => observer.observe(element));
 
   function scroll() {
