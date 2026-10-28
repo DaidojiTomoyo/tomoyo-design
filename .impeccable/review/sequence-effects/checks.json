@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "scope": [
+    "overprint",
+    "coastal-reveal"
+  ],
+  "checks": {
+    "pnpm check": "passed (ESLint, Prettier, TypeScript, 8 message namespaces)",
+    "pnpm test": {
+      "passed": 57,
+      "failed": 0
+    },
+    "pnpm build": "passed after final application copy change",
+    "git diff --check": "passed"
+  },
+  "fonts": {
+    "characters": 665,
+    "bytes": 186972,
+    "missing": 0,
+    "priorCharactersPreserved": true
+  },
+  "browser": {
+    "widths": [
+      1440,
+      1280,
+      390,
+      320
+    ],
+    "consoleWarningsAndErrors": 0
+  },
+  "limitations": [
+    "Resource failures and runtime reduced-motion preferences verified in unit harness, not browser emulation",
+    "No real mobile device or cross-browser matrix",
+    "No external AI prompt reproduction comparison"
+  ]
+}

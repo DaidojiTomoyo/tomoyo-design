@@ -1,0 +1,15 @@
+{
+  "copiedPromptMatches": true,
+  "sharedURL": "http://127.0.0.1:3002/en/effects/coastal-reveal?v=1&prompt=en&scene=text-swap&formation=500&hold=200&duration=500&stagger=25&distance=8&blur=2&startScale=1.02",
+  "languageSwitch": {
+    "prompt": "en",
+    "scene": "text-swap",
+    "ui": "zh-Hans",
+    "url": "http://127.0.0.1:3002/zh/effects/coastal-reveal?v=1&prompt=en&scene=text-swap&formation=500&hold=200&duration=500&stagger=25&distance=8&blur=2&startScale=1.02"
+  },
+  "promptSwitch": {
+    "prompt": "zh",
+    "scene": "text-swap",
+    "ui": "zh-Hans"
+  }
+}

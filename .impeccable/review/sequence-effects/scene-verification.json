@@ -1,0 +1,32 @@
+[
+  {
+    "activeText": [
+      "An afternoon by the seaI sat on a rock and tipped the sand out of my shoes."
+    ],
+    "effect": "overprint",
+    "phase": "playing",
+    "scene": "entrance"
+  },
+  {
+    "activeText": [
+      "An afternoon by the seaI sat on a rock and tipped the sand out of my shoes."
+    ],
+    "effect": "coastal-reveal",
+    "phase": "playing",
+    "scene": "entrance"
+  },
+  {
+    "activeText": [
+      "海边的一下午我在礁石边坐下，倒了倒鞋里的沙。"
+    ],
+    "effect": "overprint",
+    "phase": "playing",
+    "scene": "text-swap"
+  },
+  {
+    "effect": "overprint",
+    "pageScroll": 139,
+    "previewScroll": 309,
+    "scene": "scroll"
+  }
+]

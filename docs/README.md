@@ -11,13 +11,14 @@
 | [设计规范](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/DESIGN.md)                                                           | 已确认的视觉身份、共享控件与导航规则                     | 当前系统依据                            |
 | [首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)                                   | 首版已选图稿、首页范围、交互要求与方向约定               | 保留身份来源与历史决策                  |
 | [首页验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-validation.md)                                     | 首版首页浏览器检查、构建结果与未覆盖范围                 | 历史验证证据                            |
-| [首页动效方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-motion-studies.md)                                 | 已采用的活字排版、预览入口与动画库预留                   | 首页已采用；另两种待入库                |
+| [首页动效方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-motion-studies.md)                                 | 已采用的活字排版、预览入口与动画库预留                   | 首页已采用；另两种已收入效果库          |
 | [效果库与详情页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-design-brief.md)                  | 首轮已批准分类结构、目录与详情约定、手机重排及历史草图   | 首轮已实现                              |
 | [效果库验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-validation.md)                            | 首轮功能、生产页面、截图证据和未覆盖范围                 | 首轮修正已验收                          |
 | [体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)                                | 首页展示、目录尺度、共享控件、特有效果参数与连续性       | 本次实现范围                            |
 | [体验升级验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-validation.md)                       | 本次检查、修正复验、审查状态与验证限制                   | 最终状态以记录为准                      |
 | [分类导航与参数动效修正](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/catalog-motion-refinement.md)                     | 侧栏闪烁修复、连续导航与参数选项动效及验证证据           | 本轮窄修已审查通过                      |
 | [效果内容扩充](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-expansion.md)                                       | 杂志编辑风格与便当盒布局的参数、实现顺序及验证           | 两项样例已接入，保留验证边界            |
+| [序列效果入库](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/sequence-effects.md)                                        | 套色印刷与海岸显影的场景、参数、播放逻辑与验证           | 两项已接入；验证边界见记录              |
 | [架构方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/architecture.md)                                                | 当前服务端渲染边界、模块职责、内容模型与后续规划         | 首页与效果库已按职责拆分                |
 | [国际化实现](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/internationalization.md)                                      | next-intl 消息加载、语言路由、提示词语言、SEO 与维护方式 | 工程、核心流程与 SEO 已验证，限制见记录 |
 | [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)                                     | 竞品结论、首页、路由职责、页面布局、响应式和动效         | 设计草案                                |
@@ -40,6 +41,7 @@ docs/
   architecture.md
   internationalization.md
   effects-expansion.md
+  sequence-effects.md
   experience-design.md
   homepage-design-brief.md
   homepage-motion-studies.md

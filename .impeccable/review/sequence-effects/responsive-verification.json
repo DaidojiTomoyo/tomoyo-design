@@ -1,0 +1,234 @@
+[
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/desktop-press-zh.png",
+    "documentWidth": 1440,
+    "fonts": "loaded",
+    "height": 1893,
+    "images": [
+      {
+        "alt": "蓝色丝网套色海岸插画",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "opening",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 91,
+        "hidden": "false",
+        "scroll": 335,
+        "scrollHeight": 91,
+        "width": 335
+      }
+    ],
+    "url": "http://127.0.0.1:3002/zh/effects/overprint",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/mobile-press-en-320.png",
+    "documentWidth": 320,
+    "fonts": "loaded",
+    "height": 2471,
+    "images": [
+      {
+        "alt": "Blue screenprint of a coastline",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "entrance",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 122,
+        "hidden": "false",
+        "scroll": 224,
+        "scrollHeight": 122,
+        "width": 224
+      }
+    ],
+    "url": "http://127.0.0.1:3002/en/effects/overprint?scene=entrance",
+    "viewport": [
+      320,
+      800
+    ]
+  },
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/mobile-coast-zh-390.png",
+    "documentWidth": 390,
+    "fonts": "loaded",
+    "height": 2192,
+    "images": [
+      {
+        "alt": "蓝色丝网套色海岸插画",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "text-swap",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 91,
+        "hidden": "false",
+        "scroll": 294,
+        "scrollHeight": 91,
+        "width": 294
+      },
+      {
+        "height": 91,
+        "hidden": "true",
+        "scroll": 294,
+        "scrollHeight": 91,
+        "width": 294
+      }
+    ],
+    "url": "http://127.0.0.1:3002/zh/effects/coastal-reveal?scene=text-swap",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/mobile-coast-swap-zh-390.png",
+    "documentWidth": 390,
+    "fonts": "loaded",
+    "height": 2145,
+    "images": [
+      {
+        "alt": "蓝色丝网套色海岸插画",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "text-swap",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 91,
+        "hidden": "true",
+        "scroll": 294,
+        "scrollHeight": 91,
+        "width": 294
+      },
+      {
+        "height": 91,
+        "hidden": "false",
+        "scroll": 294,
+        "scrollHeight": 91,
+        "width": 294
+      }
+    ],
+    "url": "http://127.0.0.1:3002/zh/effects/coastal-reveal?scene=text-swap",
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/desktop-coast-en.png",
+    "documentWidth": 1440,
+    "fonts": "loaded",
+    "height": 1750,
+    "images": [
+      {
+        "alt": "Blue screenprint of a coastline",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "scroll",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 83,
+        "hidden": "false",
+        "scroll": 690,
+        "scrollHeight": 83,
+        "width": 690
+      }
+    ],
+    "url": "http://127.0.0.1:3002/en/effects/coastal-reveal?scene=scroll",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/desktop-coast-scroll-en.png",
+    "documentWidth": 1440,
+    "fonts": "loaded",
+    "height": 1717,
+    "images": [
+      {
+        "alt": "Blue screenprint of a coastline",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "scroll",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 83,
+        "hidden": "false",
+        "scroll": 690,
+        "scrollHeight": 83,
+        "width": 690
+      }
+    ],
+    "url": "http://127.0.0.1:3002/en/effects/coastal-reveal?scene=scroll",
+    "viewport": [
+      1440,
+      1000
+    ]
+  },
+  {
+    "file": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/sequence-effects/user-1280-catalog-zh.png",
+    "documentWidth": 1280,
+    "fonts": "loaded",
+    "height": 1519,
+    "images": [
+      {
+        "alt": "蓝色丝网套色海岸插画",
+        "ready": true
+      },
+      {
+        "alt": "蓝色丝网套色海岸插画",
+        "ready": true
+      },
+      {
+        "alt": "",
+        "ready": true
+      }
+    ],
+    "phase": "idle",
+    "scene": "opening",
+    "scrollY": 0,
+    "text": [
+      {
+        "height": 31,
+        "hidden": "false",
+        "scroll": 249,
+        "scrollHeight": 33,
+        "width": 249
+      },
+      {
+        "height": 31,
+        "hidden": "false",
+        "scroll": 249,
+        "scrollHeight": 33,
+        "width": 249
+      }
+    ],
+    "url": "http://127.0.0.1:3002/zh/explore/motion",
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+]

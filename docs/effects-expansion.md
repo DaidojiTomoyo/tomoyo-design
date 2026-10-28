@@ -75,3 +75,7 @@
 中文字体另补 24 个字形，共 614 个请求字符、179004 字节；旧字形全部保留，新旧字符均通过 fontkit 覆盖检查。
 
 `pnpm check` 通过。沙箱内的 `pnpm build` 在编译阶段超过九分钟未完成，停止该进程后在沙箱外重跑通过。浏览器核对中文杂志 1440px、中文便当盒 390px、英文杂志 390px 和英文总览 1280px，默认参数下的新标题、正文及缩略图均未出现文字溢出或裁切。详见[本次检查数据](../.impeccable/review/effects-expansion/copy-research-verification.json)和[杂志文案预览](../.impeccable/review/effects-expansion/copy-research-editorial-preview.png)。
+
+## 后续入库
+
+2026-10-28 继续增加套色印刷与海岸显影，详见 [序列效果入库](sequence-effects.md)。上文五项效果与待入库状态均为前一轮交付记录；当前库内共有七项。
