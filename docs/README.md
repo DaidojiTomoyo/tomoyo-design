@@ -4,25 +4,26 @@
 
 ## 阅读入口
 
-| 文档                                                                                                                              | 职责                                                   | 状态                     |
-| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------ |
-| [项目说明](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/README.md)                                                           | 环境、启动命令、检查命令与工程目录                     | 对应当前工程             |
-| [产品上下文](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/PRODUCT.md)                                                        | 已确认的用户、目标、约束与待定事项；供 Impeccable 读取 | 已从对话整理             |
-| [设计规范](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/DESIGN.md)                                                           | 已确认的视觉身份、共享控件与导航规则                   | 当前系统依据             |
-| [首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)                                   | 首版已选图稿、首页范围、交互要求与方向约定             | 保留身份来源与历史决策   |
-| [首页验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-validation.md)                                     | 首版首页浏览器检查、构建结果与未覆盖范围               | 历史验证证据             |
-| [首页动效方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-motion-studies.md)                                 | 已采用的活字排版、预览入口与动画库预留                 | 首页已采用；另两种待入库 |
-| [效果库与详情页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-design-brief.md)                  | 首轮已批准分类结构、目录与详情约定、手机重排及历史草图 | 首轮已实现               |
-| [效果库验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-validation.md)                            | 首轮功能、生产页面、截图证据和未覆盖范围               | 首轮修正已验收           |
-| [体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)                                | 首页展示、目录尺度、共享控件、特有效果参数与连续性     | 本次实现范围             |
-| [体验升级验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-validation.md)                       | 本次检查、修正复验、审查状态与验证限制                 | 最终状态以记录为准       |
-| [分类导航与参数动效修正](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/catalog-motion-refinement.md)                     | 侧栏闪烁修复、连续导航与参数选项动效及验证证据         | 本轮窄修已审查通过       |
-| [架构方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/architecture.md)                                                | 当前服务端渲染边界、模块职责、内容模型与后续规划       | 首页与效果库已按职责拆分 |
-| [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)                                     | 竞品结论、首页、路由职责、页面布局、响应式和动效       | 设计草案                 |
-| [视觉风格与动效词汇手册](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/ui-style-motion-glossary.md)                      | 效果分类与描述词汇，作为内容参考                       | 原始正文保留             |
-| [React Bits 分类目录观察](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-28/reactbits-catalog-review.md) | 指定参考的实际浏览、分类结构与本项目采用方式           | 本轮研究依据             |
-| [首页与参数面板参考观察](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-28/home-and-parameter-review.md) | React Bits、21st.dev 的真实演示与参数组织观察          | 本次升级研究依据         |
-| [竞品浏览原始记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-26/capture-notes.md)                   | 实际浏览步骤、观察范围与截图说明                       | 历史研究证据             |
+| 文档                                                                                                                              | 职责                                                     | 状态                                    |
+| --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------- |
+| [项目说明](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/README.md)                                                           | 环境、启动命令、检查命令与工程目录                       | 对应当前工程                            |
+| [产品上下文](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/PRODUCT.md)                                                        | 已确认的用户、目标、约束与待定事项；供 Impeccable 读取   | 已从对话整理                            |
+| [设计规范](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/DESIGN.md)                                                           | 已确认的视觉身份、共享控件与导航规则                     | 当前系统依据                            |
+| [首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)                                   | 首版已选图稿、首页范围、交互要求与方向约定               | 保留身份来源与历史决策                  |
+| [首页验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-validation.md)                                     | 首版首页浏览器检查、构建结果与未覆盖范围                 | 历史验证证据                            |
+| [首页动效方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-motion-studies.md)                                 | 已采用的活字排版、预览入口与动画库预留                   | 首页已采用；另两种待入库                |
+| [效果库与详情页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-design-brief.md)                  | 首轮已批准分类结构、目录与详情约定、手机重排及历史草图   | 首轮已实现                              |
+| [效果库验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-validation.md)                            | 首轮功能、生产页面、截图证据和未覆盖范围                 | 首轮修正已验收                          |
+| [体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)                                | 首页展示、目录尺度、共享控件、特有效果参数与连续性       | 本次实现范围                            |
+| [体验升级验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-validation.md)                       | 本次检查、修正复验、审查状态与验证限制                   | 最终状态以记录为准                      |
+| [分类导航与参数动效修正](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/catalog-motion-refinement.md)                     | 侧栏闪烁修复、连续导航与参数选项动效及验证证据           | 本轮窄修已审查通过                      |
+| [架构方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/architecture.md)                                                | 当前服务端渲染边界、模块职责、内容模型与后续规划         | 首页与效果库已按职责拆分                |
+| [国际化实现](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/internationalization.md)                                      | next-intl 消息加载、语言路由、提示词语言、SEO 与维护方式 | 工程、核心流程与 SEO 已验证，限制见记录 |
+| [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)                                     | 竞品结论、首页、路由职责、页面布局、响应式和动效         | 设计草案                                |
+| [视觉风格与动效词汇手册](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/ui-style-motion-glossary.md)                      | 效果分类与描述词汇，作为内容参考                         | 原始正文保留                            |
+| [React Bits 分类目录观察](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-28/reactbits-catalog-review.md) | 指定参考的实际浏览、分类结构与本项目采用方式             | 本轮研究依据                            |
+| [首页与参数面板参考观察](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-28/home-and-parameter-review.md) | React Bits、21st.dev 的真实演示与参数组织观察            | 本次升级研究依据                        |
+| [竞品浏览原始记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-26/capture-notes.md)                   | 实际浏览步骤、观察范围与截图说明                         | 历史研究证据                            |
 
 新加入项目时，先读项目说明与产品上下文，再按任务读取架构或页面方案。制作效果内容时使用词汇手册；查验竞品结论时阅读原始记录与同目录截图。
 
@@ -36,6 +37,7 @@ DESIGN.md
 docs/
   README.md
   architecture.md
+  internationalization.md
   experience-design.md
   homepage-design-brief.md
   homepage-motion-studies.md
@@ -60,6 +62,7 @@ docs/
 
 - `PRODUCT.md` 保留在项目根目录，记录产品事实和已确认约束；颜色、字体与页面构图留在设计相关文档。
 - `architecture.md` 维护技术与实现方案；精确依赖版本以工程配置和锁文件为准。
+- `internationalization.md` 维护当前消息命名空间、语言路由与 SEO 配置，以及国际化迁移的验证状态；产品对语言的约束仍写入根目录 `PRODUCT.md`。
 - 设计简报记录各轮已授权的表面范围，验证记录保存对应检查和未覆盖环境；后续调整写入新的职责明确文档，保留旧简报、截图与结论的适用范围。本次页面构图以 `experience-upgrade-brief.md` 为准，旧首页图稿不再是当前构图的像素规格。
 - `experience-design.md` 维护页面与交互草案，不将候选颜色、尺寸或动效时长直接视为已定稿规则。
 - 根目录 `DESIGN.md` 与 `.impeccable/design.json` 描述已确认的设计体系；普通页面扩展沿用它们，将页面结构和局部控件约定写入对应简报。只有获准修改全局系统时才同步系统文件，不把历史提案或局部样式升级为全站规范。

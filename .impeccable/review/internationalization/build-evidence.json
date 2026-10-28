@@ -1,0 +1,38 @@
+{
+  "sitemap": {
+    "count": 14,
+    "unique": 14,
+    "withoutQueries": true,
+    "withoutPreviews": true,
+    "languageLinks": 42
+  },
+  "pages": [
+    {
+      "locale": "en",
+      "htmlLang": "en",
+      "canonical": "http://localhost:3000/en",
+      "staticContainsLocalizedHeading": true,
+      "googleVerification": true
+    },
+    {
+      "locale": "zh",
+      "htmlLang": "zh-Hans",
+      "canonical": "http://localhost:3000/zh",
+      "staticContainsLocalizedHeading": true,
+      "googleVerification": true
+    }
+  ],
+  "staticRoutes": [
+    "/_global-error",
+    "/_not-found",
+    "/en",
+    "/en/motion-preview/coast",
+    "/en/motion-preview/press",
+    "/en/motion-preview/type",
+    "/sitemap.xml",
+    "/zh",
+    "/zh/motion-preview/coast",
+    "/zh/motion-preview/press",
+    "/zh/motion-preview/type"
+  ]
+}

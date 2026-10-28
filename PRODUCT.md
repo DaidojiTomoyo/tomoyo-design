@@ -48,6 +48,8 @@ web
 
 从目录进入详情后，返回可恢复搜索条件与滚动位置；界面语言和提示词语言独立，分享链接保存有效参数与提示词语言，已有 v1 链接缺少的新字段使用默认值。目录内部切换保留稳定的侧栏与顶部导航，通过选中底板和内容局部入场衔接；其他路径切换保留短暂淡入，查询参数更新不触发页面动画，界面语言切换只过渡文字。正式页面的加载、错误及未找到状态均已实现；本次体验升级的验证范围与收尾状态见体验升级验证记录，前一轮效果库验收保留为历史证据。
 
+中英文界面已迁移到统一国际化消息管理，现有首页、效果库、详情和动效预览保持相同内容与操作。界面语言切换保留当前路径、查询参数、锚点及提示词语言，继续使用原有文字切换动效。根路径按浏览器语言偏好选择中文或英文，无法匹配时进入英文；明确访问 `/en` 或 `/zh` 时以网址为准，不通过语言 cookie 改变入口。首页、效果库、分类和详情提供对应语言的规范地址与网站地图；动效方案预览不进入网站地图并禁止索引。本轮实现与验证进度见国际化实现文档。
+
 用户已选择「丝网套色」首页图稿，并批准本轮素材方案。网站使用该方向建立第一版设计语言，具体规则由根目录 `DESIGN.md` 记录。
 
 中英文首页文案已按用户要求调整。用户于 2026-10-27 选择「活字排版」作为正式首页动效。`/en/motion-preview/{press,type,coast}` 与对应中文路由继续作为完整开场的演示入口；正式首页不展示方案比较栏。
@@ -64,6 +66,7 @@ web
 
 - [视觉风格与动效词汇手册](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/ui-style-motion-glossary.md)：用户提供的内容基础。
 - [架构方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/architecture.md)：技术选型、数据流、模块划分和实施顺序。
+- [国际化实现](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/internationalization.md)：中英文消息、路由与提示词语言边界，以及本轮验证状态。
 - [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)：首页、路由、布局、动效建议及竞品观察。
 - [首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)：本轮已选方向、首页范围和交互要求。
 - [效果库设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-design-brief.md)：已批准的分类目录、详情布局与本轮实现约定。

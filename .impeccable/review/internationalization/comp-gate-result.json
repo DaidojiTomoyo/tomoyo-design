@@ -1,0 +1,202 @@
+{
+  "phase": "responsive",
+  "status": "open",
+  "gate": {
+    "ok": false,
+    "reasons": [
+      "the desktop capture (1440x2316; its first viewport, the top 1586x992 rows at the comp's width, is compared) scores 63% against the comp, under 65%: the first viewport does not survive a common desktop width. The hero passed at 1586x992; the layout must hold from ~1280 up, not only at the comp's exact width (grid columns in fr / minmax, not fixed px that overflow and wrap).",
+      "at desktop width, region nav-note is missing",
+      "at desktop width, region nav-dot is missing",
+      "at desktop width, region stage-caption is missing",
+      "at desktop width, region stage-footer is missing",
+      "at desktop width, region category-note is missing",
+      "at desktop width, region motion-title is missing",
+      "at desktop width, region style-title is missing",
+      "at desktop width, region material-title is missing",
+      "at desktop width, region style-description is missing",
+      "at desktop width, region material-description is missing",
+      "at desktop width, region motion-list is missing",
+      "at desktop width, region style-list is missing",
+      "at desktop width, region page-title (text) is contradicted (structure 41%)",
+      "at desktop width, region card-heading (text) is contradicted (structure 49%)",
+      "at desktop width, region card-body (text) is contradicted (structure 42%)",
+      "at desktop width, region motion-description (text) is contradicted (structure 31%)"
+    ],
+    "regionReasons": {
+      "nav-note": [
+        "at desktop width, region nav-note is missing"
+      ],
+      "nav-dot": [
+        "at desktop width, region nav-dot is missing"
+      ],
+      "stage-caption": [
+        "at desktop width, region stage-caption is missing"
+      ],
+      "stage-footer": [
+        "at desktop width, region stage-footer is missing"
+      ],
+      "category-note": [
+        "at desktop width, region category-note is missing"
+      ],
+      "motion-title": [
+        "at desktop width, region motion-title is missing"
+      ],
+      "style-title": [
+        "at desktop width, region style-title is missing"
+      ],
+      "material-title": [
+        "at desktop width, region material-title is missing"
+      ],
+      "style-description": [
+        "at desktop width, region style-description is missing"
+      ],
+      "material-description": [
+        "at desktop width, region material-description is missing"
+      ],
+      "motion-list": [
+        "at desktop width, region motion-list is missing"
+      ],
+      "style-list": [
+        "at desktop width, region style-list is missing"
+      ],
+      "page-title": [
+        "at desktop width, region page-title (text) is contradicted (structure 41%)"
+      ],
+      "card-heading": [
+        "at desktop width, region card-heading (text) is contradicted (structure 49%)"
+      ],
+      "card-body": [
+        "at desktop width, region card-body (text) is contradicted (structure 42%)"
+      ],
+      "motion-description": [
+        "at desktop width, region motion-description (text) is contradicted (structure 31%)"
+      ]
+    },
+    "summary": "desktop 63% (drift)",
+    "score": 0.6328,
+    "verdict": "drift",
+    "report": ".impeccable/review/diff/desktop/report.json",
+    "sideBySide": "/Users/peipei/mine/wanwan-Workspace/tomoyo-design/.impeccable/review/diff/desktop/side-by-side.png",
+    "worst": [
+      "motion-title missing 27%",
+      "material-title missing 28%",
+      "style-title missing 35%"
+    ],
+    "worstIds": [
+      "motion-title",
+      "material-title",
+      "style-title"
+    ],
+    "worstCrops": [
+      {
+        "id": "motion-title",
+        "verdict": "missing",
+        "score": {
+          "overall": 0.273,
+          "structure": 0.2461,
+          "color": 0.436,
+          "colorIntersection": 0.3712,
+          "paletteMatch": 0.4709,
+          "detail": 0.0065,
+          "detailRaw": 0.0065,
+          "detailAdded": 0,
+          "bands": 0.4
+        },
+        "file": ".impeccable/review/diff/desktop/regions/motion-title.png"
+      },
+      {
+        "id": "material-title",
+        "verdict": "missing",
+        "score": {
+          "overall": 0.2756,
+          "structure": 0.2246,
+          "color": 0.4589,
+          "colorIntersection": 0.3868,
+          "paletteMatch": 0.4978,
+          "detail": 0.0171,
+          "detailRaw": 0.0588,
+          "detailAdded": 0.0833,
+          "bands": 0.46
+        },
+        "file": ".impeccable/review/diff/desktop/regions/material-title.png"
+      },
+      {
+        "id": "style-title",
+        "verdict": "missing",
+        "score": {
+          "overall": 0.3476,
+          "structure": 0.3522,
+          "color": 0.5215,
+          "colorIntersection": 0.4549,
+          "paletteMatch": 0.5574,
+          "detail": 0.0075,
+          "detailRaw": 0.0075,
+          "detailAdded": 0,
+          "bands": 0.4
+        },
+        "file": ".impeccable/review/diff/desktop/regions/style-title.png"
+      }
+    ],
+    "advisories": [
+      "(advisory, still inside the first viewport) at desktop width, region brand sits about 2px to the left than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region navigation sits about 7px to the right than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region sheet-index sits about 37px lower than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region sheet-note sits about 30px higher and 38px to the right than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region card-mark sits about 78px lower and 3px to the left than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region card-index sits about 74px lower and 2px to the right than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region prompt-label sits about 79px lower than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region replay-button sits about 79px lower and 2px to the left than in the comp",
+      "(advisory, still inside the first viewport) at desktop width, region category-overline sits about 41px lower and 50px to the right than in the comp"
+    ],
+    "regionVerdicts": {
+      "page-ground": "drift",
+      "paper-grain": "match",
+      "brand": "drift",
+      "navigation": "drift",
+      "nav-note": "missing",
+      "nav-dot": "missing",
+      "sheet-frame": "drift",
+      "sheet-index": "drift",
+      "page-title": "contradicted",
+      "sheet-note": "drift",
+      "stage": "drift",
+      "blue-grain": "missing",
+      "preset-lift": "drift",
+      "preset-reveal": "drift",
+      "preset-glass": "drift",
+      "stage-caption": "missing",
+      "rest-outline": "drift",
+      "sample-card": "drift",
+      "coast-print": "contradicted",
+      "card-heading": "contradicted",
+      "card-body": "contradicted",
+      "card-mark": "drift",
+      "card-index": "drift",
+      "stage-footer": "missing",
+      "prompt-label": "drift",
+      "prompt-field": "drift",
+      "copy-button": "drift",
+      "replay-button": "drift",
+      "category-overline": "drift",
+      "category-note": "missing",
+      "motion-title": "missing",
+      "style-title": "missing",
+      "material-title": "missing",
+      "motion-description": "contradicted",
+      "style-description": "missing",
+      "material-description": "missing",
+      "motion-list": "missing",
+      "style-list": "missing",
+      "material-list": "drift"
+    },
+    "at": "2026-10-28T04:22:43.943Z"
+  },
+  "previousFinish": {
+    "disposition": "ship",
+    "at": "2026-10-28T01:51:05.486Z",
+    "phaseAtFinish": "review",
+    "artifactInputsSha256": "7eaa62ab8841e34134bdaf6d56bcf4506cab95f351a29261e516b44dc4d604d1",
+    "artifactSha256": "45710ba281220a48393d52018ab846b3cfdd10df601cda92f296be0fd067b0f3"
+  },
+  "currentFinishAttempt": "ship refused: responsive is not closed"
+}

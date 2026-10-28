@@ -1,0 +1,41 @@
+[
+  {
+    "url": "http://127.0.0.1:3006/en",
+    "lang": "en",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "phase": "complete"
+  },
+  {
+    "heading": "试试效果，再复制提示词。",
+    "lang": "zh-Hans",
+    "phase": "complete",
+    "scrollWidth": 1280,
+    "url": "http://127.0.0.1:3006/zh",
+    "width": 1280
+  },
+  {
+    "heading": "Try an effect.Get the prompt.",
+    "lang": "en",
+    "phase": "complete",
+    "scrollWidth": 390,
+    "url": "http://127.0.0.1:3006/en",
+    "width": 390
+  },
+  {
+    "heading": "试试效果，再复制提示词。",
+    "lang": "zh-Hans",
+    "phase": "complete",
+    "scrollWidth": 390,
+    "url": "http://127.0.0.1:3006/zh",
+    "width": 390
+  },
+  {
+    "heading": "Try an effect.Get the prompt.",
+    "lang": "en",
+    "phase": "complete",
+    "scrollWidth": 320,
+    "url": "http://127.0.0.1:3006/en",
+    "width": 320
+  }
+]

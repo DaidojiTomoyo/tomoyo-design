@@ -16,17 +16,18 @@
 
 - 路由组 `app/[locale]/(catalog)/` 提供效果库、分类、详情和共用的加载、错误、未找到状态。`(catalog)` 不出现在公开 URL 中。首批固定 slug 为 `hover-lift`、`soft-reveal`、`frosted-glass`；分类为 `motion` 与 `material`。
 - 首页与动效预览页继续静态生成。目录、分类和详情的页面函数等待 `searchParams`，按请求服务端渲染搜索结果或效果参数，让分享地址的首份 HTML 就对应当前配置。即使分类和 slug 由 `generateStaticParams` 枚举，这些路由仍不是静态导出页；当前部署需要 Next.js 服务端运行时。
+- 界面国际化使用 next-intl 4.14.9。根目录 `i18n/` 统一语言、路由、消息类型和元信息配置；`i18n/request.ts` 通过 `next/root-params` 读取 `[locale]`，并加载当前语言的六个 JSON 命名空间。`IntlScope` 按页面选择传给客户端的消息，首页和动效预览页的静态生成边界保持。`messages/{en,zh}/` 取代原首页、目录和参数文案字典；提示词仍由 `content/effects/prompts.ts` 根据独立的 `PromptLocale` 生成。配置与维护方法见 [国际化实现](internationalization.md)。
 - `content/effects/registry.ts` 维护分类、名称、用途与中英文别名；`schema.ts` 维护参数类型、分组、默认值、可调范围、步长、版本与解析；`presets.ts` 为每种效果提供三个起始配置；`prompts.ts` 将同一份规范生成中英文提示词。首页的 `content/home-effects.ts` 复用公共定义，不维护独立参数源。
 - 悬停浮起提供距离、缩放、旋转、阴影、时长、缓动六项；柔和入场提供方向、距离、模糊、起始缩放、时长、延迟、缓动七项；磨砂玻璃提供色调、模糊、表面不透明度、饱和度、描边不透明度、圆角、阴影七项。`features/effect-detail/parameter-controls.tsx` 按规范中的 movement、timing、surface 分组渲染；首页从同一规范选取两项快捷参数。
 - `components/ui/` 的 `RangeField` 同时提供原生 range 与数值输入；Enter 或失焦提交草稿、Escape 取消，输入提交先限制到边界，再由规范按步长归一化。`ChoiceField` 用原生 radio 表达预设、方向、缓动及色调，`SelectField` 共用于排序和提示词语言；`fields.css` 维护这些字段的公共状态与响应式规则。
 - `components/effects/` 通过固定命中区域和内部动画表面呈现可信的内置效果，首页、展示区、目录和详情复用帧定义与预览控制器。当前三个效果直接在页面内运行，没有新增 iframe 预览路由。控制器处理重播互斥、参数变化、减少动态效果、离屏、后台和卸载取消；非玻璃参数连续修改后合并为 180ms 后的一次演示，取消和卸载清理待执行任务。
 - 列表的 `q`、`sort` 与详情的 `v=1`、`prompt`、效果参数由 URL 表达。分享和控件都经 `resolveEffect` 解析；旧 v1 链接缺少的新增参数使用默认值，只接收对应效果的字段。有效数字按步长归一化，非法 URL 值回退该字段默认值；不支持的版本整体使用默认值并提示。分享链接仅保存该效果实际可调参数与提示词语言，不携带返回目录上下文。
 - `useSearchParams` 与原生 `history.replaceState(null, ...)` 保持客户端 URL、控件和语言链接同步。语言切换保留效果参数和提示词语言；共享语言控件的局部 Suspense 回退保证首页静态生成。详情的 `from` 只接受站内目录路径，目录滚动位置按路径及查询保存在 `sessionStorage`；返回链接使用 `scroll={false}`，避免框架滚动覆盖目录恢复的位置。存储受限时继续允许浏览。
-- `components/motion/page-transition.tsx` 位于语言根布局，只比较移除 `/en`、`/zh` 前缀后的 pathname。路径改变时用 WAAPI 做 240ms 的 opacity 0.65 → 1 淡入；查询修改和仅切换语言不会重播，减少动态效果时跳过，后续切换与卸载取消在途动画。公共页面祖先不应用 transform，确保手机 fixed 复制栏仍以视口定位；语言文字继续由 `LocalizedText` 处理。首页资源加载屏的生命周期不变。
+- `components/motion/page-transition.tsx` 位于语言根布局，比较通过语言配置去除前缀后的 pathname。目录与详情路由之间切换时跳过公共页面淡入，由目录自身处理内容入场并保留导航；其他路径变化用 WAAPI 做 240ms 的 opacity 0.65 → 1 淡入。查询修改和仅切换语言不会重播，减少动态效果时跳过，后续切换与卸载取消在途动画。公共页面祖先不应用 transform，确保手机 fixed 复制栏仍以视口定位；语言文字继续由原有 `LocalizedText` 节点处理。首页资源加载屏的生命周期不变。
 - 首页的 `HomeShowcase` 使用三种真实预览替换原词汇分类列表，首屏参数与详情链接共享当前配置。目录仅在无搜索、默认排序、全部分类且恰有三项时使用高预览配两幅横向预览，其余结果使用规则网格。详情宽屏保持预览和复制工具栏可见，手机改为固定底部复制入口；布局样式分别留在所属 feature。
-- 目录和详情生成独立标题、描述、canonical 与语言 alternates；参数变化不会创建新的规范内容地址。现有 Google 验证与 Analytics 接入沿用根布局。
+- 目录和详情生成独立标题、描述，canonical 与语言 alternates 统一由 `i18n/metadata.ts` 生成；HTML 语言标签来自 `i18n/config.ts`。参数变化不会创建新的规范内容地址。`app/sitemap.ts` 收录中英文首页、目录、分类与三个效果详情，排除动效预览和查询组合。域名由 `lib/site.ts` 按 `NEXT_PUBLIC_SITE_URL`、Vercel 正式域名、本地开发地址的顺序解析。现有 Google 验证与 Analytics 接入沿用根布局。
 
-本轮没有新增依赖。参数校验为 TypeScript 函数，控件使用原生 range、number、radio、select、details 和 textarea；自动化逻辑检查使用 Node.js 内置测试运行器。当前未使用 Motion、Zod、shadcn/ui、Vitest 或 Playwright 测试框架。首轮效果库证据见 [效果库验证记录](effects-library-validation.md)，当前体验升级的浏览器检查、生产构建、修正复验和未覆盖范围见 [体验升级验证记录](experience-upgrade-validation.md)。
+国际化迁移新增 next-intl 运行依赖和用于消息校验的 ICU 解析开发依赖；`pnpm check` 已包含 `pnpm i18n:check`，检查跨语言消息键、结构、ICU 语法与占位符。参数校验仍为 TypeScript 函数，控件使用原生 range、number、radio、select、details 和 textarea；自动化逻辑检查使用 Node.js 内置测试运行器。当前未使用 Motion、Zod、shadcn/ui、Vitest 或 Playwright 测试框架。首轮效果库证据见 [效果库验证记录](effects-library-validation.md)，体验升级的浏览器检查、生产构建、修正复验和未覆盖范围见 [体验升级验证记录](experience-upgrade-validation.md)；本次国际化验证状态单独记录在 [国际化实现](internationalization.md#验证状态)。
 
 ## 1 产品目标与首版范围
 
@@ -67,7 +68,7 @@
 | 独立预览 | 供 iframe 加载的可信效果画布，无主站导航、不进入搜索引擎索引 | `/preview/[id]` |
 | 设计规范页 | 在开发与评审中检查颜色、字体、控件、布局和动效状态，无主导航入口、不进入搜索引擎索引 | `/design-system` |
 
-`/zh` 使用相同的信息结构。域名根路径 `/` 由托管层固定跳转到 `/en`，语言切换保留当前内容位置；首版不根据请求位置判断语言。静态导出时将该跳转配置在托管平台，不依赖 Next.js 的请求时重定向。`/design-system` 只包含可公开的界面规范；不出现在导航和索引中不代表访问控制。
+`/zh` 使用相同的信息结构。`proxy.ts` 与 `i18n/navigation.ts` 共用 next-intl 路由配置，语言前缀始终保留。根路径及无语言前缀入口根据浏览器 `Accept-Language` 选择中英文，匹配失败时回退英文；显式 `/en`、`/zh` 优先，语言 cookie 关闭。代理使用临时跳转，`next.config.ts` 不再固定将根路径永久跳到英文。语言切换保留当前路径、查询、锚点和提示词语言。若以后采用静态导出，需要另行适配代理与重定向。规划中的 `/design-system` 只包含可公开的界面规范；不出现在导航和索引中不代表访问控制。
 
 顶部主要导航为 **效果库、场景配方、工作台**。Logo 返回首页；搜索、收藏和语言切换为辅助入口。首页采用宽幅内容布局，列表页采用分类栏与网格，详情和工作台采用大预览与操作面板。各类布局共享同一套颜色、字体、间距和控件。
 
@@ -307,10 +308,13 @@ flowchart TD
 | `components/effects/` | 首页、列表与详情共用的画布、动画帧、预览控制器和局部样式 | URL 状态、页面导航、提示词面板 |
 | `components/ui/` | 图标、range 与数值字段、radio 选择、原生 select 和共用字段样式 | 效果范围、参数业务文案、URL 状态 |
 | `components/{navigation,motion}/` | 跨页面语言切换、文字过渡与 pathname 淡入 | 首页业务状态、资源加载编排 |
+| `components/i18n/` | 按页面选择传给客户端的消息命名空间 | 文案内容、提示词生成、语言动效 |
+| `i18n/`、`proxy.ts` | UI 与提示词语言配置、路由、请求消息加载、消息类型和语言元信息 | 页面布局、效果参数、动画控制 |
+| `messages/{en,zh}/` | Common、Home、Catalog、EffectDetail、Controls、MotionPreview 六组界面文案 | 效果规范、提示词模板、组件实现 |
 | `lib/navigation/` | URL 查询序列化、合法返回路径、客户端查询订阅和语言跳转记录 | JSX、业务文案 |
 | `lib/effects/`、`lib/clipboard/` | 跨语言搜索、元信息、复制状态与失败回调 | 页面布局、效果注册内容 |
 | `content/effects/` | 效果注册、按效果的参数规范与预设、版本校验和提示词生成 | DOM 操作、浏览器生命周期 |
-| `content/catalog/`、`content/locales/` | 目录、详情及首页的中英文文案 | 组件实现、URL 与复制状态 |
+| `lib/site.ts`、`app/sitemap.ts` | 规范域名与可索引内容路由清单 | 搜索查询、用户参数配置、动效预览入口 |
 | `styles/`、`app/globals.css` | 全局变量、基础元素与 Tailwind 入口 | 整页布局、每种动画与所有媒体查询 |
 
 路由依赖功能，功能依赖公共组件与逻辑；公共组件不反向导入首页功能。新增页面先在 `features/<feature>/` 内按职责实现，确认有多个使用方后再抽公共模块。文件混合展示、状态、资源管理或不同生命周期时拆分，不为了凑行数把一段连续逻辑切碎，也不预建空目录。
@@ -355,7 +359,8 @@ features/
 content/
   effects/               结构化样例定义
   recipes/               场景配方
-  locales/               界面语言文本
+i18n/                    语言、请求消息与路由配置（当前已实现）
+messages/{en,zh}/        分命名空间的界面文本（当前已实现）
 demos/                   各类预览组件与局部样式
 core/
   schemas/               参数校验和数据版本

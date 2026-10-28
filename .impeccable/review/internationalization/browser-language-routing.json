@@ -1,0 +1,138 @@
+{
+  "origin": "http://127.0.0.1:3002",
+  "passed": 17,
+  "results": [
+    {
+      "name": "Simplified Chinese",
+      "path": "/",
+      "language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "status": 307,
+      "location": "/zh",
+      "result": "pass"
+    },
+    {
+      "name": "Taiwan Chinese",
+      "path": "/",
+      "language": "zh-TW",
+      "status": 307,
+      "location": "/zh",
+      "result": "pass"
+    },
+    {
+      "name": "Hong Kong Chinese",
+      "path": "/",
+      "language": "zh-HK",
+      "status": 307,
+      "location": "/zh",
+      "result": "pass"
+    },
+    {
+      "name": "British English",
+      "path": "/",
+      "language": "en-GB,en;q=0.9",
+      "status": 307,
+      "location": "/en",
+      "result": "pass"
+    },
+    {
+      "name": "Unsupported French",
+      "path": "/",
+      "language": "fr-FR,fr;q=0.9",
+      "status": 307,
+      "location": "/en",
+      "result": "pass"
+    },
+    {
+      "name": "Missing preference",
+      "path": "/",
+      "language": "",
+      "status": 307,
+      "location": "/en",
+      "result": "pass"
+    },
+    {
+      "name": "Wildcard",
+      "path": "/",
+      "language": "*",
+      "status": 307,
+      "location": "/en",
+      "result": "pass"
+    },
+    {
+      "name": "Invalid preference",
+      "path": "/",
+      "language": "not_a_language",
+      "status": 307,
+      "location": "/en",
+      "result": "pass"
+    },
+    {
+      "name": "English priority",
+      "path": "/",
+      "language": "zh;q=0.5,en-US;q=0.9",
+      "status": 307,
+      "location": "/en",
+      "result": "pass"
+    },
+    {
+      "name": "Chinese priority",
+      "path": "/",
+      "language": "en;q=0.5,zh-CN;q=0.9",
+      "status": 307,
+      "location": "/zh",
+      "result": "pass"
+    },
+    {
+      "name": "Supported second preference",
+      "path": "/",
+      "language": "fr-FR,zh-CN;q=0.9",
+      "status": 307,
+      "location": "/zh",
+      "result": "pass"
+    },
+    {
+      "name": "Prompt and settings",
+      "path": "/effects/soft-reveal?prompt=en&distance=48&duration=700",
+      "language": "zh-CN",
+      "status": 307,
+      "location": "/zh/effects/soft-reveal?prompt=en&distance=48&duration=700",
+      "result": "pass"
+    },
+    {
+      "name": "Catalog query",
+      "path": "/explore?q=glass&sort=name",
+      "language": "en-US",
+      "status": 307,
+      "location": "/en/explore?q=glass&sort=name",
+      "result": "pass"
+    },
+    {
+      "name": "Explicit English",
+      "path": "/en",
+      "language": "zh-CN",
+      "status": 200,
+      "location": null,
+      "result": "pass"
+    },
+    {
+      "name": "Explicit Chinese",
+      "path": "/zh",
+      "language": "en-US",
+      "status": 200,
+      "location": null,
+      "result": "pass"
+    },
+    {
+      "name": "Explicit detail",
+      "path": "/en/effects/soft-reveal?prompt=zh",
+      "language": "zh-CN",
+      "status": 200,
+      "location": null,
+      "result": "pass"
+    },
+    {
+      "name": "Disabled locale cookie does not override browser preference",
+      "result": "pass"
+    }
+  ]
+}

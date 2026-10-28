@@ -1,0 +1,123 @@
+{
+  "environment": {
+    "url": "http://127.0.0.1:3006",
+    "desktop": "1280x720",
+    "mobile": "390x844"
+  },
+  "detail": {
+    "before": {
+      "heading": "柔和入场Soft reveal",
+      "lang": "zh-Hans",
+      "promptLocale": "en",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3006/zh/effects/soft-reveal?v=1&prompt=en&direction=left&distance=48&blur=3&startScale=1&duration=700&delay=160&ease=out#effect-preview"
+    },
+    "after": {
+      "lang": "en",
+      "promptLocale": "en",
+      "scrollY": 0,
+      "url": "http://127.0.0.1:3006/en/effects/soft-reveal?v=1&prompt=en&direction=left&distance=48&blur=3&startScale=1&duration=700&delay=160&ease=out#effect-preview"
+    },
+    "promptIdentical": true,
+    "independentChinesePrompt": {
+      "alternates": [
+        {
+          "href": "http://localhost:3000/en/effects/soft-reveal",
+          "lang": "en"
+        },
+        {
+          "href": "http://localhost:3000/zh/effects/soft-reveal",
+          "lang": "zh-Hans"
+        },
+        {
+          "href": "http://localhost:3000/en/effects/soft-reveal",
+          "lang": "x-default"
+        }
+      ],
+      "canonical": "http://localhost:3000/en/effects/soft-reveal",
+      "lang": "en",
+      "promptLocale": "zh",
+      "url": "http://127.0.0.1:3006/en/effects/soft-reveal?v=1&prompt=zh&direction=left&distance=48&blur=3&startScale=1&duration=700&delay=160&ease=out#effect-preview"
+    }
+  },
+  "home": {
+    "before": {
+      "phase": "complete",
+      "url": "http://127.0.0.1:3006/zh?effect=soft-reveal&prompt=en"
+    },
+    "after": {
+      "phase": "complete",
+      "url": "http://127.0.0.1:3006/en?effect=soft-reveal&prompt=en"
+    },
+    "promptIdentical": true,
+    "observedEntries": [
+      "resources",
+      "language"
+    ],
+    "observedPhases": [
+      "complete"
+    ]
+  },
+  "catalogReturn": {
+    "body": "All effectsFind an effect you like. Make it part of your project.1 effectSortRecommendedName A–ZglassSTAYCURIOUS.A little roomfor what comes next.SurfaceFrosted glassLet the background through. Keep type crisp.Materials & lightblur 18pxChoose an effect, adjust it, then paste the prompt into your AI tool.",
+    "heading": "All effects",
+    "search": "glass",
+    "url": "http://127.0.0.1:3006/en/explore?q=glass&sort=name&prompt=zh"
+  },
+  "routes": [
+    {
+      "canonical": "http://localhost:3000/en/explore/motion",
+      "heading": "Animation & interaction",
+      "lang": "en",
+      "text": "Skip to effects\nTOMOYO\nEffects\nHow to use\nSee it. Try it. Make it.\nEN\n/\n中文\nAll effects\n3\nAnimation & interaction\n2\nHover lift\nSoft reveal\nMaterials & light\n1\nFrosted glass\nFrom effect to your project\n\nTry it. Copy the prompt. Give it to your AI.\n\nAnimation & interaction\n\nGive content a natural entrance and response.\n\n2 effects\nSort\nRecommended\nName A–Z\nOFFLINE\nTODAY.\nSomewhere by the sea.\nEverything else can wait.\nHo",
+      "title": "Animation & interaction | Tomoyo Design",
+      "url": "http://127.0.0.1:3006/en/explore/motion"
+    },
+    {
+      "canonical": "http://localhost:3000/zh/explore/material",
+      "heading": "材质与光影",
+      "lang": "zh-Hans",
+      "text": "跳转到效果内容\nTOMOYO\n效果库\n怎么用\nSee it. Try it. Make it.\nEN\n/\n中文\n全部效果\n3\n动画与交互\n2\n悬停浮起\n柔和入场\n材质与光影\n1\n磨砂玻璃\n从效果到你的项目\n\n试效果，复制提示词，交给 AI。\n\n材质与光影\n\n用表面、光影和层次改变观感。\n\n1 个效果\n排序\n推荐顺序\n按名称\nSTAY\nCURIOUS.\nA little room\nfor what comes next.\n静态材质\n磨砂玻璃\n\nFrosted glass\n\n透出背景层次，文字依然清楚。\n\n材质与光影\nblur 18px\n\n选一个效果，调整参数，再把提示词粘贴给你使用的 AI。\n\n从效果到你的项目\nTomoyo Design",
+      "title": "材质与光影 | Tomoyo Design",
+      "url": "http://127.0.0.1:3006/zh/explore/material"
+    },
+    {
+      "canonical": "http://localhost:3000/en/effects/hover-lift",
+      "heading": "Hover lift",
+      "lang": "en",
+      "text": "Skip to effects\nTOMOYO\nEffects\nHow to use\nSee it. Try it. Make it.\nEN\n/\n中文\nAll effects\n3\nAnimation & interaction\n2\nHover lift\nSoft reveal\nMaterials & light\n1\nFrosted glass\nFrom effect to your project\n\nTry it. Copy the prompt. Give it to your AI.\n\nAll effects\nAnimation & interaction\nHover lift\nHover lift\n\nA small lift when you hover or focus.\n\nPreview\nPrompt\nShare effect\nCopy prompt\nOFFLINE\nTODAY.\nSomewhere by the sea",
+      "title": "Hover lift | Tomoyo Design",
+      "url": "http://127.0.0.1:3006/en/effects/hover-lift"
+    },
+    {
+      "canonical": "http://localhost:3000/zh",
+      "heading": "试试效果，再复制提示词。",
+      "lang": "zh-Hans",
+      "robots": "noindex, nofollow",
+      "text": "套色印刷\n活字排版\n海岸显影\n重播开场\n回到首页\n\n文字排入画面，标题随滚动归位。试试右上角的中英文切换。\n\nT\nO\nM\nO\nY\nO\nDESIGN\n\n打开预览",
+      "title": "Tomoyo Design | 试试效果，再复制提示词。",
+      "url": "http://127.0.0.1:3006/zh/motion-preview/type"
+    },
+    {
+      "canonical": "http://localhost:3000/en",
+      "heading": "Try an effect.Get the prompt.",
+      "lang": "en",
+      "robots": "noindex, nofollow",
+      "text": "Screenprint\nTypesetting\nCoastal exposure\nReplay opening\nBack to home\n\nThe coast develops before the page opens. Watch the image as you scroll.\n\nT\nO\nM\nO\nY\nO\nDESIGN\n\nOpening preview",
+      "title": "Tomoyo Design | Try an effect. Get the prompt.",
+      "url": "http://127.0.0.1:3006/en/motion-preview/coast"
+    },
+    {
+      "canonical": "http://localhost:3000/zh",
+      "heading": "效果库里还没有这个效果。",
+      "lang": "zh-Hans",
+      "robots": "noindex",
+      "text": "跳转到效果内容\nTOMOYO\n效果库\n怎么用\nSee it. Try it. Make it.\nEN\n/\n中文\n全部效果\n3\n动画与交互\n2\n悬停浮起\n柔和入场\n材质与光影\n1\n磨砂玻璃\n从效果到你的项目\n\n试效果，复制提示词，交给 AI。\n\n效果库里还没有这个效果。\n\n回到目录，看看其他可用的效果。\n\n全部效果\n从效果到你的项目\nTomoyo Design",
+      "title": "Tomoyo Design | 试试效果，再复制提示词。",
+      "url": "http://127.0.0.1:3006/zh/effects/not-an-effect"
+    }
+  ],
+  "limitations": [
+    "Browser DOM sampling confirmed language entry and completed loading state; it did not measure native ViewTransition frames or simulate prefers-reduced-motion."
+  ]
+}
