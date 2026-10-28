@@ -35,3 +35,4 @@ next-env.d.ts
 !/.impeccable/review/resource-loading/*.png
 !/.impeccable/review/effects-library/*.png
 !/.impeccable/review/experience-upgrade/*.png
+!/.impeccable/review/catalog-motion/*.png

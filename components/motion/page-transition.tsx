@@ -1,15 +1,16 @@
 'use client';
 import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
+import { motionRoute, shouldAnimatePage } from '@/lib/navigation/route-motion';
 
 /** Only pathname changes animate. Query edits and locale changes keep their controls live. */
 export function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const ref = useRef<HTMLDivElement>(null);
-  const route = pathname.replace(/^\/(en|zh)/, '');
+  const route = motionRoute(pathname);
   const previous = useRef(route);
   useLayoutEffect(() => {
-    const changed = previous.current !== route;
+    const changed = shouldAnimatePage(previous.current, route);
     previous.current = route;
     if (!changed || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const animation = ref.current?.animate(

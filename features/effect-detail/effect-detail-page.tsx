@@ -2,6 +2,7 @@
 import './styles/workspace.css';
 import './styles/controls.css';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useRef } from 'react';
 import { Icon } from '@/components/ui/icon';
 import { SelectField } from '@/components/ui/select-field';
@@ -29,6 +30,7 @@ export function EffectDetailPage({
   initialQuery: string;
 }) {
   const t = getCatalogMessages(locale);
+  const pathname = usePathname();
   const effect = getEffect(id);
   const config = useEffectConfig(id, locale, initialQuery);
   const prompt = createEffectPrompt(config.spec, config.promptLocale);
@@ -51,7 +53,7 @@ export function EffectDetailPage({
     config.spec,
   );
   return (
-    <div className="effect-detail">
+    <div className="effect-detail" data-catalog-page={pathname}>
       <nav className="detail-crumb" aria-label={t.navigation}>
         <Link href={catalogReturnPath(config.from, locale)} scroll={false}>
           {config.from ? t.back : t.all}
@@ -64,7 +66,7 @@ export function EffectDetailPage({
         <span>{effect.name[locale]}</span>
       </nav>
       <LocalizedText id="effect-detail-heading" locale={locale} direction="type">
-        <div className="detail-heading">
+        <div className="detail-heading" data-route-enter>
           <h1>
             {effect.name[locale]}
             {locale === 'zh' && <span lang="en">{effect.name.en}</span>}
@@ -102,10 +104,10 @@ export function EffectDetailPage({
         </div>
       </div>
       <div className="detail-workspace">
-        <section id="effect-preview" aria-label={t.preview}>
+        <section id="effect-preview" aria-label={t.preview} data-route-enter>
           <EffectPreview locale={locale} spec={config.spec} />
         </section>
-        <section className="detail-control-panel" aria-label={t.parameters}>
+        <section className="detail-control-panel" aria-label={t.parameters} data-route-enter>
           <ParameterControls
             spec={config.spec}
             locale={locale}

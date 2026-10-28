@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { Icon } from '@/components/ui/icon';
 import { categories, effects } from '@/content/effects/registry';
 import { getCatalogMessages } from '@/content/catalog';
 import type { Locale } from '@/content/locales';
+import { NavigationTrack } from './motion/navigation-track';
 
 export function CatalogNavigation({ locale }: { locale: Locale }) {
   const pathname = usePathname();
@@ -15,6 +16,9 @@ export function CatalogNavigation({ locale }: { locale: Locale }) {
   const close = () => {
     if (details.current) details.current.open = false;
   };
+  useLayoutEffect(() => {
+    if (details.current) details.current.open = false;
+  }, [pathname]);
   const nav = (
     <>
       <Link
@@ -63,7 +67,6 @@ export function CatalogNavigation({ locale }: { locale: Locale }) {
       <details
         className="catalog-mobile-menu"
         ref={details}
-        key={pathname}
         onKeyDown={(event) => {
           if (event.key === 'Escape' && details.current?.open) {
             close();
@@ -76,10 +79,14 @@ export function CatalogNavigation({ locale }: { locale: Locale }) {
           {t.menu}
           <Icon name="down" />
         </summary>
-        <nav aria-label={t.navigation}>{nav}</nav>
+        <NavigationTrack pathname={pathname} label={t.navigation}>
+          {nav}
+        </NavigationTrack>
       </details>
       <aside className="catalog-sidebar">
-        <nav aria-label={t.navigation}>{nav}</nav>
+        <NavigationTrack pathname={pathname} label={t.navigation}>
+          {nav}
+        </NavigationTrack>
         <div className="catalog-sidebar-bottom">
           <Link href={`${prefix}#how-it-works`}>
             {t.journey}

@@ -7,6 +7,7 @@ import { Icon } from '@/components/ui/icon';
 import type { Locale } from '@/content/locales';
 import { getCatalogMessages } from '@/content/catalog';
 import { CatalogNavigation } from './catalog-navigation';
+import { CatalogContent } from './catalog-content';
 
 export function CatalogShell({ locale, children }: { locale: Locale; children: ReactNode }) {
   const t = getCatalogMessages(locale);
@@ -33,9 +34,7 @@ export function CatalogShell({ locale, children }: { locale: Locale; children: R
       </header>
       <div className="catalog-shell">
         <CatalogNavigation locale={locale} />
-        <main id="catalog-content" className="catalog-main" tabIndex={-1}>
-          {children}
-        </main>
+        <CatalogContent>{children}</CatalogContent>
       </div>
       <footer className="catalog-footer">
         <Link href={`/${locale}#how-it-works`}>

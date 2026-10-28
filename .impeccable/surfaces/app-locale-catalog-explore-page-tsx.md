@@ -1,8 +1,15 @@
 ---
 version: 1
-slug: "app-locale-catalog-explore-page-tsx"
-primary_target: "app/[locale]/(catalog)/explore/page.tsx"
-related_targets: ["app/[locale]/(catalog)/effects/[slug]/page.tsx","features/catalog","features/effect-detail","components/effects","content/effects"]
+slug: 'app-locale-catalog-explore-page-tsx'
+primary_target: 'app/[locale]/(catalog)/explore/page.tsx'
+related_targets:
+  [
+    'app/[locale]/(catalog)/effects/[slug]/page.tsx',
+    'features/catalog',
+    'features/effect-detail',
+    'components/effects',
+    'content/effects',
+  ]
 ---
 
 # 效果库与详情
@@ -19,7 +26,7 @@ STORY: Browse the real three effects, search across both languages, enter a deta
 
 FIRST VIEWPORT: Compact header and a 246px category rail. Following the user's 2026-10-28 feedback, the default overview features one tall preview beside two horizontal previews; filtered results use a regular grid. Detail retains the rail and places a large canvas beside a 320px grouped parameter panel, with a persistent copy action. Mobile has a category disclosure, one column and a reachable bottom copy action.
 
-FORM: User-pinned React Bits category structure, initially approved linked HTML sketches, refined under docs/experience-upgrade-brief.md. Earlier rejected draw: seed:648b9982cb48d682; it does not override the user's selection. Signature: a small vermilion selection mark, text-only locale transitions, and a short page arrival on pathname changes. Parameter edits do not trigger a page transition. Demonstrations remain inside their own canvas.
+FORM: User-pinned React Bits category structure, initially approved linked HTML sketches, refined under docs/experience-upgrade-brief.md. Earlier rejected draw: seed:648b9982cb48d682; it does not override the user's selection. Signature: a small vermilion selection mark and one moving light-paper navigation plate over stable catalog chrome; local heading, canvas or list, and parameter arrivals follow catalog order. Parameter radio groups move one deep-blue plate with light labels sharing its clipping edge. Interrupted selections continue from the visible frame. Locale transitions affect text only; parameter edits do not trigger a page transition. Fixed copy controls keep their viewport positioning, and demonstrations remain inside their own canvas. Motion details and this repair's evidence are recorded in docs/catalog-motion-refinement.md.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 

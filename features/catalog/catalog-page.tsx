@@ -43,8 +43,8 @@ export function CatalogPage({
     replaceQuery(next);
   }
   return (
-    <>
-      <div className="catalog-page-heading">
+    <div data-catalog-page={pathname}>
+      <div className="catalog-page-heading" data-route-enter>
         <LocalizedText id="catalog-heading" locale={locale} direction="type">
           <div>
             <h1>{selectedCategory?.name[locale] ?? t.all}</h1>
@@ -90,6 +90,7 @@ export function CatalogPage({
       {results.length > 0 ? (
         <div
           className="catalog-effect-grid"
+          data-route-enter
           data-curated={
             !query && sort === 'recommended' && !category && results.length === 3
               ? 'true'
@@ -107,7 +108,7 @@ export function CatalogPage({
           ))}
         </div>
       ) : (
-        <section className="catalog-empty">
+        <section className="catalog-empty" data-route-enter>
           <h2>{t.empty}</h2>
           <p>{t.emptyHelp}</p>
           <button type="button" className="catalog-button" onClick={() => update('q', '')}>
@@ -117,6 +118,6 @@ export function CatalogPage({
         </section>
       )}
       <p className="catalog-note">{t.instruction}</p>
-    </>
+    </div>
   );
 }

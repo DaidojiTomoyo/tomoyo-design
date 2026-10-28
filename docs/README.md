@@ -16,6 +16,7 @@
 | [效果库验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-validation.md)                            | 首轮功能、生产页面、截图证据和未覆盖范围               | 首轮修正已验收           |
 | [体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)                                | 首页展示、目录尺度、共享控件、特有效果参数与连续性     | 本次实现范围             |
 | [体验升级验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-validation.md)                       | 本次检查、修正复验、审查状态与验证限制                 | 最终状态以记录为准       |
+| [分类导航与参数动效修正](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/catalog-motion-refinement.md)                     | 侧栏闪烁修复、连续导航与参数选项动效及验证证据         | 本轮窄修已审查通过       |
 | [架构方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/architecture.md)                                                | 当前服务端渲染边界、模块职责、内容模型与后续规划       | 首页与效果库已按职责拆分 |
 | [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)                                     | 竞品结论、首页、路由职责、页面布局、响应式和动效       | 设计草案                 |
 | [视觉风格与动效词汇手册](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/ui-style-motion-glossary.md)                      | 效果分类与描述词汇，作为内容参考                       | 原始正文保留             |
@@ -43,6 +44,7 @@ docs/
   effects-library-validation.md
   experience-upgrade-brief.md
   experience-upgrade-validation.md
+  catalog-motion-refinement.md
   ui-style-motion-glossary.md
   research/
     2026-10-26/

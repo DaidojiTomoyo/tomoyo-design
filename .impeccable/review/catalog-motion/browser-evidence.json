@@ -1,0 +1,211 @@
+[
+  {
+    "ancestorOpacity": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "kind": "navigation-during-arrival",
+    "markerTransform": "matrix(1, 0, 0, 1, 0, -46)",
+    "parts": [
+      {
+        "class": "detail-heading",
+        "opacity": "0.84",
+        "transform": "matrix(1, 0, 0, 1, 8, 0)"
+      },
+      {
+        "class": "",
+        "opacity": "0.9",
+        "transform": "matrix(1, 0, 0, 1, 16, 0)"
+      },
+      {
+        "class": "detail-control-panel",
+        "opacity": "0.9",
+        "transform": "matrix(1, 0, 0, 1, 16, 0)"
+      }
+    ],
+    "path": "/zh/effects/soft-reveal"
+  },
+  {
+    "checked": "aside",
+    "clip": "inset(3px 73.1789px 3px 114.073px round 4.30756px)",
+    "kind": "preset-during-motion",
+    "rootOpacity": "1",
+    "targetClip": "inset(3px 3px 3px 187.672px round 4px)",
+    "url": "http://127.0.0.1:3004/zh/effects/soft-reveal?v=1&prompt=zh&direction=left&distance=48&blur=3&startScale=1&duration=700&delay=160&ease=out"
+  },
+  {
+    "clip": "inset(3px 47.6641px 3px 232.336px round 4px)",
+    "kind": "custom-parameters",
+    "note": "自定义参数",
+    "presetChecked": "left",
+    "url": "http://127.0.0.1:3004/zh/effects/soft-reveal?v=1&prompt=zh&direction=left&distance=49&blur=3&startScale=1&duration=700&delay=160&ease=out",
+    "queryScopeNote": "presetChecked used a document-wide first checked choice query and may identify a direction. Use custom-preset-scoped-check for the preset group."
+  },
+  {
+    "headingTransform": "matrix(1, 0, 0, 1, -0.000621436, 0)",
+    "kind": "query-keeps-shell-stable",
+    "rootOpacity": "1",
+    "url": "http://127.0.0.1:3004/zh/explore?q=glass"
+  },
+  {
+    "focus": "SUMMARY",
+    "kind": "mobile-menu-escape",
+    "open": false
+  },
+  {
+    "ancestorTransforms": [
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none"
+    ],
+    "bottom": 844,
+    "kind": "mobile-copy-during-navigation",
+    "menuOpen": false,
+    "partTransform": "matrix(1, 0, 0, 1, -5.83649, 0)",
+    "path": "/zh/effects/soft-reveal",
+    "viewportHeight": 844
+  },
+  {
+    "documentWidth": 320,
+    "groups": [
+      {
+        "base": [
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 41
+          },
+          {
+            "height": 45.59375,
+            "width": 77.34375,
+            "x": 121.328125
+          },
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 201.671875
+          }
+        ],
+        "checked": null,
+        "overlay": [
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 41
+          },
+          {
+            "height": 45.59375,
+            "width": 77.34375,
+            "x": 121.328125
+          },
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 201.671875
+          }
+        ]
+      },
+      {
+        "base": [
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 41
+          },
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 101.25
+          },
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 161.5
+          },
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 221.75
+          }
+        ],
+        "checked": "right",
+        "overlay": [
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 41
+          },
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 101.25
+          },
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 161.5
+          },
+          {
+            "height": 44,
+            "width": 57.25,
+            "x": 221.75
+          }
+        ]
+      },
+      {
+        "base": [
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 41
+          },
+          {
+            "height": 45.59375,
+            "width": 77.34375,
+            "x": 121.328125
+          },
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 201.671875
+          }
+        ],
+        "checked": "out",
+        "overlay": [
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 41
+          },
+          {
+            "height": 45.59375,
+            "width": 77.34375,
+            "x": 121.328125
+          },
+          {
+            "height": 45.59375,
+            "width": 77.328125,
+            "x": 201.671875
+          }
+        ]
+      }
+    ],
+    "kind": "english-320-controls",
+    "url": "http://127.0.0.1:3004/en/effects/soft-reveal?v=1&prompt=zh&direction=right&distance=12&blur=0&startScale=1&duration=480&delay=0&ease=out",
+    "viewport": 320
+  },
+  {
+    "kind": "custom-preset-scoped-check",
+    "note": "自定义参数",
+    "presetChecked": null,
+    "url": "http://127.0.0.1:3004/zh/effects/soft-reveal?v=1&prompt=zh&direction=up&distance=13&blur=0&startScale=1&duration=480&delay=0&ease=out"
+  }
+]

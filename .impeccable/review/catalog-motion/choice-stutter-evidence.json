@@ -1,0 +1,556 @@
+{
+  "date": "2026-10-28",
+  "before": {
+    "url": "http://127.0.0.1:3004/zh/effects/soft-reveal",
+    "samples": [
+      {
+        "at": 1793159541004,
+        "clip": "inset(3px 187.672px 3px 3px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541027,
+        "clip": "inset(3px 109.165px 3px 73.6544px round 4.56091px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541055,
+        "clip": "inset(3px 84.6738px 3px 95.6956px round 4.73589px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541067,
+        "clip": "inset(3px 70.924px 3px 108.07px round 4.83413px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541084,
+        "clip": "inset(3px 62.7717px 3px 115.407px round 4.89238px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541102,
+        "clip": "inset(3px 57.3345px 3px 120.3px round 4.93122px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541112,
+        "clip": "inset(3px 53.7764px 3px 123.502px round 4.95664px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541123,
+        "clip": "inset(3px 51.377px 3px 125.662px round 4.97379px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541143,
+        "clip": "inset(3px 48.1607px 3px 128.556px round 4.99677px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541173,
+        "clip": "inset(3px 47.8127px 3px 128.87px round 4.99925px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541187,
+        "clip": "inset(3px 47.7083px 3px 128.964px round 5px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541207,
+        "clip": "inset(3px 5.42088px 3px 184.493px round 4.05415px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541251,
+        "clip": "inset(3px 4.07291px 3px 186.263px round 4.024px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541273,
+        "clip": "inset(3px 3.40319px 3px 187.142px round 4.00902px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541283,
+        "clip": "inset(3px 3.13128px 3px 187.499px round 4.00294px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541294,
+        "clip": "inset(3px 3.02294px 3px 187.642px round 4.00051px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541304,
+        "clip": "inset(3px 3.02294px 3px 187.642px round 4.00051px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541314,
+        "clip": "inset(3px 3.00073px 3px 187.671px round 4.00002px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541326,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541337,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541350,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541362,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541383,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541402,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541411,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541420,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541428,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541437,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541446,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541453,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541464,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541472,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541481,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541488,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541497,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541506,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541516,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541523,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541530,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541537,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541546,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541555,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541564,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541572,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541578,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541587,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541599,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159541606,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      }
+    ]
+  },
+  "after": {
+    "url": "http://127.0.0.1:3005/zh/effects/soft-reveal",
+    "samples": [
+      {
+        "at": 1793159598817,
+        "clip": "inset(3px 187.672px 3px 3px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598830,
+        "clip": "inset(3px 187.672px 3px 3px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598838,
+        "clip": "inset(3px 187.672px 3px 3px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598845,
+        "clip": "inset(3px 187.672px 3px 3px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598850,
+        "clip": "inset(3px 187.672px 3px 3px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598856,
+        "clip": "inset(3px 146.047px 3px 44.625px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598862,
+        "clip": "inset(3px 146.047px 3px 44.625px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598867,
+        "clip": "inset(3px 107.039px 3px 83.6328px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598873,
+        "clip": "inset(3px 107.039px 3px 83.6328px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598888,
+        "clip": "inset(3px 77.9064px 3px 112.765px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598895,
+        "clip": "inset(3px 53.9892px 3px 136.683px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598902,
+        "clip": "inset(3px 53.9892px 3px 136.683px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598907,
+        "clip": "inset(3px 39.3134px 3px 151.359px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598913,
+        "clip": "inset(3px 39.3134px 3px 151.359px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598918,
+        "clip": "inset(3px 39.3134px 3px 151.359px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598923,
+        "clip": "inset(3px 29.2092px 3px 161.463px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598929,
+        "clip": "inset(3px 29.2092px 3px 161.463px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598934,
+        "clip": "inset(3px 22.3678px 3px 168.304px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598940,
+        "clip": "inset(3px 22.3678px 3px 168.304px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598945,
+        "clip": "inset(3px 22.3678px 3px 168.304px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598950,
+        "clip": "inset(3px 16.9744px 3px 173.697px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598956,
+        "clip": "inset(3px 16.9744px 3px 173.697px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598961,
+        "clip": "inset(3px 12.938px 3px 177.734px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598966,
+        "clip": "inset(3px 12.938px 3px 177.734px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598971,
+        "clip": "inset(3px 12.938px 3px 177.734px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598976,
+        "clip": "inset(3px 10.0696px 3px 180.602px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598982,
+        "clip": "inset(3px 10.0696px 3px 180.602px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598987,
+        "clip": "inset(3px 10.0696px 3px 180.602px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598992,
+        "clip": "inset(3px 7.91614px 3px 182.756px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159598997,
+        "clip": "inset(3px 7.91614px 3px 182.756px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599002,
+        "clip": "inset(3px 6.305px 3px 184.367px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599009,
+        "clip": "inset(3px 6.305px 3px 184.367px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599014,
+        "clip": "inset(3px 6.305px 3px 184.367px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599019,
+        "clip": "inset(3px 5.10609px 3px 185.566px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599025,
+        "clip": "inset(3px 5.10609px 3px 185.566px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599031,
+        "clip": "inset(3px 4.28577px 3px 186.386px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599037,
+        "clip": "inset(3px 4.28577px 3px 186.386px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599042,
+        "clip": "inset(3px 3.68599px 3px 186.986px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599048,
+        "clip": "inset(3px 3.68599px 3px 186.986px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599053,
+        "clip": "inset(3px 3.68599px 3px 186.986px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599058,
+        "clip": "inset(3px 3.2715px 3px 187.4px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599064,
+        "clip": "inset(3px 3.2715px 3px 187.4px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599068,
+        "clip": "inset(3px 3.06215px 3px 187.61px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599073,
+        "clip": "inset(3px 3.06215px 3px 187.61px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599078,
+        "clip": "inset(3px 3.06215px 3px 187.61px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599083,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599089,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      },
+      {
+        "at": 1793159599095,
+        "clip": "inset(3px 3px 3px 187.672px round 4px)",
+        "target": "inset(3px 3px 3px 187.672px round 4px)"
+      }
+    ]
+  },
+  "rapidChanges": [
+    {
+      "checked": "soft",
+      "clip": "inset(3px 3px 3px 187.672px round 4px)",
+      "target": "inset(3px 187.672px 3px 3px round 4px)"
+    },
+    {
+      "checked": "focus",
+      "clip": "inset(3px 114.752px 3px 75.9195px round 4px)",
+      "target": "inset(3px 95.3281px round 4px)"
+    },
+    {
+      "checked": "aside",
+      "clip": "inset(3px 106.261px 3px 84.404px round 4px)",
+      "target": "inset(3px 3px 3px 187.672px round 4px)"
+    },
+    {
+      "checked": "aside",
+      "clip": "inset(3px 82.1702px 3px 108.496px round 4px)",
+      "target": "inset(3px 3px 3px 187.672px round 4px)"
+    }
+  ],
+  "desktop": {
+    "groups": [
+      {
+        "checked": "soft",
+        "clip": "inset(3px 187.742px 3px 3.07011px round 4px)"
+      },
+      {
+        "checked": "up",
+        "clip": "inset(3px 210.641px 3px 3.10871px round 4px)"
+      },
+      {
+        "checked": "out",
+        "clip": "inset(3px 187.672px 3px 3px round 4px)"
+      }
+    ],
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  "mobile": {
+    "groups": [
+      {
+        "checked": null,
+        "clip": "inset(3px 53.3359px 3px 260.664px round 4px)",
+        "height": 51.59375
+      },
+      {
+        "checked": "left",
+        "clip": "inset(3px 80.75px 3px 158.5px round 4px)",
+        "height": 50
+      },
+      {
+        "checked": "in-out",
+        "clip": "inset(3px 106.823px 3px 106.506px round 4px)",
+        "height": 50
+      }
+    ],
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "console": [],
+  "scope": "Native clicks and read-only computed clip-path samples. Timestamps are automation-side wall-clock samples, not a GPU/frame-rate trace. Real reduced-motion and physical mobile device not tested."
+}
