@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tomoyo · 分类效果库布局草图</title>
+    <link rel="stylesheet" href="catalog.css" />
+  </head>
+  <body class="detail-page">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-mark"></span>TOMOYO</a>
+      <nav class="toplinks" aria-label="主导航">
+        <a href="index.html" aria-current="page">效果库</a><a href="index.html#how-to">怎么用</a>
+      </nav>
+      <span class="top-spacer"></span><span class="version">See it. Try it. Make it.</span
+      ><button class="language" aria-label="切换界面语言">中 / EN</button>
+    </header>
+    <details class="mobile-menu">
+      <summary>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>分类 ·
+        效果目录<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7" /></svg>
+      </summary>
+      <nav class="mobile-nav" aria-label="手机效果分类">
+        <a class="all-link" href="index.html"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" /></svg
+          >全部效果<span class="count">3</span></a
+        >
+        <div class="nav-group">
+          <a class="group-title" href="animations.html"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 13 5-8 6 14 7-9M3 19h4M18 5h3" /></svg
+            >动画与交互<span class="count">2</span></a
+          ><a class="effect-link" href="hover-lift.html">悬停浮起</a
+          ><a class="effect-link" href="soft-reveal.html" aria-current="page">柔和入场</a>
+        </div>
+        <div class="nav-group">
+          <a class="group-title" href="materials.html"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="7" width="13" height="13" rx="2" />
+              <path d="M8 4h11a2 2 0 0 1 2 2v11" /></svg
+            >材质与光影<span class="count">1</span></a
+          ><a class="effect-link" href="frosted-glass.html">磨砂玻璃</a>
+        </div>
+      </nav>
+    </details>
+    <div class="shell">
+      <aside class="sidebar">
+        <nav aria-label="效果分类">
+          <a class="all-link" href="index.html"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" /></svg
+            >全部效果<span class="count">3</span></a
+          >
+          <div class="nav-group">
+            <a class="group-title" href="animations.html"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m3 13 5-8 6 14 7-9M3 19h4M18 5h3" /></svg
+              >动画与交互<span class="count">2</span></a
+            ><a class="effect-link" href="hover-lift.html">悬停浮起</a
+            ><a class="effect-link" href="soft-reveal.html" aria-current="page">柔和入场</a>
+          </div>
+          <div class="nav-group">
+            <a class="group-title" href="materials.html"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="7" width="13" height="13" rx="2" />
+                <path d="M8 4h11a2 2 0 0 1 2 2v11" /></svg
+              >材质与光影<span class="count">1</span></a
+            ><a class="effect-link" href="frosted-glass.html">磨砂玻璃</a>
+          </div>
+        </nav>
+        <div class="sidebar-bottom">
+          <a href="index.html#how-to"
+            >从效果到你的项目
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+          <p>试效果，复制提示词，交给 AI。</p>
+        </div>
+      </aside>
+      <main>
+        <nav class="crumb" aria-label="当前位置">
+          <a href="index.html">全部效果</a
+          ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg
+          ><a href="animations.html">动画与交互</a
+          ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg
+          ><span>柔和入场</span>
+        </nav>
+        <div class="detail-heading">
+          <h1>柔和入场<span>Soft reveal</span></h1>
+          <p>从下方淡入，让内容自然出现。</p>
+        </div>
+        <div class="workspace-toolbar">
+          <nav class="tabs" aria-label="详情内容">
+            <a href="#preview" aria-current="page"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" />
+                <circle cx="12" cy="12" r="3" /></svg
+              >效果预览</a
+            ><a href="#prompt"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="8" width="12" height="13" rx="2" />
+                <path d="M15 8V3H3v13h5" /></svg
+              >提示词</a
+            >
+          </nav>
+          <button class="text-button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="m10 14 4-4M8 16l-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0M16 8l2-2a4 4 0 0 0-6-6L7 5"
+                transform="translate(2 2) scale(.9)"
+              /></svg
+            >分享效果
+          </button>
+        </div>
+        <div class="workspace">
+          <section id="preview" aria-label="效果预览">
+            <div class="stage soft">
+              <div class="sample-card">
+                <img src="/assets/plates/coast-print.png" alt="丝网套色海岸插画" /><b
+                  >TAKE IT<br />SLOW.</b
+                ><small>A small change.<br />A different feeling.</small>
+              </div>
+              <span class="stage-hint"
+                ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 3 13 9-7 1-3 7z" /></svg
+                ><span>效果演示画布</span></span
+              >
+            </div>
+            <div class="preview-footer">
+              <button class="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 8a8 8 0 1 1-1 7M4 3v5h5" /></svg
+                >重播效果
+              </button>
+              <p>仅演示当前效果</p>
+            </div>
+          </section>
+          <section class="control-panel" aria-label="效果参数">
+            <div class="panel-heading">
+              <h2>调整效果</h2>
+              <button class="text-button">重置</button>
+            </div>
+            <div class="field">
+              <label for="distance">入场距离<span class="value">12 px</span></label
+              ><input id="distance" type="range" value="12" min="0" max="24" />
+              <div class="scale"><span>0px</span><span>24px</span></div>
+            </div>
+            <div class="field">
+              <label for="duration">过渡时长<span class="value">480 ms</span></label
+              ><input id="duration" type="range" value="480" min="100" max="800" />
+              <div class="scale"><span>100ms</span><span>800ms</span></div>
+            </div>
+            <div class="curve"><span>运动曲线</span><span>cubic-bezier(.16,1,.3,1)</span></div>
+            <div class="prompt-summary">
+              <label for="prompt-language"
+                >提示词语言<select id="prompt-language">
+                  <option>简体中文</option>
+                  <option>English</option>
+                </select></label
+              >
+              <p>从下方 12px 淡入，用 480ms 完成。</p>
+              <button class="button copy">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="8" y="8" width="12" height="13" rx="2" />
+                  <path d="M15 8V3H3v13h5" /></svg
+                >复制提示词</button
+              ><a class="text-button" href="#prompt"
+                >查看完整提示词<svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+          </section>
+        </div>
+        <section class="prompt-section" id="prompt">
+          <h2>把这个效果用在你的项目里</h2>
+          <p>
+            沿用我项目现有的技术栈，保留我的内容、字体、颜色与布局。为现有卡片添加柔和入场。透明度从
+            0 到 1，向上移动 12px，用 480ms
+            完成；保留原有布局空间。重播前从当前画面平滑淡出，避免闪烁。尊重减少动态效果设置，支持键盘与触屏操作。
+          </p>
+        </section>
+        <p class="draft-note">
+          布局草图 · 分类与详情链接可浏览，搜索、调参、复制和语言切换待接入。
+        </p>
+      </main>
+    </div>
+    <div class="mobile-copy">
+      <span>提示词 · 中文</span
+      ><button class="button copy">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="8" y="8" width="12" height="13" rx="2" />
+          <path d="M15 8V3H3v13h5" /></svg
+        >复制提示词
+      </button>
+    </div>
+  </body>
+</html>

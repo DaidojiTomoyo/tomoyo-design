@@ -33,15 +33,20 @@ web
 - 展示真实的 UI 视觉与动画效果，并提供可复制的 AI 提示词。
 - 开发前先研究同类产品，明确首页和各路由职责。
 - 先做好网站自身的布局、设计语言和动效，再扩充效果内容。
+- 效果库采用按类别浏览的组织方式。用户于 2026-10-28 否定首轮三种布局草图，指定 React Bits 的效果目录作为分类导航与浏览结构的参考，并批准随后提供的目录、分类页和详情 HTML 草图及实现。视觉规则继续沿用现有设计语言。
 - 使用 Next.js；`app/`、`components/` 等目录位于项目根目录，不创建 `src/`。
 - 工程已完成 TypeScript、Tailwind CSS、ESLint、Prettier 和 pnpm 的初始化；实际版本以 `package.json` 和锁文件为准。
 - 用户已安装 Impeccable，用于后续设计与开发。
 
 ### 当前实现状态
 
-首页已实现第一条完整体验路径：选择效果、操作或重播示例、阅读完整提示词，再复制到自己的 AI 工具。首批使用同一张内容卡片演示 Hover lift、Soft reveal 和 Frosted glass；预览和提示词共用效果配置。
+首页已实现第一条完整体验路径：选择效果、操作或重播示例、快速调整参数、阅读完整提示词，再复制到自己的 AI 工具。首屏使用同一张内容卡片演示 Hover lift、Soft reveal 和 Frosted glass；当前参数同时驱动预览、提示词和详情入口。后续展示区以三种真实预览和分类入口帮助用户继续浏览。
 
-当前提供桌面与手机布局、键盘操作、减少动态效果适配，以及复制失败时的手动选文路径。分类索引中的下划线词条可切换真实预览，其他词条作为词汇参考展示。顶部导航连接首页内的效果区域与使用说明。首页采用「活字排版」整页动效，覆盖首次开场、内容入场、滚动和中英文文字切换；这些动效尊重减少动态效果设置。
+当前提供桌面与手机布局、键盘操作、减少动态效果适配，以及复制失败时的手动选文路径。首页首屏直接连接效果库，已选示例可携带当前参数进入对应详情；原词汇分类列表已由真实效果展示替换，Soft reveal 统一归入动效。顶部导航连接效果库与使用说明。首页采用「活字排版」整页动效，覆盖资源等待时的开场、内容入场、滚动和中英文文字切换；这些动效尊重减少动态效果设置。
+
+效果库、分类页与固定 slug 的详情页已接通，首批三个效果分属动画与交互、材质与光影两类；没有可用内容的分类暂不显示。默认总览以一幅高预览和两幅横向预览展示内容，分类、搜索与名称排序采用规则网格。用户可以搜索中英文名称和别名、排序、操作预览、调整参数、重置、复制当前提示词或分享当前配置。三种效果分别提供 6、7、7 项参数和各自的三个预设；数字可直接编辑，预览、提示词与分享共用配置规范。宽屏详情保留随滚动可用的预览与复制工具栏，手机提供底部复制入口。
+
+从目录进入详情后，返回可恢复搜索条件与滚动位置；界面语言和提示词语言独立，分享链接保存有效参数与提示词语言，已有 v1 链接缺少的新字段使用默认值。路径切换采用短暂淡入，查询参数更新不触发页面动画，界面语言切换只过渡文字。正式页面的加载、错误及未找到状态均已实现；本次体验升级的验证范围与收尾状态见体验升级验证记录，前一轮效果库验收保留为历史证据。
 
 用户已选择「丝网套色」首页图稿，并批准本轮素材方案。网站使用该方向建立第一版设计语言，具体规则由根目录 `DESIGN.md` 记录。
 
@@ -51,7 +56,7 @@ web
 
 ### 规划与待定事项
 
-现已提供 `/en` 与 `/zh` 两个语言路由，界面语言和提示词语言分别选择。完整效果目录、详情页、搜索、调参、场景配方、工作台和本机收藏仍按后续任务推进。`Tomoyo Design` 是工程使用的名称，正式品牌名称仍待确定。
+现已提供 `/en` 与 `/zh` 两个语言路由，首批效果目录、详情、搜索和调参已经实现。内容扩充、场景配方、工作台和本机收藏仍按后续任务推进。`Tomoyo Design` 是工程使用的名称，正式品牌名称仍待确定。
 
 用户确认「套色印刷」和「海岸显影」后续收入动画库。现阶段保留两者的实现与预览，待动画库建设时补充独立演示、可复制提示词及内容条目，尚未作为库内成品发布。
 
@@ -61,6 +66,11 @@ web
 - [架构方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/architecture.md)：技术选型、数据流、模块划分和实施顺序。
 - [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)：首页、路由、布局、动效建议及竞品观察。
 - [首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)：本轮已选方向、首页范围和交互要求。
+- [效果库设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-design-brief.md)：已批准的分类目录、详情布局与本轮实现约定。
+- [效果库验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/effects-library-validation.md)：功能、生产页面、截图证据与验证限制。
+- [体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)：2026-10-28 对首页展示、目录布局、共享控件和详情参数的调整范围。
+- [体验升级验证记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-validation.md)：本次实现、浏览器与自动化证据、修正复验和未覆盖范围。
+- [首页与参数面板参考观察](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-28/home-and-parameter-review.md)：本次 React Bits 与 21st.dev 观察及采用边界。
 - [竞品浏览原始记录](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/research/2026-10-26/capture-notes.md)：2026 年 10 月 26 日的公开页面观察，同目录保留实际截图。
 
 研究截图用于理解同类产品的组织方式；页面方案中的视觉参数是待验证建议。

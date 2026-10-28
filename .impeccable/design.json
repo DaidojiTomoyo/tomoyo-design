@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-27T07:45:17Z",
+  "generatedAt": "2026-10-28T03:12:44.330Z",
   "title": "Design System: Tomoyo Design",
   "extensions": {
     "colorMeta": {
@@ -227,6 +227,36 @@
           "oklch(83.57% 0.01467 80.71 / 0.7)",
           "oklch(95% 0.01467 80.71 / 0.7)"
         ]
+      },
+      "range-track": {
+        "role": "neutral",
+        "displayName": "滑轨灰",
+        "canonical": "#c5bec0",
+        "tonalRamp": [
+          "oklch(0.1500 0.0083 357.86)",
+          "oklch(0.2643 0.0083 357.86)",
+          "oklch(0.3786 0.0083 357.86)",
+          "oklch(0.4929 0.0083 357.86)",
+          "oklch(0.6071 0.0083 357.86)",
+          "oklch(0.7214 0.0083 357.86)",
+          "oklch(0.8357 0.0083 357.86)",
+          "oklch(0.9500 0.0083 357.86)"
+        ]
+      },
+      "choice-surface": {
+        "role": "neutral",
+        "displayName": "选项纸底",
+        "canonical": "#e8d9cc",
+        "tonalRamp": [
+          "oklch(0.1500 0.0242 63.47)",
+          "oklch(0.2643 0.0242 63.47)",
+          "oklch(0.3786 0.0242 63.47)",
+          "oklch(0.4929 0.0242 63.47)",
+          "oklch(0.6071 0.0242 63.47)",
+          "oklch(0.7214 0.0242 63.47)",
+          "oklch(0.8357 0.0242 63.47)",
+          "oklch(0.9500 0.0242 63.47)"
+        ]
       }
     },
     "typographyMeta": {
@@ -321,6 +351,10 @@
       "prompt-language-label": {
         "displayName": "提示词语言标签",
         "purpose": "英文界面的原生语言选择；中文界面继承 Noto Sans SC。"
+      },
+      "field-number": {
+        "displayName": "参数数字",
+        "purpose": "共享数值字段中的等宽数字；手机输入为 16px，值按所属效果的范围与步长解析。"
       }
     },
     "shadows": [
@@ -344,17 +378,17 @@
       {
         "name": "lift-distance",
         "value": "6px",
-        "purpose": "内部表面的向上位移，外层命中区域保持不动。"
+        "purpose": "默认效果配置：内部表面的向上位移，外层命中区域保持不动。调参后由 content/effects/schema.ts 的当前规范驱动。"
       },
       {
         "name": "lift-duration",
         "value": "240ms",
-        "purpose": "hover / focus 的归稳过渡。"
+        "purpose": "默认效果配置：hover / focus 的归稳过渡。调参后由 content/effects/schema.ts 的当前规范驱动。"
       },
       {
         "name": "lift-replay-duration",
         "value": "960ms",
-        "purpose": "一次抬升演示段，结束时依据当前输入状态归稳。"
+        "purpose": "默认效果配置：一次抬升演示段，结束时依据当前输入状态归稳。调参后由 content/effects/schema.ts 的当前规范驱动。"
       },
       {
         "name": "reveal-reset-duration",
@@ -369,17 +403,17 @@
       {
         "name": "reveal-distance",
         "value": "12px",
-        "purpose": "柔和入场的起始向下偏移。"
+        "purpose": "默认效果配置：柔和入场的起始向下偏移。调参后由 content/effects/schema.ts 的当前规范驱动。"
       },
       {
         "name": "reveal-duration",
         "value": "480ms",
-        "purpose": "柔和入场的 opacity 与位置过渡。"
+        "purpose": "默认效果配置：柔和入场的 opacity 与位置过渡。调参后由 content/effects/schema.ts 的当前规范驱动。"
       },
       {
         "name": "reveal-demonstration-duration",
         "value": "600ms",
-        "purpose": "预备淡出与入场合计的演示段。"
+        "purpose": "默认效果配置：预备淡出与入场合计的演示段。调参后由 content/effects/schema.ts 的当前规范驱动。"
       },
       {
         "name": "glass-reset-duration",
@@ -388,7 +422,7 @@
       },
       {
         "name": "glass-reset-ease",
-        "value": "ease-in-out",
+        "value": "ease-in",
         "purpose": "玻璃重播预备段的曲线。"
       },
       {
@@ -487,16 +521,6 @@
         "purpose": "已显示加载层后的首页标题与三个预设编号依次延迟；这段内容入场在退场开始后 855ms 完成。"
       },
       {
-        "name": "home-category-arrival-duration",
-        "value": "620ms",
-        "purpose": "分类标题首次可见时从 translateY(85%)、rotate(3deg) 归位。"
-      },
-      {
-        "name": "home-category-index-duration",
-        "value": "400ms",
-        "purpose": "分类编号延迟 100ms 后从上方 12px 进入。"
-      },
-      {
         "name": "home-guide-title-duration",
         "value": "680ms",
         "purpose": "使用说明标题按行从左侧 16px 配合遮片进入。"
@@ -545,6 +569,21 @@
         "name": "copy-success-label-duration",
         "value": "260ms",
         "purpose": "活字首页的成功标签从下方 8px 进入；2400ms 状态保留时间不变。"
+      },
+      {
+        "name": "path-arrival-duration",
+        "value": "240ms",
+        "purpose": "只在移除语言前缀后的 pathname 改变时，对公共页面容器做 opacity 淡入；query、语言切换、首次挂载和减少动态效果不播放。"
+      },
+      {
+        "name": "path-arrival-opacity",
+        "value": "0.65 → 1",
+        "purpose": "公共祖先只改变透明度，不使用 transform，以维持手机 fixed 复制栏的视口定位；控件持续可用，切换或卸载取消在途动画。"
+      },
+      {
+        "name": "parameter-replay-delay",
+        "value": "180ms",
+        "purpose": "非玻璃参数连续修改后合并为一次演示；离屏、后台、减少动态效果或卸载清理待播放任务。"
       }
     ],
     "breakpoints": [
@@ -567,6 +606,10 @@
       {
         "name": "narrow",
         "value": "360px"
+      },
+      {
+        "name": "shared-fields-compact",
+        "value": "760px"
       }
     ]
   },
@@ -612,11 +655,11 @@
       "css": ".ds-prompt-field{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-prompt-field textarea{font-family:var(--font-mono, \"Roboto Mono\"), monospace;box-sizing:border-box}.ds-prompt-field{padding: 8px 0 24px}.ds-prompt-field label{display: block;font-size: 22px;font-family: var(--font-heading, \"Oswald\"), sans-serif;font-weight: 600}.ds-prompt-field p{margin-block: 12px 20px;font-size: 13px;line-height: 1.7}.ds-prompt-field textarea{display: block;width: 100%;min-height: 310px;padding: 20px;resize: vertical;border: 1px solid #7481a5;border-radius: 5px;background: rgb(255 249 239 / 45%);color: var(--ink, #08297e);caret-color: var(--vermilion, #f74822);font-size: 14px;line-height: 1.7}.ds-copy-error{color: #96301f}@media (max-width: 900px){.ds-prompt-field textarea{min-height: 420px;padding: 14px;font-size: 16px}}:lang(zh-Hans) .ds-prompt-field label{font-family: var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-field textarea:lang(en){font-family:var(--font-mono, \"Roboto Mono\"), monospace}.ds-prompt-field textarea:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-field:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-field textarea:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
     },
     {
-      "name": "页内导航",
+      "name": "首页导航",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "当前两个真实页内入口。英文为等宽字、中文为 Noto Sans SC，窄屏导航换行；界面语言链接作为独立组件展示。",
-      "html": "<header class=\"ds-header\"><nav aria-label=\"Main navigation\"><a href=\"#effects\">Effects</a><a href=\"#how-it-works\">How it works</a></nav></header>",
+      "description": "首页提供效果库路由与页内使用说明两个真实入口。英文为等宽字、中文为 Noto Sans SC，窄屏换行；目录与详情的分类导航按各自表面简报组织。路径变化只做透明度淡入，参数查询更新保持控件实时。",
+      "html": "<header class=\"ds-header\"><nav aria-label=\"Main navigation\"><a href=\"/en/explore\">Effects</a><a href=\"#how-it-works\">How it works</a></nav></header>",
       "css": ".ds-header{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-header a{color:inherit;text-underline-offset:5px;touch-action:manipulation}.ds-header{display: flex;height: calc(58 * var(--unit, 1px));align-items: center;gap: calc(32 * var(--unit, 1px));padding-inline: calc(40 * var(--unit, 1px))}.ds-header nav{display: flex;gap: calc(32 * var(--unit, 1px));font-size: calc(14 * var(--unit, 1px));font-weight: 600}.ds-header nav a{padding-block: 12px;text-decoration: none}.ds-header nav a:hover{text-decoration: underline}@media (max-width: 1100px){.ds-header{height: 70px;padding-inline: 28px;gap: 24px}.ds-header nav{gap: 24px;font-size: 13px}}@media (max-width: 900px){.ds-header{min-height: 76px;height: auto;padding: 18px 20px;gap: 18px;flex-wrap: wrap}}@media (max-width: 600px){.ds-header{row-gap: 8px}.ds-header nav{order: 3;width: 100%;gap: 24px;font-size: 12px}.ds-header nav a{padding-block: 8px}}@media (max-width: 1100px){.ds-header{gap: 20px}}@media (max-width: 600px){.ds-header{gap: 12px}}.ds-header:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-header a:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
     },
     {
@@ -639,22 +682,38 @@
       "name": "界面语言链接",
       "kind": "nav",
       "refersTo": "language-switch",
-      "description": "EN / 中文为真实语言链接；aria-current 与 2px 下划线标记当前界面。目标 URL 保留效果、hash 和有效提示词语言，包括尚未手动修改的默认值。 正式首页为文字应用活字纵向 ViewTransition：旧文 160ms 上移淡出，新文延迟 60ms 后以 380ms 从下方进入；不重播开场，图像和控件保持实时。片段只展示语言链接，路由与文字快照由应用负责。 语言链接位于 components/navigation/，文字过渡位于 components/motion/，URL 状态与当前页面内存的语言切换意图共用 lib/navigation/；刷新不会继承这项意图。",
+      "description": "EN / 中文切换当前路径的语言前缀；aria-current 与 2px 下划线标记当前界面。目标 URL 保留路径、查询、hash 和当前实际提示词语言。语言切换只为文字应用活字 ViewTransition，不触发 pathname 淡入或完整开场，图像和控件保持实时。文字过渡位于 components/motion/，URL 状态与当前页面内存的语言切换意图共用 lib/navigation/；刷新不会继承这项意图。片段展示语言链接，导航与文字快照由应用负责。",
       "html": "<div class=\"ds-language-switch\" role=\"group\" aria-label=\"Interface language\"><a href=\"/en?prompt=en\" hreflang=\"en\" lang=\"en\" aria-current=\"page\">EN</a><span aria-hidden=\"true\">/</span><a href=\"/zh?prompt=en\" hreflang=\"zh-Hans\" lang=\"zh-Hans\">中文</a></div>",
       "css": ".ds-language-switch{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-language-switch a{color:inherit;text-underline-offset:5px;touch-action:manipulation}.ds-language-switch{display: inline-flex;margin-inline-start: auto;align-items: center;gap: 8px;flex: none;font-size: 12px;font-weight: 600}.ds-language-switch a{display: inline-flex;align-items: center;min-height: 44px;padding-inline: 4px;text-decoration: none}.ds-language-switch a[aria-current='page']{text-decoration: underline;text-decoration-thickness: 2px}.ds-language-switch a:hover{text-decoration: underline}@media (max-width: 1100px){.ds-language-switch{margin-inline-start: auto}}@media (max-width: 600px){.ds-language-switch{font-size: 12px;gap: 4px}}.ds-language-switch a:lang(zh-Hans){font-family: var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-language-switch a:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}.ds-language-switch{margin-inline-start:auto}"
     },
     {
-      "name": "独立提示词语言选择",
+      "name": "共享原生下拉",
       "kind": "input",
-      "refersTo": "prompt-language-select",
-      "description": "原生 select 独立选择 English / 简体中文。其 label 跟随界面，提示词正文与 textarea lang 跟随所选语言；不改变界面语言或当前效果。",
-      "html": "<div class=\"ds-language-field\"><label class=\"ds-prompt-language\">Prompt language<select aria-label=\"Prompt language\"><option value=\"en\" lang=\"en\" selected>English</option><option value=\"zh\" lang=\"zh-Hans\">简体中文</option></select></label></div>",
-      "css": ".ds-language-field{font-family:var(--font-mono, \"Roboto Mono\"), monospace;color:var(--ink, #08297e)}.ds-language-field label{font-family:var(--font-heading, \"Oswald\"), sans-serif;font-size:22px;font-weight:600}.ds-language-field{padding: 8px 0 24px}.ds-language-field label{display: block;font-size: 22px;font-family: var(--font-heading, \"Oswald\"), sans-serif;font-weight: 600}.ds-language-field p{margin-block: 12px 20px;font-size: 13px;line-height: 1.7}.ds-language-field textarea{display: block;width: 100%;min-height: 310px;padding: 20px;resize: vertical;border: 1px solid #7481a5;border-radius: 5px;background: rgb(255 249 239 / 45%);color: var(--ink, #08297e);caret-color: var(--vermilion, #f74822);font-size: 14px;line-height: 1.7}@media (max-width: 900px){.ds-language-field textarea{min-height: 420px;padding: 14px;font-size: 16px}}.ds-language-field .ds-prompt-language{display: flex;align-items: center;gap: 12px;font: inherit;font-size: 13px}.ds-prompt-language select{min-height: 44px;padding: 8px 12px;border: 1px solid var(--ink, #08297e);border-radius: 5px;background: var(--paper, #f7e8d8);color: var(--ink, #08297e);font: inherit;cursor: pointer}:lang(zh-Hans) .ds-language-field label{font-family: var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-language select{touch-action:manipulation}.ds-language-field:lang(zh-Hans){font-family:var(--font-cjk, \"Noto Sans SC\"), sans-serif}.ds-prompt-language select:focus-visible{outline:3px solid var(--vermilion, #f74822);outline-offset:5px}"
+      "refersTo": "select-field",
+      "description": "排序和提示词语言共用的原生 select：6px 圆角、浅纸白底、蓝边，右侧 34px 内边距留给 SVG 箭头；焦点只显示在外框。示例为独立提示词语言，label 跟随界面、正文与 textarea lang 跟随所选语言。",
+      "html": "<label class=\"ds-select-example\">Prompt language<span class=\"ds-select\"><select aria-label=\"Prompt language\"><option value=\"en\" lang=\"en\" selected>English</option><option value=\"zh\" lang=\"zh-Hans\">简体中文</option></select><svg class=\"ds-icon\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\" /></svg></span></label>",
+      "css": ".ds-select-example{display:flex;align-items:center;gap:12px;font:13px var(--font-mono,\"Roboto Mono\"),monospace;color:var(--ink,#08297e)}.ds-select{position:relative;display:inline-flex;align-items:center;border:1px solid var(--control-border,#426aa7);border-radius:6px;color:var(--ink,#08297e);background:var(--action-paper,#fff9ef)}.ds-select select{appearance:none;width:100%;min-height:42px;padding:8px 34px 8px 12px;border:0;border-radius:inherit;background:transparent;color:inherit;font:inherit;cursor:pointer;touch-action:manipulation}.ds-select>.ds-icon{position:absolute;right:10px;width:13px;height:13px;pointer-events:none;transform:rotate(90deg)}.ds-select:focus-within{outline:2px solid var(--blue,#0840b1);outline-offset:3px}.ds-select select:focus-visible{outline:none}.ds-select-example:lang(zh-Hans){font-family:var(--font-cjk,\"Noto Sans SC\"),sans-serif}"
+    },
+    {
+      "name": "滑块与数值输入",
+      "kind": "input",
+      "refersTo": "number-field",
+      "description": "RangeField 保留原生 range 与 number，滑动即时更新同一配置；Enter 或失焦提交数值草稿，Escape 取消。数值框为 6px 圆角，滑轨 4px、拇指外径 18px。片段显示详情的焦点样式，应用负责数值同步、边界与步长校验。",
+      "html": "<div class=\"ds-range-field\"><div class=\"ds-field-heading\"><label for=\"ds-distance\">Travel distance</label><span class=\"ds-number-field\"><input aria-label=\"Travel distance\" type=\"number\" min=\"0\" max=\"24\" step=\"1\" value=\"6\"><span aria-hidden=\"true\">px</span></span></div><input class=\"ds-range\" id=\"ds-distance\" type=\"range\" min=\"0\" max=\"24\" step=\"1\" value=\"6\" aria-valuetext=\"6px\" style=\"--range-fill:25%\"></div>",
+      "css": ".ds-range-field{min-width:0;font-family:var(--font-mono,\"Roboto Mono\"),monospace;color:var(--ink,#08297e)}.ds-field-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}.ds-number-field{display:flex;align-items:center;gap:3px;padding:0 9px;border:1px solid var(--control-border,#426aa7);border-radius:6px;background:var(--action-paper,#fff9ef);font:12px var(--font-mono,\"Roboto Mono\"),monospace;font-variant-numeric:tabular-nums}.ds-number-field input{width:49px;min-height:36px;padding:0;border:0;outline:0;color:inherit;background:transparent;font:inherit;text-align:right;appearance:textfield}.ds-number-field input::-webkit-inner-spin-button,.ds-number-field input::-webkit-outer-spin-button{appearance:none;margin:0}.ds-number-field:focus-within{outline:2px solid var(--blue,#0840b1);outline-offset:3px}.ds-number-field input:focus-visible{outline:none}.ds-range{display:block;width:100%;height:32px;margin:4px 0 0;background:transparent;appearance:none;cursor:pointer;touch-action:pan-y}.ds-range::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(to right,var(--ink,#08297e) var(--range-fill),#c5bec0 var(--range-fill))}.ds-range::-moz-range-track{height:4px;border-radius:4px;background:#c5bec0}.ds-range::-moz-range-progress{height:4px;background:var(--ink,#08297e)}.ds-range::-webkit-slider-thumb{appearance:none;width:18px;height:18px;margin-top:-7px;border:2px solid var(--ink,#08297e);border-radius:50%;background:var(--action-paper,#fff9ef);transition:background 120ms}.ds-range::-moz-range-thumb{width:14px;height:14px;border:2px solid var(--ink,#08297e);border-radius:50%;background:var(--action-paper,#fff9ef)}.ds-range:hover::-webkit-slider-thumb,.ds-range:active::-webkit-slider-thumb{background:var(--active-peach,#ff986e)}.ds-range:focus-visible{outline:2px solid var(--blue,#0840b1);outline-offset:4px}@media(max-width:760px){.ds-number-field input{font-size:16px;min-height:40px}}"
+    },
+    {
+      "name": "分段单选",
+      "kind": "input",
+      "refersTo": "choice-group",
+      "description": "ChoiceField 以 fieldset、legend 和原生 radio 表达互斥选项，用于每种效果的三个预设以及方向、缓动、色调。蓝底与浅纸白字表示 checked，焦点只显示在可见选项上；手机选项最小高度 44px。",
+      "html": "<fieldset class=\"ds-choice-field\"><legend>Start with a preset</legend><div class=\"ds-segments\"><label><input type=\"radio\" name=\"ds-preset\" value=\"quiet\"><span>Quiet</span></label><label><input type=\"radio\" name=\"ds-preset\" value=\"lift\" checked><span>Lift</span></label><label><input type=\"radio\" name=\"ds-preset\" value=\"playful\"><span>Playful</span></label></div></fieldset>",
+      "css": ".ds-choice-field{min-width:0;border:0;padding:0;margin:0;font-family:var(--font-mono,\"Roboto Mono\"),monospace;color:var(--ink,#08297e)}.ds-choice-field legend{padding:0;margin-bottom:10px;font-size:13px}.ds-segments{display:flex;padding:3px;gap:3px;background:#e8d9cc;border-radius:7px}.ds-segments label{position:relative;flex:1;min-width:0;cursor:pointer}.ds-segments input{position:absolute;opacity:0;width:1px;height:1px}.ds-segments span{display:flex;min-height:38px;align-items:center;justify-content:center;padding:6px 8px;border-radius:4px;font-size:12px;line-height:1.4;text-align:center;transition:color 160ms,background 160ms}.ds-segments input:checked+span{color:var(--action-paper,#fff9ef);background:var(--ink,#08297e)}.ds-segments input:focus-visible+span{outline:2px solid var(--blue,#0840b1);outline-offset:3px}.ds-segments label:hover span{background:rgb(8 41 126 / 8%)}.ds-segments label:hover input:checked+span{background:var(--blue,#0840b1)}.ds-choice-field:lang(zh-Hans){font-family:var(--font-cjk,\"Noto Sans SC\"),sans-serif}@media(max-width:760px){.ds-segments span{min-height:44px}}"
     }
   ],
   "narrative": {
     "northStar": "丝网套色 / Screenprint Overprint",
-    "overview": "暖奶油纸面承接群青油墨，朱红标记让操作和当前状态清楚可见。英文以压缩粗体建立远近层次，等宽文字像印刷样本旁的准确注释；中文以本地黑体的重量和独立字阶延续同一层次。材质来自经批准的纸纹、蓝色油墨与海岸图像；文字和控件保持真实、可选择、可操作。\n\n这套语言服务于「看见效果、找到描述、用于自己的项目」：效果可以有触感和运动，说明与操作则保持稳定。它以第一版首页为实证，后续页面继承颜色、字体关系、材料和状态规则；首页的画布位置、三栏分类与首屏顺序仍属于[首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)，不构成所有页面的固定模板。",
+    "overview": "暖奶油纸面承接群青油墨，朱红标记让操作和当前状态清楚可见。英文以压缩粗体建立远近层次，等宽文字像印刷样本旁的准确注释；中文以本地黑体的重量和独立字阶延续同一层次。材质来自经批准的纸纹、蓝色油墨与海岸图像；文字和控件保持真实、可选择、可操作。\n\n这套语言服务于「看见效果、找到描述、用于自己的项目」：效果可以有触感和运动，说明与操作则保持稳定。它以第一版首页为实证，后续页面继承颜色、字体关系、材料和状态规则；原首页的画布位置、三栏分类与首屏顺序保留在[首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)。当前首页、目录与详情构图以[体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)为准，均不构成所有页面的固定模板。",
     "keyCharacteristics": [
       "奶油纸与深蓝油墨形成稳定的阅读底色。",
       "朱红动作、浅暖色选中编号与细蓝线共同表达状态。",

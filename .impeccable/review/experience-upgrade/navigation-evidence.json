@@ -1,0 +1,54 @@
+{
+  "ancestors": [
+    {
+      "opacity": "1",
+      "tag": "DIV",
+      "transform": "none"
+    },
+    {
+      "opacity": "1",
+      "tag": "MAIN",
+      "transform": "none"
+    },
+    {
+      "opacity": "1",
+      "tag": "DIV",
+      "transform": "none"
+    },
+    {
+      "opacity": "1",
+      "tag": "DIV",
+      "transform": "none"
+    },
+    {
+      "opacity": "1",
+      "tag": "DIV",
+      "transform": "none"
+    },
+    {
+      "opacity": "1",
+      "tag": "BODY",
+      "transform": "none"
+    },
+    {
+      "opacity": "1",
+      "tag": "HTML",
+      "transform": "none"
+    }
+  ],
+  "copyBar": {
+    "bottom": 844,
+    "height": 75,
+    "left": 0,
+    "right": 390,
+    "top": 769,
+    "width": 390,
+    "x": 0,
+    "y": 769
+  },
+  "pathname": "/zh/effects/hover-lift",
+  "viewport": {
+    "height": 844,
+    "width": 390
+  }
+}

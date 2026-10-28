@@ -33,3 +33,5 @@ next-env.d.ts
 !/.impeccable/review/user-1280.png
 !/.impeccable/review/hero-repro.png
 !/.impeccable/review/resource-loading/*.png
+!/.impeccable/review/effects-library/*.png
+!/.impeccable/review/experience-upgrade/*.png

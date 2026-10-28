@@ -18,6 +18,8 @@ colors:
   field-surface: 'rgb(255 249 239 / 45%)'
   glass-surface: 'rgba(247, 232, 216, 0.86)'
   glass-border: 'rgb(255 249 239 / 70%)'
+  range-track: '#c5bec0'
+  choice-surface: '#e8d9cc'
 typography:
   display:
     fontFamily: 'Anton, sans-serif'
@@ -136,9 +138,14 @@ typography:
     fontFamily: 'Roboto Mono, monospace'
     fontSize: '13px'
     fontWeight: 400
+  field-number:
+    fontFamily: 'Roboto Mono, monospace'
+    fontSize: '12px'
 rounded:
   mark: '4px'
   control: '5px'
+  field: '6px'
+  choice-group: '7px'
   reference-outline: '8px'
   specimen-compact: '12px'
   specimen: '14px'
@@ -200,12 +207,34 @@ components:
     textColor: '{colors.ink}'
     typography: '{typography.language-label}'
     padding: '0 4px'
-  prompt-language-select:
-    backgroundColor: '{colors.paper}'
+  select-field:
+    backgroundColor: '{colors.action-paper}'
     textColor: '{colors.ink}'
-    typography: '{typography.prompt-language-label}'
-    rounded: '{rounded.control}'
-    padding: '8px 12px'
+    rounded: '{rounded.field}'
+    padding: '8px 34px 8px 12px'
+  number-field:
+    backgroundColor: '{colors.action-paper}'
+    textColor: '{colors.ink}'
+    typography: '{typography.field-number}'
+    rounded: '{rounded.field}'
+    padding: '0 9px'
+  range-control:
+    backgroundColor: 'transparent'
+    height: '32px'
+    width: '100%'
+  choice-group:
+    backgroundColor: '{colors.choice-surface}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.choice-group}'
+    padding: '3px'
+  choice-option:
+    backgroundColor: 'transparent'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.mark}'
+    padding: '6px 8px'
+  choice-option-selected:
+    backgroundColor: '{colors.ink}'
+    textColor: '{colors.action-paper}'
   effect-preset:
     backgroundColor: 'transparent'
     textColor: '{colors.paper}'
@@ -241,7 +270,7 @@ components:
 
 暖奶油纸面承接群青油墨，朱红标记让操作和当前状态清楚可见。英文以压缩粗体建立远近层次，等宽文字像印刷样本旁的准确注释；中文以本地黑体的重量和独立字阶延续同一层次。材质来自经批准的纸纹、蓝色油墨与海岸图像；文字和控件保持真实、可选择、可操作。
 
-这套语言服务于「看见效果、找到描述、用于自己的项目」：效果可以有触感和运动，说明与操作则保持稳定。它以第一版首页为实证，后续页面继承颜色、字体关系、材料和状态规则；首页的画布位置、三栏分类与首屏顺序仍属于[首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)，不构成所有页面的固定模板。
+这套语言服务于「看见效果、找到描述、用于自己的项目」：效果可以有触感和运动，说明与操作则保持稳定。它以第一版首页为实证，后续页面继承颜色、字体关系、材料和状态规则；原首页的画布位置、三栏分类与首屏顺序保留在[首页设计简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/homepage-design-brief.md)。当前首页、目录与详情构图以[体验升级简报](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-upgrade-brief.md)为准，均不构成所有页面的固定模板。
 
 **Key Characteristics:**
 
@@ -251,7 +280,7 @@ components:
 - 真实栅格纹理带来印刷触感，语义文字和几何图标保持清晰。
 - 演示动效局限于当前示例；首页只有资源仍需等待才显示活字加载，快速就绪直接显示内容，滚动与语言过渡延续同一节奏。
 
-本文件从 `styles/tokens.css`、`styles/base.css`、`features/home/styles/`、`features/home/motion/`、`features/home/effects/`、`components/navigation/`、`components/motion/`，以及 `app/[locale]/layout.tsx`、`content/home-effects.ts`、`content/motion-studies.ts`、`content/locales/` 提取。语言与 URL 状态共用 `lib/navigation/`，预览比较栏位于 `features/motion-preview/`。frontmatter 是颜色、排版、圆角、间距及组件基础属性的规范；`.impeccable/design.json` 补充阴影、动效、断点和组件片段。sidecar 色阶仅供面板观察，不是已实现的新色彩 token。
+本文件从 `styles/tokens.css`、`styles/base.css`、`features/home/styles/`、`features/home/motion/`、`features/home/effects/`、`components/navigation/`、`components/motion/`，以及 `app/[locale]/layout.tsx`、`content/home-effects.ts`、`content/motion-studies.ts`、`content/locales/` 提取。本轮仅根据 `components/ui/fields.css`、共享字段组件、`content/effects/`、`components/effects/` 和路径过渡实现补充公共规则，不重建既有视觉身份。语言与 URL 状态共用 `lib/navigation/`，预览比较栏位于 `features/motion-preview/`。frontmatter 是颜色、排版、圆角、间距及组件基础属性的规范；`.impeccable/design.json` 补充阴影、动效、断点和组件片段。sidecar 色阶仅供面板观察，不是已实现的新色彩 token。
 
 ## Colors
 
@@ -273,10 +302,11 @@ components:
 ### Neutral
 
 - **奶油纸 — `paper`：** 页面与默认卡片；也用于蓝底文字与蓝底焦点环。
-- **浅纸白 — `action-paper`：** Copy 文字与几何图标。
+- **浅纸白 — `action-paper`：** Copy 文字、几何图标与共享数字、下拉字段底色。
 - **退后蓝 — `quiet-blue`：** 未选编号和细短线；**套准浅蓝 — `registration-blue`：** 贯穿画布的套准线及虚线参照框。
 - **控件蓝边 — `control-border`：** 摘要、Replay 与宽屏分类分隔；**蓝灰分隔 — `divider`：** 折叠区、步骤和紧凑分类之间的线条。
 - **半透明字段纸 — `field-surface`：** 提示词文本域；**玻璃纸 — `glass-surface`** 与 **玻璃亮边 — `glass-border`：** Frosted glass 的表面与不占布局空间的描边。
+- **滑轨灰 — `range-track`：** 数值滑块尚未经过的轨道；**选项纸底 — `choice-surface`：** 分段单选组的承托面。两者限定在共享参数控件中，选中项继续使用深蓝与浅纸白。
 
 **The Two Inks Rule.** 群青承担主体与预览，朱红承担动作、索引和有意义的标记；蓝底选中编号使用更亮的暖色，不能直接以装饰色替代可读的状态文字。
 
@@ -333,7 +363,7 @@ components:
 
 ## Shapes
 
-控件采用轻圆角 `control`，主示例采用 `specimen`，紧凑示例采用 `specimen-compact`。短印记用 `mark`；虚线参照框用 `reference-outline`。外部印刷样张维持直角，圆形只用于已有的品牌点和套准标记。
+原有按钮、提示词文本域与目录搜索采用轻圆角 `control`；共享数字和下拉字段使用 `field`，分段单选组使用 `choice-group`，其中选项使用 `mark` 的圆角量度。它们是一组按用途区分的控件，不要求全部旧控件改成同一半径。主示例采用 `specimen`，紧凑示例采用 `specimen-compact`；可调玻璃的实际圆角来自效果配置。短印记用 `mark`；虚线参照框用 `reference-outline`。外部印刷样张维持直角，圆形用于已有的品牌点、套准标记和滑块拇指。
 
 普通控件与分隔使用细线（1px），静置参照框用虚线（1.5px）。样张外框是朱红描边（2px），经真实纸纹调制形成缺墨和细微不齐；它不是硬偏移阴影，也不是随机噪声描边。
 
@@ -349,7 +379,7 @@ components:
 
 - **Copy：** 使用 `button-copy`，朱红填充、浅纸白字、加粗标签与复制图标；hover 轻微压暗（`brightness(0.94)`）。复制中显示当前语言的处理中标签、不透明度降为（0.85），以 `aria-busy`、`aria-disabled` 和请求互斥阻止重复提交，保留 pointer 指针与键盘焦点，不使用原生 disabled 或 progress 指针。成功显示对应语言的成功文字与勾选图标（2400ms）后回到默认；正式首页的勾选图标以（320ms）缩放归位，标签以（260ms）从下方（8px）进入，减少动态效果时省略这两段动画。失败会打开完整提示词、聚焦并选中文本，同时给出错误说明。
 - **Replay：** 使用 `button-replay`，细蓝边、透明底；hover 转为深蓝底与纸色字。按钮、卡片点击或键盘操作均可请求单次演示。同一效果正在演示时，重复重播请求被忽略；切换到另一效果则从当前画面接续。
-- **文字动作：** Select all text 与分类中的真实预设入口采用下划线，明确与静态词汇区分。紧凑分类入口和手动选文操作保留（44px）最小高度。
+- **文字动作：** Select all text 保留下划线与（44px）最小高度。首页展示区和分类入口连接已经实现的效果与目录；原静态词汇列表已移除。
 - **Focus：** 默认焦点环为朱红实线（3px），外偏移（5px）；蓝底预览内改用纸色。保留可见键盘焦点与跳转到效果区域的 skip link。
 - **Pointer / Touch：** 按钮和 disclosure 内部元素继承父级指针，图标与文字不切换鼠标样式；按钮、链接、summary 和 select 使用 `touch-action: manipulation`。
 
@@ -361,13 +391,15 @@ components:
 
 示例卡片外层是固定命中区域的真实按钮（`sample-hit-area`）；中间的 `sample-arrival` 包装层只承担首页入场，内部 `sample-surface` 承担纸色、纹理、阴影、内容内间距与示例演示。两层均不接收指针事件，两个控制器不向同一元素写入变换。frontmatter 中既有 `sample-card`、`sample-card-compact`、`sample-card-glass` 描述内部视觉表面。海岸图、标题、正文、印记和编号的结构在三个效果之间保持稳定。玻璃后方图像常驻，切换时只以（200ms ease-out）改变透明度，不反复挂载。完整宽屏构图与影像选择属于首页简报。
 
-演示动效参数维护在 `content/home-effects.ts`，预览与中英文提示词同时读取；`features/home/effects/use-preview-motion.ts` 统一控制 hover、焦点、切换和重播。开始新演示前先读取当前透明度、位置、阴影和材质，再取消旧动画并接续。示例表面本身默认可见，加载阶段的整体可见性由外部 `motion-content` 管理；内容入场由 `features/home/motion/page-entry.ts` 单独负责。
+演示参数、默认值与范围维护在 `content/effects/schema.ts`，预设维护在 `content/effects/presets.ts`，预览与中英文提示词同时读取校验后的配置。`content/home-effects.ts` 只复用这些定义；`features/home/effects/use-preview-motion.ts` 接入 `components/effects/preview-controller.ts`，与目录、详情共用 hover、焦点、切换和重播行为。开始新演示前先读取当前透明度、位置、阴影和材质，再取消旧动画并接续。示例表面本身默认可见，加载阶段的整体可见性由外部 `motion-content` 管理；内容入场由 `features/home/motion/page-entry.ts` 单独负责。
+
+以下是默认配置的演示行为；调参后使用同一规范中的当前值，不把默认距离、阴影或时长固化为所有效果的规则。悬停浮起、柔和入场、磨砂玻璃分别有 6、7、7 项适用参数，详情各提供三个预设；完整字段和范围以规范为准。连续参数修改合并为短暂等待后的一次演示；离屏、后台、减少动态效果与卸载均清理待播放任务。
 
 | 效果          | 实际行为                                                                                                                                                                   |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hover lift    | 内部表面向上（6px），普通 hover / focus 归稳过渡为（240ms）；精细指针 hover 和可见键盘焦点均可触发。点击或 Replay 演示段为（960ms），结束后按当前 hover / focus 状态归稳。 |
 | Soft reveal   | 先从当前帧淡出（120ms，ease-in），再以 opacity（0 → 1）、translateY（12px → 0）入场（480ms）；演示段合计（600ms），不突然隐藏已可见内容。                                  |
-| Frosted glass | 切换到最终玻璃表面用（320ms）；同一玻璃效果重播时先平滑回到纸面（160ms，ease-in-out），再转为玻璃（320ms），演示段合计（480ms）。静态玻璃状态保留。                        |
+| Frosted glass | 切换到最终玻璃表面用（320ms）；同一玻璃效果重播时先平滑回到纸面（160ms，ease-in），再转为玻璃（320ms），演示段合计（480ms）。静态玻璃状态保留。                            |
 
 演示的进入与归稳使用指数缓出曲线（`cubic-bezier(0.16, 1, 0.3, 1)`）；有预备段的时间轴为 linear，各段单独设定 easing。结束后根据当前输入状态归稳，页面进入后台时取消演示并落实可见目标状态。实现采用 CSS 与 Web Animations API，无独立动画依赖，不自动循环。
 
@@ -387,7 +419,7 @@ components:
 
 只有尚未接管的 `checking` 状态保留约（6s）的 CSS 恢复：隐藏加载层、显露正文并恢复滚动。迟到接管若发现正文已恢复可见，直接完成，不重新覆盖。脚本接管后的 `loading` 由资源结果和（10s）故障上限管理，不再被这个 CSS 恢复时限提前结束。无脚本时，`noscript` 直接隐藏加载层并显示静态正文，`scripting: none` 恢复滚动；减少动态效果时也直接显示正文并解除滚动锁。
 
-分类、使用说明标题与每个步骤首次进入视口（IntersectionObserver threshold 0.2）时播放一次。分类标题从下方（85%）及旋转（3deg）归位（620ms），旁边编号延迟（100ms）、以（400ms）从上方（12px）进入。说明标题按行从左侧（16px）配合遮片进入（680ms），行间隔（85ms）；步骤编号各以（460ms）从上方（18px）进入。说明区上方的朱红细线根据阅读位置伸展；正式首页不启用海岸视差。开屏退出后的正文保持可见，滚动提示不自动循环。
+使用说明标题与每个步骤首次进入视口（IntersectionObserver threshold 0.2）时播放一次。说明标题按行从左侧（16px）配合遮片进入（680ms），行间隔（85ms）；步骤编号各以（460ms）从上方（18px）进入。原分类词汇区已被真实效果展示替换，原分类标题及编号的滚动入场不再运行。说明区上方的朱红细线根据阅读位置伸展；正式首页不启用海岸视差。开屏退出后的正文保持可见，滚动提示不自动循环。
 
 加载层视图与检查阶段样式、资源结果聚合、页面资源收集、内容入场和滚动分别由 `features/home/motion/` 下的独立模块负责；`resource-barrier.ts` 汇总结果，`resource-readiness.ts` 收集实际字体与图像任务。减少动态效果时省略加载动画、滚动位移、阅读细线和语言过渡；切换为减少动态效果或卸载会通过 AbortController 结束等待并取消相应动画，防止旧异步过程重新写回状态，卸载还释放观察器、帧请求与事件监听。
 
@@ -399,15 +431,24 @@ components:
 
 完整提示词使用原生 `details` / `summary` 展开和只读 `textarea`，字段拥有实际 label。文本域采用 `prompt-textarea`，最小高度（310px）、纵向可调整；紧凑屏为（420px）最小高度、（16px）字号与（14px）内边距。焦点使用全局规则，输入光标为朱红。复制失败时文字自动选中，也可点击 Select all text 手动选择。
 
-提示词语言使用工具栏中的原生 select，纸色底、深蓝（1px）描边、`control` 圆角与（44px）最小高度；选项为 English 与简体中文。语言只改变完整提示词及文本域自身的字体、`lang`，不改变当前效果或界面语言。其 label 跟随界面语言；摘要仍使用当前界面语言。
+共享字段保留原生输入语义，位于 `components/ui/`。`RangeField` 用 label 对应原生 range，旁边的 number 输入显示当前值和独立单位；`ChoiceField` 用 fieldset、legend 和同名 radio 表达互斥选项，预设及参数都可以用键盘选择。提示词文本域与目录搜索仍保留各自的用途和外观，不把字段族描述为所有旧控件的统一替换。
+
+- **数值与滑块：** 数字外框使用 `number-field`，蓝色细边（1px）与等宽对齐数字；数字输入宽（49px）、最小高（36px），手机最小高（40px）、字号（16px）。Enter 或失焦提交，Escape 取消编辑；空白和非有限数字不提交，有效值先限制到范围，再按效果规范的步长归一化。原生 range 的操作高度使用 `range-control`，轨道厚（4px）、拇指外径（18px）；已调部分为深蓝，hover / active 的拇指变为浅暖色。滑动即时更新数字和同一配置。
+- **分段单选：** 使用 `choice-group`，每个 `choice-option` 等分宽度并允许文字换行；选中时使用 `choice-option-selected`。选项最小高（38px），在（760px）以下为（44px）。hover 使用浅蓝透明底，选中 hover 转为群青；状态由真实 radio 的 checked 语义表达。
+- **原生下拉：** 排序和提示词语言共用 `select-field`；浅纸白底、控件蓝边（1px），最小高（42px），右侧内边距为箭头预留空间。箭头是无指针事件的 SVG，不能用页面样式缩掉预留宽度。字体继承所在表单，提示词语言选项为 English 与简体中文。
+- **单一焦点：** 数字和 select 外框使用群青（2px）外圈、偏移（3px），内部输入不再叠加第二圈。radio 焦点显示在其可见选项表面；目录搜索同样只保留外框焦点。原有按钮和提示词文本域继续使用其既有朱红焦点，不因此改写全局规则。
+
+提示词语言只改变完整提示词及文本域自身的字体、`lang`，不改变当前效果或界面语言。其 label 跟随界面语言；摘要仍使用当前界面语言。
 
 ### Navigation
 
-主导航使用深蓝文字的普通锚点，英文为等宽字、中文为本地黑体，hover 显示下划线。当前入口连接页内真实区域，窄屏自然换行；不添加未实现的目录链接或选中页面状态。Oswald 字标与朱红圆点维持紧凑头部节奏，头部短注在平板布局隐藏，圆点在手机布局隐藏。
+主导航使用深蓝文字的真实链接，英文为等宽字、中文为本地黑体，hover 显示下划线。首页连接效果库与页内使用说明；目录和详情保留共用分类导航与当前类别标记，窄屏以可展开分类适应内容。只提供已经实现的路由。Oswald 字标与朱红圆点维持首页紧凑头部节奏，头部短注在平板布局隐藏，圆点在手机布局隐藏。
 
-EN / 中文是界面语言链接组，连接 `/en` 与 `/zh`；当前语言以 `aria-current="page"` 和（2px）下划线表示，单个链接最小高度为（44px）。切换界面语言时保留当前效果、hash 和当前实际提示词语言，包括尚未手动修改的默认值。效果和提示词语言由 URL 的 `effect` / `prompt` 参数记录；界面切换不重置用户正在参考的内容。
+EN / 中文是界面语言链接组，切换当前路径的 `/en` 与 `/zh` 前缀；当前语言以 `aria-current="page"` 和（2px）下划线表示，单个链接最小高度为（44px）。切换界面语言时保留路径、查询、hash 和当前实际提示词语言，包括尚未手动修改的默认值。首页效果选择、目录搜索和详情参数均由各自 URL 状态记录；界面切换不重置用户正在参考的内容。
 
 正式首页的语言切换采用活字纵向交换，仅为文本建立 React ViewTransition。旧文上移（18px）并淡出（160ms，ease-in），新文延迟（60ms）后从下方（18px）进入（380ms，指数缓出）；根快照不播放整页动画，海岸图像与操作控件保持实时。不支持原生过渡 API 时，新的文本以（300ms）从下方（10px）及透明度（0.4）进入；减少动态效果时直接显示文本。语言切换不触发完整开场。
+
+跨页面路径变化由 `PageTransition` 对公共页面容器做短暂淡入：opacity（0.65 → 1）、时长（240ms）、指数缓出。比较前移除语言前缀，只有 pathname 改变才播放；query 更新、仅切换语言和首次挂载不播放，减少动态效果时跳过。公共页面祖先不得通过 transform 做这段过渡，保持 fixed 复制栏以视口定位；点击和控件持续可用，后续切换或卸载取消在途动画。详情的 sticky 画布、桌面复制工具栏与手机底部复制入口属于该表面的布局，不能被共同祖先动画改变定位方式。
 
 ## Do's and Don'ts
 

@@ -1,16 +1,32 @@
 # UI 效果库架构与技术选型方案
 
-日期：2026 年 10 月 26 日。目标用户：海外或全球用户，包括通过 AI 制作页面、但不熟悉设计术语的人。
+初稿：2026 年 10 月 26 日。实现状态更新：2026 年 10 月 28 日。目标用户：海外或全球用户，包括通过 AI 制作页面、但不熟悉设计术语的人。
 
-文档状态：技术与实施方案。基础工程已初始化，详细功能仍待实现；已确认的产品需求与约束见 [PRODUCT.md](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/PRODUCT.md)。
+文档状态：当前实现与后续技术方案并存。首页、首批效果库、分类与详情已实现；下方「当前实现」及职责边界说明已落地的选择，其余方案保留最初的扩充方向，不代表相关依赖或页面已存在。已确认的产品需求与约束见 [PRODUCT.md](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/PRODUCT.md)。
 
-建议采用 **Next.js App Router + React + TypeScript + Tailwind CSS + Motion**，以结构化内容文件管理样例，通过 Vercel 发布。首版采用静态页面和浏览器内交互，提供效果浏览、参数调整、提示词复制和有限范围的效果组合。
+原方案建议采用 **Next.js App Router + React + TypeScript + Tailwind CSS + Motion**，以结构化内容文件管理样例，通过 Vercel 发布。当前已采用前四者；效果交互使用 CSS 与 Web Animations API，尚未引入 Motion。效果组合仍为后续范围。
 
 项目采用根目录组织：`app/`、`components/`、`features/` 等直接放在项目根目录，不设置 `src/`。实施顺序为 **产品设计语言与核心页面 → 网站布局和交互 → 效果运行与提示词 → 内容扩充**。
 
 页面结构、竞品依据和网站自身的动效规范见 [页面与交互方案](/Users/peipei/mine/wanwan-Workspace/tomoyo-design/docs/experience-design.md)。工程实现以该文档确定的页面职责为依据。
 
 系统最重要的约束是：**实际预览、复制的提示词和分享的参数，必须来自同一份效果规范。** 内容更新时，这三者一起更新。
+
+## 当前实现
+
+- 路由组 `app/[locale]/(catalog)/` 提供效果库、分类、详情和共用的加载、错误、未找到状态。`(catalog)` 不出现在公开 URL 中。首批固定 slug 为 `hover-lift`、`soft-reveal`、`frosted-glass`；分类为 `motion` 与 `material`。
+- 首页与动效预览页继续静态生成。目录、分类和详情的页面函数等待 `searchParams`，按请求服务端渲染搜索结果或效果参数，让分享地址的首份 HTML 就对应当前配置。即使分类和 slug 由 `generateStaticParams` 枚举，这些路由仍不是静态导出页；当前部署需要 Next.js 服务端运行时。
+- `content/effects/registry.ts` 维护分类、名称、用途与中英文别名；`schema.ts` 维护参数类型、分组、默认值、可调范围、步长、版本与解析；`presets.ts` 为每种效果提供三个起始配置；`prompts.ts` 将同一份规范生成中英文提示词。首页的 `content/home-effects.ts` 复用公共定义，不维护独立参数源。
+- 悬停浮起提供距离、缩放、旋转、阴影、时长、缓动六项；柔和入场提供方向、距离、模糊、起始缩放、时长、延迟、缓动七项；磨砂玻璃提供色调、模糊、表面不透明度、饱和度、描边不透明度、圆角、阴影七项。`features/effect-detail/parameter-controls.tsx` 按规范中的 movement、timing、surface 分组渲染；首页从同一规范选取两项快捷参数。
+- `components/ui/` 的 `RangeField` 同时提供原生 range 与数值输入；Enter 或失焦提交草稿、Escape 取消，输入提交先限制到边界，再由规范按步长归一化。`ChoiceField` 用原生 radio 表达预设、方向、缓动及色调，`SelectField` 共用于排序和提示词语言；`fields.css` 维护这些字段的公共状态与响应式规则。
+- `components/effects/` 通过固定命中区域和内部动画表面呈现可信的内置效果，首页、展示区、目录和详情复用帧定义与预览控制器。当前三个效果直接在页面内运行，没有新增 iframe 预览路由。控制器处理重播互斥、参数变化、减少动态效果、离屏、后台和卸载取消；非玻璃参数连续修改后合并为 180ms 后的一次演示，取消和卸载清理待执行任务。
+- 列表的 `q`、`sort` 与详情的 `v=1`、`prompt`、效果参数由 URL 表达。分享和控件都经 `resolveEffect` 解析；旧 v1 链接缺少的新增参数使用默认值，只接收对应效果的字段。有效数字按步长归一化，非法 URL 值回退该字段默认值；不支持的版本整体使用默认值并提示。分享链接仅保存该效果实际可调参数与提示词语言，不携带返回目录上下文。
+- `useSearchParams` 与原生 `history.replaceState(null, ...)` 保持客户端 URL、控件和语言链接同步。语言切换保留效果参数和提示词语言；共享语言控件的局部 Suspense 回退保证首页静态生成。详情的 `from` 只接受站内目录路径，目录滚动位置按路径及查询保存在 `sessionStorage`；返回链接使用 `scroll={false}`，避免框架滚动覆盖目录恢复的位置。存储受限时继续允许浏览。
+- `components/motion/page-transition.tsx` 位于语言根布局，只比较移除 `/en`、`/zh` 前缀后的 pathname。路径改变时用 WAAPI 做 240ms 的 opacity 0.65 → 1 淡入；查询修改和仅切换语言不会重播，减少动态效果时跳过，后续切换与卸载取消在途动画。公共页面祖先不应用 transform，确保手机 fixed 复制栏仍以视口定位；语言文字继续由 `LocalizedText` 处理。首页资源加载屏的生命周期不变。
+- 首页的 `HomeShowcase` 使用三种真实预览替换原词汇分类列表，首屏参数与详情链接共享当前配置。目录仅在无搜索、默认排序、全部分类且恰有三项时使用高预览配两幅横向预览，其余结果使用规则网格。详情宽屏保持预览和复制工具栏可见，手机改为固定底部复制入口；布局样式分别留在所属 feature。
+- 目录和详情生成独立标题、描述、canonical 与语言 alternates；参数变化不会创建新的规范内容地址。现有 Google 验证与 Analytics 接入沿用根布局。
+
+本轮没有新增依赖。参数校验为 TypeScript 函数，控件使用原生 range、number、radio、select、details 和 textarea；自动化逻辑检查使用 Node.js 内置测试运行器。当前未使用 Motion、Zod、shadcn/ui、Vitest 或 Playwright 测试框架。首轮效果库证据见 [效果库验证记录](effects-library-validation.md)，当前体验升级的浏览器检查、生产构建、修正复验和未覆盖范围见 [体验升级验证记录](experience-upgrade-validation.md)。
 
 ## 1 产品目标与首版范围
 
@@ -35,6 +51,8 @@
 ## 2 页面与信息架构
 
 网站自身保持稳定、清楚的导航和控件风格，不同视觉风格在预览区域内展示。用户切换样例时，操作位置和使用方式保持一致。
+
+下表保留完整产品的信息架构方案。当前已开放首页、`/[locale]/explore`、`/[locale]/explore/[category]` 和 `/[locale]/effects/[slug]`；使用说明仍是首页区域，配方、工作台、收藏、独立预览和设计规范页尚未开放。正式导航只显示已实现入口。
 
 | 页面 | 核心职责 | 建议路由 |
 |---|---|---|
@@ -77,6 +95,8 @@
 
 ## 4 技术栈与取舍
 
+以下为初稿的技术选型建议；是否已采用以上方「当前实现」及 `package.json` 为准。尤其不要把静态生成、Motion、Zod、shadcn/ui 和测试框架建议视为本轮已安装或已使用。
+
 | 层级 | 推荐选择 | 在本项目中的用途 |
 |---|---|---|
 | 应用框架 | Next.js App Router + React + TypeScript | 目录和详情页面静态生成，交互区使用 React，保持统一组件体系 |
@@ -95,7 +115,7 @@ Next.js 支持将页面导出为静态文件，也允许后续改为需要服务
 
 交互边界限定在预览、调参和组合器中；页面说明和内容目录优先在构建时生成。[Next.js 组件边界文档](https://nextjs.org/docs/app/getting-started/server-and-client-components)
 
-Motion 支持 React 中的弹簧、布局、手势和滚动动画；项目安装 `motion`，从 `motion/react` 引用。简单的颜色或透明度过渡使用 CSS 即可。[Motion for React 文档](https://motion.dev/docs/react)
+Motion 支持 React 中的弹簧、布局、手势和滚动动画；原方案建议在需要时安装 `motion` 并从 `motion/react` 引用，当前尚未引入。简单的颜色或透明度过渡使用 CSS 即可。[Motion for React 文档](https://motion.dev/docs/react)
 
 shadcn/ui 提供可以直接修改的组件代码，适合调整操作面板的样式。[shadcn/ui 文档](https://ui.shadcn.com/docs) 动态参数通过 CSS 变量或内联样式传递，Tailwind 类名保持静态可发现，避免运行时拼接任意类名。[Tailwind 样式文档](https://tailwindcss.com/docs/styling-with-utility-classes)
 
@@ -193,6 +213,8 @@ flowchart TD
 
 ## 7 预览系统
 
+本节保留独立预览的后续方案。当前三项效果已在 `components/effects/` 内以原生 DOM、CSS 与 WAAPI 实现，列表和详情复用同一控制器；尚未实现 iframe 宿主和消息协议。
+
 列表页优先显示静态预览图。用户悬停、聚焦或点击体验时，只激活当前样例，避免整页同时运行大量动画。
 
 详情页和场景模板在独立 iframe 中运行，隔离全局样式，并让切换预览宽度能够触发真实的响应式布局。预览路由与网站操作面板使用独立样式入口，避免网站主题影响样例。
@@ -269,19 +291,26 @@ flowchart TD
 
 ### 当前实现的职责边界
 
-2026-10-27 已落地的首页按以下边界组织，所有目录都在根目录，不创建 `src/`：
+截至 2026-10-28，首页与效果库按以下边界组织，所有目录都在根目录，不创建 `src/`：
 
 | 位置 | 负责什么 | 不放什么 |
 |---|---|---|
-| `app/[locale]/` | 路由参数、元信息、静态生成、语言根布局和页面组装 | 效果交互、整页动效控制器、大段区域样式 |
+| `app/[locale]/` | 路由参数、元信息、首页静态生成、语言根布局和页面组装 | 效果交互、整页动效控制器、大段区域样式 |
+| `app/[locale]/(catalog)/` | 目录、分类与详情的参数和 metadata，服务端查询读取，共用布局与路由状态 | 搜索实现、参数表单、复制状态、局部样式 |
 | `features/home/home-page.tsx` | 组合首页导航、效果体验、使用说明和页脚 | 资源等待、复制状态、动画时序 |
-| `features/home/effects/` | 预览舞台、效果选择、分类入口、提示词操作和各自 hooks | 跨页面导航、整页开屏逻辑 |
+| `features/home/effects/` | 预览舞台、快捷参数、真实效果展示、提示词操作和各自 hooks | 跨页面导航、整页开屏逻辑 |
 | `features/home/motion/` | 加载状态编排、资源准备、开屏、内容入场与滚动 | 提示词状态或具体效果参数 |
 | `features/home/styles/` | 按区域维护首页样式，响应式规则跟随所属区域 | 公共元素重置、其他页面样式 |
 | `features/motion-preview/` | 比较方案的预览工具栏 | 正式首页专属内容 |
-| `components/{ui,navigation,motion}/` | 跨页面的图标、语言切换和文字过渡 | 首页业务状态 |
-| `lib/navigation/` | URL 状态订阅和语言跳转记录 | JSX、业务文案 |
-| `content/` | 双语文案、效果参数、提示词生成、动效参数 | DOM 操作、浏览器生命周期 |
+| `features/catalog/` | 目录外壳、分类导航、搜索排序、列表、空状态与滚动恢复 | 效果参数解析、详情表单、全局 tokens |
+| `features/effect-detail/` | 当前配置、参数控件、提示词、复制、分享与对应样式 | 目录数据、动画帧定义、首页开屏 |
+| `components/effects/` | 首页、列表与详情共用的画布、动画帧、预览控制器和局部样式 | URL 状态、页面导航、提示词面板 |
+| `components/ui/` | 图标、range 与数值字段、radio 选择、原生 select 和共用字段样式 | 效果范围、参数业务文案、URL 状态 |
+| `components/{navigation,motion}/` | 跨页面语言切换、文字过渡与 pathname 淡入 | 首页业务状态、资源加载编排 |
+| `lib/navigation/` | URL 查询序列化、合法返回路径、客户端查询订阅和语言跳转记录 | JSX、业务文案 |
+| `lib/effects/`、`lib/clipboard/` | 跨语言搜索、元信息、复制状态与失败回调 | 页面布局、效果注册内容 |
+| `content/effects/` | 效果注册、按效果的参数规范与预设、版本校验和提示词生成 | DOM 操作、浏览器生命周期 |
+| `content/catalog/`、`content/locales/` | 目录、详情及首页的中英文文案 | 组件实现、URL 与复制状态 |
 | `styles/`、`app/globals.css` | 全局变量、基础元素与 Tailwind 入口 | 整页布局、每种动画与所有媒体查询 |
 
 路由依赖功能，功能依赖公共组件与逻辑；公共组件不反向导入首页功能。新增页面先在 `features/<feature>/` 内按职责实现，确认有多个使用方后再抽公共模块。文件混合展示、状态、资源管理或不同生命周期时拆分，不为了凑行数把一段连续逻辑切碎，也不预建空目录。
@@ -290,7 +319,7 @@ flowchart TD
 
 ### 后续功能的目录规划
 
-下面仍是扩充效果库时的规划，不表示这些页面和依赖已经实现。当前动画使用 CSS 与 Web Animations API，尚未引入 Motion、Zod、shadcn/ui 或独立测试框架。
+下面保留 2026-10-26 的整体目录规划，便于追溯后续配方、工作台和独立预览的意图；它不是当前文件树。目录、详情、参数校验、提示词与分享已经按上方实际职责落地，使用 `(catalog)` 路由组、`features/effect-detail/`、`components/effects/`、`content/effects/` 和 `lib/`，未建立下表的 `core/`、`registry/` 或 `demos/` 目录。当前动画使用 CSS 与 Web Animations API，尚未引入 Motion、Zod、shadcn/ui 或独立测试框架。
 
 目录结构遵循本项目约定，所有业务目录位于项目根目录：
 
@@ -376,6 +405,8 @@ Vitest 主要验证参数归一化、提示词输出、组合冲突和分享往�
 
 ## 13 部署与成本
 
+2026-10-28 实现更新：当前使用标准 Next.js 生产构建与服务端运行时，目录和详情需要请求时读取查询参数；尚未启用 `output: 'export'`。下方静态导出内容保留为初稿方案，若以后采用，必须重新设计分享地址的首屏配置恢复并复验。
+
 首版建议使用 Next.js 静态导出：内容在构建时生成，交互在浏览器内执行。所有样例和语言路由在构建时枚举；图片提前生成合适尺寸，分享参数由客户端处理。
 
 静态导出模式不提供请求时的服务端业务处理，也不能直接使用需要服务端的 Server Actions、ISR 或默认图片优化。加入此类需求时，需要调整为有服务端运行时的部署。[Next.js 静态导出限制](https://nextjs.org/docs/app/guides/static-exports)
@@ -384,7 +415,7 @@ Vitest 主要验证参数归一化、提示词输出、组合冲突和分享往�
 
 首版运行成本主要来自域名、托管和资源传输，核心功能没有数据库或模型调用费用。Vercel Hobby 适用于个人非商业用途；商业化发布按合适的付费套餐预算，实际金额取决于届时套餐和流量。[Vercel Hobby 说明](https://vercel.com/docs/plans/hobby)
 
-由于产物是静态文件，也保留迁移到其他静态托管平台的路径。
+若后续完成静态导出适配，可再评估迁移到其他静态托管平台；当前生产产物不能直接视为纯静态站点。
 
 ## 14 实施阶段
 
