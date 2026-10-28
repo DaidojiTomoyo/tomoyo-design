@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-28",
+  "service": "http://127.0.0.1:3002",
+  "pages": [
+    {
+      "name": "editorial",
+      "lang": "en",
+      "title": "Editorial style | Tomoyo Design",
+      "canonical": "http://localhost:3000/en/effects/editorial",
+      "alternates": [
+        {
+          "lang": "en",
+          "url": "http://localhost:3000/en/effects/editorial"
+        },
+        {
+          "lang": "zh-Hans",
+          "url": "http://localhost:3000/zh/effects/editorial"
+        },
+        {
+          "lang": "x-default",
+          "url": "http://localhost:3000/en/effects/editorial"
+        }
+      ],
+      "params": true
+    },
+    {
+      "name": "bento",
+      "lang": "zh-Hans",
+      "title": "便当盒布局 | Tomoyo Design",
+      "canonical": "http://localhost:3000/zh/effects/bento-grid",
+      "alternates": [
+        {
+          "lang": "en",
+          "url": "http://localhost:3000/en/effects/bento-grid"
+        },
+        {
+          "lang": "zh-Hans",
+          "url": "http://localhost:3000/zh/effects/bento-grid"
+        },
+        {
+          "lang": "x-default",
+          "url": "http://localhost:3000/en/effects/bento-grid"
+        }
+      ],
+      "params": true
+    },
+    {
+      "name": "style",
+      "lang": "en",
+      "title": "Visual styles | Tomoyo Design",
+      "canonical": "http://localhost:3000/en/explore/style",
+      "alternates": [
+        {
+          "lang": "en",
+          "url": "http://localhost:3000/en/explore/style"
+        },
+        {
+          "lang": "zh-Hans",
+          "url": "http://localhost:3000/zh/explore/style"
+        },
+        {
+          "lang": "x-default",
+          "url": "http://localhost:3000/en/explore/style"
+        }
+      ],
+      "params": null
+    },
+    {
+      "name": "layout",
+      "lang": "zh-Hans",
+      "title": "布局与编排 | Tomoyo Design",
+      "canonical": "http://localhost:3000/zh/explore/layout",
+      "alternates": [
+        {
+          "lang": "en",
+          "url": "http://localhost:3000/en/explore/layout"
+        },
+        {
+          "lang": "zh-Hans",
+          "url": "http://localhost:3000/zh/explore/layout"
+        },
+        {
+          "lang": "x-default",
+          "url": "http://localhost:3000/en/explore/layout"
+        }
+      ],
+      "params": null
+    }
+  ],
+  "sitemap": {
+    "urls": 22,
+    "unique": 22,
+    "alternates": 66,
+    "query": false,
+    "preview": false
+  },
+  "checks": {
+    "check": "passed again after compact-copy and prompt-spacing fixes",
+    "tests": "48/48 after final fixes",
+    "build": "passed after final fixes; exit 0; no missing message errors"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "海边示例文案阅读后重写；仅核对当前文字及默认参数下排版",
+  "captures": [
+    {
+      "name": "copy-research-editorial-zh-1440",
+      "copy": [
+        "海边的一下午本来只想走一小段，到小路尽头时，已经快日落了。从小路上望过去的海。小路到礁石边就没了。我找了块平些的石头坐下，脱鞋倒沙。旁边有人钓鱼，我看了半天，他一条也没钓上来。回程一路上坡，走着走着就饿了。包里的水还剩一半，已经晒热了。海边散步记"
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "杂志编辑风格Editorial style",
+      "url": "http://127.0.0.1:3002/zh/effects/editorial",
+      "width": 1440
+    },
+    {
+      "name": "copy-research-bento-zh-390",
+      "copy": [
+        "海边的一下午本来只想走一小段，到小路尽头时，已经快日落了。带出门的只带了一瓶水，回去的路上就饿了。路到这里就没了再往前就是礁石，我找了块平些的石头坐下。回去时还是原来那条路。来时没觉得坡有这么长。鞋里的沙在海边倒过一次，回到家，袜子里又掉出一些。"
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "便当盒布局Bento grid",
+      "url": "http://127.0.0.1:3002/zh/effects/bento-grid",
+      "width": 390
+    },
+    {
+      "name": "copy-research-editorial-en-390",
+      "copy": [
+        "An afternoon by the seaI'd only meant to go for a short walk. By the time I reached the end of the coastal path, the sun was almost down.The sea seen from the path.The path stopped at the rocks. I found a flat one to sit on and tipped the sand out of my shoes. Someone nearby was fishing. I watched for quite a while, but he didn't catch a thing.The walk back was all uphill, and I started to get hungry. I still had half a bottle of water in my bag, warm from the sun.Notes from a coastal walk"
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "Editorial style",
+      "url": "http://127.0.0.1:3002/en/effects/editorial",
+      "width": 390
+    },
+    {
+      "name": "copy-research-catalog-en-1280",
+      "copy": [
+        "An afternoon by the seaI'd only meant to go for a short walk. By the time I reached the end of the coastal path, the sun was almost down.The sea seen from the path.I sat on a rock and tipped the sand out of my shoes.Notes from a coastal walk",
+        "An afternoon by the seaIn my bagOne bottle of water.Path's endA rock to sit on.Heading backUphill all the way.Sand in my shoesStill some in my socks."
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "All effects",
+      "url": "http://127.0.0.1:3002/en/explore",
+      "width": 1280
+    }
+  ]
+}

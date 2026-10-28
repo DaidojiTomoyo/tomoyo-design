@@ -15,14 +15,14 @@
 | `i18n/config.ts`                      | 界面语言、提示词语言、默认语言、语言标签与路径辅助函数 |
 | `i18n/routing.ts`                     | next-intl 语言前缀、检测、cookie 与 alternates 策略    |
 | `i18n/navigation.ts`                  | 共用 `Link`、redirect 和路由 hooks                     |
-| `i18n/request.ts`                     | 读取当前语言，加载该语言的六个消息文件                 |
+| `i18n/request.ts`                     | 读取当前语言，加载该语言的七个消息文件                 |
 | `i18n/messages.ts`、`i18n/types.d.ts` | 消息结构及 next-intl 的 `Locale`、`Messages` 类型声明  |
 | `components/i18n/intl-scope.tsx`      | 选择允许传入客户端的消息命名空间                       |
 | `i18n/metadata.ts`、`lib/site.ts`     | canonical、语言 alternates 与规范站点地址              |
 | `proxy.ts`                            | 复用路由配置处理带语言前缀的请求                       |
 | `scripts/check-messages.mjs`          | 执行消息完整性和 ICU 校验                              |
 
-`messages/en/` 与 `messages/zh/` 各有以下六个 JSON 文件。文件内部直接保存命名空间内容，加载时再组合命名空间键。
+`messages/en/` 与 `messages/zh/` 各有以下七个 JSON 文件。文件内部直接保存命名空间内容，加载时再组合命名空间键。
 
 | 文件                  | 命名空间        | 内容                                                     |
 | --------------------- | --------------- | -------------------------------------------------------- |
@@ -32,6 +32,7 @@
 | `effect-detail.json`  | `EffectDetail`  | 详情、复制、分享和配置恢复反馈                           |
 | `controls.json`       | `Controls`      | 参数、分组、选项与预设名称                               |
 | `motion-preview.json` | `MotionPreview` | 开屏提示和动效方案预览工具栏                             |
+| `composition.json`    | `Composition`   | 杂志与便当盒的示例内容、排版对比及窄屏预览控件           |
 
 同步组件使用 `useTranslations('Home')` 等命名空间 hook，异步服务端代码使用 `getTranslations`。动态文案使用 ICU 参数，例如 `t('preview.view', {name})`；保留排版换行的数组通过 `t.raw` 读取，数组本身不执行插值。原有 `content/locales/`、`content/catalog/` 和 `control-copy.ts` 字典已移除。
 
@@ -41,13 +42,13 @@
 
 `next.config.ts` 通过 next-intl 插件绑定 `i18n/request.ts`。请求配置优先使用调用方显式传入的 locale，否则从 `next/root-params` 取得语言根布局的 `[locale]`；不支持的语言交给 `notFound()`。页面消息配置不直接读取请求 headers，也不使用旧式 `setRequestLocale`；浏览器语言协商由入口代理负责，详见下方路由规则。这是当前 Next.js 与 next-intl 文档提供的根参数读取方式。[next/root-params](https://nextjs.org/docs/app/api-reference/functions/next-root-params)、[next-intl 请求配置](https://next-intl.dev/docs/usage/configuration)
 
-服务端并行加载当前语言的全部六个命名空间。客户端只接收当前页面需要的部分，`IntlScope` 总是包含 `Common`，再加入调用方指定的命名空间。
+服务端并行加载当前语言的全部七个命名空间。客户端只接收当前页面需要的部分，`IntlScope` 总是包含 `Common`，再加入调用方指定的命名空间。
 
-| 作用域                         | 传入客户端的命名空间                            |
-| ------------------------------ | ----------------------------------------------- |
-| 语言根布局                     | `Common`                                        |
-| 首页、动效预览页               | `Common`、`Home`、`Controls`、`MotionPreview`   |
-| 目录路由组（目录、分类和详情） | `Common`、`Catalog`、`EffectDetail`、`Controls` |
+| 作用域                         | 传入客户端的命名空间                                           |
+| ------------------------------ | -------------------------------------------------------------- |
+| 语言根布局                     | `Common`                                                       |
+| 首页、动效预览页               | `Common`、`Home`、`Controls`、`MotionPreview`                  |
+| 目录路由组（目录、分类和详情） | `Common`、`Catalog`、`EffectDetail`、`Controls`、`Composition` |
 
 组件不直接导入全部语言的 UI 字典。首页与动效预览继续通过静态参数预生成；目录、分类和详情依然等待 `searchParams`，按请求渲染当前搜索或效果配置。国际化迁移未改变这些页面的服务端渲染职责。
 
@@ -81,7 +82,7 @@
 
 `.env.example` 提供配置提示。发布前需要核对正式环境中的域名，避免 canonical 和网站地图仍指向本地地址。
 
-`app/sitemap.ts` 由当前效果注册表生成首页、效果库总览、两个分类、三个效果详情的中英文地址，共 14 条；每条包含对应语言 alternates。网站地图不收录查询组合与动效预览路由。动效预览页继续设置 `index: false`、`follow: false`。
+`app/sitemap.ts` 由当前效果注册表生成首页、效果库总览、四个分类、五个效果详情的中英文地址，共 22 条；每条包含对应语言 alternates。网站地图不收录查询组合与动效预览路由。动效预览页继续设置 `index: false`、`follow: false`。
 
 ## 文案维护与检查
 
@@ -92,6 +93,8 @@
 增加语言时，应同步语言配置、消息目录、字体字形、路由与元信息，并单独评估提示词语言支持；检查通过后再验证对应页面与切换路径。运行时不提供额外英文 fallback。
 
 ## 验证状态
+
+本节保留国际化迁移时的六个命名空间、三个效果与 44 项测试记录。后续排版效果扩充增加 `Composition` 命名空间，当前为七个命名空间、五个效果；对应检查见 [效果内容扩充](effects-expansion.md)。
 
 验证日期：2026 年 10 月 28 日。浏览器检查使用本地生产服务 `http://127.0.0.1:3006`，桌面视口为 1280 × 720，手机视口为 390 × 844。
 

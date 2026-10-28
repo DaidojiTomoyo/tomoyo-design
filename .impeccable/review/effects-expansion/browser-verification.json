@@ -1,0 +1,419 @@
+{
+  "bento": {
+    "columns": "125px 125px 125px 125px",
+    "gap": "26px",
+    "prompt": "Build Bento grid using my project's existing stack. Keep my real content, brand colors, links and semantic structure, and adjust the composition using the settings below. Do not copy Tomoyo's sample text or coastline artwork, or add a component library.\n\nArrange five real content blocks with CSS Grid and 4 minmax(0, 1fr) columns: the lead block spans two columns and two rows; the final block spans two columns; other blocks occupy one cell. Use a 26px grid gap, 20px inner padding, 16px corner radius, grid-auto-rows: minmax(112px, auto), and align-content: start. Row height is a minimum: let long content expand rows instead of clipping it. At container widths of 520px or less, use two columns and reset every column/row span. At 340px or less, use one column. Do not reorder reading order with dense packing, order or absolute positioning.\n\nThis is a static composition, with no automatic entrance animation. Reserve image aspect ratios before loading; retain readable text and alternatives if an image fails. Support keyboard, touch, 200% zoom and reading without JavaScript. Do not give ordinary content blocks button semantics. Any optional transition must respect prefers-reduced-motion by removing movement and fades and showing the final layout immediately.\n\nAfter implementation, list the adjustable values and verify desktop, narrow containers, long text and failed images.",
+    "promptLanguage": "en",
+    "uiLanguage": "zh-Hans",
+    "url": "http://127.0.0.1:3002/zh/effects/bento-grid?v=1&prompt=en&columns=four-columns&arrangement=featured&alignment=align-start&rowHeight=112&gap=26&padding=20&radius=16",
+    "copyMatches": true,
+    "share": "http://127.0.0.1:3002/zh/effects/bento-grid?v=1&prompt=en&columns=four-columns&arrangement=featured&alignment=align-start&rowHeight=112&gap=26&padding=20&radius=16",
+    "restored": {
+      "configuredColumns": "4",
+      "gap": "26px",
+      "prompt": "Build Bento grid using my project's existing stack. Keep my real content, brand colors, links and semantic structure, and adjust the composition using the settings below. Do not copy Tomoyo's sample text or coastline artwork, or add a component library.\n\nArrange five real content blocks with CSS Grid and 4 minmax(0, 1fr) columns: the lead block spans two columns and two rows; the final block spans two columns; other blocks occupy one cell. Use a 26px grid gap, 20px inner padding, 16px corner radius, grid-auto-rows: minmax(112px, auto), and align-content: start. Row height is a minimum: let long content expand rows instead of clipping it. At container widths of 520px or less, use two columns and reset every column/row span. At 340px or less, use one column. Do not reorder reading order with dense packing, order or absolute positioning.\n\nThis is a static composition, with no automatic entrance animation. Reserve image aspect ratios before loading; retain readable text and alternatives if an image fails. Support keyboard, touch, 200% zoom and reading without JavaScript. Do not give ordinary content blocks button semantics. Any optional transition must respect prefers-reduced-motion by removing movement and fades and showing the final layout immediately.\n\nAfter implementation, list the adjustable values and verify desktop, narrow containers, long text and failed images."
+    },
+    "afterLocaleSwitch": {
+      "lang": "en",
+      "prompt": "Build Bento grid using my project's existing stack. Keep my real content, brand colors, links and semantic structure, and adjust the composition using the settings below. Do not copy Tomoyo's sample text or coastline artwork, or add a component library.\n\nArrange five real content blocks with CSS Grid and 4 minmax(0, 1fr) columns: the lead block spans two columns and two rows; the final block spans two columns; other blocks occupy one cell. Use a 26px grid gap, 20px inner padding, 16px corner radius, grid-auto-rows: minmax(112px, auto), and align-content: start. Row height is a minimum: let long content expand rows instead of clipping it. At container widths of 520px or less, use two columns and reset every column/row span. At 340px or less, use one column. Do not reorder reading order with dense packing, order or absolute positioning.\n\nThis is a static composition, with no automatic entrance animation. Reserve image aspect ratios before loading; retain readable text and alternatives if an image fails. Support keyboard, touch, 200% zoom and reading without JavaScript. Do not give ordinary content blocks button semantics. Any optional transition must respect prefers-reduced-motion by removing movement and fades and showing the final layout immediately.\n\nAfter implementation, list the adjustable values and verify desktop, narrow containers, long text and failed images.",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid?v=1&prompt=en&columns=four-columns&arrangement=featured&alignment=align-start&rowHeight=112&gap=26&padding=20&radius=16"
+    }
+  },
+  "editorial": {
+    "composition": "cover",
+    "imageRatio": "1.53846 / 1",
+    "prompt": "Build Editorial style using my project's existing stack. Keep my real content, brand colors, links and semantic structure, and adjust the composition using the settings below. Do not copy Tomoyo's sample text or coastline artwork, or add a component library.\n\nUse a semantic article with a headline, introduction, image, caption and body. Place full-width image above the body, with a 32px column gap. Set the cover image height to 65% of its width, using object-fit: cover.Use the project's existing condensed display face for the heading, capped at 64px and 12% of the container width, with a 28px floor. Body type is 14px with line-height 1.6 and a 65ch maximum measure. Use 2px rules at the title and footer; 0 removes them. At container widths of 480px or less, stack image then body without changing DOM reading order.\n\nThis is a static composition, with no automatic entrance animation. Reserve image aspect ratios before loading; retain readable text and alternatives if an image fails. Support keyboard, touch, 200% zoom and reading without JavaScript. Do not give ordinary content blocks button semantics. Any optional transition must respect prefers-reduced-motion by removing movement and fades and showing the final layout immediately.\n\nAfter implementation, list the adjustable values and verify desktop, narrow containers, long text and failed images.",
+    "url": "http://127.0.0.1:3002/en/effects/editorial?v=1&prompt=en&composition=cover&imageShare=65&columnGap=32&ruleWeight=2&titleFace=condensed&titleSize=64&bodySize=14&lineHeight=1.6",
+    "narrow": {
+      "bodySize": "18px",
+      "columns": "288px",
+      "overflow": false,
+      "width": 320
+    }
+  },
+  "search": {
+    "search": "杂志",
+    "url": "http://127.0.0.1:3002/en/explore?q=%E6%9D%82%E5%BF%97"
+  },
+  "mobileCategory": {
+    "expandedMenus": 0,
+    "title": "布局与编排",
+    "url": "http://127.0.0.1:3002/zh/explore/layout"
+  },
+  "keyboard": {
+    "control": "editorial Heading size",
+    "key": "ArrowRight",
+    "before": 52,
+    "after": 54,
+    "promptContains54px": true
+  },
+  "viewports": [
+    {
+      "name": "editorial-en-1440",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "Editorial style",
+      "url": "http://127.0.0.1:3002/en/effects/editorial",
+      "width": 1440
+    },
+    {
+      "name": "bento-zh-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "便当盒布局Bento grid",
+      "url": "http://127.0.0.1:3002/zh/effects/bento-grid",
+      "width": 1280
+    },
+    {
+      "name": "editorial-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "杂志编辑风格Editorial style",
+      "url": "http://127.0.0.1:3002/zh/effects/editorial",
+      "width": 390
+    },
+    {
+      "name": "bento-en-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 390
+    },
+    {
+      "name": "bento-en-320",
+      "images": [
+        {
+          "complete": true,
+          "width": 288
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 320,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 320
+    },
+    {
+      "name": "catalog-en-1440",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        },
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "All effects",
+      "url": "http://127.0.0.1:3002/en/explore",
+      "width": 1440
+    },
+    {
+      "name": "layout-en-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "Layouts",
+      "url": "http://127.0.0.1:3002/en/explore/layout",
+      "width": 1280
+    },
+    {
+      "name": "catalog-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        },
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "全部效果",
+      "url": "http://127.0.0.1:3002/zh/explore",
+      "width": 390
+    },
+    {
+      "name": "layout-en-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "Layouts",
+      "url": "http://127.0.0.1:3002/en/explore/layout",
+      "width": 1280
+    },
+    {
+      "name": "catalog-en-1440",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        },
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "All effects",
+      "url": "http://127.0.0.1:3002/en/explore",
+      "width": 1440
+    },
+    {
+      "name": "catalog-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        },
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "全部效果",
+      "url": "http://127.0.0.1:3002/zh/explore",
+      "width": 390
+    },
+    {
+      "name": "editorial-en-1440",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "Editorial style",
+      "url": "http://127.0.0.1:3002/en/effects/editorial",
+      "width": 1440
+    },
+    {
+      "name": "bento-zh-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "便当盒布局Bento grid",
+      "url": "http://127.0.0.1:3002/zh/effects/bento-grid",
+      "width": 1280
+    },
+    {
+      "name": "editorial-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "杂志编辑风格Editorial style",
+      "url": "http://127.0.0.1:3002/zh/effects/editorial",
+      "width": 390
+    },
+    {
+      "name": "bento-en-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 390
+    },
+    {
+      "name": "bento-en-320",
+      "images": [
+        {
+          "complete": true,
+          "width": 288
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 320,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 320
+    }
+  ],
+  "console": {
+    "since": "2026-10-28T06:23:00.000Z",
+    "entries": [],
+    "historicalNote": "Earlier Composition errors occurred during hot reload before the catalog namespace and fixed homepage showcase changes."
+  },
+  "finalViewports": [
+    {
+      "name": "layout-en-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "Layouts",
+      "url": "http://127.0.0.1:3002/en/explore/layout",
+      "width": 1280
+    },
+    {
+      "name": "catalog-en-1440",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        },
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "All effects",
+      "url": "http://127.0.0.1:3002/en/explore",
+      "width": 1440
+    },
+    {
+      "name": "catalog-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        },
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "全部效果",
+      "url": "http://127.0.0.1:3002/zh/explore",
+      "width": 390
+    },
+    {
+      "name": "editorial-en-1440",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1440,
+      "title": "Editorial style",
+      "url": "http://127.0.0.1:3002/en/effects/editorial",
+      "width": 1440
+    },
+    {
+      "name": "bento-zh-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "便当盒布局Bento grid",
+      "url": "http://127.0.0.1:3002/zh/effects/bento-grid",
+      "width": 1280
+    },
+    {
+      "name": "editorial-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "杂志编辑风格Editorial style",
+      "url": "http://127.0.0.1:3002/zh/effects/editorial",
+      "width": 390
+    },
+    {
+      "name": "bento-en-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 390
+    },
+    {
+      "name": "bento-en-320",
+      "images": [
+        {
+          "complete": true,
+          "width": 288
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 320,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 320
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-28",
+  "scope": "Humanizer rewrite of Editorial and Bento sample copy in English and Chinese",
+  "viewports": [
+    {
+      "name": "copy-bento-zh-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "便当盒布局Bento grid",
+      "url": "http://127.0.0.1:3002/zh/effects/bento-grid",
+      "width": 1280
+    },
+    {
+      "name": "copy-editorial-zh-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "杂志编辑风格Editorial style",
+      "url": "http://127.0.0.1:3002/zh/effects/editorial",
+      "width": 390
+    },
+    {
+      "name": "copy-layout-en-1280",
+      "images": [
+        {
+          "complete": true,
+          "width": 500
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 1280,
+      "title": "Layouts",
+      "url": "http://127.0.0.1:3002/en/explore/layout",
+      "width": 1280
+    },
+    {
+      "name": "copy-bento-en-390",
+      "images": [
+        {
+          "complete": true,
+          "width": 351
+        }
+      ],
+      "overflows": [],
+      "scrollWidth": 390,
+      "title": "Bento grid",
+      "url": "http://127.0.0.1:3002/en/effects/bento-grid",
+      "width": 390
+    }
+  ],
+  "font": {
+    "characters": 590,
+    "bytes": 171848,
+    "missing": 0
+  },
+  "checks": {
+    "check": "passed",
+    "build": "passed"
+  },
+  "note": "Copy-only follow-up checked by the main thread; earlier independent design review remains historical."
+}

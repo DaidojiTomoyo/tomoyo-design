@@ -14,22 +14,24 @@
 
 ## 当前实现
 
-- 路由组 `app/[locale]/(catalog)/` 提供效果库、分类、详情和共用的加载、错误、未找到状态。`(catalog)` 不出现在公开 URL 中。首批固定 slug 为 `hover-lift`、`soft-reveal`、`frosted-glass`；分类为 `motion` 与 `material`。
+- 路由组 `app/[locale]/(catalog)/` 提供效果库、分类、详情和共用的加载、错误、未找到状态。`(catalog)` 不出现在公开 URL 中。固定 slug 为 `hover-lift`、`soft-reveal`、`frosted-glass`、`editorial`、`bento-grid`；分类为 `motion`、`material`、`style`、`layout`。
 - 首页与动效预览页继续静态生成。目录、分类和详情的页面函数等待 `searchParams`，按请求服务端渲染搜索结果或效果参数，让分享地址的首份 HTML 就对应当前配置。即使分类和 slug 由 `generateStaticParams` 枚举，这些路由仍不是静态导出页；当前部署需要 Next.js 服务端运行时。
-- 界面国际化使用 next-intl 4.14.9。根目录 `i18n/` 统一语言、路由、消息类型和元信息配置；`i18n/request.ts` 通过 `next/root-params` 读取 `[locale]`，并加载当前语言的六个 JSON 命名空间。`IntlScope` 按页面选择传给客户端的消息，首页和动效预览页的静态生成边界保持。`messages/{en,zh}/` 取代原首页、目录和参数文案字典；提示词仍由 `content/effects/prompts.ts` 根据独立的 `PromptLocale` 生成。配置与维护方法见 [国际化实现](internationalization.md)。
-- `content/effects/registry.ts` 维护分类、名称、用途与中英文别名；`schema.ts` 维护参数类型、分组、默认值、可调范围、步长、版本与解析；`presets.ts` 为每种效果提供三个起始配置；`prompts.ts` 将同一份规范生成中英文提示词。首页的 `content/home-effects.ts` 复用公共定义，不维护独立参数源。
-- 悬停浮起提供距离、缩放、旋转、阴影、时长、缓动六项；柔和入场提供方向、距离、模糊、起始缩放、时长、延迟、缓动七项；磨砂玻璃提供色调、模糊、表面不透明度、饱和度、描边不透明度、圆角、阴影七项。`features/effect-detail/parameter-controls.tsx` 按规范中的 movement、timing、surface 分组渲染；首页从同一规范选取两项快捷参数。
+- 界面国际化使用 next-intl 4.14.9。根目录 `i18n/` 统一语言、路由、消息类型和元信息配置；`i18n/request.ts` 通过 `next/root-params` 读取 `[locale]`，并加载当前语言的七个 JSON 命名空间。`IntlScope` 按页面选择传给客户端的消息，新增 `Composition` 仅传给目录路由组，首页和动效预览页的静态生成边界保持。`messages/{en,zh}/` 取代原首页、目录和参数文案字典；提示词仍由 `content/effects/prompts.ts` 根据独立的 `PromptLocale` 生成。配置与维护方法见 [国际化实现](internationalization.md)。
+- `content/effects/registry.ts` 维护分类、名称、用途与中英文别名；`types.ts` 维护类型，`definitions/` 按卡片与排版效果维护参数分组、默认值、范围和步长，`schema.ts` 聚合规范并处理版本与解析，`motion-tokens.ts` 保留共用动效值。`presets.ts` 为每种效果提供三个起始配置；`prompts.ts` 将生成委派到 `prompts/card.ts` 与 `prompts/composition.ts`。首页的 `content/home-effects.ts` 从注册表明确选取原三项，复用公共参数定义。
+- 悬停浮起提供六项参数；柔和入场与磨砂玻璃各七项。杂志编辑风格提供图文位置、图片占比、栏间距、分隔线、标题风格和字号、正文字号与行高八项；便当盒布局提供列数、主块布局、对齐、行高下限、间距、内边距、圆角七项。`features/effect-detail/parameter-controls.tsx` 依照规范分组渲染，无须为每个效果编写独立表单；首页仍从原效果规范选取两项快捷参数。
 - `components/ui/` 的 `RangeField` 同时提供原生 range 与数值输入；Enter 或失焦提交草稿、Escape 取消，输入提交先限制到边界，再由规范按步长归一化。`ChoiceField` 用原生 radio 表达预设、方向、缓动及色调，`SelectField` 共用于排序和提示词语言；`fields.css` 维护这些字段的公共状态与响应式规则。
-- `components/effects/` 通过固定命中区域和内部动画表面呈现可信的内置效果，首页、展示区、目录和详情复用帧定义与预览控制器。当前三个效果直接在页面内运行，没有新增 iframe 预览路由。控制器处理重播互斥、参数变化、减少动态效果、离屏、后台和卸载取消；非玻璃参数连续修改后合并为 180ms 后的一次演示，取消和卸载清理待执行任务。
+- `components/effects/` 的入口按类型分派预览，全部效果直接在页面内运行，没有新增 iframe。原三项由 `card-effect-preview.tsx` 及原有帧定义、控制器处理重播互斥、参数变化、减少动态效果、离屏、后台和卸载取消；非玻璃参数连续修改后合并为 180ms 后的一次演示。新增 `composition/` 使用语义 HTML、CSS Grid 和容器查询，支持普通排列对比与 320px 窄屏预览，不接入动画重播控制器。
 - 列表的 `q`、`sort` 与详情的 `v=1`、`prompt`、效果参数由 URL 表达。分享和控件都经 `resolveEffect` 解析；旧 v1 链接缺少的新增参数使用默认值，只接收对应效果的字段。有效数字按步长归一化，非法 URL 值回退该字段默认值；不支持的版本整体使用默认值并提示。分享链接仅保存该效果实际可调参数与提示词语言，不携带返回目录上下文。
 - `useSearchParams` 与原生 `history.replaceState(null, ...)` 保持客户端 URL、控件和语言链接同步。语言切换保留效果参数和提示词语言；共享语言控件的局部 Suspense 回退保证首页静态生成。详情的 `from` 只接受站内目录路径，目录滚动位置按路径及查询保存在 `sessionStorage`；返回链接使用 `scroll={false}`，避免框架滚动覆盖目录恢复的位置。存储受限时继续允许浏览。
 - `components/motion/page-transition.tsx` 位于语言根布局，比较通过语言配置去除前缀后的 pathname。目录与详情路由之间切换时跳过公共页面淡入，由目录自身处理内容入场并保留导航；其他路径变化用 WAAPI 做 240ms 的 opacity 0.65 → 1 淡入。查询修改和仅切换语言不会重播，减少动态效果时跳过，后续切换与卸载取消在途动画。公共页面祖先不应用 transform，确保手机 fixed 复制栏仍以视口定位；语言文字继续由原有 `LocalizedText` 节点处理。首页资源加载屏的生命周期不变。
-- 首页的 `HomeShowcase` 使用三种真实预览替换原词汇分类列表，首屏参数与详情链接共享当前配置。目录仅在无搜索、默认排序、全部分类且恰有三项时使用高预览配两幅横向预览，其余结果使用规则网格。详情宽屏保持预览和复制工具栏可见，手机改为固定底部复制入口；布局样式分别留在所属 feature。
-- 目录和详情生成独立标题、描述，canonical 与语言 alternates 统一由 `i18n/metadata.ts` 生成；HTML 语言标签来自 `i18n/config.ts`。参数变化不会创建新的规范内容地址。`app/sitemap.ts` 收录中英文首页、目录、分类与三个效果详情，排除动效预览和查询组合。域名由 `lib/site.ts` 按 `NEXT_PUBLIC_SITE_URL`、Vercel 正式域名、本地开发地址的顺序解析。现有 Google 验证与 Analytics 接入沿用根布局。
+- 首页的 `HomeShowcase` 固定使用三种原有预览，首屏参数与详情链接共享当前配置。目录在无搜索、默认排序、全部分类且至少三项时，前三项使用高预览配两幅横向预览，后续条目排在下方；筛选与名称排序使用规则网格。原卡片详情宽屏保持预览可见，较长的排版预览自然滚动；复制工具栏和手机底部复制入口保持。布局样式跟随各自职责。
+- 目录和详情生成独立标题、描述，canonical 与语言 alternates 统一由 `i18n/metadata.ts` 生成；HTML 语言标签来自 `i18n/config.ts`。参数变化不会创建新的规范内容地址。`app/sitemap.ts` 收录中英文首页、目录、四个分类与五个效果详情，排除动效预览和查询组合。域名由 `lib/site.ts` 按 `NEXT_PUBLIC_SITE_URL`、Vercel 正式域名、本地开发地址的顺序解析。现有 Google 验证与 Analytics 接入沿用根布局。
 
 国际化迁移新增 next-intl 运行依赖和用于消息校验的 ICU 解析开发依赖；`pnpm check` 已包含 `pnpm i18n:check`，检查跨语言消息键、结构、ICU 语法与占位符。参数校验仍为 TypeScript 函数，控件使用原生 range、number、radio、select、details 和 textarea；自动化逻辑检查使用 Node.js 内置测试运行器。当前未使用 Motion、Zod、shadcn/ui、Vitest 或 Playwright 测试框架。首轮效果库证据见 [效果库验证记录](effects-library-validation.md)，体验升级的浏览器检查、生产构建、修正复验和未覆盖范围见 [体验升级验证记录](experience-upgrade-validation.md)；本次国际化验证状态单独记录在 [国际化实现](internationalization.md#验证状态)。
 
 ## 1 产品目标与首版范围
+
+2026-10-28 按用户选定的架构顺序补齐杂志编辑风格与便当盒布局；两项的参数、模块边界、预览与提示词一致性以及实际验证范围见 [效果内容扩充](effects-expansion.md)。
 
 用户可以从视觉示例出发，认识效果、调整效果，再将准确的描述交给自己的 AI 工具实现。
 
@@ -214,7 +216,7 @@ flowchart TD
 
 ## 7 预览系统
 
-本节保留独立预览的后续方案。当前三项效果已在 `components/effects/` 内以原生 DOM、CSS 与 WAAPI 实现，列表和详情复用同一控制器；尚未实现 iframe 宿主和消息协议。
+本节保留独立预览的后续方案。当前五项效果在 `components/effects/` 内实现：原三项卡片复用 CSS 与 WAAPI 控制器，两项排版效果使用静态 HTML 与 CSS。尚未实现 iframe 宿主和消息协议。
 
 列表页优先显示静态预览图。用户悬停、聚焦或点击体验时，只激活当前样例，避免整页同时运行大量动画。
 
@@ -310,7 +312,7 @@ flowchart TD
 | `components/{navigation,motion}/` | 跨页面语言切换、文字过渡与 pathname 淡入 | 首页业务状态、资源加载编排 |
 | `components/i18n/` | 按页面选择传给客户端的消息命名空间 | 文案内容、提示词生成、语言动效 |
 | `i18n/`、`proxy.ts` | UI 与提示词语言配置、路由、请求消息加载、消息类型和语言元信息 | 页面布局、效果参数、动画控制 |
-| `messages/{en,zh}/` | Common、Home、Catalog、EffectDetail、Controls、MotionPreview 六组界面文案 | 效果规范、提示词模板、组件实现 |
+| `messages/{en,zh}/` | Common、Home、Catalog、EffectDetail、Controls、MotionPreview、Composition 七组界面文案 | 效果规范、提示词模板、组件实现 |
 | `lib/navigation/` | URL 查询序列化、合法返回路径、客户端查询订阅和语言跳转记录 | JSX、业务文案 |
 | `lib/effects/`、`lib/clipboard/` | 跨语言搜索、元信息、复制状态与失败回调 | 页面布局、效果注册内容 |
 | `content/effects/` | 效果注册、按效果的参数规范与预设、版本校验和提示词生成 | DOM 操作、浏览器生命周期 |
