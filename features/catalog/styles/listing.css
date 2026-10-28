@@ -1,0 +1,275 @@
+.catalog-page-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.catalog-page-heading p {
+  margin: 0;
+  color: var(--catalog-muted);
+  font-size: 13px;
+  max-width: 55ch;
+}
+.catalog-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--catalog-line);
+  border-radius: 5px;
+  padding: 0 12px;
+  height: 44px;
+  gap: 10px;
+  background: rgb(255 249 239 / 40%);
+  width: 286px;
+  flex-shrink: 0;
+}
+.catalog-search input {
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  font-size: 13px;
+}
+.catalog-search input::placeholder {
+  color: var(--catalog-muted);
+}
+.catalog-search input:focus-visible {
+  outline: none;
+}
+.catalog-search:focus-within {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+.catalog-result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--catalog-line);
+  margin-bottom: 22px;
+  color: var(--catalog-muted);
+  font-size: 12px;
+}
+.catalog-result-bar strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.catalog-result-bar label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.catalog-result-bar .ui-select {
+  font-size: 12px;
+}
+.catalog-effect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 27px 20px;
+}
+.catalog-effect-grid[data-curated] {
+  grid-template-columns: 1.04fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:first-child {
+  grid-row: span 2;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:first-child .effect-canvas {
+  aspect-ratio: auto;
+  height: 566px;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:first-child .effect-target {
+  width: 76%;
+  max-width: 360px;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:first-child .effect-sample-title {
+  font-size: 46px;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:not(:first-child) .effect-canvas {
+  height: 218px;
+  min-height: 218px;
+  aspect-ratio: auto;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:not(:first-child) .effect-target {
+  width: 82%;
+  max-width: 310px;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:not(:first-child) .effect-sample {
+  padding: 16px 20px;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:not(:first-child) .effect-print-copy {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:not(:first-child) .effect-sample-title {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+.catalog-effect-grid[data-curated] .catalog-effect-card:not(:first-child) .effect-sample-note {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.catalog-effect-grid[data-curated] .catalog-card-description {
+  display: none;
+}
+.catalog-effect-grid[data-curated] .catalog-card-footer {
+  margin-top: 12px;
+}
+.catalog-effect-card {
+  min-width: 0;
+}
+.catalog-card-link {
+  display: block;
+  border-radius: 5px;
+}
+.catalog-card-link:hover h2 {
+  text-decoration: underline;
+}
+.catalog-card-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 15px;
+}
+.catalog-card-name h2 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 800;
+}
+.catalog-card-name .icon {
+  width: 16px;
+  height: 16px;
+}
+.catalog-english {
+  font:
+    11px var(--font-mono),
+    monospace;
+  color: var(--catalog-muted);
+  margin: 4px 0 0;
+}
+.catalog-card-description {
+  margin: 12px 0 13px;
+  font-size: 12px;
+  color: var(--catalog-muted);
+  min-height: 3.2em;
+}
+.catalog-card-footer {
+  border-top: 1px solid var(--catalog-line);
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--catalog-muted);
+}
+.catalog-card-footer span:last-child {
+  font:
+    10px var(--font-mono),
+    monospace;
+  flex-shrink: 0;
+}
+.catalog-note {
+  margin: 42px 0 0;
+  color: var(--catalog-muted);
+  font-size: 12px;
+}
+.catalog-filter {
+  display: inline-flex;
+  max-width: 100%;
+  gap: 8px;
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--catalog-line);
+  border-radius: 5px;
+  font-size: 12px;
+}
+.catalog-filter > span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.catalog-filter button {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: transparent;
+}
+.catalog-empty {
+  padding: 40px 0 60px;
+}
+.catalog-empty h2 {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+.catalog-empty p {
+  color: var(--catalog-muted);
+  font-size: 13px;
+  max-width: 65ch;
+  margin-bottom: 24px;
+}
+@media (max-width: 1150px) {
+  .catalog-effect-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .catalog-page-heading {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .catalog-search {
+    width: 100%;
+  }
+}
+@media (max-width: 760px) {
+  .catalog-effect-grid[data-curated] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .catalog-effect-grid[data-curated] .catalog-effect-card:first-child {
+    grid-row: auto;
+  }
+  .catalog-effect-grid[data-curated] .catalog-effect-card:first-child .effect-canvas {
+    height: 340px;
+  }
+  .catalog-effect-grid[data-curated] .catalog-effect-card:first-child .effect-target {
+    width: 66%;
+    max-width: 250px;
+  }
+  .catalog-effect-grid[data-curated] .catalog-effect-card:first-child .effect-sample-title {
+    font-size: 32px;
+  }
+  .catalog-page-heading {
+    margin-bottom: 23px;
+    gap: 20px;
+  }
+  .catalog-page-heading p {
+    font-size: 12px;
+  }
+  .catalog-effect-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .catalog-result-bar {
+    margin-bottom: 18px;
+  }
+  .catalog-card-description {
+    margin: 8px 0 10px;
+    min-height: 0;
+  }
+  .catalog-note {
+    margin-top: 30px;
+  }
+  .catalog-search input {
+    font-size: 16px;
+  }
+  .catalog-search input::placeholder {
+    font-size: 13px;
+  }
+}

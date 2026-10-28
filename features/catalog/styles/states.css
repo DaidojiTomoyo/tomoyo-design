@@ -1,0 +1,21 @@
+.catalog-loading {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.catalog-loading div {
+  background: var(--catalog-soft);
+  min-height: 260px;
+  border-radius: 9px;
+}
+.catalog-loading div:first-child {
+  grid-column: 1 / -1;
+  min-height: 92px;
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+@media (max-width: 760px) {
+  .catalog-loading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
