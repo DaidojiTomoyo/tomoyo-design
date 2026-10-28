@@ -1,7 +1,8 @@
 import type { EffectSpec } from './schema';
+import type { PromptLocale } from '@/i18n/config';
 
 /** Only the resolved specification reaches both this generator and the preview. */
-export function createEffectPrompt(t: EffectSpec, locale: 'en' | 'zh') {
+export function createEffectPrompt(t: EffectSpec, locale: PromptLocale) {
   const names = {
     'hover-lift': { en: 'Hover lift', zh: '悬停浮起' },
     'soft-reveal': { en: 'Soft reveal', zh: '柔和入场' },
@@ -27,7 +28,7 @@ export function createEffectPrompt(t: EffectSpec, locale: 'en' | 'zh') {
   ].join('\n\n');
 }
 
-function describeEffect(t: EffectSpec, locale: 'en' | 'zh') {
+function describeEffect(t: EffectSpec, locale: PromptLocale) {
   const zh = locale === 'zh';
   if (t.id === 'hover-lift')
     return zh

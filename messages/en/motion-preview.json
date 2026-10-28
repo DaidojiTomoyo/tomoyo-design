@@ -1,0 +1,19 @@
+{
+  "label": "Homepage motion studies",
+  "names": {
+    "press": "Screenprint",
+    "type": "Typesetting",
+    "coast": "Coastal exposure"
+  },
+  "descriptions": {
+    "press": "Registration, ink, then the page. Scroll to see the rest of the sequence.",
+    "type": "Type slides into place. Scroll through the headings and try changing the language.",
+    "coast": "The coast develops before the page opens. Watch the image as you scroll."
+  },
+  "replay": "Replay opening",
+  "home": "Back to home",
+  "loading": "Preparing images and type",
+  "ready": "Opening preview",
+  "homeReady": "Explore the effects",
+  "quiet": "Reduced motion is on. Opening and scroll movement are skipped."
+}

@@ -1,4 +1,6 @@
-export const motionRoute = (pathname: string) => pathname.replace(/^\/(en|zh)(?=\/|$)/, '');
+import { stripLocalePrefix } from '../../i18n/config';
+
+export const motionRoute = stripLocalePrefix;
 
 export const isCatalogRoute = (route: string) => /^\/(explore|effects)(\/|$)/.test(route);
 

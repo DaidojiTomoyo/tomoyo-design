@@ -188,8 +188,9 @@ export function resolveEffect<Id extends EffectId>(id: Id, input: Record<string,
   return { spec: spec as SpecsById[Id], invalid };
 }
 
-export function effectQuery(spec: EffectSpec, prompt: 'en' | 'zh') {
+export function effectQuery(spec: EffectSpec, prompt: PromptLocale) {
   const query = new URLSearchParams({ v: '1', prompt });
   for (const p of parameters[spec.id]) query.set(p.key, String(parameterValue(spec, p.key)));
   return query;
 }
+import type { PromptLocale } from '@/i18n/config';

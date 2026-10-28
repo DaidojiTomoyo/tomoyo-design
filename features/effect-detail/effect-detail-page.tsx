@@ -1,18 +1,18 @@
 'use client';
 import './styles/workspace.css';
 import './styles/controls.css';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { usePathname } from 'next/navigation';
 import { useRef } from 'react';
 import { Icon } from '@/components/ui/icon';
 import { SelectField } from '@/components/ui/select-field';
 import { LocalizedText } from '@/components/motion/localized-text';
 import { EffectPreview } from '@/components/effects/effect-preview';
-import { getCatalogMessages } from '@/content/catalog';
+import { useTranslations } from 'next-intl';
 import { getEffect, getCategory } from '@/content/effects/registry';
 import { createEffectPrompt } from '@/content/effects/prompts';
 import type { EffectId } from '@/content/effects/schema';
-import { formatMessage, type Locale } from '@/content/locales';
+import { localeInfo, promptLocales, stripLocalePrefix, type Locale } from '@/i18n/config';
 import { catalogReturnPath } from '@/lib/navigation/query';
 import { useClipboard } from '@/lib/clipboard/use-clipboard';
 import { useEffectConfig } from './use-effect-config';
@@ -29,7 +29,7 @@ export function EffectDetailPage({
   locale: Locale;
   initialQuery: string;
 }) {
-  const t = getCatalogMessages(locale);
+  const t = useTranslations('EffectDetail');
   const pathname = usePathname();
   const effect = getEffect(id);
   const config = useEffectConfig(id, locale, initialQuery);
@@ -48,18 +48,18 @@ export function EffectDetailPage({
     }
   }
   const clipboard = useClipboard(prompt, () => openPrompt(true));
-  const summary = formatMessage(
-    id === 'hover-lift' ? t.summaryLift : id === 'soft-reveal' ? t.summaryReveal : t.summaryGlass,
+  const summary = t(
+    id === 'hover-lift' ? 'summaryLift' : id === 'soft-reveal' ? 'summaryReveal' : 'summaryGlass',
     config.spec,
   );
   return (
     <div className="effect-detail" data-catalog-page={pathname}>
-      <nav className="detail-crumb" aria-label={t.navigation}>
-        <Link href={catalogReturnPath(config.from, locale)} scroll={false}>
-          {config.from ? t.back : t.all}
+      <nav className="detail-crumb" aria-label={t('navigation')}>
+        <Link href={stripLocalePrefix(catalogReturnPath(config.from, locale))} scroll={false}>
+          {config.from ? t('back') : t('all')}
         </Link>
         <Icon name="chevron" />
-        <Link href={`/${locale}/explore/${effect.category}`}>
+        <Link href={`/explore/${effect.category}`}>
           {getCategory(effect.category)!.name[locale]}
         </Link>
         <Icon name="chevron" />
@@ -76,14 +76,14 @@ export function EffectDetailPage({
       </LocalizedText>
       {config.invalid && (
         <p className="catalog-notice" role="status">
-          {t.invalid}
+          {t('invalid')}
         </p>
       )}
       <div className="detail-workspace-toolbar">
-        <nav className="detail-section-links" aria-label={t.library}>
+        <nav className="detail-section-links" aria-label={t('library')}>
           <a href="#effect-preview">
             <Icon name="eye" />
-            {t.preview}
+            {t('preview')}
           </a>
           <a
             href="#effect-prompt"
@@ -93,46 +93,48 @@ export function EffectDetailPage({
             }}
           >
             <Icon name="copy" />
-            {t.prompt}
+            {t('prompt')}
           </a>
         </nav>
         <div className="detail-toolbar-actions">
           <ShareEffect locale={locale} promptLocale={config.promptLocale} spec={config.spec} />
           <div className="detail-desktop-copy">
-            <PromptCopyButton locale={locale} clipboard={clipboard} />
+            <PromptCopyButton clipboard={clipboard} />
           </div>
         </div>
       </div>
       <div className="detail-workspace">
-        <section id="effect-preview" aria-label={t.preview} data-route-enter>
+        <section id="effect-preview" aria-label={t('preview')} data-route-enter>
           <EffectPreview locale={locale} spec={config.spec} />
         </section>
-        <section className="detail-control-panel" aria-label={t.parameters} data-route-enter>
+        <section className="detail-control-panel" aria-label={t('parameters')} data-route-enter>
           <ParameterControls
             spec={config.spec}
-            locale={locale}
             onChange={config.update}
             onReset={config.reset}
             onPreset={config.applyPreset}
           />
           <div className="detail-prompt-summary">
             <label htmlFor="prompt-language">
-              {t.promptLanguage}
+              {t('promptLanguage')}
               <SelectField
                 id="prompt-language"
                 value={config.promptLocale}
                 onChange={(event) => config.changeLanguage(event.target.value)}
               >
-                <option value="en">English</option>
-                <option value="zh">简体中文</option>
+                {promptLocales.map((language) => (
+                  <option key={language} value={language}>
+                    {localeInfo[language].label}
+                  </option>
+                ))}
               </SelectField>
             </label>
             <p>{summary}</p>
             <div className="detail-desktop-copy">
-              <PromptCopyButton locale={locale} clipboard={clipboard} />
+              <PromptCopyButton clipboard={clipboard} />
             </div>
             <button type="button" className="catalog-text-button" onClick={() => openPrompt()}>
-              {t.fullPrompt}
+              {t('fullPrompt')}
               <Icon name="arrow" />
             </button>
           </div>
@@ -143,10 +145,13 @@ export function EffectDetailPage({
         role="status"
         aria-live="polite"
       >
-        {clipboard.status === 'error' ? t.copyError : clipboard.status === 'copied' ? t.copied : ''}
+        {clipboard.status === 'error'
+          ? t('copyError')
+          : clipboard.status === 'copied'
+            ? t('copied')
+            : ''}
       </p>
       <PromptDetails
-        locale={locale}
         promptLocale={config.promptLocale}
         prompt={prompt}
         clipboard={clipboard}
@@ -155,9 +160,9 @@ export function EffectDetailPage({
       />
       <div className="detail-mobile-copy">
         <span>
-          {t.prompt} · {config.promptLocale === 'zh' ? '中文' : 'EN'}
+          {t('prompt')} · {localeInfo[config.promptLocale].shortLabel}
         </span>
-        <PromptCopyButton locale={locale} clipboard={clipboard} />
+        <PromptCopyButton clipboard={clipboard} />
       </div>
     </div>
   );

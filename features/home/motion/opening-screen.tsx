@@ -1,19 +1,17 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import type { CSSProperties } from 'react';
 import coastPrint from '@/assets/plates/coast-print.png';
-import type { Locale } from '@/content/locales';
-import { getMotionStudy, type MotionDirection } from '@/content/motion-studies';
+import type { MotionDirection } from '@/content/motion-studies';
 
 export function OpeningScreen({
-  locale,
   direction,
   preview,
 }: {
-  locale: Locale;
   direction: MotionDirection;
   preview: boolean;
 }) {
-  const t = getMotionStudy(locale);
+  const t = useTranslations('MotionPreview');
   return (
     <>
       <div className="motion-intro" role="status" aria-live="polite">
@@ -50,8 +48,8 @@ export function OpeningScreen({
           <span className="intro-wordmark-small">DESIGN</span>
         </div>
         <p className="intro-status">
-          <span className="intro-waiting">{t.loading}</span>
-          <span className="intro-ready">{preview ? t.ready : t.homeReady}</span>
+          <span className="intro-waiting">{t('loading')}</span>
+          <span className="intro-ready">{preview ? t('ready') : t('homeReady')}</span>
         </p>
       </div>
       <noscript

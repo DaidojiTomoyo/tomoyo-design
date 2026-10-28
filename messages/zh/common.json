@@ -1,0 +1,23 @@
+{
+  "language": "界面语言",
+  "Preview": {
+    "replay": "重播效果",
+    "play": "播放「{name}」",
+    "playing": "正在播放",
+    "previewHint": "悬停、聚焦或轻点卡片试试",
+    "localPreview": "仅演示当前效果",
+    "paused": "已按设备设置减少动态效果",
+    "imageError": "预览图片未能加载。",
+    "retry": "重新加载图片",
+    "imageAlt": "蓝色丝网套色海岸插画"
+  },
+  "States": {
+    "notFound": "效果库里还没有这个效果。",
+    "notFoundHelp": "回到目录，看看其他可用的效果。",
+    "error": "效果库暂时没有加载出来。",
+    "errorHelp": "可以再试一次。",
+    "retryPage": "重新加载",
+    "all": "全部效果",
+    "loading": "正在加载效果"
+  }
+}

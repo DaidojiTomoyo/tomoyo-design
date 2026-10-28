@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import type { Locale } from '@/content/locales';
+import type { Locale } from '@/i18n/config';
+import { languageAlternates } from '@/i18n/metadata';
 export function catalogMetadata(
   locale: Locale,
   path: string,
@@ -9,9 +10,6 @@ export function catalogMetadata(
   return {
     title: `${title} | Tomoyo Design`,
     description,
-    alternates: {
-      canonical: `/${locale}${path}`,
-      languages: { en: `/en${path}`, 'zh-Hans': `/zh${path}`, 'x-default': `/en${path}` },
-    },
+    alternates: languageAlternates(locale, path),
   };
 }

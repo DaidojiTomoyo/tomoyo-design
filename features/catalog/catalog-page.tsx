@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 import { LocalizedText } from '@/components/motion/localized-text';
 import { Icon } from '@/components/ui/icon';
 import { SelectField } from '@/components/ui/select-field';
-import { getCatalogMessages } from '@/content/catalog';
-import { formatMessage, type Locale } from '@/content/locales';
+import { useTranslations } from 'next-intl';
+import type { Locale } from '@/i18n/config';
 import { effects, getCategory, type CategoryId } from '@/content/effects/registry';
 import { matchesEffect } from '@/lib/effects/search';
 import { useQuery, replaceQuery } from '@/lib/navigation/use-query';
@@ -22,7 +22,7 @@ export function CatalogPage({
   category?: CategoryId;
   initialQuery: string;
 }) {
-  const t = getCatalogMessages(locale);
+  const t = useTranslations('Catalog');
   const params = useQuery(initialQuery);
   const pathname = usePathname();
   const query = (params.get('q') ?? '').slice(0, 200);
@@ -47,8 +47,8 @@ export function CatalogPage({
       <div className="catalog-page-heading" data-route-enter>
         <LocalizedText id="catalog-heading" locale={locale} direction="type">
           <div>
-            <h1>{selectedCategory?.name[locale] ?? t.all}</h1>
-            <p>{selectedCategory?.description[locale] ?? t.intro}</p>
+            <h1>{selectedCategory?.name[locale] ?? t('all')}</h1>
+            <p>{selectedCategory?.description[locale] ?? t('intro')}</p>
           </div>
         </LocalizedText>
         <label className="catalog-search">
@@ -57,32 +57,32 @@ export function CatalogPage({
             type="search"
             value={query}
             maxLength={200}
-            aria-label={t.search}
-            placeholder={t.placeholder}
+            aria-label={t('search')}
+            placeholder={t('placeholder')}
             onChange={(event) => update('q', event.target.value)}
           />
         </label>
       </div>
       <div className="catalog-result-bar">
         <strong role="status" aria-live="polite">
-          {results.length === 1 ? t.single : formatMessage(t.count, { count: results.length })}
+          {t('count', { count: results.length })}
         </strong>
         <label>
-          {t.sort}
+          {t('sort')}
           <SelectField
-            aria-label={t.sort}
+            aria-label={t('sort')}
             value={sort}
             onChange={(event) => update('sort', event.target.value)}
           >
-            <option value="recommended">{t.recommended}</option>
-            <option value="name">{t.alphabetical}</option>
+            <option value="recommended">{t('recommended')}</option>
+            <option value="name">{t('alphabetical')}</option>
           </SelectField>
         </label>
       </div>
       {query && (
         <div className="catalog-filter">
           <span>{query}</span>
-          <button type="button" aria-label={t.clear} onClick={() => update('q', '')}>
+          <button type="button" aria-label={t('clear')} onClick={() => update('q', '')}>
             <Icon name="close" />
           </button>
         </div>
@@ -109,15 +109,15 @@ export function CatalogPage({
         </div>
       ) : (
         <section className="catalog-empty" data-route-enter>
-          <h2>{t.empty}</h2>
-          <p>{t.emptyHelp}</p>
+          <h2>{t('empty')}</h2>
+          <p>{t('emptyHelp')}</p>
           <button type="button" className="catalog-button" onClick={() => update('q', '')}>
-            {t.clear}
+            {t('clear')}
             <Icon name="arrow" />
           </button>
         </section>
       )}
-      <p className="catalog-note">{t.instruction}</p>
+      <p className="catalog-note">{t('instruction')}</p>
     </div>
   );
 }

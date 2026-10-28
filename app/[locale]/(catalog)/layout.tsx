@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
-import { isLocale } from '@/content/locales';
+import { isLocale } from '@/i18n/config';
+import { IntlScope } from '@/components/i18n/intl-scope';
 import { CatalogShell } from '@/features/catalog/catalog-shell';
 
 export default async function CatalogLayout({
@@ -12,5 +13,9 @@ export default async function CatalogLayout({
 }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <CatalogShell locale={locale}>{children}</CatalogShell>;
+  return (
+    <IntlScope namespaces={['Catalog', 'EffectDetail', 'Controls']}>
+      <CatalogShell locale={locale}>{children}</CatalogShell>
+    </IntlScope>
+  );
 }

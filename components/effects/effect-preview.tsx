@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import coastPrint from '@/assets/plates/coast-print.png';
 import { Icon } from '@/components/ui/icon';
-import { getCatalogMessages } from '@/content/catalog';
-import { formatMessage, type Locale } from '@/content/locales';
+import { useTranslations } from 'next-intl';
+import type { Locale } from '@/i18n/config';
 import { getEffect } from '@/content/effects/registry';
 import type { EffectSpec } from '@/content/effects/schema';
 import { createPreviewController } from './preview-controller';
@@ -26,7 +26,7 @@ export function EffectPreview({
   compact?: boolean;
   eager?: boolean;
 }) {
-  const t = getCatalogMessages(locale);
+  const t = useTranslations('Common.Preview');
   const button = useRef<HTMLButtonElement>(null);
   const surface = useRef<HTMLSpanElement>(null);
   const controller = useRef<ReturnType<typeof createPreviewController> | null>(null);
@@ -68,7 +68,7 @@ export function EffectPreview({
       key={imageAttempt}
       src={coastPrint}
       loading={eager || !compact ? 'eager' : 'lazy'}
-      alt={glass ? '' : t.imageAlt}
+      alt={glass ? '' : t('imageAlt')}
       sizes={glass ? '(max-width: 760px) 100vw, 60vw' : '(max-width: 760px) 180px, 280px'}
       className={glass ? 'effect-backdrop' : 'effect-artwork'}
       onError={() => setImageError(true)}
@@ -87,7 +87,7 @@ export function EffectPreview({
           ref={button}
           className="effect-target"
           type="button"
-          aria-label={formatMessage(t.play, { name: getEffect(spec.id).name[locale] })}
+          aria-label={t('play', { name: getEffect(spec.id).name[locale] })}
           onClick={() => controller.current?.replay()}
         >
           <span ref={surface} className="effect-sample">
@@ -136,7 +136,7 @@ export function EffectPreview({
           <button
             type="button"
             className="effect-trigger"
-            aria-label={`${t.replay} · ${getEffect(spec.id).name[locale]}`}
+            aria-label={`${t('replay')} · ${getEffect(spec.id).name[locale]}`}
             onClick={() => controller.current?.replay()}
           >
             <span className="effect-hint">
@@ -147,12 +147,12 @@ export function EffectPreview({
         ) : (
           <span className="effect-hint">
             <Icon name="pointer" />
-            {t.previewHint}
+            {t('previewHint')}
           </span>
         )}
         {imageError && (
           <div className="effect-image-error" role="status">
-            <span>{t.imageError}</span>
+            <span>{t('imageError')}</span>
             <button
               type="button"
               onClick={() => {
@@ -160,7 +160,7 @@ export function EffectPreview({
                 setImageAttempt((attempt) => attempt + 1);
               }}
             >
-              {t.retry}
+              {t('retry')}
             </button>
           </div>
         )}
@@ -174,9 +174,9 @@ export function EffectPreview({
             onClick={() => controller.current?.replay()}
           >
             <Icon name="replay" />
-            {playing ? t.playing : t.replay}
+            {playing ? t('playing') : t('replay')}
           </button>
-          <p role="status">{reduced ? t.paused : t.localPreview}</p>
+          <p role="status">{reduced ? t('paused') : t('localPreview')}</p>
         </div>
       )}
     </div>

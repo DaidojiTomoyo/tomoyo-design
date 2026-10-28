@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { posix } from 'node:path';
 import test from 'node:test';
 import { runInNewContext } from 'node:vm';
 import ts from 'typescript';
@@ -10,7 +11,14 @@ function load(path, globals = {}) {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
   });
   const exports = {};
-  runInNewContext(outputText, { exports, ...globals });
+  runInNewContext(outputText, {
+    exports,
+    require: (specifier) => {
+      assert.ok(specifier.startsWith('.'), `Unexpected dependency: ${specifier}`);
+      return load(posix.join(posix.dirname(path), specifier), globals);
+    },
+    ...globals,
+  });
   return exports;
 }
 

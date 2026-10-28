@@ -15,8 +15,14 @@ export function queryInput(params: URLSearchParams): Record<string, unknown> {
     ]),
   );
 }
-export function catalogReturnPath(from: string | null, locale: 'en' | 'zh') {
-  if (!from || !/^\/(en|zh)\/explore(?:\/(motion|material))?(?:\?[^#]*)?$/.test(from))
+export function catalogReturnPath(from: string | null, locale: UiLocale) {
+  const route = from ? stripLocalePrefix(from) : '';
+  if (
+    !from ||
+    !isLocale(from.split('/')[1]) ||
+    !/^\/explore(?:\/(motion|material))?(?:\?[^#]*)?$/.test(route)
+  )
     return `/${locale}/explore`;
-  return from.replace(/^\/(en|zh)/, `/${locale}`);
+  return localizedPath(locale, route);
 }
+import { isLocale, localizedPath, stripLocalePrefix, type UiLocale } from '../../i18n/config';

@@ -6,7 +6,11 @@ import type { CSSProperties, ReactNode } from 'react';
 import paperGrain from '@/assets/plates/paper-grain.png';
 import blueGrain from '@/assets/plates/blue-grain.png';
 import { notFound } from 'next/navigation';
-import { getMessages, isLocale, locales } from '@/content/locales';
+import { getTranslations } from 'next-intl/server';
+import { isLocale, locales, localeInfo } from '@/i18n/config';
+import { IntlScope } from '@/components/i18n/intl-scope';
+import { languageAlternates } from '@/i18n/metadata';
+import { siteUrl } from '@/lib/site';
 import { PageTransition } from '@/components/motion/page-transition';
 import '../globals.css';
 
@@ -58,16 +62,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const { meta } = getMessages(locale);
+  const t = await getTranslations({ locale, namespace: 'Home.meta' });
   return {
-    ...meta,
+    metadataBase: siteUrl,
+    title: t('title'),
+    description: t('description'),
     verification: {
       google: 'bGGIfT4GfBSWoTXDSvAa9cX73Cpkd5TjCKRMoB9uHNE',
     },
-    alternates: {
-      canonical: `/${locale}`,
-      languages: { en: '/en', 'zh-Hans': '/zh', 'x-default': '/en' },
-    },
+    alternates: languageAlternates(locale, ''),
   };
 }
 export default async function RootLayout({
@@ -78,7 +81,7 @@ export default async function RootLayout({
   if (!isLocale(locale)) notFound();
   return (
     <html
-      lang={locale === 'zh' ? 'zh-Hans' : 'en'}
+      lang={localeInfo[locale].lang}
       className={`${display.variable} ${heading.variable} ${mono.variable} ${cjk.variable}`}
     >
       <head>
@@ -130,7 +133,9 @@ export default async function RootLayout({
             </filter>
           </defs>
         </svg>
-        <PageTransition>{children}</PageTransition>
+        <IntlScope>
+          <PageTransition>{children}</PageTransition>
+        </IntlScope>
         <Analytics />
       </body>
     </html>

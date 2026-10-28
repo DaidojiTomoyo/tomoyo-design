@@ -1,7 +1,7 @@
 'use client';
 
 import { useLayoutEffect, useRef, type CSSProperties, type ReactNode } from 'react';
-import type { Locale } from '@/content/locales';
+import type { UiLocale } from '@/i18n/config';
 import { studyMotion, type MotionDirection } from '@/content/motion-studies';
 import { createHomeMotion } from './controller';
 import { OpeningScreen } from './opening-screen';
@@ -21,7 +21,7 @@ export function MotionShell({
   preview = false,
   children,
 }: {
-  locale: Locale;
+  locale: UiLocale;
   direction: MotionDirection;
   preview?: boolean;
   children: ReactNode;
@@ -46,7 +46,7 @@ export function MotionShell({
       style={timing}
       ref={ref}
     >
-      <OpeningScreen locale={locale} direction={direction} preview={preview} />
+      <OpeningScreen direction={direction} preview={preview} />
       <div className="motion-content">{children}</div>
     </div>
   );

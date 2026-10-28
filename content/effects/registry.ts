@@ -1,4 +1,4 @@
-import type { Locale } from '@/content/locales';
+import type { Locale } from '@/i18n/config';
 import { effectIds, type EffectId } from './schema';
 
 export const categories = [

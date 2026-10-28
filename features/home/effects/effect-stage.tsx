@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { Icon } from '@/components/ui/icon';
 import { RangeField } from '@/components/ui/range-field';
-import { controlCopy } from '@/content/effects/control-copy';
 import {
   parameters,
   parameterValue,
@@ -12,7 +12,7 @@ import {
 import type { RefObject } from 'react';
 import coastPrint from '@/assets/plates/coast-print.png';
 import { LocalizedText } from '@/components/motion/localized-text';
-import { formatMessage as f, getMessages, type Locale } from '@/content/locales';
+import type { UiLocale } from '@/i18n/config';
 import { getHomeEffects, type EffectId } from '@/content/home-effects';
 import type { MotionDirection } from '@/content/motion-studies';
 
@@ -27,7 +27,7 @@ export function EffectStage({
   sampleRef,
   surfaceRef,
 }: {
-  locale: Locale;
+  locale: UiLocale;
   direction: MotionDirection;
   selectedId: EffectId;
   spec: EffectSpec;
@@ -37,19 +37,19 @@ export function EffectStage({
   sampleRef: RefObject<HTMLButtonElement | null>;
   surfaceRef: RefObject<HTMLSpanElement | null>;
 }) {
-  const t = getMessages(locale);
-  const homeEffects = getHomeEffects(locale);
+  const t = useTranslations('Home');
+  const c = useTranslations('Controls');
+  const homeEffects = getHomeEffects(t);
   const active = homeEffects.find((effect) => effect.id === selectedId)!;
   const index = homeEffects.indexOf(active) + 1;
   const quickKeys = selectedId === 'frosted-glass' ? ['blur', 'opacity'] : ['distance', 'duration'];
-  const c = controlCopy[locale];
-  const headline =
-    locale === 'zh' ? ['试试效果，', '再复制提示词。'] : ['Try an effect.', 'Get the prompt.'];
+  const headline = t.raw('preview.headline') as string[];
+  const heading = t.raw('preview.heading') as string[];
   return (
     <>
       <div className="sheet-heading">
         <span className="registration-mark registration-start" aria-hidden="true" />
-        <span className="sheet-index" aria-label={f(t.preview.example, { index })}>
+        <span className="sheet-index" aria-label={t('preview.example', { index })}>
           0{index} / 03
         </span>
         <LocalizedText id="page-title" locale={locale} direction={direction}>
@@ -61,15 +61,15 @@ export function EffectStage({
             ))}
           </h1>
         </LocalizedText>
-        <Link className="home-library-link" href={`/${locale}/explore`}>
-          {locale === 'zh' ? '浏览效果库' : 'Browse effects'}
+        <Link className="home-library-link" href="/explore" locale={locale}>
+          {t('preview.browse')}
           <Icon name="arrow" />
         </Link>
         <span className="registration-mark registration-end" aria-hidden="true" />
       </div>
       <div className="preview-stage" data-effect={selectedId}>
         <span className="ink-pass" aria-hidden="true" />
-        <div className="preset-list" role="group" aria-label={t.preview.choose}>
+        <div className="preset-list" role="group" aria-label={t('preview.choose')}>
           {homeEffects.map((effect, position) => (
             <button
               className="preset"
@@ -107,7 +107,7 @@ export function EffectStage({
           type="button"
           ref={sampleRef}
           data-effect={selectedId}
-          aria-label={f(t.preview.play, { name: active.name })}
+          aria-label={t('preview.play', { name: active.name })}
           aria-describedby="preview-instructions"
           onClick={() => onReplay()}
         >
@@ -117,7 +117,7 @@ export function EffectStage({
                 <Image
                   className="coast-print"
                   src={coastPrint}
-                  alt={t.preview.imageAlt}
+                  alt={t('preview.imageAlt')}
                   preload
                   sizes="(max-width: 800px) 85vw, 21vw"
                 />
@@ -125,14 +125,14 @@ export function EffectStage({
               <span className="sample-copy">
                 <LocalizedText id="sample-heading" locale={locale} direction={direction}>
                   <span className="sample-heading" data-locale-text>
-                    {t.preview.heading[0]}
+                    {heading[0]}
                     <br />
-                    {t.preview.heading[1]}
+                    {heading[1]}
                   </span>
                 </LocalizedText>
                 <LocalizedText id="sample-body" locale={locale} direction={direction}>
                   <span className="sample-body" data-locale-text>
-                    {t.preview.body}
+                    {t('preview.body')}
                   </span>
                 </LocalizedText>
                 <span className="sample-mark" aria-hidden="true" />
@@ -142,7 +142,7 @@ export function EffectStage({
           </span>
         </button>
         <div className="home-quick-controls">
-          <p>{locale === 'zh' ? '自己调一下' : 'Make it yours'}</p>
+          <p>{t('quickControls.title')}</p>
           {parameters[selectedId]
             .filter((parameter) => quickKeys.includes(parameter.key))
             .map(
@@ -151,7 +151,7 @@ export function EffectStage({
                   <RangeField
                     key={parameter.key}
                     id={`home-${parameter.key}`}
-                    label={c[parameter.key]}
+                    label={c(parameter.key)}
                     min={parameter.min}
                     max={parameter.max}
                     step={parameter.step}
@@ -161,7 +161,7 @@ export function EffectStage({
                   />
                 ),
             )}
-          <span>{locale === 'zh' ? '提示词也会跟着变。' : 'The prompt changes with you.'}</span>
+          <span>{t('quickControls.note')}</span>
         </div>
         <p id="preview-instructions" className="sr-only">
           {active.hint}

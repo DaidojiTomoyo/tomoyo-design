@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { HomeContent } from '@/features/home/home-page';
 import { MotionPreviewBar } from '@/features/motion-preview/preview-bar';
-import { isLocale } from '@/content/locales';
+import { isLocale } from '@/i18n/config';
+import { IntlScope } from '@/components/i18n/intl-scope';
 import { isMotionDirection, motionDirections } from '@/content/motion-studies';
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
@@ -19,9 +20,9 @@ export default async function MotionPreviewPage({
   const { locale, direction } = await params;
   if (!isLocale(locale) || !isMotionDirection(direction)) notFound();
   return (
-    <>
+    <IntlScope namespaces={['Home', 'Controls', 'MotionPreview']}>
       <MotionPreviewBar locale={locale} direction={direction} />
       <HomeContent locale={locale} direction={direction} preview />
-    </>
+    </IntlScope>
   );
 }

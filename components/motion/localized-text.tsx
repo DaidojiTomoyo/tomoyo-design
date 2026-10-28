@@ -1,6 +1,6 @@
 import './localized-text.css';
 import { ViewTransition, type ReactElement } from 'react';
-import type { Locale } from '@/content/locales';
+import type { Locale } from '@/i18n/config';
 import type { MotionDirection } from '@/content/motion-studies';
 
 /** Only text participates; artwork and rapidly clicked controls remain live. */

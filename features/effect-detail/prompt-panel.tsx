@@ -1,14 +1,18 @@
 import type { RefObject } from 'react';
 import { Icon } from '@/components/ui/icon';
-import { getCatalogMessages } from '@/content/catalog';
-import type { Locale } from '@/content/locales';
+import { useTranslations } from 'next-intl';
+import { localeInfo, type PromptLocale } from '@/i18n/config';
 import type { useClipboard } from '@/lib/clipboard/use-clipboard';
 
 type Clipboard = ReturnType<typeof useClipboard>;
-export function PromptCopyButton({ locale, clipboard }: { locale: Locale; clipboard: Clipboard }) {
-  const t = getCatalogMessages(locale);
+export function PromptCopyButton({ clipboard }: { clipboard: Clipboard }) {
+  const t = useTranslations('EffectDetail');
   const label =
-    clipboard.status === 'copied' ? t.copied : clipboard.status === 'copying' ? t.copying : t.copy;
+    clipboard.status === 'copied'
+      ? t('copied')
+      : clipboard.status === 'copying'
+        ? t('copying')
+        : t('copy');
   return (
     <button
       className="catalog-copy"
@@ -22,37 +26,35 @@ export function PromptCopyButton({ locale, clipboard }: { locale: Locale; clipbo
   );
 }
 export function PromptDetails({
-  locale,
   promptLocale,
   prompt,
   clipboard,
   detailsRef,
   textRef,
 }: {
-  locale: Locale;
-  promptLocale: Locale;
+  promptLocale: PromptLocale;
   prompt: string;
   clipboard: Clipboard;
   detailsRef: RefObject<HTMLDetailsElement | null>;
   textRef: RefObject<HTMLTextAreaElement | null>;
 }) {
-  const t = getCatalogMessages(locale);
+  const t = useTranslations('EffectDetail');
   return (
     <details className="detail-prompt-section" id="effect-prompt" ref={detailsRef}>
       <summary>
-        <h2>{t.promptHeading}</h2>
+        <h2>{t('promptHeading')}</h2>
         <Icon name="down" />
       </summary>
-      <p>{t.promptHelp}</p>
+      <p>{t('promptHelp')}</p>
       <label className="detail-prompt-label" htmlFor="effect-prompt-text">
-        {t.prompt} · {promptLocale === 'zh' ? '简体中文' : 'English'}
+        {t('prompt')} · {localeInfo[promptLocale].label}
       </label>
       <textarea
         id="effect-prompt-text"
         ref={textRef}
         readOnly
         value={prompt}
-        lang={promptLocale === 'zh' ? 'zh-Hans' : 'en'}
+        lang={localeInfo[promptLocale].lang}
         spellCheck={false}
       />
       <div className="detail-prompt-actions">
@@ -64,9 +66,9 @@ export function PromptDetails({
             textRef.current?.select();
           }}
         >
-          {t.select}
+          {t('select')}
         </button>
-        <PromptCopyButton locale={locale} clipboard={clipboard} />
+        <PromptCopyButton clipboard={clipboard} />
       </div>
     </details>
   );

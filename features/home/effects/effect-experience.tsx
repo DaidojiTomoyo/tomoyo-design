@@ -1,9 +1,9 @@
 'use client';
 
 import { useRef, type CSSProperties } from 'react';
-import Link from 'next/link';
-import { formatMessage, getMessages, type Locale } from '@/content/locales';
-import { getCatalogMessages } from '@/content/catalog';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
+import type { UiLocale } from '@/i18n/config';
 import { getEffect } from '@/content/effects/registry';
 import { Icon } from '@/components/ui/icon';
 import { getHomeEffects, motionTokens, type EffectId } from '@/content/home-effects';
@@ -33,16 +33,16 @@ export function EffectExperience({
   locale,
   direction,
 }: {
-  locale: Locale;
+  locale: UiLocale;
   direction: MotionDirection;
 }) {
-  const t = getMessages(locale);
+  const t = useTranslations('Home');
   const selection = useHomeSelection(locale);
   const { selectedId, promptLocale } = selection;
-  const baseEffect = getHomeEffects(locale).find((effect) => effect.id === selectedId)!;
+  const baseEffect = getHomeEffects(t).find((effect) => effect.id === selectedId)!;
   const active = {
     ...baseEffect,
-    summary: formatMessage(t.effects[selectedId].summary, selection.spec),
+    summary: t(`effects.${selectedId}.summary`, selection.spec),
   };
   const sampleRef = useRef<HTMLButtonElement>(null);
   const surfaceRef = useRef<HTMLSpanElement>(null);
@@ -92,14 +92,15 @@ export function EffectExperience({
           sampleRef={sampleRef}
           surfaceRef={surfaceRef}
         />
-        <PromptActions locale={locale} active={active} copy={copy} onReplay={replay} />
+        <PromptActions active={active} copy={copy} onReplay={replay} />
       </section>
       <p className="preview-guidance" id="preview-guidance">
-        {t.preview.guidance}{' '}
+        {t('preview.guidance')}{' '}
         <Link
-          href={`/${locale}/effects/${selectedId}?${effectQuery(selection.spec, promptLocale)}`}
+          href={`/effects/${selectedId}?${effectQuery(selection.spec, promptLocale)}`}
+          locale={locale}
         >
-          {formatMessage(getCatalogMessages(locale).view, {
+          {t('preview.view', {
             name: getEffect(selectedId).name[locale],
           })}
           <Icon name="arrow" />
@@ -107,7 +108,6 @@ export function EffectExperience({
       </p>
       <HomeShowcase locale={locale} />
       <PromptDetails
-        locale={locale}
         active={active}
         promptLocale={promptLocale}
         prompt={prompt}

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { isLocale } from '@/content/locales';
+import { isLocale } from '@/i18n/config';
 import { categories, getCategory } from '@/content/effects/registry';
 import { CatalogPage } from '@/features/catalog/catalog-page';
 import { catalogMetadata } from '@/lib/effects/metadata';

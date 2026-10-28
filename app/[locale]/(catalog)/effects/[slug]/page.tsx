@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { isLocale } from '@/content/locales';
+import { isLocale } from '@/i18n/config';
 import { getEffect } from '@/content/effects/registry';
 import { effectIds, isEffectId } from '@/content/effects/schema';
 import { EffectDetailPage } from '@/features/effect-detail/effect-detail-page';

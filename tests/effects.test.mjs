@@ -1,9 +1,31 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { posix } from 'node:path';
 import test from 'node:test';
+import { runInNewContext } from 'node:vm';
+import ts from 'typescript';
 import { defaultValues, effectQuery, resolveEffect } from '../content/effects/schema.ts';
 import { createEffectPrompt } from '../content/effects/prompts.ts';
 import { matchesEffect } from '../lib/effects/search.ts';
-import { catalogReturnPath, queryInput, serializeQuery } from '../lib/navigation/query.ts';
+
+function load(path) {
+  const source = readFileSync(new URL(`../${path}.ts`, import.meta.url), 'utf8');
+  const { outputText } = ts.transpileModule(source, {
+    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
+  });
+  const exports = {};
+  runInNewContext(outputText, {
+    exports,
+    URLSearchParams,
+    require: (specifier) => {
+      assert.ok(specifier.startsWith('.'), `Unexpected dependency: ${specifier}`);
+      return load(posix.join(posix.dirname(path), specifier));
+    },
+  });
+  return exports;
+}
+
+const { catalogReturnPath, queryInput, serializeQuery } = load('lib/navigation/query');
 
 test('share links restore the same values used by the preview and both prompt languages', () => {
   for (const [id, values, expected] of [
@@ -90,16 +112,31 @@ test('unsupported versions reset configuration and valid fractional values snap 
 });
 
 test('return navigation stays in the catalog and follows the current interface language', () => {
-  assert.equal(
-    catalogReturnPath('/zh/explore/motion?q=fade&sort=name', 'en'),
-    '/en/explore/motion?q=fade&sort=name',
-  );
+  for (const route of ['', '/motion', '/material']) {
+    for (const [fromLocale, locale] of [
+      ['zh', 'en'],
+      ['en', 'zh'],
+    ]) {
+      assert.equal(
+        catalogReturnPath(`/${fromLocale}/explore${route}?q=fade&q=glass&sort=name`, locale),
+        `/${locale}/explore${route}?q=fade&q=glass&sort=name`,
+      );
+    }
+  }
   for (const value of [
+    null,
+    '',
     '//example.com',
     'https://example.com',
+    '/explore/motion',
+    '/english/explore',
+    '/zh-Hans/explore',
     '/zh/explore/../../admin',
     '/zh/effects/hover-lift',
     '/zh/explore/evil',
+    '/zh/explore-other',
+    '/zh/explore/motion/evil',
+    '/zh/explore?q=fade#outside',
   ]) {
     assert.equal(catalogReturnPath(value, 'zh'), '/zh/explore');
   }

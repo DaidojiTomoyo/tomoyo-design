@@ -6,15 +6,16 @@ import {
   type ParameterKey,
   type ParameterValue,
 } from '@/content/effects/schema';
-import { isLocale, type Locale } from '@/content/locales';
+import { getDefaultPromptLocale, isPromptLocale, type UiLocale } from '@/i18n/config';
 import { queryInput } from '@/lib/navigation/query';
 import { useQuery, replaceQuery } from '@/lib/navigation/use-query';
 
-export function useEffectConfig(id: EffectId, locale: Locale, initialQuery: string) {
+export function useEffectConfig(id: EffectId, locale: UiLocale, initialQuery: string) {
   const params = useQuery(initialQuery);
   const { spec, invalid } = resolveEffect(id, queryInput(params));
-  const language = params.get('prompt') ?? locale;
-  const promptLocale = isLocale(language) ? language : locale;
+  const defaultPromptLocale = getDefaultPromptLocale(locale);
+  const language = params.get('prompt') ?? defaultPromptLocale;
+  const promptLocale = isPromptLocale(language) ? language : defaultPromptLocale;
   function updateValues(next: ReturnType<typeof resolveEffect>['spec']) {
     const query = effectQuery(next, promptLocale);
     const from = params.get('from');
@@ -36,7 +37,7 @@ export function useEffectConfig(id: EffectId, locale: Locale, initialQuery: stri
       updateValues(resolveEffect(id).spec);
     },
     changeLanguage(value: string) {
-      if (!isLocale(value)) return;
+      if (!isPromptLocale(value)) return;
       const query = new URLSearchParams(params);
       query.set('prompt', value);
       replaceQuery(query);

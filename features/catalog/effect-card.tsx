@@ -1,11 +1,11 @@
 'use client';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Icon } from '@/components/ui/icon';
 import { LocalizedText } from '@/components/motion/localized-text';
 import { EffectPreview } from '@/components/effects/effect-preview';
 import { getCategory, type EffectEntry } from '@/content/effects/registry';
 import { resolveEffect } from '@/content/effects/schema';
-import type { Locale } from '@/content/locales';
+import type { Locale } from '@/i18n/config';
 import { rememberCatalogPosition } from './scroll-position';
 
 export function EffectCard({
@@ -25,7 +25,7 @@ export function EffectCard({
       <EffectPreview spec={spec} locale={locale} compact eager={eager} />
       <Link
         className="catalog-card-link"
-        href={`/${locale}/effects/${effect.id}?${new URLSearchParams({ from })}`}
+        href={`/effects/${effect.id}?${new URLSearchParams({ from })}`}
         onNavigate={rememberCatalogPosition}
       >
         <LocalizedText id={`catalog-card-${effect.id}`} locale={locale} direction="type">

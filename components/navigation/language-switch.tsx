@@ -2,12 +2,14 @@
 
 import './language-switch.css';
 
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Suspense, useSyncExternalStore } from 'react';
-import { getMessages, isLocale, type Locale } from '@/content/locales';
+import { locales, localeInfo, localizedPath, type Locale } from '@/i18n/config';
 import { readUrl, serverUrl, subscribeUrl } from '@/lib/navigation/url-state';
 import { rememberLocaleNavigation } from '@/lib/navigation/locale-navigation';
+import { languageLocation } from '@/lib/navigation/language-location';
 
 export function LanguageSwitch({ locale }: { locale: Locale }) {
   return (
@@ -23,39 +25,55 @@ function CurrentLanguageLinks({ locale }: { locale: Locale }) {
 }
 
 function LanguageLinks({ locale, query }: { locale: Locale; query: string }) {
+  const t = useTranslations('Common');
   const pathname = usePathname();
-  const route = pathname.replace(/^\/(en|zh)/, '');
   const suffix = useSyncExternalStore(subscribeUrl, readUrl, serverUrl);
-  const params = new URLSearchParams(query);
-  const prompt = params.get('prompt');
-  if (!prompt || !isLocale(prompt)) params.set('prompt', locale);
   const hash = suffix.includes('#') ? suffix.slice(suffix.indexOf('#')) : '';
-  const languageSuffix = `?${params.toString()}${hash}`;
+  const href = languageLocation(pathname, query, hash, locale);
   return (
-    <div className="language-switch" role="group" aria-label={getMessages(locale).nav.language}>
-      <Link
-        href={`/en${route}${languageSuffix}`}
-        transitionTypes={['locale-change']}
-        onNavigate={() => rememberLocaleNavigation(`/en${route}`)}
-        hrefLang="en"
-        lang="en"
-        aria-current={locale === 'en' ? 'page' : undefined}
-        scroll={false}
-      >
-        EN
-      </Link>
-      <span aria-hidden="true">/</span>
-      <Link
-        href={`/zh${route}${languageSuffix}`}
-        transitionTypes={['locale-change']}
-        onNavigate={() => rememberLocaleNavigation(`/zh${route}`)}
-        hrefLang="zh-Hans"
-        lang="zh-Hans"
-        aria-current={locale === 'zh' ? 'page' : undefined}
-        scroll={false}
-      >
-        中文
-      </Link>
+    <div className="language-switch" role="group" aria-label={t('language')}>
+      {locales.map((target, index) => (
+        <LanguageOption
+          key={target}
+          locale={locale}
+          target={target}
+          href={href}
+          pathname={pathname}
+          divider={index > 0}
+        />
+      ))}
     </div>
+  );
+}
+
+function LanguageOption({
+  locale,
+  target,
+  href,
+  pathname,
+  divider,
+}: {
+  locale: Locale;
+  target: Locale;
+  href: string;
+  pathname: string;
+  divider: boolean;
+}) {
+  return (
+    <>
+      {divider && <span aria-hidden="true">/</span>}
+      <Link
+        href={href}
+        locale={target}
+        transitionTypes={['locale-change']}
+        onNavigate={() => rememberLocaleNavigation(localizedPath(target, pathname))}
+        hrefLang={localeInfo[target].lang}
+        lang={localeInfo[target].lang}
+        aria-current={locale === target ? 'page' : undefined}
+        scroll={false}
+      >
+        {localeInfo[target].shortLabel}
+      </Link>
+    </>
   );
 }

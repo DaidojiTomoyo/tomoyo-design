@@ -3,7 +3,12 @@
 import { subscribeUrl, readUrl, serverUrl } from '@/lib/navigation/url-state';
 import { useSyncExternalStore } from 'react';
 import { homeEffects, type EffectId } from '@/content/home-effects';
-import { isLocale, type Locale } from '@/content/locales';
+import {
+  getDefaultPromptLocale,
+  isPromptLocale,
+  type PromptLocale,
+  type UiLocale,
+} from '@/i18n/config';
 import {
   effectQuery,
   resolveEffect,
@@ -13,15 +18,16 @@ import {
 import { queryInput } from '@/lib/navigation/query';
 import { replaceQuery } from '@/lib/navigation/use-query';
 
-export function useHomeSelection(locale: Locale) {
+export function useHomeSelection(locale: UiLocale) {
   const suffix = useSyncExternalStore(subscribeUrl, readUrl, serverUrl);
   const params = new URLSearchParams(suffix.split('#')[0]);
   const selectedId =
     homeEffects.find((effect) => effect.id === params.get('effect'))?.id ?? 'hover-lift';
-  const language = params.get('prompt') ?? locale;
-  const promptLocale = isLocale(language) ? language : locale;
+  const defaultPromptLocale = getDefaultPromptLocale(locale);
+  const language = params.get('prompt') ?? defaultPromptLocale;
+  const promptLocale = isPromptLocale(language) ? language : defaultPromptLocale;
   const spec = resolveEffect(selectedId, queryInput(params)).spec;
-  function update(key: 'effect' | 'prompt', value: EffectId | Locale) {
+  function update(key: 'effect' | 'prompt', value: EffectId | PromptLocale) {
     const url = new URL(window.location.href);
     url.searchParams.set(key, value);
     window.history.replaceState(null, '', url.pathname + url.search + url.hash);
@@ -44,6 +50,6 @@ export function useHomeSelection(locale: Locale) {
       next.set('effect', selectedId);
       replaceQuery(next);
     },
-    selectPromptLocale: (value: Locale) => update('prompt', value),
+    selectPromptLocale: (value: PromptLocale) => update('prompt', value),
   };
 }

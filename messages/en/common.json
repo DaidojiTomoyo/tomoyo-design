@@ -1,0 +1,23 @@
+{
+  "language": "Interface language",
+  "Preview": {
+    "replay": "Replay effect",
+    "play": "Play {name}",
+    "playing": "Playing",
+    "previewHint": "Hover, focus or tap the card",
+    "localPreview": "Only this preview will play",
+    "paused": "Motion reduced by your device settings",
+    "imageError": "The preview image could not load.",
+    "retry": "Retry image",
+    "imageAlt": "Blue screenprint of a coastline"
+  },
+  "States": {
+    "notFound": "This effect is not in the library.",
+    "notFoundHelp": "Browse the available effects to find something else.",
+    "error": "The library could not load.",
+    "errorHelp": "Try loading it again.",
+    "retryPage": "Try again",
+    "all": "All effects",
+    "loading": "Loading effects"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "library": "Effects",
+  "all": "All effects",
+  "how": "How to use",
+  "skip": "Skip to effects",
+  "navigation": "Effect categories",
+  "menu": "Categories · effect index",
+  "intro": "Find an effect you like. Make it part of your project.",
+  "search": "Search effects",
+  "placeholder": "Search names, uses or keywords",
+  "count": "{count, plural, one {# effect} other {# effects}}",
+  "sort": "Sort",
+  "recommended": "Recommended",
+  "alphabetical": "Name A–Z",
+  "empty": "No effects match that search.",
+  "emptyHelp": "Try “hover”, “fade” or “glass”, or clear your search.",
+  "clear": "Clear search",
+  "journey": "From effect to your project",
+  "note": "Try it. Copy the prompt. Give it to your AI.",
+  "instruction": "Choose an effect, adjust it, then paste the prompt into your AI tool.",
+  "brandNote": "See it. Try it. Make it."
+}
